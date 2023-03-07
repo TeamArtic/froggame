@@ -1,1 +1,7 @@
-esto es el javascript :)
+class level{
+
+}
+
+window.addEventListener('load', () => {
+
+})
