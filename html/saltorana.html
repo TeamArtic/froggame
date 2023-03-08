@@ -19,9 +19,10 @@
 			animation: jump 1s ease-out;
 		}
 	</style>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
-	<img src="../img/dona.gif" alt="Rana" id="rana">
+	<img src="../img/dona.gif"  class="rana" id="rana">
 
 	<script>
 		var rana = document.getElementById("rana");
@@ -45,7 +46,7 @@
 					rana.classList.remove("jump");
 					rana.src = rana1;
 					isJumping = false;
-				}, 1000);
+				}, 0);
 			}
 		});
 	</script>
