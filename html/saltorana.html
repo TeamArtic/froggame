@@ -3,9 +3,6 @@
 <head>
 	<title>Rana saltarina</title>
 	<style>
-		.jump {
-			animation: jump 1s ease-out;
-		}
 
 		@keyframes jump {
 			0% {
@@ -18,22 +15,38 @@
 				transform: scale(1) translateY(0);
 			}
 		}
-        #rana{
-            margin-top: 300px;
-        position: center;
-        }
+        .jump {
+			animation: jump 1s ease-out;
+		}
 	</style>
 </head>
-<body><img src="../img/dona.gif" id="rana">
+<body>
+	<img src="../img/dona.gif" alt="Rana" id="rana">
 
 	<script>
 		var rana = document.getElementById("rana");
+		var rana1 = "../img/dona.gif";
+		var rana2 = "../img/saltar.gif";
+		var isRana1 = true;
+		var isJumping = false;
+
 		rana.addEventListener("click", function() {
-			rana.classList.add("jump");
-			setTimeout(function() {
-				rana.classList.remove("jump");
-			}, 1000);
+			if (!isJumping) {
+				isJumping = true;
+				rana.classList.add("jump");
+				if (isRana1) {
+					rana.src = rana2;
+					isRana1 = false;
+				} else {
+					rana.src = rana1;
+					isRana1 = true;
+				}
+				setTimeout(function() {
+					rana.classList.remove("jump");
+					rana.src = rana1;
+					isJumping = false;
+				}, 1000);
+			}
 		});
 	</script>
 </body>
-</html>
