@@ -13,6 +13,21 @@
 .jump {
     animation: jump 1s ease-out;
 }
+
+@font-face {
+    font-family: 'hola';
+    src: url(../BITWONDER.TTF);
+}
+
+h1 {
+    font-family: 'hola';
+    text-align: center ;
+    top:20px;
+    position: relative;
+    font-size: 50px;
+
+}
+
 #rana{
     cursor: pointer;
     position: absolute;
