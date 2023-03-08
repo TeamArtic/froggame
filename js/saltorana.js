@@ -1,3 +1,5 @@
+window.addEventListener("load", function() {
+
 var rana = document.getElementById("rana");
 		var rana1 = "../img/dona.gif";
 		var rana2 = "../img/saltar.gif";
@@ -22,3 +24,4 @@ var rana = document.getElementById("rana");
 				}, 1000);
 			}
 		});
+});
