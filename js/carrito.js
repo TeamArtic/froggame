@@ -23,8 +23,6 @@ const botonesAñadir = document.querySelectorAll('.buy-button');
 // Saldo inicial
 let saldo = 100;
 
-// Actualizar el saldo en la página
-saldoSpan.textContent = saldo;
 
 // Función para actualizar el saldo en la página
 function actualizarSaldo() {
@@ -49,24 +47,3 @@ document.addEventListener('keydown', function(event) {
     cerrarcarrito();
   }
 });
-function restarSaldo(event) {
-  const precio = parseFloat(event.target.dataset.price);
-  const nombre = event.target.dataset.name;
-
-  if (saldo >= precio) {
-    saldo -= precio;
-    document.getElementById('saldo').textContent = saldo.toFixed(2);
-
-    const table = document.querySelector('.cart-table tbody');
-    const row = table.insertRow();
-    const nameCell = row.insertCell();
-    const priceCell = row.insertCell();
-
-    nameCell.textContent = nombre;
-    priceCell.textContent = precio.toFixed(2);
-
-    const cartTotal = document.querySelector('.cart-total');
-    const currentTotal = parseFloat(cartTotal.textContent);
-    cartTotal.textContent = (currentTotal + precio).toFixed(2);
-  }
-}
