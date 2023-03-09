@@ -15,4 +15,10 @@ cartButton.addEventListener('click', function() {
 
 function cerrarcarrito() {
   cartContainer.style.display = 'none';
+<<<<<<< HEAD:js/carrito.js
 };
+=======
+});
+
+
+>>>>>>> 72e56c1079a4033bbfe48c1586b0f03006d06a7c:js/script.js
