@@ -43,8 +43,6 @@ class object{
             this.object.style.top = this.position.y + "px"
         }
     }
-
-    translate()
 }
 
 class grid{
