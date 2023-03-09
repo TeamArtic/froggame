@@ -3,7 +3,7 @@ class level {
 }
 
 window.addEventListener('load', () => {
-
+  cartContainer.style.display = 'none';
 })
 const cartButton = document.querySelector(".cart-button");
 const closeButton = document.querySelector(".close-button");
