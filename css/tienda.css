@@ -171,7 +171,7 @@ main {
 }
 .splinter{
   position:relative;
-  top:190px;
+  top: 92px;
   text-align: center;
 }
 
@@ -190,16 +190,25 @@ main {
 
 .splinter-img{
   width: 100%;
+  top: 105px;
+  position: relative;
 }
 
 .rafaelo-img{
   position: relative;
   top: 70px;
+  width: 200px;
 }
 
 .michelangelo-img{
   position: relative;
-  top:100px ;
+  top: 95px;
+  width: 200px;
+}
+.leo-img{
+  position: relative;
+  top: 5px;
+  width: 200px;
 }
 .carrito{
   cursor: pointer;
