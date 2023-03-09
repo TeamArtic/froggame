@@ -44,4 +44,8 @@ botonesAñadir.forEach(function(boton) {
     actualizarSaldo();
   });
 });
-
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && document.querySelector('.cart-container').style.display !== 'none') {
+    cerrarcarrito();
+  }
+});
