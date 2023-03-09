@@ -72,5 +72,3 @@ buyButtons.forEach((buyButton) => {
       cerrarcarrito();
     }
   });
-
-   
