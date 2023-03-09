@@ -13,13 +13,11 @@
 
 
 
-    function Rellena() {
-        var lista = document.getElementById('lista1');
-
+    function cambiaprecio(event) {
+        var personaje = event.target.id
         for (var i = 0; i <Tortugas.length; i++) {
-            var nombre =Tortugas[i].nombre + ' ' +Tortugas[i].precio + '€';
-            var precio =Tortugas[i].precio;
-            lista.options[lista.options.length] = new Option(nombre, precio);
+            if(personaje==Tortugas[i].nombre){
+            dinero -= Tortugas[i].precio;
 
         }
 
