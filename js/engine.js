@@ -51,8 +51,8 @@ class grid{
         this.width = width
         this.height = height
         this.tileSize = tileSize
-        this.gridContainer.style.width = width*tileSize + "px"
-        this.gridContainer.style.height = height*tileSize + "px"
+        this.gridContainer.style.width = (width + 1) * tileSize + "px"
+        this.gridContainer.style.height = (height + 1) *tileSize + "px"
     }
 }
 
