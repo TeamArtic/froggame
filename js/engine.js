@@ -68,8 +68,11 @@ class gridObject extends object{
     }
 
     gridMove(movement){
-        let finalPosition = this.gridPosition.add(movement)
-        if(finalPosition.x < this.grid.width && finalPosition.x > 0 && finalPosition.y < this.grid.height && finalPosition.x > 0){
+        let finalPosition = vector2.additionVector2(this.gridPosition, movement)
+        if(finalPosition.x <= this.grid.width && 
+            finalPosition.x >= 0 && 
+            finalPosition.y <= this.grid.height && 
+            finalPosition.y >= 0){
             this.gridTransform(movement)
             this.gridPosition = finalPosition
             console.log("Event")
