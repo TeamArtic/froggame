@@ -1,6 +1,6 @@
 
     var dinero = 10;
-    varTortugas = [
+    var Tortugas = [
 
         { nombre: 'Splinter', precio: '5' },
 
