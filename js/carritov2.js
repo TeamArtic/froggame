@@ -8,43 +8,7 @@
 
         { nombre: 'Colacao', precio: '4' },
 
-        { nombre: 'Cereales', precio: '2' },
-
-        { nombre: 'Donuts', precio: '1' },
-
-        { nombre: 'Empanadillas', precio: '0.5' },
-
-        { nombre: 'Filipinos', precio: '1' },
-
-        { nombre: 'Gominolas', precio: '1' },
-
-        { nombre: 'Happy Hippo', precio: '1.5' },
-
-        { nombre: 'Huesitos', precio: '2' },
-
-        { nombre: 'Kinder Bueno', precio: '1.5' },
-
-        { nombre: 'kikos', precio: '1' },
-
-        { nombre: 'kaskis', precio: '1' },
-
-        { nombre: 'Nachos y guacamole', precio: '3' },
-
-        { nombre: 'Nutella', precio: '3.5' },
-
-        { nombre: 'Oreos', precio: '1.5' },
-
-        { nombre: 'Pringles', precio: '2' },
-
-        { nombre: 'Palmeritas', precio: '1.5' },
-
-        { nombre: 'Pizza', precio: '2.5' },
-
-        { nombre: 'Saladitos', precio: '2' },
-
-        { nombre: 'Saladitas', precio: '1.5' },
-
-        { nombre: 'Weikis', precio: '2' }]
+        { nombre: 'Cereales', precio: '2' }]
 
 
 
