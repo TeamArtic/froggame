@@ -16,3 +16,6 @@ cartButton.addEventListener("click", function() {
 closeButton.addEventListener("click", function() {
   cartContainer.classList.remove("open");
 });
+cartCloseButton.addEventListener('click', function() {
+  cartContainer.style.display = 'none';
+});
