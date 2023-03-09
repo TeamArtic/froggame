@@ -7,8 +7,9 @@
         { nombre: 'Leonardo', precio: '10' },
 
         { nombre: 'Raphael', precio: '20' },
-
+        
         { nombre: 'Michelangelo', precio: '30' },]
+
 
 
 
