@@ -23,6 +23,10 @@ class vector2{
         this.y *= number
         return this
     }
+
+    static multiplyVector2(multipliedVector2, number){
+        return new vector2(multipliedVector2.x * number, multipliedVector2.y * number)
+    }
 }
 
 class object{
