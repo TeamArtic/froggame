@@ -57,7 +57,7 @@ main {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #5eff00;
-  width: 200px;
+  width: 300px;
 
 }
 
@@ -67,11 +67,11 @@ main {
   justify-content: space-between;
 }
 
-.character img {
+/* .character img {
   width: 200px;
   margin-bottom: 10px;
   position: relative;
-}
+} */
 
 .character h3 {
   font-size: 15px;
@@ -189,8 +189,7 @@ main {
 }
 
 .splinter-img{
-  position: relative;
-  top:200px
+  width: 100%;
 }
 
 .rafaelo-img{
