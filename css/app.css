@@ -6,3 +6,7 @@
 .app{
     height: 100vh;
 }
+
+.elementsContainer{
+    position: absolute;
+}
