@@ -213,3 +213,10 @@ main {
 .carrito{
   cursor: pointer;
 }
+.cart-container {
+  display: none;
+}
+
+.cart-container.show {
+  display: block;
+}
