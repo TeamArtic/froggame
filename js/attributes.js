@@ -1,8 +1,8 @@
 class attributes {
     constructor(attributes) {
-        if(attributes){
+        if (attributes) {
             this.attributes = attributes
-        }else{
+        } else {
             this.attributes = []
         }
     }

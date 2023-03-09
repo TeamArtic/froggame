@@ -1,11 +1,11 @@
 let elementsContainer, keyboardEvent, gameFrog, frogContainer, mainGrid
 
-class level{
+class level {
 
 }
 
-class frog extends gridObject{
-    constructor(objectGrid, object){
+class frog extends gridObject {
+    constructor(objectGrid, object) {
         super(objectGrid, new vector2(0, 0), object)
     }
 }
@@ -23,19 +23,19 @@ window.addEventListener('load', () => {
 //     gameFrog.gridMove(new vector2(2, 2))
 // }
 
-function moveCharacter(e){
-    switch (e.keyCode){
+function moveCharacter(e) {
+    switch (e.keyCode) {
         case 87:
             gameFrog.gridMove(new vector2(0, -1))
-        break;
+            break;
         case 65:
             gameFrog.gridMove(new vector2(-1, 0))
-        break;
+            break;
         case 83:
             gameFrog.gridMove(new vector2(0, 1))
-        break;
+            break;
         case 68:
             gameFrog.gridMove(new vector2(1, 0))
-        break;
+            break;
     }
 }

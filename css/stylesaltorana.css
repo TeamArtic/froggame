@@ -1,15 +1,17 @@
-
 @keyframes jump {
     0% {
         transform: scale(1) translateY(0);
     }
+
     50% {
         transform: scale(1.2) translateY(-50px);
     }
+
     100% {
         transform: scale(1) translateY(0);
     }
 }
+
 .jump {
     animation: jump 1s ease-out;
 }
@@ -21,14 +23,14 @@
 
 h1 {
     font-family: 'hola';
-    text-align: center ;
-    top:20px;
+    text-align: center;
+    top: 20px;
     position: relative;
     font-size: 50px;
 
 }
 
-#rana{
+#rana {
     cursor: pointer;
     position: absolute;
     top: 40%;
