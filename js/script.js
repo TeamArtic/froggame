@@ -5,14 +5,14 @@ class level {
 window.addEventListener('load', () => {
 
 })
-const cartButton = document.querySelector('nav li:last-child');
-const cartContainer = document.querySelector('.cart-container');
-const cartCloseButton = document.querySelector('.cart-close-button');
+const cartButton = document.querySelector(".cart-button");
+const closeButton = document.querySelector(".close-button");
+const cartContainer = document.querySelector(".cart-container");
 
-cartButton.addEventListener('click', function() {
-  cartContainer.style.display = 'block';
+cartButton.addEventListener("click", function() {
+  cartContainer.classList.add("open");
 });
 
-cartCloseButton.addEventListener('click', function() {
-  cartContainer.style.display = 'none';
+closeButton.addEventListener("click", function() {
+  cartContainer.classList.remove("open");
 });
