@@ -13,6 +13,6 @@ cartButton.addEventListener('click', function() {
   cartContainer.style.display = 'block';
 });
 
-cartCloseButton.addEventListener('click', function() {
+function cerrarcarrito() {
   cartContainer.style.display = 'none';
-});
+};
