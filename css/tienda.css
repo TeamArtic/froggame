@@ -70,6 +70,7 @@ main {
 .character img {
   width: 200px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .character h3 {
@@ -167,4 +168,37 @@ main {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+}
+.splinter{
+  position:relative;
+  top:190px;
+  text-align: center;
+}
+
+.michelangelo{
+  position:relative;
+  top:90px;
+  text-align: center;
+
+}
+
+.rafael{
+  position:relative;
+  top:65px;
+  text-align: center;
+}
+
+.splinter-img{
+  position: relative;
+  top:200px
+}
+
+.rafaelo-img{
+  position: relative;
+  top: 70px;
+}
+
+.michelangelo-img{
+  position: relative;
+  top:100px ;
 }
