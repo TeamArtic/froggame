@@ -16,11 +16,11 @@
       <ul>
         <li><a href="../html/menuprincipal.html">Inicio</a></li>
         <li><a href="#">Personajes</a></li>
-        <li onclick="abrircarrito()" class="carrito">Carrito</li>
+        <li><a href="#">Carrito</a></li>
       </ul>
     </nav>
-  </header>
 
+  </header>
   <main>
     <section class="characters">
       <div class="character">
@@ -38,7 +38,7 @@
         <button class="buy-button" data-price="15.00" data-name="Personaje 2">Comprar</button>
       </div>
       <div class="character">
-        <img src="../img/rafa.gif" alt="Personaje 3" class="rafaelo-img">
+        <img src="../img/rafa.gif" alt="Personaje 3" class="rafaelo-img"> 
         <div class="rafael">
           <h3>Raphael</h3>
           <p>20.00€</p>
@@ -46,33 +46,16 @@
         </div>
       </div>
       <div class="character">
-        <img src="../img/miguel.gif" alt="Personaje 3" class="michelangelo-img">
+        <img src="../img/miguel.gif" alt="Personaje 3" class="michel">
         <div class="michelangelo">
           <h3>Michelangelo</h3>
           <p>20.00€</p>
-          <button class="buy-button" data-price="20.00" data-name="Personaje 4">Comprar</button>
-
-
-          <div class="cart-container">
-            <span class="close-button" onclick="cerrarcarrito()">&times;</span>
-            <h2>Tu carrito</h2>
-            <table class="cart-table">
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Los productos en el carrito se agregarán aquí dinámicamente con JavaScript -->
-              </tbody>
-            </table>
-            <p>Total: <span class="cart-total">20</span> €</p>
-            <button class="buy-button">Comprar</button>
-          </div>
+          <button class="buy-button" data-price="20.00" data-name="Personaje 3">Comprar</button>
+        </div>
+      </div>
     </section>
   </main>
-  <script src="../js/carrito.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
