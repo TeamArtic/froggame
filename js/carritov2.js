@@ -1,59 +1,23 @@
 
     var dinero = 10;
-    var monchis = [
+    varTortugas = [
 
-        { nombre: 'Cacahuetes con miel', precio: '2.5' },
+        { nombre: 'Splinter', precio: '5' },
 
-        { nombre: 'Choclate Nestle', precio: '2' },
+        { nombre: 'Leonardo', precio: '10' },
 
-        { nombre: 'Colacao', precio: '4' },
+        { nombre: 'Raphael', precio: '20' },
 
-        { nombre: 'Cereales', precio: '2' },
-
-        { nombre: 'Donuts', precio: '1' },
-
-        { nombre: 'Empanadillas', precio: '0.5' },
-
-        { nombre: 'Filipinos', precio: '1' },
-
-        { nombre: 'Gominolas', precio: '1' },
-
-        { nombre: 'Happy Hippo', precio: '1.5' },
-
-        { nombre: 'Huesitos', precio: '2' },
-
-        { nombre: 'Kinder Bueno', precio: '1.5' },
-
-        { nombre: 'kikos', precio: '1' },
-
-        { nombre: 'kaskis', precio: '1' },
-
-        { nombre: 'Nachos y guacamole', precio: '3' },
-
-        { nombre: 'Nutella', precio: '3.5' },
-
-        { nombre: 'Oreos', precio: '1.5' },
-
-        { nombre: 'Pringles', precio: '2' },
-
-        { nombre: 'Palmeritas', precio: '1.5' },
-
-        { nombre: 'Pizza', precio: '2.5' },
-
-        { nombre: 'Saladitos', precio: '2' },
-
-        { nombre: 'Saladitas', precio: '1.5' },
-
-        { nombre: 'Weikis', precio: '2' }]
+        { nombre: 'Michelangelo', precio: '30' },]
 
 
 
     function Rellena() {
         var lista = document.getElementById('lista1');
 
-        for (var i = 0; i < monchis.length; i++) {
-            var nombre = monchis[i].nombre + ' ' + monchis[i].precio + '€';
-            var precio = monchis[i].precio;
+        for (var i = 0; i <Tortugas.length; i++) {
+            var nombre =Tortugas[i].nombre + ' ' +Tortugas[i].precio + '€';
+            var precio =Tortugas[i].precio;
             lista.options[lista.options.length] = new Option(nombre, precio);
 
         }
