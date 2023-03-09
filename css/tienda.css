@@ -107,3 +107,64 @@ main {
   font-family: 'hola';
   src: url(../BITWONDER.TTF);
 }
+/* Estilo para el contenedor del carrito */
+.cart-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #2e2e2e;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el botón de comprar */
+.buy-button {
+  background-color: #40b8c9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.buy-button:hover {
+  background-color: #30828f;
+}
+
+/* Estilo para la tabla del carrito */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cart-table td,
+.cart-table th {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-table th {
+  background-color: #40b8c9;
+  color: white;
+}
+
+.cart-table td img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
