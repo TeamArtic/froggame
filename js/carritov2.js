@@ -1,5 +1,4 @@
-
-    var dinero = 10;
+var dinero = 100;
     var Tortugas = [
 
         { nombre: 'Splinter', precio: '5' },
@@ -13,54 +12,65 @@
 
 
 
-    function Rellena() {
-        var lista = document.getElementById('lista1');
-
+    function cambiarprecio(event) {
+        var personaje = event.target.id ;
+        var boton = document.getElementById(personaje);
         for (var i = 0; i <Tortugas.length; i++) {
-            var nombre =Tortugas[i].nombre + ' ' +Tortugas[i].precio + '€';
-            var precio =Tortugas[i].precio;
-            lista.options[lista.options.length] = new Option(nombre, precio);
+            if(personaje==Tortugas[i].nombre && dinero-Tortugas[i].precio>=0){
+
+                if(personaje==Tortugas[i].nombre){
+                dinero -=Tortugas[i].precio;
+                document.getElementById('saldo').innerHTML = dinero + '€';
+                boton.disabled = true;
+
+            }
+
+            } 
+            }
 
         }
+        const carritoBtn = document.querySelector('.carrito');
+const carritoContenedor = document.querySelector('.cart-container');
 
+carritoBtn.addEventListener('click', () => {
+  carritoContenedor.style.display = 'block';
+});
+
+function cerrarcarrito() {
+  carritoContenedor.style.display = 'none';
+}
+
+// Agregar productos al carrito
+const buyButtons = document.querySelectorAll('.buy-button');
+const cartTableBody = document.querySelector('.cart-table tbody');
+const cartTotalSpan = document.querySelector('.cart-total');
+
+let cartTotal = 0;
+
+buyButtons.forEach((buyButton) => {
+  buyButton.addEventListener('click', (event) => {
+    const productPrice = parseFloat(event.target.dataset.price);
+    const productName = event.target.dataset.name;
+
+    const cartTableRow = document.createElement('tr');
+    const productNameCell = document.createElement('td');
+    const productPriceCell = document.createElement('td');
+
+    productNameCell.innerText = productName;
+    productPriceCell.innerText = productPrice.toFixed(2) + ' €';
+
+    cartTableRow.appendChild(productNameCell);
+    cartTableRow.appendChild(productPriceCell);
+    cartTableBody.appendChild(cartTableRow);
+
+    cartTotal += productPrice;
+    cartTotalSpan.innerText = cartTotal.toFixed(2);
+  });
+});
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && document.querySelector('.cart-container').style.display !== 'none') {
+      cerrarcarrito();
     }
+  });
 
-
-    function moveOption(origin, dest) {
-        var originList = document.getElementById(origin);
-        var destList = document.getElementById(dest);
-        var selectedOption = originList.options[originList.selectedIndex];
-        var precio = parseFloat(selectedOption.value);
-        if (dinero >= precio) {
-
-            destList.options[destList.options.length] = new Option(selectedOption.text, selectedOption.value);
-            originList.remove(originList.selectedIndex);
-            dinero -= precio;
-            document.getElementById('dinero').innerHTML = 'Saldo: ' + dinero + '€';
-
-        }
-        else {
-            document.getElementById('texto').innerHTML = 'Tu saldo no te da para comprarte eso, a parte has bajado de los 5€ y te has quedado sin tu viaje. Haz el favor y quita productos porque aquí solo se fia a mayores de 90 años acompañados de su padre.';
-            document.getElementById("texto").style.visibility = "visible";
-        }
-        if (dinero > precio) {
-
-            document.getElementById("texto").style.visibility = "hidden";
-        }
-    }
-    function RemoveOption(origin, dest) {
-        var originList = document.getElementById(origin);
-        var destList = document.getElementById(dest);
-        var selectedOption = originList.options[originList.selectedIndex];
-        var precio = parseFloat(selectedOption.value);
-
-        destList.options[destList.options.length] = new Option(selectedOption.text, selectedOption.value);
-        originList.remove(originList.selectedIndex);
-        dinero += precio;
-        document.getElementById('dinero').innerHTML = 'Saldo: ' + dinero + '€';
-        if (dinero > 0) {
-
-            document.getElementById("texto").style.visibility = "hidden";
-        }
-
-    }
+   
