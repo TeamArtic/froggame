@@ -39,9 +39,13 @@ class object{
     move(movement){
         this.position = vector2.additionVector2(this.position, movement)
         if(this.object){
-            this.object.style.left = this.position.x + "px"
-            this.object.style.top = this.position.y + "px"
+            this.setPosition(this.position)
         }
+    }
+
+    setPosition(newPosition){
+        this.object.style.left = newPosition.x + "px"
+        this.object.style.top = newPosition.y + "px"
     }
 }
 
