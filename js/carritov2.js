@@ -1,13 +1,13 @@
 var dinero = 100;
     var Tortugas = [
 
-        { nombre: 'Splinter', precio: '5' },
+        { nombre: 'Splinter', precio: '30' },
 
-        { nombre: 'Leonardo', precio: '10' },
+        { nombre: 'Leonardo', precio: '20' },
 
         { nombre: 'Raphael', precio: '20' },
         
-        { nombre: 'Michelangelo', precio: '30' },]
+        { nombre: 'Michelangelo', precio: '20' },]
 
 
 
