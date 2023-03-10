@@ -34,13 +34,13 @@ class object{
     constructor(position, object = null){
         this.position = position
         this.object = object
+
     }
 
     move(movement){
         this.position = vector2.additionVector2(this.position, movement)
         if(this.object){
-            this.object.style.left = this.position.x + "px"
-            this.object.style.top = this.position.y + "px"
+            this.setPosition(this.position)
         }
     }
 
