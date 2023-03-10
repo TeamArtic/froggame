@@ -12,13 +12,6 @@ var dinero = 100;
 
 
 
-<<<<<<< HEAD
-    function cambiaprecio(event) {
-        var personaje = event.target.id
-        for (var i = 0; i <Tortugas.length; i++) {
-            if(personaje==Tortugas[i].nombre){
-            dinero -= Tortugas[i].precio;
-=======
     function cambiarprecio(event) {
         var personaje = event.target.id ;
         var boton = document.getElementById(personaje);
@@ -34,7 +27,6 @@ var dinero = 100;
 
             } 
             }
->>>>>>> 04d187dd05e1f77b019899b04257999a386b5557
 
         }
         const carritoBtn = document.querySelector('.carrito');
@@ -94,3 +86,4 @@ comprarButton.addEventListener('click', () => {
 function cerrarMensajeCompra() {
   mensajeCompra.style.display = 'none';
 }
+
