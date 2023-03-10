@@ -231,3 +231,19 @@ main {
   z-index: 9999;
   display: none;
 }
+.compra-realizada {
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#5eff00;;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  font-size: 24px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.compra-realizada.mostrar {
+  opacity: 1;
+}
