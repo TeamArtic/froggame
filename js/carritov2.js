@@ -72,3 +72,17 @@ buyButtons.forEach((buyButton) => {
       cerrarcarrito();
     }
   });
+  //confirmacion//
+  const comprarButton = document.querySelector('.cart-container .buy-button');
+const mensajeCompra = document.createElement('div');
+mensajeCompra.classList.add('mensaje-compra');
+mensajeCompra.innerHTML = 'Compra realizada <button onclick="cerrarMensajeCompra()">Cerrar</button>';
+document.body.appendChild(mensajeCompra);
+
+comprarButton.addEventListener('click', () => {
+  mensajeCompra.style.display = 'block';
+});
+
+function cerrarMensajeCompra() {
+  mensajeCompra.style.display = 'none';
+}
