@@ -16,7 +16,6 @@
       <ul>
         <li><a href="../html/menuprincipal.html">Inicio</a></li>
         <li><a href="#">Personajes</a></li>
-        <li><a onclick="abrircarrito()" class="carrito">Carrito</a></li>
       </ul>
     </nav>
 
@@ -29,9 +28,6 @@
           <h3>Splinter</h3>
           <p>5€</p>
           <button class="buy-button" data-price="5" data-name="Splinter" onclick="cambiarprecio(event)" id="Splinter">Añadir</button>
-          <p>3€</p>
-          <p>30€</p>
-          <button class="buy-button" data-price="10.00" data-name="Splinter" onclick="cambiarprecio(event)" id="Splinter">Añadir</button>
         </div>
       </div>
       <div class="character">
@@ -39,8 +35,6 @@
         <h3>Leonardo</h3>
         <p>10€</p>
         <button class="buy-button" data-price="10" data-name="Leonardo" onclick="cambiarprecio(event)" id="Leonardo">Añadir</button>
-        <p>20€</p>
-        <button class="buy-button" data-price="15.00" data-name="Leonardo" onclick="cambiarprecio(event)" id="Leonardo">Añadir</button>
       </div>
       <div class="character">
         <img src="../img/rafa.gif" alt="Personaje 3" class="rafaelo-img"> 
@@ -55,30 +49,11 @@
         <div class="michelangelo">
           <h3>Michelangelo</h3>
           <p>30€</p>
-          <button class="buy-button" data-price="30" data-name="Michelangelo" onclick="cambiarprecio(event)" id="Michelangelo">Añadir</button>
-          <p>20€</p>
           <button class="buy-button" data-price="20.00" data-name="Michelangelo" onclick="cambiarprecio(event)" id="Michelangelo">Añadir</button>
         </div>
       </div>
        <div class="cart-container">
             <span class="close-button" onclick="cerrarcarrito()">&times;</span>
-            <h2>Tu carrito</h2>
-            <table class="cart-table">
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Los productos en el carrito se agregarán aquí dinámicamente con JavaScript -->
-              </tbody>
-            </table>
-            <p>Total: <span class="cart-total">0</span> €</p>
-            <button class="buy-button">Comprar</button>
-            <div id="mensaje-confirmacion" class="mensaje-confirmacion">
-            </div>
-          </div>
     </section>
   </main>
   <script src="../js/carritov2.js"></script>
