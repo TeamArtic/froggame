@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     elementsContainer = document.getElementById('elementsContainer')
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
-    mainGrid = new grid(elementsContainer, 4, 6, 100)
+    mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, frogContainer)
     document.onkeydown = moveCharacter;
 
