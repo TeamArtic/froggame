@@ -39,25 +39,26 @@ h1 {
     margin-top: 5%;
 }
 
-.menu div {
+.highlighted-button {
     display: block;
     width: 100%;
     max-width: 300px;
     margin: 10px auto;
-    padding: 50px;
-    background-color: #5eff00;
+    padding: 20px;
+    border: 2px solid #1d4e00;
     color: #fff;
     font-size: 24px;
     text-align: center;
     text-shadow: 2px 2px #000;
-    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-
+    background-color: #51dc00;
+    transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
 }
 
-.menu div:hover {
+.highlighted-button:hover {
     background-color: #000;
     color: #5eff00;
     text-shadow: 2px 2px #fff;
+    transform: scale(1.1);
 }
