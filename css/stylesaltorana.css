@@ -33,5 +33,6 @@ h1 {
 #rana {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    width: 50px;
 }
+

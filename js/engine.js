@@ -23,6 +23,10 @@ class vector2{
         this.y *= number
         return this
     }
+
+    static multiplyVector2(multipliedVector2, number){
+        return new vector2(multipliedVector2.x * number, multipliedVector2.y * number)
+    }
 }
 
 class object{
@@ -39,8 +43,6 @@ class object{
             this.object.style.top = this.position.y + "px"
         }
     }
-
-    translate()
 }
 
 class grid{
@@ -49,8 +51,8 @@ class grid{
         this.width = width
         this.height = height
         this.tileSize = tileSize
-        this.gridContainer.style.width = width*tileSize + "px"
-        this.gridContainer.style.height = height*tileSize + "px"
+        this.gridContainer.style.width = (width + 1) * tileSize + "px"
+        this.gridContainer.style.height = (height + 1) *tileSize + "px"
     }
 }
 
@@ -66,8 +68,11 @@ class gridObject extends object{
     }
 
     gridMove(movement){
-        let finalPosition = this.gridPosition.add(movement)
-        if(finalPosition.x < this.grid.width && finalPosition.x > 0 && finalPosition.y < this.grid.height && finalPosition.x > 0){
+        let finalPosition = vector2.additionVector2(this.gridPosition, movement)
+        if(finalPosition.x <= this.grid.width && 
+            finalPosition.x >= 0 && 
+            finalPosition.y <= this.grid.height && 
+            finalPosition.y >= 0){
             this.gridTransform(movement)
             this.gridPosition = finalPosition
             console.log("Event")
