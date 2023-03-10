@@ -1,0 +1,38 @@
+header {
+    background-color: #5eff00;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;ç
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    font-family: 'hola';
+  }
+  
+.foto{
+height: 50px;
+  }
+
+  @font-face {
+    font-family: 'hola';
+    src: url(../BITWONDER.TTF);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #000;
+    text-decoration: none;
+  }
