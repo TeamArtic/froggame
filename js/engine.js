@@ -34,7 +34,7 @@ class object{
     constructor(position, object = null){
         this.position = position
         this.object = object
-
+        this.setPosition(this.position)
     }
 
     move(movement){
