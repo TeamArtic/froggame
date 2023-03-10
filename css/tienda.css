@@ -67,11 +67,6 @@ main {
   justify-content: space-between;
 }
 
-/* .character img {
-  width: 200px;
-  margin-bottom: 10px;
-  position: relative;
-} */
 
 .character h3 {
   font-size: 15px;
@@ -101,7 +96,7 @@ main {
 }
 
 .h2 {
-  margin-left: 260px;
+  margin-right: 160px;
 }
 
 @font-face {
@@ -246,4 +241,7 @@ main {
 }
 .compra-realizada.mostrar {
   opacity: 1;
+}
+.Dinero{
+  margin-right: 200px;
 }
