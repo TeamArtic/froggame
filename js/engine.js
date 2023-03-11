@@ -73,7 +73,6 @@ class scene{
     }
 }
 
-
 class object{
     // constructor(position){
     constructor(position, size, object = null){
