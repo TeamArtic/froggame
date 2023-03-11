@@ -31,9 +31,10 @@ class vector2{
 
 class object{
     // constructor(position){
-    constructor(position, object = null){
+    constructor(position, size, object = null){
         this.position = position
         this.object = object
+        this.size = size
         this.setPosition(this.position)
     }
 
@@ -62,8 +63,8 @@ class grid{
 }
 
 class gridObject extends object{
-    constructor(grid, position, object){
-        super(position.multiply(grid.tileSize), object)
+    constructor(grid, position, size, object){
+        super(position.multiply(grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
         this.grid = grid
         this.gridPosition = position
     }
