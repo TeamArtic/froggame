@@ -29,6 +29,51 @@ class vector2{
     }
 }
 
+class scene{
+    constructor(){
+        this.objects = []
+    }
+
+    addObject(id, object){
+        this.objects.push({"id":id, "object":object})
+    }
+
+    getObject(id){
+        let findObject = this.objects.find(function(arrayObject){
+            return arrayObject.id == id
+        })
+        if(findObject){
+            return findObject.object
+        }else{
+            // TODO Create an exception
+        }
+    }
+
+    calculeCollision(id, newPosition){
+        let collisionObject = this.getObject(id)
+        for(let i = 0; i < this.objects.length; i++){
+            if(this.objects[i].id != id){
+                let topCollision = 
+                this.objects[i].object.position.y + this.objects[i].object.size.y > newPosition.y
+                let bottomCollision = 
+                newPosition.y + collisionObject.size.y > this.objects[i].object.position.y
+                let leftCollision = 
+                this.objects[i].object.position.x + this.objects[i].object.size.x > newPosition.x
+                let rightCollision = 
+                newPosition.x + collisionObject.size.x > this.objects[i].object.position.x
+                if(topCollision && bottomCollision && leftCollision && rightCollision){
+                    if(collisionObject.collisionFunction){
+                        collisionObject.collisionFunction()
+                    }
+                    return false
+                }
+            }
+        }
+        return true
+    }
+}
+
+
 class object{
     // constructor(position){
     constructor(position, size, object = null){
