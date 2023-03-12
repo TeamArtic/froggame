@@ -75,11 +75,14 @@ class scene{
 
 class object{
     // constructor(position){
-    constructor(position, size, object = null){
+    constructor(id, objectScene, position, size, object = null){
+        this.id = id
+        this.objectScene = objectScene
         this.position = position
         this.object = object
         this.size = size
         this.setPosition(this.position)
+        this.objectScene.addObject(this.id, this)
     }
 
     move(movement){
@@ -107,8 +110,8 @@ class grid{
 }
 
 class gridObject extends object{
-    constructor(grid, position, size, object){
-        super(position.multiply(grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
+    constructor(grid, objectScene, id, position, size, object){
+        super(id, objectScene, position.multiply(grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
         this.grid = grid
         this.gridPosition = position
     }
