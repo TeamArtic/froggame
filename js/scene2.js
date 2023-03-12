@@ -16,13 +16,9 @@ window.addEventListener('load', () => {
     frogContainer = document.getElementById('rana')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, frogContainer)
-    document.onkeydown = moveCharacter;
-
-   
-    
-
-    
+    document.onkeydown = moveCharacter;    
 });
+
 function ranasalta() {
     var isJumping = false;
     var rana = document.getElementById("rana");
