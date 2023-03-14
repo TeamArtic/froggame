@@ -6,7 +6,7 @@ class level {
 
 class frog extends gridObject {
     constructor(objectGrid, object) {
-        super(objectGrid, new vector2(0, 0), new vector2(100, 100), object)
+        super(objectGrid, new vector2(3, 0), new vector2(100, 100), object)
     }
 }
 
