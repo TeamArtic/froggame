@@ -108,7 +108,7 @@ class grid{
 
 class gridObject extends object{
     constructor(grid, position, size, object){
-        super(position.multiply(grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
+        super(vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
         this.grid = grid
         this.gridPosition = position
     }
