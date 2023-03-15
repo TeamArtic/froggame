@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.app1{
+.app{
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.elementsContainer1{
+.elementsContainer{
     display: grid;
     align-items: top center;
     justify-items: center;

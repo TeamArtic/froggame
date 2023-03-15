@@ -1,4 +1,4 @@
-let elementsContainer, keyboardEvent, gameFrog, frogContainer, mainGrid
+let elementsContainer,elementsContainer2, keyboardEvent, gameFrog, frogContainer, mainGrid
 
 class level {
 
@@ -21,15 +21,19 @@ class frog extends gridObject {
 
 function transitionToNextScreen() {
     //transición a la siguiente pantalla
-    console.log("transición a la siguiente pantalla");
+    document.getElementById('elementsContainer').style.display = 'none';
+    document.getElementById('elementsContainer2').style.display = 'grid';
 }
 
 window.addEventListener('load', () => {
     elementsContainer = document.getElementById('elementsContainer')
+    elementsContainer2 = document.getElementById('elementsContainer2')
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
+    mainGrid2 = new grid(elementsContainer2, 6, 6, 100)
     gameFrog = new frog(mainGrid, frogContainer)
+    gameFrog2 = new frog(mainGrid2, frogContainer)
     document.onkeydown = moveCharacter;    
 });
 
