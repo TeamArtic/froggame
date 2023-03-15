@@ -32,11 +32,8 @@ window.addEventListener('load', () => {
     elementsContainer2 = document.getElementById('elementsContainer2')
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
-    frogContainer2 = document.getElementById('rana2')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
-    mainGrid2 = new grid(elementsContainer2, 6, 6, 100)
     gameFrog = new frog(mainGrid, frogContainer)
-    gameFrog2 = new frog(mainGrid2, frogContainer2)
     document.onkeydown = moveCharacter;
 });
 
