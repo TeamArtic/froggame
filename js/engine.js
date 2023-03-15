@@ -119,7 +119,8 @@ class gridObject extends object{
     }
 
     gridTransform(movement){
-        this.move(movement.multiply(this.grid.tileSize))
+        this.move(vector2.multiplyVector2(movement, this.grid.tileSize))
+        this.gridPosition = movement
     }
 
     gridMove(movement){
