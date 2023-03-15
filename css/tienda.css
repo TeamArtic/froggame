@@ -17,7 +17,7 @@ header {
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
 }
 
 nav ul {
@@ -96,12 +96,18 @@ main {
   box-shadow: 0px 0px 5px #289234;
 }
 
+<<<<<<< HEAD
 .titulo {
 
   position: relative;
   left: 200px;
   font-size: 14px;
   margin-right: 420px;
+=======
+.h2 {
+  margin-right: 160px;
+  font-size: 18px;
+>>>>>>> d5afb035f37628cb44584974bb8630465956696a
 }
 
 @font-face {
@@ -161,16 +167,6 @@ main {
   top: 5px;
   width: 200px;
 }
-.carrito{
-  cursor: pointer;
-}
-.cart-container {
-  display: none;
-}
-
-.cart-container.show {
-  display: block;
-}
 .mensaje-compra {
   position: fixed;
   top: 50%;
@@ -184,7 +180,7 @@ main {
 }
 .compra-realizada {
   position: fixed;
-  top: 96%;
+  top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color:#289234;
@@ -248,6 +244,7 @@ main {
   transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
   border-radius: 20px;
   border: 4px solid #154734;
+  position: relative;
 }
 
 .buy-button2:hover {
