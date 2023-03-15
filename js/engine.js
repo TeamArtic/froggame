@@ -131,7 +131,6 @@ class gridObject extends object{
             finalPosition.y >= 0){
             this.gridTransform(movement)
             this.gridPosition = finalPosition
-            console.log("Event")
         }
         console.log(this.gridPosition.x + " " + this.gridPosition.y)
     }
