@@ -109,6 +109,12 @@ class grid{
         this.gridContainer.style.width = (width + 1) * tileSize + "px"
         this.gridContainer.style.height = (height + 1) *tileSize + "px"
     }
+
+    setGrid(newGrid){
+        this.gridContainer = newGrid
+        this.gridContainer.style.width = (this.width + 1) * this.tileSize + "px"
+        this.gridContainer.style.height = (this.height + 1) * this.tileSize + "px"
+    }
 }
 
 class gridObject extends object{
