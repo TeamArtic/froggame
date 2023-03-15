@@ -13,14 +13,14 @@ class frog extends gridObject {
     gridMove(offset) {
         super.gridMove(offset);
         if (this.gridPosition.y === 6) {
-            // Si la rana llegó a la fila 6, activar la transición a la siguiente pantalla
+            // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
             transitionToNextScreen();
         }
     }
 }
 
 function transitionToNextScreen() {
-    // Aquí puedes escribir el código necesario para la transición a la siguiente pantalla
+    //transición a la siguiente pantalla
     console.log("Transición a la siguiente pantalla");
 }
 
