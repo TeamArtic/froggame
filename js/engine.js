@@ -102,12 +102,10 @@ class object{
 
 class grid{
     constructor(gridContainer, width, height, tileSize){
-        this.gridContainer = gridContainer
         this.width = width
         this.height = height
         this.tileSize = tileSize
-        this.gridContainer.style.width = (width + 1) * tileSize + "px"
-        this.gridContainer.style.height = (height + 1) *tileSize + "px"
+        this.setGrid(gridContainer)
     }
 
     setGrid(newGrid){
