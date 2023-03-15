@@ -3,19 +3,3 @@
     padding: 0;
 }
 
-.app{
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.elementsContainer{
-    display: grid;
-    align-items: top center;
-    justify-items: center;
-    position: absolute;
-    background-image: url(../img/prueba-carretera.png);
-}

@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.app{
+.app1{
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -12,10 +12,28 @@
     
 }
 
-.elementsContainer{
+.app2{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.elementsContainer1{
     display: grid;
     align-items: top center;
     justify-items: center;
     position: absolute;
     background-image: url(../img/PLANTILLA.png);
+}
+
+.elementsContainer2{
+    display: none;
+    align-items: top center;
+    justify-items: center;
+    position: absolute;
+    background-image: url(../img/prueba-carretera.png);
+
 }
