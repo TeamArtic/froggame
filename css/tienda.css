@@ -157,16 +157,6 @@ main {
   top: 5px;
   width: 200px;
 }
-.carrito{
-  cursor: pointer;
-}
-.cart-container {
-  display: none;
-}
-
-.cart-container.show {
-  display: block;
-}
 .mensaje-compra {
   position: fixed;
   top: 50%;
