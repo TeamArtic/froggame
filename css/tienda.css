@@ -180,7 +180,7 @@ main {
 }
 .compra-realizada {
   position: fixed;
-  top: 96%;
+  top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color:#289234;
