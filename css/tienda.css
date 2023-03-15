@@ -10,13 +10,15 @@ header {
   background-color: #289234;
   color: #000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  justify-content: center;
+
+  padding: 10px 10px;
+
 }
 
 .logo img {
   height: 80px;
+  
 }
 
 nav ul {
@@ -26,6 +28,8 @@ nav ul {
 
 nav li {
   margin-right: 20px;
+  margin-top: 9px;
+  font-size: 20px;
 }
 
 nav a {
@@ -95,26 +99,18 @@ main {
   box-shadow: 0px 0px 5px #289234;
 }
 
-.h2 {
-  margin-right: 160px;
-  font-size: 18px;
+
+.titulo {
+  position: relative;
+  left: 200px;
+  font-size: 20px;
+  margin-right: 480px;
+  margin-top: 23px;
 }
 
 @font-face {
   font-family: 'hola';
   src: url(../BITWONDER.TTF);
-}
-.cart-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: #2e2e2e;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .splinter{
   position:relative;
@@ -182,12 +178,14 @@ main {
   transition: opacity 0.5s ease-in-out;
   border-radius: 20px;
   border: 4px solid #154734;
+  margin-top: 20px;
 }
 .compra-realizada.mostrar {
   opacity: 1;
 }
 .Dinero{
-  margin-right: 200px;
+  left: 60px;
+  font-size: 20px;
 }
 .buy-button1{
   display: block;
