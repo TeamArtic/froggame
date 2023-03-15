@@ -6,7 +6,7 @@ header {
     align-items: center;
     padding: 10px 20px;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
@@ -352,3 +352,4 @@ height: 50px;
     text-shadow: 2px 2px #fff;
     transform: scale(1.1);
   }
+ 
