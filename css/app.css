@@ -12,10 +12,26 @@
     
 }
 
+.app2{
+    height: 100vh;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .elementsContainer{
     display: grid;
     align-items: top center;
     justify-items: center;
     position: absolute;
     background-image: url(../img/PLANTILLA.png);
+}
+
+.elementsContainer2{
+    display: none;
+    align-items: top center;
+    justify-items: center;
+    position: absolute;
+    background-image: url(../img/prueba-carretera.png);
 }

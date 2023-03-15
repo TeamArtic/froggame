@@ -93,6 +93,11 @@ class object{
         this.object.style.left = newPosition.x + "px"
         this.object.style.top = newPosition.y + "px"
     }
+
+    setObject(newObject){
+        this.object = newObject
+        this.setPosition(this.position)
+    }
 }
 
 class grid{
@@ -108,13 +113,14 @@ class grid{
 
 class gridObject extends object{
     constructor(grid, position, size, object){
-        super(position.multiply(grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
+        super(vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
         this.grid = grid
         this.gridPosition = position
     }
 
     gridTransform(movement){
-        this.move(movement.multiply(this.grid.tileSize))
+        this.move(vector2.multiplyVector2(movement, this.grid.tileSize))
+        this.gridPosition = movement
     }
 
     gridMove(movement){
@@ -130,3 +136,4 @@ class gridObject extends object{
         console.log(this.gridPosition.x + " " + this.gridPosition.y)
     }
 }
+

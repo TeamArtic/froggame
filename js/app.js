@@ -1,4 +1,4 @@
-let elementsContainer, keyboardEvent, gameFrog, frogContainer, mainGrid
+let elementsContainer,elementsContainer2, keyboardEvent, gameFrog, frogContainer, mainGrid
 
 class level {
 
@@ -12,6 +12,7 @@ class frog extends gridObject {
 
 window.addEventListener('load', () => {
     elementsContainer = document.getElementById('elementsContainer')
+    elementsContainer2 = document.getElementById('elementsContainer2')
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('frogContainer')
     mainGrid = new grid(elementsContainer, 4, 8, 100)
