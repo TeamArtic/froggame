@@ -35,3 +35,7 @@
     position: absolute;
     background-image: url(../img/prueba-carretera.png);
 }
+
+.position-absolute{
+    position: absolute;
+}
