@@ -93,6 +93,11 @@ class object{
         this.object.style.left = newPosition.x + "px"
         this.object.style.top = newPosition.y + "px"
     }
+
+    setObject(newObject){
+        this.object = newObject
+        this.setPosition(this.position)
+    }
 }
 
 class grid{
