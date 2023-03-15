@@ -24,7 +24,6 @@ function transitionToNextScreen() {
     gameFrog.gridPosition = new vector2(3, 0);
     document.getElementById('elementsContainer').style.display = 'none';
     document.getElementById('elementsContainer2').style.display = 'grid';
-    gameFrog2.gridPosition = new vector2(3, 0);
 }
 
 window.addEventListener('load', () => {
