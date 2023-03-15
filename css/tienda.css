@@ -98,7 +98,6 @@ main {
 
 
 .titulo {
-
   position: relative;
   left: 200px;
   font-size: 14px;
@@ -108,18 +107,6 @@ main {
 @font-face {
   font-family: 'hola';
   src: url(../BITWONDER.TTF);
-}
-.cart-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: #2e2e2e;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .splinter{
   position:relative;
