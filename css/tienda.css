@@ -96,18 +96,13 @@ main {
   box-shadow: 0px 0px 5px #289234;
 }
 
-<<<<<<< HEAD
+
 .titulo {
 
   position: relative;
   left: 200px;
   font-size: 14px;
   margin-right: 420px;
-=======
-.h2 {
-  margin-right: 160px;
-  font-size: 18px;
->>>>>>> d5afb035f37628cb44584974bb8630465956696a
 }
 
 @font-face {
