@@ -119,7 +119,7 @@ class gridObject extends object{
     }
 
     gridTransform(movement){
-        this.move(vector2.multiplyVector2(movement, this.grid.tileSize))
+        this.setPosition(vector2.multiplyVector2(movement, this.grid.tileSize))
         this.gridPosition = movement
     }
 
@@ -129,7 +129,7 @@ class gridObject extends object{
             finalPosition.x >= 0 && 
             finalPosition.y <= this.grid.height && 
             finalPosition.y >= 0){
-            this.gridTransform(movement)
+            this.gridTransform(vector2.additionVector2(this.gridPosition, movement))
             this.gridPosition = finalPosition
         }
         console.log(this.gridPosition.x + " " + this.gridPosition.y)
