@@ -21,8 +21,7 @@ class frog extends gridObject {
 
 function transitionToNextScreen() {
     //transición a la siguiente pantalla
-    document.getElementById('pantalla1').style.display = 'none';
-    document.getElementById('pantalla2').style.display = 'grid';
+    console.log("transición a la siguiente pantalla");
 }
 
 window.addEventListener('load', () => {

@@ -15,10 +15,9 @@
 .app2{
     height: 100vh;
     overflow: hidden;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 
 .elementsContainer1{
@@ -35,5 +34,4 @@
     justify-items: center;
     position: absolute;
     background-image: url(../img/prueba-carretera.png);
-
 }
