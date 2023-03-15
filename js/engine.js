@@ -130,3 +130,4 @@ class gridObject extends object{
         console.log(this.gridPosition.x + " " + this.gridPosition.y)
     }
 }
+

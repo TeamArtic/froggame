@@ -6,8 +6,22 @@ class level {
 
 class frog extends gridObject {
     constructor(objectGrid, object) {
-        super(objectGrid, new vector2(3, 0), new vector2(100, 100), object)
+        super(objectGrid, new vector2(3, 0), new vector2(100, 100), object);
+        this.gridPosition = new vector2(3, 0); // Inicializar la propiedad gridPosition en el constructor
     }
+
+    gridMove(offset) {
+        super.gridMove(offset);
+        if (this.gridPosition.y === 6) {
+            // Si la rana llegó a la fila 6, activar la transición a la siguiente pantalla
+            transitionToNextScreen();
+        }
+    }
+}
+
+function transitionToNextScreen() {
+    // Aquí puedes escribir el código necesario para la transición a la siguiente pantalla
+    console.log("Transición a la siguiente pantalla");
 }
 
 window.addEventListener('load', () => {
@@ -57,3 +71,4 @@ function moveCharacter(e) {
             break;
     }
 }
+
