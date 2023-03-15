@@ -14,7 +14,11 @@ body {
   background-color: #000;
   font-family: 'hola';
 }
-
+h1{
+  text-align: center;
+  position: relative;
+  left: 100px;
+}
 .h3-leonardo {
   position: relative;
   top: 5px;
