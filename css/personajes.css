@@ -1,10 +1,10 @@
 header {
-    background-color: #5eff00;
+    background-color: #289234;
     color: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;ç
+    padding: 10px 20px;
   }
   
   body {
@@ -45,12 +45,12 @@ height: 50px;
   }
   
   header {
-    background-color: #5eff00;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    background-color: #289234;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   }
   
   .logo img {
@@ -135,6 +135,7 @@ height: 50px;
   
   .h2 {
     margin-right: 160px;
+  font-size: 18px;
   }
   
   @font-face {
