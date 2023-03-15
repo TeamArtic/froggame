@@ -22,6 +22,7 @@ class frog extends gridObject {
 function transitionToNextScreen() {
     //transición a la siguiente pantalla
     gameFrog.gridTransform(new vector2(3, 0));
+    mainGrid.setGrid(document.getElementById('elementsContainer2'))
     document.getElementById('elementsContainer').style.display = 'none';
     document.getElementById('elementsContainer2').style.display = 'grid';
 }
