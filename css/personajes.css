@@ -15,6 +15,11 @@ header {
     font-family: 'hola';
   }
   
+  .h3-leonardo{
+    position: relative;
+    top: 5px;
+
+  }
 .foto{
 height: 50px;
   }
@@ -282,6 +287,8 @@ height: 50px;
     transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
     border-radius: 20px;
     border: 4px solid #154734;
+    position: relative;
+    top: 10px;
   }
   
   .buy-button2:hover {
