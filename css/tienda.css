@@ -10,9 +10,10 @@ header {
   background-color: #289234;
   color: #000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+
   padding: 10px 20px;
+
 }
 
 .logo img {
@@ -95,9 +96,13 @@ main {
   box-shadow: 0px 0px 5px #289234;
 }
 
-.h2 {
-  margin-right: 160px;
-  font-size: 18px;
+
+.titulo {
+
+  position: relative;
+  left: 200px;
+  font-size: 14px;
+  margin-right: 420px;
 }
 
 @font-face {
@@ -157,16 +162,6 @@ main {
   top: 5px;
   width: 200px;
 }
-.carrito{
-  cursor: pointer;
-}
-.cart-container {
-  display: none;
-}
-
-.cart-container.show {
-  display: block;
-}
 .mensaje-compra {
   position: fixed;
   top: 50%;
@@ -180,7 +175,7 @@ main {
 }
 .compra-realizada {
   position: fixed;
-  top: 96%;
+  top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color:#289234;
@@ -197,7 +192,7 @@ main {
   opacity: 1;
 }
 .Dinero{
-  margin-right: 200px;
+  left: 60px;
 }
 .buy-button1{
   display: block;
