@@ -7,16 +7,18 @@ body {
 }
 
 header {
-  background-color: #5eff00;
+  background-color: #289234;
   color: #000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  justify-content: center;
+
+  padding: 10px 10px;
+
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
+  
 }
 
 nav ul {
@@ -26,6 +28,8 @@ nav ul {
 
 nav li {
   margin-right: 20px;
+  margin-top: 9px;
+  font-size: 20px;
 }
 
 nav a {
@@ -45,7 +49,7 @@ main {
 .characters h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #5eff00;
+  color: #289234;
 }
 
 .character {
@@ -56,7 +60,7 @@ main {
   background-color: #000;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #5eff00;
+  box-shadow: 0px 0px 5px #289234;
   width: 300px;
 
 }
@@ -71,17 +75,17 @@ main {
 .character h3 {
   font-size: 15px;
   margin-bottom: 5px;
-  color: #5eff00;
+  color: #289234;
 }
 
 .character p {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #5eff00;
+  color: #289234;
 }
 
 .buy-button {
-  background-color: #5eff00;
+  background-color: #289234;
   color: #000;
   border: none;
   border-radius: 5px;
@@ -91,29 +95,22 @@ main {
 
 .buy-button:hover {
   background-color: #000;
-  color: #5eff00;
-  box-shadow: 0px 0px 5px #5eff00;
+  color: #289234;
+  box-shadow: 0px 0px 5px #289234;
 }
 
-.h2 {
-  margin-right: 160px;
+
+.titulo {
+  position: relative;
+  left: 200px;
+  font-size: 20px;
+  margin-right: 480px;
+  margin-top: 23px;
 }
 
 @font-face {
   font-family: 'hola';
   src: url(../BITWONDER.TTF);
-}
-.cart-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: #2e2e2e;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .splinter{
   position:relative;
@@ -156,16 +153,6 @@ main {
   top: 5px;
   width: 200px;
 }
-.carrito{
-  cursor: pointer;
-}
-.cart-container {
-  display: none;
-}
-
-.cart-container.show {
-  display: block;
-}
 .mensaje-compra {
   position: fixed;
   top: 50%;
@@ -179,10 +166,10 @@ main {
 }
 .compra-realizada {
   position: fixed;
-  top: 96%;
+  top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:#5eff00;;
+  background-color:#289234;
   padding: 10px 20px;
   border: 2px solid #000;
   font-size: 24px;
@@ -191,12 +178,14 @@ main {
   transition: opacity 0.5s ease-in-out;
   border-radius: 20px;
   border: 4px solid #154734;
+  margin-top: 20px;
 }
 .compra-realizada.mostrar {
   opacity: 1;
 }
 .Dinero{
-  margin-right: 200px;
+  left: 60px;
+  font-size: 20px;
 }
 .buy-button1{
   display: block;
@@ -211,7 +200,7 @@ main {
   text-shadow: 2px 2px #000;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #51dc00;
+  background-color: #289234;
   transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
   margin-right: 60px;
   margin-top: 20px;
@@ -222,7 +211,7 @@ main {
 
 .buy-button1:hover {
   background-color: #000;
-  color: #5eff00;
+  color: #289234;
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
@@ -239,15 +228,16 @@ main {
   text-shadow: 2px 2px #000;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #51dc00;
+  background-color: #289234;
   transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
   border-radius: 20px;
   border: 4px solid #154734;
+  position: relative;
 }
 
 .buy-button2:hover {
   background-color: #000;
-  color: #5eff00;
+  color:#289234;
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
@@ -264,7 +254,7 @@ text-align: center;
 text-shadow: 2px 2px #000;
 cursor: pointer;
 transition: all 0.3s ease;
-background-color: #51dc00;
+background-color: #289234;
 transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
 margin-right: 60px;
 margin-top: 20px;
@@ -273,7 +263,7 @@ border-radius: 20px;
 
 .buy-button3:hover {
 background-color: #000;
-color: #5eff00;
+color: #289234;
 text-shadow: 2px 2px #fff;
 transform: scale(1.1);
 }
@@ -292,7 +282,7 @@ transform: scale(1.1);
   text-shadow: 2px 2px #000;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #51dc00;
+  background-color: #289234;
   transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
   margin-right: 60px;
   margin-top: 20px;
@@ -302,7 +292,7 @@ transform: scale(1.1);
 
 .buy-button4:hover {
   background-color: #000;
-  color: #5eff00;
+  color: #289234;
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }

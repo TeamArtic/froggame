@@ -1,4 +1,4 @@
-let elementsContainer,elementsContainer2, keyboardEvent, gameFrog, frogContainer, mainGrid
+let elementsContainer, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2
 
 class level {
 
@@ -21,6 +21,9 @@ class frog extends gridObject {
 
 function transitionToNextScreen() {
     //transición a la siguiente pantalla
+    gameFrog.gridTransform(new vector2(3, 0));
+    mainGrid.setGrid(document.getElementById('elementsContainer2'))
+    gameFrog.setObject(document.getElementById('rana2'))
     document.getElementById('elementsContainer').style.display = 'none';
     document.getElementById('elementsContainer2').style.display = 'grid';
 }
@@ -31,10 +34,8 @@ window.addEventListener('load', () => {
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
-    mainGrid2 = new grid(elementsContainer2, 6, 6, 100)
     gameFrog = new frog(mainGrid, frogContainer)
-    gameFrog2 = new frog(mainGrid2, frogContainer)
-    document.onkeydown = moveCharacter;    
+    document.onkeydown = moveCharacter;
 });
 
 function ranasalta() {
@@ -42,17 +43,17 @@ function ranasalta() {
     var rana = document.getElementById("rana");
     var rana1 = "../img/dona.gif"; // ruta del gif de posición "parado"
     var rana2 = "../img/saltar.gif"; // ruta del gif de posición "salto"
-        if (!isJumping) { // si la rana no está saltando actualmente
-            isJumping = true; // marcar como saltando
-            rana.src = rana2; // cambiar la imagen a la de salto
-            rana.classList.add("jump"); // agregar la clase "jump" para iniciar la animación de salto
-            setTimeout(function () { // después de 1000 milisegundos
-                rana.classList.remove("jump"); // eliminar la clase "jump" para detener la animación de salto
-                rana.src = rana1; // cambiar la imagen de vuelta a la de posición "parado"
-                isJumping = false; // marcar como no saltando
-            }, 1000);
-        }
-    };
+    if (!isJumping) { // si la rana no está saltando actualmente
+        isJumping = true; // marcar como saltando
+        rana.src = rana2; // cambiar la imagen a la de salto
+        rana.classList.add("jump"); // agregar la clase "jump" para iniciar la animación de salto
+        setTimeout(function () { // después de 1000 milisegundos
+            rana.classList.remove("jump"); // eliminar la clase "jump" para detener la animación de salto
+            rana.src = rana1; // cambiar la imagen de vuelta a la de posición "parado"
+            isJumping = false; // marcar como no saltando
+        }, 1000);
+    }
+};
 
 // function moveFrog(){
 //     gameFrog.gridMove(new vector2(2, 2))
