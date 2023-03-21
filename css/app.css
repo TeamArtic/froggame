@@ -25,7 +25,7 @@
     align-items: top center;
     justify-items: center;
     position: absolute;
-    background-image: url(../img/PLANTILLA.png);
+    background-image: url(../img/grafico-cloaca.png);
 }
 
 .elementsContainer2{
@@ -33,7 +33,7 @@
     align-items: top center;
     justify-items: center;
     position: absolute;
-    background-image: url(../img/prueba-carretera.png);
+    background-image: url(../img/grafico-carretera.png);
 }
 
 .position-absolute{
