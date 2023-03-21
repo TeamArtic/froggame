@@ -1,24 +1,33 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  font-family: 'hola';
-}
-
 header {
   background-color: #289234;
   color: #000;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-  padding: 10px 10px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(../img/rafaello.jpg);
+  font-family: 'hola';
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+li a {
+  font-size: 20px;
+}
+
+li a:hover {
+  color: yellow;
 }
 
 .logo img {
   height: 80px;
-  
+
 }
 
 nav ul {
@@ -49,7 +58,7 @@ main {
 .characters h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #289234;
+  color: #ffffff;
 }
 
 .character {
@@ -57,7 +66,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  background-color: #000;
+  background-color: #00000050;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #289234;
@@ -75,13 +84,13 @@ main {
 .character h3 {
   font-size: 15px;
   margin-bottom: 5px;
-  color: #289234;
+  color: #ffffff;
 }
 
 .character p {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #289234;
+  color: #ffffff;
 }
 
 .buy-button {
@@ -103,7 +112,7 @@ main {
 .titulo {
   position: relative;
   left: 200px;
-  font-size: 20px;
+  font-size: 30px;
   margin-right: 480px;
   margin-top: 23px;
 }
@@ -112,47 +121,50 @@ main {
   font-family: 'hola';
   src: url(../BITWONDER.TTF);
 }
-.splinter{
-  position:relative;
+
+.splinter {
+  position: relative;
   top: 92px;
   text-align: center;
 }
 
-.michelangelo{
-  position:relative;
-  top:90px;
+.michelangelo {
+  position: relative;
+  top: 90px;
   text-align: center;
 
 }
 
-.rafael{
-  position:relative;
-  top:65px;
+.rafael {
+  position: relative;
+  top: 65px;
   text-align: center;
 }
 
-.splinter-img{
+.splinter-img {
   width: 100%;
   top: 105px;
   position: relative;
 }
 
-.rafaelo-img{
+.rafaelo-img {
   position: relative;
   top: 70px;
   width: 200px;
 }
 
-.michelangelo-img{
+.michelangelo-img {
   position: relative;
   top: 95px;
   width: 200px;
 }
-.leo-img{
+
+.leo-img {
   position: relative;
   top: 5px;
   width: 200px;
 }
+
 .mensaje-compra {
   position: fixed;
   top: 50%;
@@ -164,12 +176,13 @@ main {
   z-index: 9999;
   display: none;
 }
+
 .compra-realizada {
   position: fixed;
   top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:#289234;
+  background-color: #289234;
   padding: 10px 20px;
   border: 2px solid #000;
   font-size: 24px;
@@ -180,14 +193,17 @@ main {
   border: 4px solid #154734;
   margin-top: 20px;
 }
+
 .compra-realizada.mostrar {
   opacity: 1;
 }
-.Dinero{
+
+.Dinero {
   left: 60px;
   font-size: 20px;
 }
-.buy-button1{
+
+.buy-button1 {
   display: block;
   width: 100%;
   max-width: 200px;
@@ -201,7 +217,7 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
+  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
   margin-right: 60px;
   margin-top: 20px;
   border-radius: 20px;
@@ -215,7 +231,8 @@ main {
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
-.buy-button2{
+
+.buy-button2 {
   display: block;
   width: 100%;
   max-width: 200px;
@@ -229,7 +246,7 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
+  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
   border-radius: 20px;
   border: 4px solid #154734;
   position: relative;
@@ -237,39 +254,40 @@ main {
 
 .buy-button2:hover {
   background-color: #000;
-  color:#289234;
+  color: #289234;
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
-.buy-button3{
-display: block;
-width: 140%;
-max-width: 200px;
-margin: 10px auto;
-padding: 20px;
-border: 4px solid #154734;
-color: #fff;
-font-size: 24px;
-text-align: center;
-text-shadow: 2px 2px #000;
-cursor: pointer;
-transition: all 0.3s ease;
-background-color: #289234;
-transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
-margin-right: 60px;
-margin-top: 20px;
-border-radius: 20px;
+
+.buy-button3 {
+  display: block;
+  width: 140%;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 4px solid #154734;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #289234;
+  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
+  margin-right: 60px;
+  margin-top: 20px;
+  border-radius: 20px;
 }
 
 .buy-button3:hover {
-background-color: #000;
-color: #289234;
-text-shadow: 2px 2px #fff;
-transform: scale(1.1);
+  background-color: #000;
+  color: #289234;
+  text-shadow: 2px 2px #fff;
+  transform: scale(1.1);
 }
 
 
-.buy-button4{
+.buy-button4 {
   display: block;
   width: 110%;
   max-width: 200px;
@@ -283,7 +301,7 @@ transform: scale(1.1);
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
+  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
   margin-right: 60px;
   margin-top: 20px;
   border-radius: 20px;
