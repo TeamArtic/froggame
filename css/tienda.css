@@ -1,3 +1,12 @@
+header {
+  background-color: #289234;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,14 +15,12 @@ body {
   font-family: 'hola';
 }
 
-header {
-  background-color: #289234;
-  color: #000;
-  display: flex;
-  justify-content: center;
+li a{
+  font-size: 20px;
+}
 
-  padding: 10px 10px;
-
+li a:hover{
+  color: yellow;
 }
 
 .logo img {
@@ -103,7 +110,7 @@ main {
 .titulo {
   position: relative;
   left: 200px;
-  font-size: 20px;
+  font-size: 30px;
   margin-right: 480px;
   margin-top: 23px;
 }
