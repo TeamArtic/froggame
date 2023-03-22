@@ -1,4 +1,4 @@
-const characters = document.querySelectorAll('.character');
+const characters = document.querySelectorAll('.character-personajes');
 
 function selectCharacter(selectedCharacter) {
   characters.forEach((character) => {
@@ -25,7 +25,7 @@ characters.forEach((character) => {
   });
 });
 
-const botonesPersonajes = document.querySelectorAll('.buy-button');
+const botonesPersonajes = document.querySelectorAll('.buy-button-personajes');
 
 botonesPersonajes.forEach((boton) => {
   boton.addEventListener('click', seleccionarPersonaje);
@@ -52,7 +52,7 @@ function refreshPage() {
   location.reload();
 }
 
-const selectAnotherButton = document.getElementById('select-another-button');
+const selectAnotherButton = document.getElementById('other-characters-button');
 selectAnotherButton.addEventListener('click', selectAnotherCharacter);
 
 function selectAnotherCharacter() {
@@ -61,8 +61,6 @@ function selectAnotherCharacter() {
     character.querySelector('button').disabled = false;
   });
 
-  const selectAnotherButton = document.getElementById('select-another-button');
-  selectAnotherButton.classList.add('hidden');
-
-  refreshPage();
+  const refreshButton = document.getElementById('refresh-button');
+  refreshButton.classList.add('hidden');
 }
