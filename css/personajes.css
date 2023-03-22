@@ -436,3 +436,12 @@ main {
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
+.character.grayed-out {
+  filter: grayscale(1);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+  
+}
