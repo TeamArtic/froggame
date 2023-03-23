@@ -27,12 +27,21 @@ h1 {
     top: 20px;
     position: relative;
     font-size: 50px;
-
+    color: white;
 }
 
 #rana {
     cursor: pointer;
     position: absolute;
     width: 50px;
+}
+
+.vidas{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    color: white;
+    font-size: 20px;
+    font-family: 'hola';
 }
 

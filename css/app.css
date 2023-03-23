@@ -48,8 +48,7 @@ body{
     justify-items: center;
     position: absolute;
     background-image: url(../img/grafico-carretera.png);
-}
-
+} 
 
 .position-absolute{
     position: absolute;
