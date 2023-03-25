@@ -50,7 +50,6 @@ function transitionToNextScreen() {
 
 window.addEventListener('load', () => {
     elementsContainer = document.getElementById('elementsContainer')
-    elementsContainer2 = document.getElementById('elementsContainer2')
     mainScene = new scene()
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
