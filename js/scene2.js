@@ -5,8 +5,8 @@ class level {
 }
 
 class frog extends gridObject {
-    constructor(objectGrid, object) {
-        super(objectGrid, new vector2(3, 0), new vector2(100, 100), object);
+    constructor(objectGrid, objectScene, id, object) {
+        super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), object);
         this.gridPosition = new vector2(3, 0); // Inicializar la propiedad gridPosition en el constructor
     }
 
@@ -31,10 +31,11 @@ function transitionToNextScreen() {
 window.addEventListener('load', () => {
     elementsContainer = document.getElementById('elementsContainer')
     elementsContainer2 = document.getElementById('elementsContainer2')
+    mainScene = new scene()
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
-    gameFrog = new frog(mainGrid, frogContainer)
+    gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     document.onkeydown = moveCharacter;
 });
 
