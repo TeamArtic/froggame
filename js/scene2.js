@@ -8,6 +8,13 @@ let levels = [
 
 let actualLevel = 0
 
+class levelManager{
+    static loadLevel(level){    // TODO Do this with classes
+        elementsContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
+        gameFrog.gridTransform(new vector2(3, 0))
+    }
+}
+
 }
 
 class frog extends gridObject {
