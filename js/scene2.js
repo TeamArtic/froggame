@@ -1,6 +1,10 @@
 let elementsContainer, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2
 
-class level {
+let levels = [
+    {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
+    {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
+    {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
+]
 
 }
 
