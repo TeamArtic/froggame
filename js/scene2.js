@@ -27,7 +27,9 @@ class frog extends gridObject {
         super.gridMove(offset);
         if (this.gridPosition.y === 6) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
-            transitionToNextScreen();
+            if(actualLevel <= levels.length - 1){
+                levelManager.loadLevel(levels[++actualLevel])
+            }
         }
     }
 }
