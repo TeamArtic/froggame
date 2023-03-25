@@ -15,6 +15,11 @@ class levelManager{
     }
 }
 
+class level {
+    constructor(name, backgroundImage){
+        this.name = name
+        this.backgroundImage = backgroundImage
+    }
 }
 
 class frog extends gridObject {
