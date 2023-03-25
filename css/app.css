@@ -39,14 +39,6 @@ body{
     background-image: url(../img/grafico-cloaca.png);
 }
 
-.elementsContainer2{
-    display: none;
-    align-items: top center;
-    justify-items: center;
-    position: absolute;
-    background-image: url(../img/grafico-carretera.png);
-} 
-
 .position-absolute{
     position: absolute;
 }
