@@ -6,6 +6,8 @@ let levels = [
     {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
 ]
 
+let actualLevel = 0
+
 }
 
 class frog extends gridObject {
