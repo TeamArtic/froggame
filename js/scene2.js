@@ -1,4 +1,8 @@
-let appContainer, elementsContainer, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout
+
+let playing = true
+
+const animationTime = 500
 
 let levels = [
     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
@@ -33,11 +37,49 @@ class frog extends gridObject {
         super.gridMove(offset);
         if (this.gridPosition.y === 6) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
-            if(actualLevel <= levels.length - 1){
-                levelManager.loadLevel(levels[++actualLevel])
-            }
+            startLoadingLevel()
         }
     }
+}
+
+function startLoadingLevel(){
+    playing = false
+    foregroundContainer.style.backgroundColor = "#000000FF"
+    // foregroundContainer.style.filter = "blur(4px)"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(loadLevel, animationTime)
+}
+
+function loadLevel(){
+    if(actualLevel < levels.length - 1){
+                levelManager.loadLevel(levels[++actualLevel])
+        clearTimeout(showLevel)
+        levelLoadingTimeout = setTimeout(showLevel, animationTime)
+    }else{
+        alert("Event")
+            }
+        }
+
+function showLevel(){
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(showLevelInfo, animationTime)
+    foregroundContainer.style.backgroundColor = "#000000ab"
+}
+
+function showLevelInfo(){
+    // pageTitle.innerHTML = levels[actualLevel].name
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(removeLoadLevelEffects, 1000)
+}
+
+function removeLoadLevelEffects(){
+    foregroundContainer.style.backgroundColor = "#00000000"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(startLevel, animationTime)
+    }
+
+function startLevel(){
+    playing = true
 }
 
 function transitionToNextScreen() {
@@ -51,7 +93,9 @@ function transitionToNextScreen() {
 
 window.addEventListener('load', () => {
     appContainer = document.getElementById('app')
+    pageTitle = document.getElementById('pageTitle')
     elementsContainer = document.getElementById('elementsContainer')
+    foregroundContainer = document.getElementById('foregroundContainer')
     mainScene = new scene()
     keyboardEvent = new KeyboardEvent("keydown")
     frogContainer = document.getElementById('rana')
@@ -83,6 +127,7 @@ function ranasalta() {
 // }
 
 function moveCharacter(e) {
+    if(playing){
     switch (e.keyCode) {
         case 87:
             gameFrog.gridMove(new vector2(0, -1))
@@ -97,6 +142,7 @@ function moveCharacter(e) {
         case 68:
             gameFrog.gridMove(new vector2(1, 0))
             break;
+        }
     }
 }
 
