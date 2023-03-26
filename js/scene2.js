@@ -1,4 +1,4 @@
-let elementsContainer, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2
+let appContainer, elementsContainer, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2
 
 let levels = [
     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
@@ -11,6 +11,7 @@ let actualLevel = 0
 class levelManager{
     static loadLevel(level){    // TODO Do this with classes
         elementsContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
+        appContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
         gameFrog.gridTransform(new vector2(3, 0))
     }
 }
@@ -49,6 +50,7 @@ function transitionToNextScreen() {
 }
 
 window.addEventListener('load', () => {
+    appContainer = document.getElementById('app')
     elementsContainer = document.getElementById('elementsContainer')
     mainScene = new scene()
     keyboardEvent = new KeyboardEvent("keydown")
