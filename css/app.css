@@ -23,6 +23,11 @@ body{
     
 }
 
+.background-container{
+    background-repeat: repeat;
+    background-position: center;
+}
+
 .app2{
     height: 100vh;
     overflow: hidden;
