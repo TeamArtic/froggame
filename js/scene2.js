@@ -53,13 +53,13 @@ function startLoadingLevel(){
 
 function loadLevel(){
     if(actualLevel < levels.length - 1){
-                levelManager.loadLevel(levels[++actualLevel])
+        levelManager.loadLevel(levels[++actualLevel])
         clearTimeout(showLevel)
         levelLoadingTimeout = setTimeout(showLevel, animationTime)
     }else{
         alert("Event")
-            }
-        }
+    }
+}
 
 function showLevel(){
     clearTimeout(levelLoadingTimeout)
@@ -77,7 +77,7 @@ function removeLoadLevelEffects(){
     foregroundContainer.style.backgroundColor = "#00000000"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(startLevel, animationTime)
-    }
+}
 
 function startLevel(){
     playing = true
@@ -129,20 +129,20 @@ function ranasalta() {
 
 function moveCharacter(e) {
     if(playing){
-    switch (e.keyCode) {
-        case 87:
-            gameFrog.gridMove(new vector2(0, -1))
-            break;
-        case 65:
-            gameFrog.gridMove(new vector2(-1, 0))
-            break;
-        case 83:
-            gameFrog.gridMove(new vector2(0, 1))
-            ranasalta()
-            break;
-        case 68:
-            gameFrog.gridMove(new vector2(1, 0))
-            break;
+        switch (e.keyCode) {
+            case 87:
+                gameFrog.gridMove(new vector2(0, -1))
+                break;
+            case 65:
+                gameFrog.gridMove(new vector2(-1, 0))
+                break;
+            case 83:
+                gameFrog.gridMove(new vector2(0, 1))
+                ranasalta()
+                break;
+            case 68:
+                gameFrog.gridMove(new vector2(1, 0))
+                break;
         }
     }
 }
