@@ -59,8 +59,17 @@ function loadLevel(){
         clearTimeout(showLevel)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
     }else{
-        alert("Event")
+        clearTimeout(levelLoadingTimeout)
+        levelLoadingTimeout = setTimeout(showEnd, 800)
     }
+}
+
+function showEnd(){
+    pageTitle.innerHTML = "Fin"
+    levelInfoName.innerHTML = "Fin"
+    levelInfoName.style.filter = "opacity(100%)"
+}
+
 function showLevelName(){
     levelInfoName.innerHTML = levels[actualLevel].name
     levelInfoName.style.filter = "opacity(100%)"
