@@ -58,6 +58,7 @@ window.addEventListener('load', () => {
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     document.onkeydown = moveCharacter;
+    levelManager.loadLevel(levels[0])
 });
 
 function ranasalta() {
