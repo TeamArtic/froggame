@@ -43,6 +43,8 @@ class frog extends gridObject {
     }
 }
 
+// Level transition animation
+
 function startLoadingLevel(){
     playing = false
     foregroundContainer.style.backgroundColor = "#000000FF"
@@ -82,6 +84,8 @@ function removeLoadLevelEffects(){
 function startLevel(){
     playing = true
 }
+
+// End of the level transition animation
 
 function transitionToNextScreen() {
     //transición a la siguiente pantalla
