@@ -123,6 +123,7 @@ window.addEventListener('load', () => {
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     document.onkeydown = moveCharacter;
     levelManager.loadLevel(levels[0])
+    levelLoadingTimeout = setTimeout(showLevelName, 800)
 });
 
 function ranasalta() {
