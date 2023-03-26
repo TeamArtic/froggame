@@ -57,10 +57,15 @@ function loadLevel(){
     if(actualLevel < levels.length - 1){
         levelManager.loadLevel(levels[++actualLevel])
         clearTimeout(showLevel)
-        levelLoadingTimeout = setTimeout(showLevel, animationTime)
+        levelLoadingTimeout = setTimeout(showLevelName, 800)
     }else{
         alert("Event")
     }
+function showLevelName(){
+    levelInfoName.innerHTML = levels[actualLevel].name
+    levelInfoName.style.filter = "opacity(100%)"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(showLevel, 1000)
 }
 
 function showLevel(){
@@ -69,7 +74,7 @@ function showLevel(){
     foregroundContainer.style.backgroundColor = "#000000ab"
 }
 
-function showLevelInfo(){
+function showLevelInfo(){ // TODO Change the name of this function.
     // pageTitle.innerHTML = levels[actualLevel].name
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(removeLoadLevelEffects, 1000)
@@ -79,6 +84,7 @@ function removeLoadLevelEffects(){
     foregroundContainer.style.backgroundColor = "#00000000"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(startLevel, animationTime)
+    levelInfoName.style.filter = "opacity(0%)"
 }
 
 function startLevel(){
