@@ -1,6 +1,6 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout
 
-let playing = true
+let playing = false
 
 const animationTime = 500
 
