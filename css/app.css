@@ -55,6 +55,19 @@ body{
     font-size: 0.6in;
 }
 
+.shadowContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000006b;
+}
+
+.borderShadow{
+    border: 10px solid #00000057;
+}
+
 .position-absolute{
     position: absolute;
 }
