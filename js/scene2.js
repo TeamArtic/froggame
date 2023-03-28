@@ -156,7 +156,6 @@ function moveFrog(movement){
 }
 
 function moveCharacter(e) {
-    if(playing){
         switch (e.keyCode) {
             case 87:
                 moveFrog(new vector2(0, -1))
@@ -172,6 +171,5 @@ function moveCharacter(e) {
                 moveFrog(new vector2(1, 0))
                 break;
         }
-    }
 }
 
