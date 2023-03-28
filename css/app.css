@@ -68,6 +68,10 @@ body{
     border: 10px solid #00000057;
 }
 
+.character{
+    transition: left 0.5s linear, top 0.5s linear;
+}
+
 .position-absolute{
     position: absolute;
 }
@@ -89,5 +93,5 @@ body{
 }
 
 .jump {
-    animation: jump 1s ease-out;
+    animation: jump 0.5s ease-out;
 }
