@@ -1,6 +1,8 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout
 
 let playing = false
+
+let onMovement = false
 
 const animationTime = 500
 
@@ -143,25 +145,31 @@ function ranasalta() {
     }
 };
 
-// function moveFrog(){
-//     gameFrog.gridMove(new vector2(2, 2))
-// }
+function moveFrog(movement){
+    if(!onMovement && playing){
+        onMovement = true
+        rana.src = "../img/palante.gif"
+        clearTimeout(frogMovementTimeout)
+        frogMovementTimeout = setTimeout(function(){onMovement = false; rana.src = "../img/dona.gif"}, 500)
+        gameFrog.gridMove(movement)
+    }
+}
 
 function moveCharacter(e) {
     if(playing){
         switch (e.keyCode) {
             case 87:
-                gameFrog.gridMove(new vector2(0, -1))
+                moveFrog(new vector2(0, -1))
                 break;
             case 65:
-                gameFrog.gridMove(new vector2(-1, 0))
+                moveFrog(new vector2(-1, 0))
                 break;
             case 83:
-                gameFrog.gridMove(new vector2(0, 1))
+                moveFrog(new vector2(0, 1))
                 ranasalta()
                 break;
             case 68:
-                gameFrog.gridMove(new vector2(1, 0))
+                moveFrog(new vector2(1, 0))
                 break;
         }
     }
