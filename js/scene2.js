@@ -165,7 +165,6 @@ function moveCharacter(e) {
             break;
         case 83:
             moveFrog(new vector2(0, 1))
-            ranasalta()
             break;
         case 68:
             moveFrog(new vector2(1, 0))
