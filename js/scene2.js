@@ -156,20 +156,20 @@ function moveFrog(movement){
 }
 
 function moveCharacter(e) {
-        switch (e.keyCode) {
-            case 87:
-                moveFrog(new vector2(0, -1))
-                break;
-            case 65:
-                moveFrog(new vector2(-1, 0))
-                break;
-            case 83:
-                moveFrog(new vector2(0, 1))
-                ranasalta()
-                break;
-            case 68:
-                moveFrog(new vector2(1, 0))
-                break;
-        }
+    switch (e.keyCode) {
+        case 87:
+            moveFrog(new vector2(0, -1))
+            break;
+        case 65:
+            moveFrog(new vector2(-1, 0))
+            break;
+        case 83:
+            moveFrog(new vector2(0, 1))
+            ranasalta()
+            break;
+        case 68:
+            moveFrog(new vector2(1, 0))
+            break;
+    }
 }
 
