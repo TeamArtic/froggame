@@ -35,14 +35,26 @@ function seleccionarPersonaje(event) {
   botonesPersonajes.forEach((boton) => {
     boton.disabled = true;
     boton.classList.add('unselected');
+    boton.style.backgroundColor = '';
   });
 
   const botonSeleccionado = event.target;
   botonSeleccionado.classList.remove('unselected');
+  botonSeleccionado.style.backgroundColor = 'green';
+  botonSeleccionado.disabled = true;
   botonSeleccionado.innerText = 'Seleccionado';
 
   const refreshButton = document.getElementById('refresh-button');
   refreshButton.classList.remove('hidden');
+  
+  const characterCard = event.target.closest('.character-personajes');
+  characters.forEach((character) => {
+    if (character === characterCard) {
+      character.classList.add('selected');
+    } else {
+      character.classList.remove('selected');
+    }
+  });
 }
 
 const refreshButton = document.getElementById('refresh-button');
@@ -59,8 +71,32 @@ function selectAnotherCharacter() {
   characters.forEach((character) => {
     character.classList.remove('grayed-out');
     character.querySelector('button').disabled = false;
+    character.classList.remove('selected');
   });
 
   const refreshButton = document.getElementById('refresh-button');
   refreshButton.classList.add('hidden');
+}
+
+const characterButtons = document.querySelectorAll('.buy-button');
+characterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    characterButtons.forEach(btn => btn.parentElement.classList.remove('selected'));
+    button.parentElement.classList.add('selected');
+  });
+});
+function cambiarprecio(event) {
+  var boton = event.target;
+  var character = boton.parentElement.parentElement;
+
+  // Quitamos la clase 'selected' de todos los personajes
+  var characters = document.querySelectorAll('.character-personajes');
+  characters.forEach(function (character) {
+    character.classList.remove('selected');
+  });
+
+  // Añadimos la clase 'selected' al personaje seleccionado
+  character.classList.add('selected');
+
+  // Hacer cualquier otra cosa que necesites aquí
 }
