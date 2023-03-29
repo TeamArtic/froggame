@@ -93,6 +93,9 @@ class object{
     }
 
     setPosition(newPosition){
+        if(this.imageURL){
+            newPosition.add(this.imagePosition)
+        }
         this.object.style.left = newPosition.x + "px"
         this.object.style.top = newPosition.y + "px"
     }
@@ -100,6 +103,12 @@ class object{
     setObject(newObject){
         this.object = newObject
         this.setPosition(this.position)
+    }
+
+    setImage(image, dimension, position){
+        this.imageURL = image
+        this.imageDimension = dimension
+        this.imagePosition = position
     }
 }
 
