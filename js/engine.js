@@ -83,6 +83,7 @@ class object{
         this.size = size
         this.setPosition(this.position)
         this.objectScene.addObject(this.id, this)
+        this.movementInterval
     }
 
     move(movement){
@@ -90,6 +91,15 @@ class object{
         if(this.object){
             this.setPosition(this.position)
         }
+    }
+
+    dynamicMovement(movement, time, onEndFunction){
+        clearInterval(movementInterval)
+        movementInterval = setInterval(movementStep, 10)
+    }
+
+    movementStep(){
+
     }
 
     setPosition(newPosition){
