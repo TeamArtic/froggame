@@ -1,8 +1,12 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout
 
 let playing = false
 
+let onMovement = false
+
 const animationTime = 500
+
+let actualCharacter
 
 let levels = [
     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
@@ -42,6 +46,26 @@ class frog extends gridObject {
         }
     }
 }
+
+class imageInfo{
+    constructor(imageURL, size, center){
+        this.imageURL = imageURL
+    }
+}
+
+class characterInfo{
+    constructor(characterName, stayImageURL, movingImageURL){
+        this.characterName = characterName
+        this.stayImageURL = stayImageURL
+        this.movingImageURL = movingImageURL
+    }
+}
+
+let imagesFolder = "../img/"
+
+let characters = [
+    new characterInfo("Donatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif")
+]
 
 // Level transition animation
 
@@ -121,6 +145,7 @@ window.addEventListener('load', () => {
     frogContainer = document.getElementById('rana')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
+    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
     document.onkeydown = moveCharacter;
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
@@ -143,27 +168,30 @@ function ranasalta() {
     }
 };
 
-// function moveFrog(){
-//     gameFrog.gridMove(new vector2(2, 2))
-// }
+function moveFrog(movement){
+    if(!onMovement && playing){
+        onMovement = true
+        rana.src = "../img/palante.gif"
+        clearTimeout(frogMovementTimeout)
+        frogMovementTimeout = setTimeout(function(){onMovement = false; rana.src = "../img/dona.gif"}, 500)
+        gameFrog.gridMove(movement)
+    }
+}
 
 function moveCharacter(e) {
-    if(playing){
-        switch (e.keyCode) {
-            case 87:
-                gameFrog.gridMove(new vector2(0, -1))
-                break;
-            case 65:
-                gameFrog.gridMove(new vector2(-1, 0))
-                break;
-            case 83:
-                gameFrog.gridMove(new vector2(0, 1))
-                ranasalta()
-                break;
-            case 68:
-                gameFrog.gridMove(new vector2(1, 0))
-                break;
-        }
+    switch (e.keyCode) {
+        case 87:
+            moveFrog(new vector2(0, -1))
+            break;
+        case 65:
+            moveFrog(new vector2(-1, 0))
+            break;
+        case 83:
+            moveFrog(new vector2(0, 1))
+            break;
+        case 68:
+            moveFrog(new vector2(1, 0))
+            break;
     }
 }
 

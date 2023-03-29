@@ -83,6 +83,7 @@ class object{
         this.size = size
         this.setPosition(this.position)
         this.objectScene.addObject(this.id, this)
+        this.movementInterval
     }
 
     move(movement){
@@ -92,7 +93,19 @@ class object{
         }
     }
 
+    dynamicMovement(movement, time, onEndFunction){
+        clearInterval(movementInterval)
+        movementInterval = setInterval(movementStep, 10)
+    }
+
+    movementStep(){
+
+    }
+
     setPosition(newPosition){
+        if(this.imageURL){
+            newPosition.add(this.imagePosition)
+        }
         this.object.style.left = newPosition.x + "px"
         this.object.style.top = newPosition.y + "px"
     }
@@ -100,6 +113,12 @@ class object{
     setObject(newObject){
         this.object = newObject
         this.setPosition(this.position)
+    }
+
+    setImage(image, dimension, position){
+        this.imageURL = image
+        this.imageDimension = dimension
+        this.imagePosition = position
     }
 }
 
@@ -139,7 +158,6 @@ class gridObject extends object{
             this.gridTransform(vector2.additionVector2(this.gridPosition, movement))
             this.gridPosition = finalPosition
         }
-        console.log(this.gridPosition.x + " " + this.gridPosition.y)
     }
 }
 
