@@ -710,3 +710,13 @@ h1-personajes {
   border: 4px solid #154734;
   margin-top: 20px;
 }
+.character-personajes:not(.selected) {
+  filter: grayscale(100%);
+}
+.selected {
+  background-color: green;
+}
+
+.selected img {
+  filter: none;
+}
