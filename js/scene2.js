@@ -6,6 +6,8 @@ let onMovement = false
 
 const animationTime = 500
 
+let actualCharacter
+
 let levels = [
     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
     {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
@@ -44,6 +46,26 @@ class frog extends gridObject {
         }
     }
 }
+
+class imageInfo{
+    constructor(imageURL, size, center){
+        this.imageURL = imageURL
+    }
+}
+
+class characterInfo{
+    constructor(characterName, stayImageURL, movingImageURL){
+        this.characterName = characterName
+        this.stayImageURL = stayImageURL
+        this.movingImageURL = movingImageURL
+    }
+}
+
+let imagesFolder = "../img/"
+
+let characters = [
+    new characterInfo("Donatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif")
+]
 
 // Level transition animation
 
