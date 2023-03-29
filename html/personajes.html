@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="../css/tienda.css">
 </head>
 <body>
-  <div>
     <header class="header-personajes">
       <img src="../img/Logo.png" class="foto-personajes" alt="Logo-personajes">
       <h1>TUS PERSONAJES</h1>
@@ -26,42 +25,58 @@
           <img src="../img/splinter.gif" alt="Personaje 1" class="splinter-img-personajes">
           <div class="splinter-personajes">
             <h3 class="h3-splinter-personajes">Splinter</h3>
-            <button class="buy-button1-personajes" data-price="5" data-name="Splinter" id="buy-button" onclick="cambiarprecio(event)"
+            <button class="buy-button1-personajes" data-price="5" data-name="Splinter"  onclick="cambiarprecio(event)"
               id="Splinter">
-              Seleccionar <span class="tick"></span>
+              Seleccionar 
             </button>
           </div>
         </div>
+
+
         <div class="character-personajes">
           <img src="../img/leo.gif" alt="Personaje 2" class="leo-img-personajes">
-          <h3 class="h3-leonardo-personajes">Leonardo</h3>
-          <button class="buy-button2-personajes" data-price="10" data-name="Leonardo" id="buy-button" onclick="cambiarprecio(event)"
-            id="Leonardo">Seleccionar</button>
+          <div class="leo-personajes">
+            <h3 class="h3-leonardo-personajes">Leonardo</h3>
+            <button class="buy-button2-personajes" data-price="10" data-name="Leonardo"  onclick="cambiarprecio(event)"
+              id="Leonardo">
+              Seleccionar 
+            </button>
+          </div>
         </div>
+
+      
         <div class="character-personajes">
           <img src="../img/rafa.gif" alt="Personaje 3" class="rafaelo-img-personajes">
           <div class="rafael-personajes">
             <h3>Raphael</h3>
-            <button class="buy-button3-personajes" data-price="20" data-name="Raphael" id="buy-button" onclick="cambiarprecio(event)"
+            <button class="buy-button3-personajes" data-price="20" data-name="Raphael"  onclick="cambiarprecio(event)"
               id="Raphael">Seleccionar</button>
           </div>
         </div>
+
+
         <div class="character-personajes">
           <img src="../img/miguel.gif" alt="Personaje 3" class="michelangelo-img-personajes">
           <div class="michelangelo-personajes">
             <h3>Michelangelo</h3>
-            <button class="buy-button4-personajes" data-price="20.00" data-name="Michelangelo"  id="buy-button" onclick="cambiarprecio(event)"
+            <button class="buy-button4-personajes" data-price="20" data-name="Michelangelo"  onclick="cambiarprecio(event)"
               id="Michelangelo">Seleccionar</button>
           </div>
         </div>
+
+
+
         <div class="character-personajes">
-          <img src="../img/dona.gif" alt="Personaje 2" class="dona-img-personajes">
-          <h3 class="h3-dona-personajes">Donatello</h3>
-          <button class="buy-button5-personajes" data-price="10" data-name="Leonardo" id="buy-button" onclick="cambiarprecio(event)"
-            id="Leonardo">Seleccionar</button>
+          <img src="../img/dona.gif" alt="Personaje 4" class="dona-img-personajes">
+          <div class="dona-personajes">
+            <h3 class="h3-dona-personajes">Donatello</h3>
+            <button class="buy-button5-personajes" data-price="10" data-name="Donatello"  onclick="cambiarprecio(event)"
+              id="Leonardo">
+              Seleccionar 
+            </button>
+          </div>
         </div>
     </main>
-  </div>
   <script src="../js/personaje.js"></script>
   <button id="other-characters-button" class="hidden"  onclick="location.reload()">Elegir otro personaje</button>
 </body>
