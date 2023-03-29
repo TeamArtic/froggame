@@ -148,7 +148,6 @@ class gridObject extends object{
             this.gridTransform(vector2.additionVector2(this.gridPosition, movement))
             this.gridPosition = finalPosition
         }
-        console.log(this.gridPosition.x + " " + this.gridPosition.y)
     }
 }
 
