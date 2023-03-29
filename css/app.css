@@ -1,16 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url(../img/fondo.png);
-    font-family: 'hola';
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    font-family: 'Press Start 2P', cursive;
 }
-
-
-
 
 *{
     margin: 0;
@@ -24,6 +16,11 @@ body{
     justify-content: center;
     align-items: center;
     
+}
+
+.background-container{
+    background-repeat: repeat;
+    background-position: center;
 }
 
 .app2{
@@ -42,14 +39,55 @@ body{
     background-image: url(../img/grafico-cloaca.png);
 }
 
-.elementsContainer2{
-    display: none;
-    align-items: top center;
-    justify-items: center;
+.foregroundContainer{
     position: absolute;
-    background-image: url(../img/grafico-carretera.png);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left :0;
+    z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+.levelInfoContainer{
+    z-index: 2;
+    color: #FFF;
+    font-size: 0.6in;
+}
+
+.shadowContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000006b;
+}
+
+.borderShadow{
+    border: 10px solid #00000057;
 }
 
 .position-absolute{
     position: absolute;
+}
+
+/* Animation */
+
+@keyframes jump {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.2) translateY(-50px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+.jump {
+    animation: jump 1s ease-out;
 }

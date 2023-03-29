@@ -27,7 +27,7 @@ h1 {
     top: 20px;
     position: relative;
     font-size: 50px;
-
+    color: white;
 }
 
 #rana {
@@ -36,6 +36,16 @@ h1 {
     width: 50px;
 }
 
+
 .corazones{
     height: 100px;
+}
+
+.vidas{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: 'hola';
 }
