@@ -23,12 +23,9 @@ body{
     background-position: center;
 }
 
-.app2{
-    height: 100vh;
-    overflow: hidden;
-    display: none;
-    justify-content: center;
-    align-items: center;
+.vertical-container{
+    flex-direction: column;
+    gap: 10px;
 }
 
 .elementsContainer{
@@ -55,6 +52,24 @@ body{
     font-size: 0.6in;
 }
 
+.default-menu-container{
+    border: 2px solid green;
+    background-color: #00000070
+}
+
+.default-background{
+    background-image: url(../img/fondo.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.main-screen-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
 .shadowContainer{
     position: absolute;
     top: 0;
@@ -62,6 +77,12 @@ body{
     right: 0;
     bottom: 0;
     background-color: #0000006b;
+}
+
+.website-title{
+    color: #fff;
+    text-shadow: 2px 2px #5eff00;
+    font-size: 0.5in;
 }
 
 .borderShadow{
@@ -72,8 +93,36 @@ body{
     transition: left 0.5s linear, top 0.5s linear;
 }
 
+.justify-content-space-evenly{
+    justify-content: space-evenly;
+}
+
 .position-absolute{
     position: absolute;
+}
+
+.highlighted-button {
+    display: block;
+    padding: 20px 40px;
+    border: 2px solid #1d4e00;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+    background-color: #51dc00;
+    transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
+}
+
+a.highlighted-button{
+    text-decoration: none;
+}
+
+.highlighted-button:hover {
+    background-color: #000;
+    color: #5eff00;
+    text-shadow: 2px 2px #fff;
+    transform: scale(1.1);
+    z-index: 1;
 }
 
 /* Animation */
