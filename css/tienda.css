@@ -4,7 +4,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
+  width: 98.5%;
+  height: 100px;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
 }
 
 li a {
-  font-size: 20px;
+  font-size: 12px;
 }
 
 li a:hover {
@@ -38,7 +40,7 @@ nav ul {
 nav li {
   margin-right: 20px;
   margin-top: 9px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 nav a {
@@ -70,8 +72,8 @@ main {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #289234;
-  width: 300px;
-
+  width: 200px;
+height: 400px;
 }
 
 .characters {
@@ -111,9 +113,9 @@ main {
 
 .titulo {
   position: relative;
-  left: 200px;
-  font-size: 30px;
-  margin-right: 480px;
+  right: 130px;
+  font-size: 20px;
+  
   margin-top: 23px;
 }
 
@@ -124,45 +126,54 @@ main {
 
 .splinter {
   position: relative;
-  top: 92px;
+  top: 32px;
   text-align: center;
 }
 
 .michelangelo {
   position: relative;
-  top: 90px;
+  top: 30px;
   text-align: center;
-
 }
 
 .rafael {
   position: relative;
-  top: 65px;
+  top: 35px;
+  text-align: center;
+}
+.Donatelo{
+  position: relative;
+  top: 35px;
   text-align: center;
 }
 
 .splinter-img {
   width: 100%;
-  top: 105px;
+  top: 25px;
   position: relative;
 }
 
 .rafaelo-img {
   position: relative;
-  top: 70px;
-  width: 200px;
+  top: 30px;
+  width: 60%;
 }
 
 .michelangelo-img {
   position: relative;
-  top: 95px;
-  width: 200px;
+  top: 30px;
+  width: 67%;
 }
 
 .leo-img {
   position: relative;
   top: 5px;
-  width: 200px;
+  width: 60%;
+}
+.dona-img{
+  position: relative;
+  top: 10px;
+  width: 53%;
 }
 
 .mensaje-compra {
@@ -236,7 +247,6 @@ main {
   display: block;
   width: 100%;
   max-width: 200px;
-  margin: 10px auto;
   padding: 20px;
   border: 2px solid #1d4e00;
   color: #fff;
@@ -250,6 +260,7 @@ main {
   border-radius: 20px;
   border: 4px solid #154734;
   position: relative;
+  margin-bottom: 900px;
 }
 
 .buy-button2:hover {
