@@ -82,6 +82,30 @@ body{
     position: absolute;
 }
 
+.highlighted-button {
+    display: block;
+    padding: 20px 40px;
+    border: 2px solid #1d4e00;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+    background-color: #51dc00;
+    transition: transform 0.3s cubic-bezier(.18,.89,.32,1.28);
+}
+
+a.highlighted-button{
+    text-decoration: none;
+}
+
+.highlighted-button:hover {
+    background-color: #000;
+    color: #5eff00;
+    text-shadow: 2px 2px #fff;
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 /* Animation */
 
 @keyframes jump {
