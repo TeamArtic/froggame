@@ -64,6 +64,12 @@ body{
     background-color: #0000006b;
 }
 
+.website-title{
+    color: #fff;
+    text-shadow: 2px 2px #5eff00;
+    font-size: 0.5in;
+}
+
 .borderShadow{
     border: 10px solid #00000057;
 }
