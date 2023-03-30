@@ -55,6 +55,13 @@ body{
     font-size: 0.6in;
 }
 
+.main-screen-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
 .shadowContainer{
     position: absolute;
     top: 0;
