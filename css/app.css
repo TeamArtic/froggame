@@ -28,14 +28,6 @@ body{
     gap: 10px;
 }
 
-.app2{
-    height: 100vh;
-    overflow: hidden;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
 .elementsContainer{
     display: grid;
     align-items: top center;
