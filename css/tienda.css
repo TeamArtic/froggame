@@ -714,7 +714,7 @@ h1-personajes {
   filter: grayscale(100%);
 }
 .selected {
-  background-color: green;
+  color: green;
 }
 
 .selected img {
