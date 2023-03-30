@@ -23,6 +23,11 @@ body{
     background-position: center;
 }
 
+.vertical-container{
+    flex-direction: column;
+    gap: 10px;
+}
+
 .app2{
     height: 100vh;
     overflow: hidden;
