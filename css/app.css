@@ -55,6 +55,11 @@ body{
     font-size: 0.6in;
 }
 
+.default-menu-container{
+    border: 2px solid green;
+    background-color: #00000070
+}
+
 .main-screen-menu{
     display: grid;
     grid-template-columns: 1fr 1fr;
