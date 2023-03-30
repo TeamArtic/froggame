@@ -732,19 +732,23 @@ h1 {
   text-align: center;
   position: relative;
   display: inline-block;
-  margin-left: 600px;
+  margin-left: 20%;
 }
 
 .tortuga-izquierda{
 position: absolute;
-margin-left: 400px;
+margin-left:30%;
   vertical-align: middle;
   animation: mover 2s linear infinite;
+ 
 }
 .tortuga-derecha {
+  position: absolute;
+margin-left: 69%;
   display: inline-block;
   vertical-align: middle;
   animation: mover 2s linear infinite;
+
 }
 
 .tortuga-izquierda {
