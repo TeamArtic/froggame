@@ -573,11 +573,11 @@ h1-personajes {
 
 .buy-button2-personajes {
   display: block;
-  width: 100%;
+  width: 140%;
   max-width: 200px;
   margin: 10px auto;
   padding: 20px;
-  border: 2px solid #1d4e00;
+  border: 4px solid #154734;
   color: #fff;
   font-size: 24px;
   text-align: center;
@@ -586,11 +586,11 @@ h1-personajes {
   transition: all 0.3s ease;
   background-color: #289234;
   transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
+  margin-right: 60px;
+  margin-top: 20px;
   border-radius: 20px;
-  border: 4px solid #154734;
   position: relative;
-  top: 10px;
-  left: 5px;
+  left: 15px;
 }
 
 .buy-button2-personajes:hover {
@@ -692,7 +692,6 @@ h1-personajes {
 }
 .hidden {
   display: none;
-  
 }
 #other-characters-button{
   top: 93%;
@@ -708,8 +707,8 @@ h1-personajes {
   transition: opacity 0.5s ease-in-out;
   border-radius: 20px;
   border: 4px solid #154734;
-  margin-top: 20px;
-}
+  margin-top: 100px;
+}   
 .character-personajes:not(.selected) {
   filter: grayscale(100%);
 }
@@ -719,4 +718,47 @@ h1-personajes {
 
 .selected img {
   filter: none;
+}
+.h3-dona-personajes{
+  margin-left: 39px;
+}
+.h3-leonardo-personajes{
+margin-left: 50px;
+}
+h1 {
+  font-family:hola;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 600px;
+}
+
+.tortuga-izquierda{
+position: absolute;
+margin-left: 400px;
+  vertical-align: middle;
+  animation: mover 2s linear infinite;
+}
+.tortuga-derecha {
+  display: inline-block;
+  vertical-align: middle;
+  animation: mover 2s linear infinite;
+}
+
+.tortuga-izquierda {
+  margin-right: 20px;
+}
+
+@keyframes mover {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
 }
