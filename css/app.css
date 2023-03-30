@@ -101,6 +101,10 @@ body{
     transition: left 0.5s linear, top 0.5s linear;
 }
 
+.justify-content-space-evenly{
+    justify-content: space-evenly;
+}
+
 .position-absolute{
     position: absolute;
 }
