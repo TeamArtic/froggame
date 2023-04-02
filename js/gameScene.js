@@ -14,6 +14,12 @@ let levels = [
     {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
 ]
 
+let levels = [
+    new level(1, "Cloaca", "../img/grafico-cloaca.png"),
+    new level(2, "Carretera", "../img/grafico-carretera.png"),
+    new level(3, "Level name", "../img/grafico3.png")
+]
+
 let actualLevel = 0
 
 class levelManager{
