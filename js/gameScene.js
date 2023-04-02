@@ -26,7 +26,8 @@ class levelManager{
 }
 
 class level {
-    constructor(name, backgroundImage){
+    constructor(levelId, name, backgroundImage){
+        this.levelId = levelId
         this.name = name
         this.backgroundImage = backgroundImage
     }
