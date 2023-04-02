@@ -8,6 +8,14 @@ const animationTime = 500
 
 let actualCharacter
 
+class level {
+    constructor(levelId, name, backgroundImage){
+        this.levelId = levelId
+        this.name = name
+        this.backgroundImage = backgroundImage
+    }
+}
+
 // let levels = [
 //     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
 //     {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
@@ -28,14 +36,6 @@ class levelManager{
         elementsContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
         gameFrog.gridTransform(new vector2(3, 0))
-    }
-}
-
-class level {
-    constructor(levelId, name, backgroundImage){
-        this.levelId = levelId
-        this.name = name
-        this.backgroundImage = backgroundImage
     }
 }
 
