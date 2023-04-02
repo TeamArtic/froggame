@@ -8,11 +8,11 @@ const animationTime = 500
 
 let actualCharacter
 
-let levels = [
-    {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
-    {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
-    {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
-]
+// let levels = [
+//     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
+//     {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
+//     {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
+// ]
 
 let levels = [
     new level(1, "Cloaca", "../img/grafico-cloaca.png"),
