@@ -146,6 +146,11 @@ a.highlighted-button{
     text-decoration: none;
 }
 
+button.highlighted-button{
+    font: unset;
+    font-size: 24px;
+}
+
 .highlighted-button:hover {
     background-color: #000;
     color: #5eff00;
