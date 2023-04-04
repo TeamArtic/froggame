@@ -52,6 +52,14 @@ body{
     font-size: 0.6in;
 }
 
+.pauseMenu{
+    z-index: 2;
+    background-color: #00000075;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
 .default-menu-container{
     border: 2px solid green;
     background-color: #00000070
