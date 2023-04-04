@@ -33,7 +33,7 @@ body{
 }
 
 .hidden-menu{
-    display: none;
+    display: none !important;
 }
 
 .vertical-container{
