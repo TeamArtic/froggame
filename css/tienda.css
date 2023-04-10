@@ -20,7 +20,7 @@ body {
 }
 
 li a {
-  font-size: 12px;
+  font-size: 20px;
 }
 
 li a:hover {
@@ -38,9 +38,8 @@ nav ul {
 }
 
 nav li {
-  margin-right: 20px;
-  margin-top: 9px;
-  font-size: 30px;
+  margin-right: 70px;
+  font-size: 20px;
 }
 
 nav a {
@@ -67,19 +66,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
   background-color: #00000050;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #289234;
-  width: 200px;
-height: 400px;
+  width: 285px;
+  height: 460px;
 }
 
 .characters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 24px;
 }
 
 
@@ -112,11 +110,8 @@ height: 400px;
 
 
 .titulo {
-  position: relative;
-  right: 130px;
+   margin-left: 100px;
   font-size: 20px;
-  
-  margin-top: 23px;
 }
 
 @font-face {
@@ -168,7 +163,7 @@ height: 400px;
 .leo-img {
   position: relative;
   top: 5px;
-  width: 60%;
+  width: 58%;
 }
 .dona-img{
   position: relative;
@@ -177,27 +172,23 @@ height: 400px;
 }
 
 .mensaje-compra {
-  position: fixed;
-  top: 50%;
+  position: relative;
+  top: 300px;
   left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   border: 2px solid #000;
   padding: 20px;
-  z-index: 9999;
   display: none;
 }
 
 .compra-realizada {
-  position: fixed;
-  top: 93%;
+  position: relative;
+  top:300px;
   left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #289234;
   padding: 10px 20px;
   border: 2px solid #000;
   font-size: 24px;
-  z-index: 9999;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   border-radius: 20px;
@@ -219,7 +210,7 @@ height: 400px;
   width: 100%;
   max-width: 200px;
   margin: 10px auto;
-  padding: 20px;
+  padding: 11px;
   border: 2px solid #1d4e00;
   color: #fff;
   font-size: 24px;
@@ -247,7 +238,7 @@ height: 400px;
   display: block;
   width: 100%;
   max-width: 200px;
-  padding: 20px;
+  padding: 11px;
   border: 2px solid #1d4e00;
   color: #fff;
   font-size: 24px;
@@ -275,7 +266,7 @@ height: 400px;
   width: 140%;
   max-width: 200px;
   margin: 10px auto;
-  padding: 20px;
+  padding: 11px;
   border: 4px solid #154734;
   color: #fff;
   font-size: 24px;
@@ -303,7 +294,7 @@ height: 400px;
   width: 110%;
   max-width: 200px;
   margin: 10px auto;
-  padding: 20px;
+  padding: 11px;
   border: 2px solid #1d4e00;
   color: #fff;
   font-size: 24px;
@@ -336,7 +327,8 @@ height: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
+  height: 80px;
 }
 
 body {
@@ -428,7 +420,8 @@ h1-personajes {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #289234;
-  width: 300px;
+  transform: scale(0.7);
+  margin-top: -80px;
 
 }
 

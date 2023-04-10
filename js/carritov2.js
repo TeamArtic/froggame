@@ -4,6 +4,7 @@ var Tortugas = [
     { nombre: 'Leonardo', precio: '10' },
     { nombre: 'Raphael', precio: '20' },
     { nombre: 'Michelangelo', precio: '30' },
+    { nombre: 'Donatelo', precio: '40' },
 ];
 
 function comprarRealizada() {
@@ -21,7 +22,6 @@ function comprarRealizada() {
     divCompra.remove();
   }, 2000);
 }
-
 function cambiarprecio(event) {
   var personaje = event.target.id;
   var boton = document.getElementById(personaje);
