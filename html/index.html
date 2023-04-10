@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rana saltarina</title>
+    <style>
+        @keyframes jump {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.2) translateY(-50px);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .jump {
+            animation: jump 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/dona.gif" alt="Rana" id="rana">
+    <script>
+        var rana = document.getElementById("rana");
+        var rana1 = "../img/dona.gif";
+        var rana2 = "../img/saltar.gif";
+        var isRana1 = true;
+        var isJumping = false;
+
+        rana.addEventListener("click", function () {
+            if (!isJumping) {
+                isJumping = true;
+                rana.classList.add("jump");
+                if (isRana1) {
+                    rana.src = rana2;
+                    isRana1 = false;
+                } else {
+                    rana.src = rana1;
+                    isRana1 = true;
+                }
+                setTimeout(function () {
+                    rana.classList.remove("jump");
+                    rana.src = rana1;
+                    isJumping = false;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
