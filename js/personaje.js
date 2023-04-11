@@ -97,6 +97,12 @@ function cambiarprecio(event) {
 
   // Añadimos la clase 'selected' al personaje seleccionado
   character.classList.add('selected');
-
-  // Hacer cualquier otra cosa que necesites aquí
+}
+function mostrarMensaje() {
+  const mensaje = document.getElementById("mensaje");
+  mensaje.innerHTML = "¡Seleccionado!";
+  mensaje.style.display = "block";
+  setTimeout(function() {
+    mensaje.style.display = "none";
+  }, 2000); // 2000 milisegundos = 2 segundos
 }
