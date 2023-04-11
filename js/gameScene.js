@@ -142,22 +142,6 @@ function transitionToNextScreen() {
     document.getElementById('elementsContainer2').style.display = 'grid';
 }
 
-window.addEventListener('load', () => {
-    appContainer = document.getElementById('app')
-    pageTitle = document.getElementById('pageTitle')
-    elementsContainer = document.getElementById('elementsContainer')
-    foregroundContainer = document.getElementById('foregroundContainer')
-    mainScene = new scene()
-    keyboardEvent = new KeyboardEvent("keydown")
-    frogContainer = document.getElementById('rana')
-    mainGrid = new grid(elementsContainer, 6, 6, 100)
-    gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
-    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
-    document.onkeydown = moveCharacter;
-    levelManager.loadLevel(levels[0])
-    levelLoadingTimeout = setTimeout(showLevelName, 800)
-});
-
 function ranasalta() {
     var isJumping = false;
     var rana = document.getElementById("rana");
@@ -202,3 +186,18 @@ function moveCharacter(e) {
     }
 }
 
+window.addEventListener('load', () => {
+    appContainer = document.getElementById('app')
+    pageTitle = document.getElementById('pageTitle')
+    elementsContainer = document.getElementById('elementsContainer')
+    foregroundContainer = document.getElementById('foregroundContainer')
+    mainScene = new scene()
+    keyboardEvent = new KeyboardEvent("keydown")
+    frogContainer = document.getElementById('rana')
+    mainGrid = new grid(elementsContainer, 6, 6, 100)
+    gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
+    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
+    document.onkeydown = moveCharacter;
+    levelManager.loadLevel(levels[0])
+    levelLoadingTimeout = setTimeout(showLevelName, 800)
+});
