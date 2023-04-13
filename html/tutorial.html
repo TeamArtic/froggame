@@ -14,8 +14,37 @@
       padding: 5px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    } 
+    #movementContainer2 {
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      background-color: white;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      height: 800px;
+      width: 300px;
     }
-  </style>
+    .typewriter > p {
+      display: inline-block;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2s steps(20, end);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .hidden-image {
+  display: none;
+}
+.show-image {
+  display: block !important;
+  visibility: visible !important;
+}
+</style>
 </head>
 <body>
   <div id="app" class="app background-container">
@@ -38,7 +67,7 @@
     </div>
     <!-- Contenedor de movimiento -->
     <div id="movementContainer">
-        <p>Controles basicos:</p>
+        <p>Controles basicos</p>
       <ul>
         <li>W:Subir</li>
         <li>S:Bajar</li>
@@ -46,13 +75,24 @@
         <li>D:Mover derecha</li>
       </ul>
     </div>
+    <div id="movementContainer2">
+      <p id="text" class="typewriter" style="display:none">
+        ¡Bienvenido al emocionante mundo de las Tortugas Ninja! En este juego, tendrás la oportunidad de unirte a tus tortugas favoritas en una misión peligrosa pero crucial para salvar la ciudad de Nueva York del Clan del Pie. Solo tú y tus habilidades ninja podrán salvar la ciudad de Nueva York del malvado Clan del Pie. ¡Prepárate para una aventura emocionante y llena de acción!
+      </p>
+    </div>
   </div>
+  <script>
+const movementContainer2 = document.getElementById('movementContainer2');
+const text = movementContainer2.textContent.trim();
+let index = 0;
+
+const timer = setInterval(() => {
+  movementContainer2.textContent = text.slice(0, index);
+  index++;
+}, 50);
+    </script>
+    
   <script src="../js/engine.js"></script>
   <script src="../js/gameSceneTutorial.js"></script>
-  <script>
-    // Agrega el contenedor de movimiento al DOM
-    const movementContainer = document.getElementById('movementContainer');
-    document.body.appendChild(movementContainer);
-  </script>
 </body>
 </html>
