@@ -34,6 +34,7 @@
         { mensaje: "Pulsa 'A' para continuar", tecla: "KeyA" },
         { mensaje: "Pulsa 'S' para continuar", tecla: "KeyS" },
         { mensaje: "Pulsa 'D' para continuar", tecla: "KeyD" },
+        { mensaje: "¡Has completado todos los requisitos! Pulsa la tecla 'F' para mover la rana a tu gusto", tecla: "KeyF" },
       ];
 
       // Obtener el elemento del personaje
@@ -81,6 +82,26 @@
                   case "KeyD":
                     x += 10;
                     break;
+                    case "KeyF":
+                     // Cambiar la tecla 'F' por la tecla correspondiente al movimiento deseado
+                     document.addEventListener("keydown", function (event) {
+                       switch (event.code) {
+                         case "KeyW":
+                           y -= 10;
+                           break;
+                         case "KeyA":
+                           x -= 10;
+                           break;
+                         case "KeyS":
+                           y += 10;
+                           break;
+                         case "KeyD":
+                           x += 10;
+                           break;
+                         }
+ moverPersonaje(x, y);
+  });
+  break;
                 }
                 moverPersonaje(x, y);
               });
