@@ -1,4 +1,4 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle
 
 let playing = false
 
@@ -183,6 +183,9 @@ function moveCharacter(e) {
         case 68:
             moveFrog(new vector2(1, 0))
             break;
+        case 27:
+            pauseMenuToggle.toggle()
+            break;
     }
 }
 
@@ -197,6 +200,8 @@ window.addEventListener('load', () => {
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
+    pauseMenu = document.getElementById('pauseMenu')
+    pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
     document.onkeydown = moveCharacter;
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
