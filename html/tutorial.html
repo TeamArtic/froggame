@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="pageTitle">Rana saltarina</title>
+  <link rel="stylesheet" href="../css/app.css">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos para el contenedor de movimiento */
+    #movementContainer {
+      position: absolute;
+      top: 20px;
+      left: 0px;
+      background-color: white;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app background-container">
+    <div id="foregroundContainer" class="foregroundContainer" style="background-color: #000000FF"></div>
+    <div class="shadowContainer"></div>
+    <div class="elementsContainer borderShadow" id="elementsContainer">
+      <img src="../img/dona.gif" class="rana character position-absolute" id="rana">
+    </div>
+    <div id="levelInfoContainer" class="levelInfoContainer">
+      <h1 id="levelInfoName" style="filter:opacity(0%)"></h1>
+    </div>
+    <div id="pauseMenu" class="pauseMenu full-size-menu hidden-menu">
+      <div id="pauseMenuContainer" class="pauseMenuContainer default-menu-container vertical-menu">
+        <a class="highlighted-button">Continue</a>
+        <button class="highlighted-button">Settings</button>
+        <button class="highlighted-button">Characters</button>
+        <button class="highlighted-button">c</button>
+        <a class="highlighted-button" href="./menuprincipal.html">Home</a>
+      </div>
+    </div>
+    <!-- Contenedor de movimiento -->
+    <div id="movementContainer">
+        <p>Controles basicos:</p>
+      <ul>
+        <li>W:Subir</li>
+        <li>S:Bajar</li>
+        <li>A:Mover izquierda</li>
+        <li>D:Mover derecha</li>
+      </ul>
+    </div>
+  </div>
+  <script src="../js/engine.js"></script>
+  <script src="../js/gameSceneTutorial.js"></script>
+  <script>
+    // Agrega el contenedor de movimiento al DOM
+    const movementContainer = document.getElementById('movementContainer');
+    document.body.appendChild(movementContainer);
+  </script>
+</body>
+</html>
