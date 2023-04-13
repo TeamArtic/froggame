@@ -25,7 +25,7 @@ class level {
 let levels = [
     new level(1, "Cloaca", "../img/grafico-cloaca.png"),
     new level(2, "Carretera", "../img/grafico-carretera.png"),
-    new level(3, "Level name", "../img/grafico3.png")
+    new level(3, "Rio", "../img/grafico3.png"),
 ]
 
 let actualLevel = 0
@@ -96,8 +96,8 @@ function loadLevel(){
 }
 
 function showEnd(){
-    pageTitle.innerHTML = "Fin"
-    levelInfoName.innerHTML = "Fin"
+    window.location.href = "../html/creditos.html";
+    levelInfoName.innerHTML = "Creditos"
     levelInfoName.style.filter = "opacity(100%)"
 }
 
