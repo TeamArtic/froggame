@@ -1,100 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mi juego</title>
-    <style>
-      body {
-        background-image: url('../img/prueba-carretera.png') !important;
-        background-size: 35.%;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      #juego {
-        position: relative;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="juego">
-      <div id="instrucciones-container">
-        <div id="instrucciones"></div>
+    <title id="pageTitle">Rana saltarina</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="../js/engine.js"></script>
+    <script src="../js/gameSceneTutorial.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <div id="app" class="app background-container">
+      <div id="foregroundContainer" class="foregroundContainer" style="background-color: #000000FF">
+
       </div>
-      <div id="personaje"><img src="../img/rafa.gif" alt=""></div>
-    </div>
-    <script>
-      // Definir una variable para llevar el registro del mensaje actual
-      let mensajeActual = 0;
-
-      // Definir un arreglo con los mensajes y las teclas correspondientes
-      const mensajes = [
-        { mensaje: "Pulsa 'W' para continuar", tecla: "KeyW" },
-        { mensaje: "Pulsa 'A' para continuar", tecla: "KeyA" },
-        { mensaje: "Pulsa 'S' para continuar", tecla: "KeyS" },
-        { mensaje: "Pulsa 'D' para continuar", tecla: "KeyD" },
-      ];
-
-      // Obtener el elemento del personaje
-      const personaje = document.getElementById("personaje");
-
-      // Inicializar la posición del personaje
-      let x = document.getElementById("juego").offsetWidth / 2;
-      let y = document.getElementById("juego").offsetHeight / 2;
-      personaje.style.left = x + "px";
-      personaje.style.top = y + "px";
-
-      // Función para mover el personaje
-      function moverPersonaje(x, y) {
-        personaje.style.left = x + "px";
-        personaje.style.top = y + "px";
-      }
-
-      // Función para mostrar el mensaje de instrucciones
-      function mostrarMensaje() {
-        const instrucciones = document.getElementById("instrucciones");
-        instrucciones.innerHTML = mensajes[mensajeActual].mensaje;
-        instrucciones.style.display = "block";
-
-        // Agregar un event listener para esperar a que el usuario pulse la tecla indicada
-        document.addEventListener("keydown", function (event) {
-          if (event.code === mensajes[mensajeActual].tecla) {
-            // Incrementar el mensaje actual y mostrar el siguiente mensaje
-            mensajeActual++;
-            if (mensajeActual < mensajes.length) {
-              mostrarMensaje();
-            } else {
-              // Cuando se han mostrado todos los mensajes, permitir que el jugador mueva libremente la rana
-              document.removeEventListener("keydown", arguments.callee);
-              document.addEventListener("keydown", function (event) {
-                switch (event.code) {
-                  case "KeyW":
-                    y -= 10;
-                    break;
-                  case "KeyA":
-                    x -= 10;
-                    break;
-                  case "KeyS":
-                    y += 10;
-                    break;
-                  case "KeyD":
-                    x += 10;
-                    break;
-                }
-                moverPersonaje(x, y);
-              });
-            }
-            // Actualizar la posición del personaje después de que el usuario pulse una tecla
-            x = parseInt(personaje.style.left);
-            y = parseInt(personaje.style.top);
-            moverPersonaje(x, y);
-          }
-        });
-      }
-
-      // Mostrar el primer mensaje
-      mostrarMensaje();
-    </script>
-  </body>
+      <div class="shadowContainer">
+          
+      </div>
+      <div class="elementsContainer borderShadow" id="elementsContainer">
+          <img src="../img/dona.gif" class="rana character position-absolute" id="rana">
+      </div>
+      <div id="levelInfoContainer" class="levelInfoContainer">
+          <h1 id="levelInfoName" style="filter:opacity(0%)"></h1>
+      </div>
+      <div id="pauseMenu" class="pauseMenu full-size-menu hidden-menu">
+          <div id="pauseMenuContainer" class="pauseMenuContainer default-menu-container vertical-menu">
+              <a class="highlighted-button">Continue</a>
+              <button class="highlighted-button">Settings</button>
+              <button class="highlighted-button">Characters</button>
+              <button class="highlighted-button">c</button>
+              <a class="highlighted-button" href="./menuprincipal.html">Home</a>
+          </div>
+      </div>
+  </div>
+</body>
 </html>
