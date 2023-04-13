@@ -2,68 +2,99 @@
 <html>
   <head>
     <title>Mi juego</title>
+    <style>
+      body {
+        background-image: url('../img/prueba-carretera.png') !important;
+        background-size: 35.%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #juego {
+        position: relative;
+      }
+    </style>
   </head>
   <body>
-    <h1>Tutorial</h1>
-    <div id="instrucciones-container">
-      <div id="instrucciones"></div>
+    <div id="juego">
+      <div id="instrucciones-container">
+        <div id="instrucciones"></div>
+      </div>
+      <div id="personaje"><img src="../img/rafa.gif" alt=""></div>
     </div>
-    <div id="personaje"><img src="../img/rafa.gif" alt=""></div>
     <script>
-  // Definir una variable para llevar el registro del mensaje actual
-let mensajeActual = 0;
+      // Definir una variable para llevar el registro del mensaje actual
+      let mensajeActual = 0;
 
-// Definir un arreglo con los mensajes y las teclas correspondientes
-const mensajes = [
-  { mensaje: "Pulsa 'W' para continuar", tecla: "KeyW" },
-  { mensaje: "Pulsa 'A' para continuar", tecla: "KeyA" },
-  { mensaje: "Pulsa 'S' para continuar", tecla: "KeyS" },
-  { mensaje: "Pulsa 'D' para continuar", tecla: "KeyD" },
-];
+      // Definir un arreglo con los mensajes y las teclas correspondientes
+      const mensajes = [
+        { mensaje: "Pulsa 'W' para continuar", tecla: "KeyW" },
+        { mensaje: "Pulsa 'A' para continuar", tecla: "KeyA" },
+        { mensaje: "Pulsa 'S' para continuar", tecla: "KeyS" },
+        { mensaje: "Pulsa 'D' para continuar", tecla: "KeyD" },
+      ];
 
-// Obtener el elemento del personaje
-const personaje = document.getElementById("personaje");
+      // Obtener el elemento del personaje
+      const personaje = document.getElementById("personaje");
 
-// Inicializar la posición del personaje
-let x = window.innerWidth / 2;
-let y = window.innerHeight / 2;
-personaje.style.left = x + "px";
-personaje.style.top = y + "px";
+      // Inicializar la posición del personaje
+      let x = document.getElementById("juego").offsetWidth / 2;
+      let y = document.getElementById("juego").offsetHeight / 2;
+      personaje.style.left = x + "px";
+      personaje.style.top = y + "px";
 
-// Función para mover el personaje
-function moverPersonaje(x, y) {
-  personaje.style.left = x + "px";
-  personaje.style.top = y + "px";
-}
-
-// Función para mostrar el mensaje de instrucciones
-function mostrarMensaje() {
-  const instrucciones = document.getElementById("instrucciones");
-  instrucciones.innerHTML = mensajes[mensajeActual].mensaje;
-  instrucciones.style.display = "block";
-  
-  // Agregar un event listener para esperar a que el usuario pulse la tecla indicada
-  document.addEventListener("keydown", function(event) {
-    if (event.code === mensajes[mensajeActual].tecla) {
-      // Incrementar el mensaje actual y mostrar el siguiente mensaje
-      mensajeActual++;
-      if (mensajeActual < mensajes.length) {
-        mostrarMensaje();
-      } else {
-        // Cuando se han mostrado todos los mensajes, quitar el event listener
-        document.removeEventListener("keydown", arguments.callee);
+      // Función para mover el personaje
+      function moverPersonaje(x, y) {
+        personaje.style.left = x + "px";
+        personaje.style.top = y + "px";
       }
 
-      // Actualizar la posición del personaje después de que el usuario pulse una tecla
-      x = parseInt(personaje.style.left);
-      y = parseInt(personaje.style.top);
-      moverPersonaje(x, y);
-    }
-  });
-}
+      // Función para mostrar el mensaje de instrucciones
+      function mostrarMensaje() {
+        const instrucciones = document.getElementById("instrucciones");
+        instrucciones.innerHTML = mensajes[mensajeActual].mensaje;
+        instrucciones.style.display = "block";
 
-// Mostrar el primer mensaje
-mostrarMensaje();
+        // Agregar un event listener para esperar a que el usuario pulse la tecla indicada
+        document.addEventListener("keydown", function (event) {
+          if (event.code === mensajes[mensajeActual].tecla) {
+            // Incrementar el mensaje actual y mostrar el siguiente mensaje
+            mensajeActual++;
+            if (mensajeActual < mensajes.length) {
+              mostrarMensaje();
+            } else {
+              // Cuando se han mostrado todos los mensajes, permitir que el jugador mueva libremente la rana
+              document.removeEventListener("keydown", arguments.callee);
+              document.addEventListener("keydown", function (event) {
+                switch (event.code) {
+                  case "KeyW":
+                    y -= 10;
+                    break;
+                  case "KeyA":
+                    x -= 10;
+                    break;
+                  case "KeyS":
+                    y += 10;
+                    break;
+                  case "KeyD":
+                    x += 10;
+                    break;
+                }
+                moverPersonaje(x, y);
+              });
+            }
+            // Actualizar la posición del personaje después de que el usuario pulse una tecla
+            x = parseInt(personaje.style.left);
+            y = parseInt(personaje.style.top);
+            moverPersonaje(x, y);
+          }
+        });
+      }
+
+      // Mostrar el primer mensaje
+      mostrarMensaje();
     </script>
   </body>
 </html>
