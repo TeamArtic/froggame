@@ -37,13 +37,55 @@
       from { width: 0; }
       to { width: 100%; }
     }
-    .hidden-image {
-  display: none;
+
+.tortugasgif1 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+
 }
-.show-image {
-  display: block !important;
-  visibility: visible !important;
+
+.tortugasgif1:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  border: 5px solid red;
 }
+.tortugasgif2{
+  position: absolute;
+      top: 200px;
+      left: 160px;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      height: 100px;
+      width: 100px;
+}
+.tortugasgif3{
+  position: absolute;
+      top: 450px;
+      left: 0px;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      height: 100px;
+      width: 100px;
+}
+.tortugasgif4{
+  position: absolute;
+      top: 450px;
+      left: 160px;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      height: 100px;
+      width: 100px;
+}
+
 </style>
 </head>
 <body>
@@ -64,6 +106,7 @@
         <button class="highlighted-button">c</button>
         <a class="highlighted-button" href="./menuprincipal.html">Home</a>
       </div>
+      
     </div>
     <!-- Contenedor de movimiento -->
     <div id="movementContainer">
@@ -75,12 +118,18 @@
         <li>D:Mover derecha</li>
       </ul>
     </div>
+      <img src="../img/tutorial1.gif" alt="" class="tortugasgif1" width="100px">
+      <img src="../img/tutorial2.gif" alt="" class="tortugasgif2" width="100px">
+      <img src="../img/tutorial3.gif" alt="" class="tortugasgif3" width="100px">
+      <img src="../img/tutorial4.gif" alt="" class="tortugasgif4" width="100px">
     <div id="movementContainer2">
       <p id="text" class="typewriter" style="display:none">
         ¡Bienvenido al emocionante mundo de las Tortugas Ninja! En este juego, tendrás la oportunidad de unirte a tus tortugas favoritas en una misión peligrosa pero crucial para salvar la ciudad de Nueva York del Clan del Pie. Solo tú y tus habilidades ninja podrán salvar la ciudad de Nueva York del malvado Clan del Pie. ¡Prepárate para una aventura emocionante y llena de acción!
       </p>
     </div>
   </div>
+
+
   <script>
 const movementContainer2 = document.getElementById('movementContainer2');
 const text = movementContainer2.textContent.trim();
@@ -91,8 +140,9 @@ const timer = setInterval(() => {
   index++;
 }, 50);
     </script>
-    
+
   <script src="../js/engine.js"></script>
   <script src="../js/gameSceneTutorial.js"></script>
 </body>
 </html>
+
