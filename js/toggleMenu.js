@@ -11,4 +11,12 @@ class toggleMenu{
             this.menu.classList.add(this.activatedClass)
         }
     }
+
+    toggleToState(state){
+        if(state){
+            this.menu.classList.add(this.activatedClass)
+        }else{
+            this.menu.classList.remove(this.activatedClass)
+        }
+    }
 }
