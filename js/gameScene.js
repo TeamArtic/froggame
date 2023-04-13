@@ -190,6 +190,8 @@ function moveCharacter(e) {
 }
 
 window.addEventListener('load', () => {
+    gameScene = new scene()
+
     appContainer = document.getElementById('app')
     pageTitle = document.getElementById('pageTitle')
     elementsContainer = document.getElementById('elementsContainer')
