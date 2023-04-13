@@ -75,7 +75,7 @@ main {
 .characters {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 85px;
 }
 
 
