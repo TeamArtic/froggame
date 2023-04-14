@@ -247,7 +247,7 @@ window.addEventListener('load', () => {
     foregroundContainer = document.getElementById('foregroundContainer')
     mainScene = new scene()
     keyboardEvent = new KeyboardEvent("keydown")
-    frogContainer = document.getElementById('rana')
+    frogContainer = document.getElementById('mainCharacter')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
