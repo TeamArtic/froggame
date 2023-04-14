@@ -32,6 +32,7 @@ let actualLevel = 0
 
 class levelManager{
     static loadLevel(levelInfo){    // TODO Do this with classes
+        levelManager.actualLevelId = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
