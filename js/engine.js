@@ -132,7 +132,7 @@ class object{
     }
 
     updateObjectReference(){
-        this.object = document.getElementById(id)
+        this.object = document.getElementById(this.id)
     }
 }
 
