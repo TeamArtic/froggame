@@ -40,7 +40,7 @@ class levelManager{
         gameFrog.gridTransform(new vector2(3, 0))
         for(let i = 0; i < levelInfo.floorElements; i++){
             let floorElement = levelInfo.floorElements[i]
-            let floorObjectText = "<img src=\"../img/acer-nueva.png\" style=\"position:absolute\">"
+            let floorObjectText = generateLabelHTML("img",new Attributes([{"name":"style","values":["position:absolute;"]}]),"")
             elementsContainer.innerHTML += floorObjectText
         }
     }
