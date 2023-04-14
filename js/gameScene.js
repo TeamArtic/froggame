@@ -93,7 +93,7 @@ function startLoadingLevel(){
 
 function loadLevel(){
     if(actualLevel < levels.length - 1){
-        levelManager.loadLevel(levels[++actualLevel])
+        levelManager.loadLevel(levels[++actualLevel - 1])
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
     }else{
@@ -109,7 +109,7 @@ function showEnd(){
 }
 
 function showLevelName(){
-    levelInfoName.innerHTML = levels[actualLevel].name
+    levelInfoName.innerHTML = levels[actualLevel - 1].name
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(showLevel, 1000)
