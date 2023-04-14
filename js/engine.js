@@ -141,6 +141,13 @@ class grid{
         this.gridContainer.style.width = (this.width + 1) * this.tileSize + "px"
         this.gridContainer.style.height = (this.height + 1) * this.tileSize + "px"
     }
+
+    setGridSize(newSize){
+        this.width = newSize.x
+        this.height = newSize.y
+        this.gridContainer.style.width = (this.width + 1) * this.tileSize + "px"
+        this.gridContainer.style.height = (this.height + 1) * this.tileSize + "px"
+    }
 }
 
 class gridObject extends object{
