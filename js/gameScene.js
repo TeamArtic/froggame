@@ -80,6 +80,7 @@ class levelManager{
             let floorObjectText = generateLabelHTML("img",new attributes([{"name":"src","values":[floorObjectImageSRC]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;"]}]),"")
             elementsContainer.innerHTML += floorObjectText
         }
+        gameFrog.updateObjectReference()
     }
 }
 
