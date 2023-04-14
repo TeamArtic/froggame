@@ -2,6 +2,10 @@ function generateObject(parameters){
 
 }
 
+function generateLabelHTML(labelType, attributes, text){
+    return "<" + labelType + attributes.renderHTML() + ">" + text + "</" + labelType + ">"
+}
+
 class vector2{
     constructor(x, y){
         this.x = x
