@@ -31,6 +31,13 @@ let levels = [
     new level(3, "Rio", new vector2(6, 6)),
 ]
 
+class levelFloor {
+    constructor(floorName, imageSRC){
+        this.floorName = floorName
+        this.imageSRC = imageSRC
+    }
+}
+
 let actualLevel = 0
 
 class levelManager{
