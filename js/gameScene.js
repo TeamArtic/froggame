@@ -206,6 +206,8 @@ window.addEventListener('load', () => {
     mainGrid = new grid(elementsContainer, 6, 6, 100)
     gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
     gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
+    enemyContainer = document.getElementById('enemy')
+    enemyContainer = new object("enemy", mainScene, new vector2(50,0),new vector2(0,0), enemyContainer)
     pauseMenu = document.getElementById('pauseMenu')
     pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
     document.onkeydown = moveCharacter;
