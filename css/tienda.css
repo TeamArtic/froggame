@@ -210,7 +210,7 @@ main {
   transition: opacity 0.5s ease-in-out;
   border-radius: 20px;
   border: 4px solid #154734;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 
 .compra-realizada.mostrar {
