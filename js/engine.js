@@ -30,8 +30,14 @@ class vector2{
 }
 
 class scene{
-    constructor(){
+    constructor(updateMethod){
         this.objects = []
+        this.updateMethod = updateMethod
+        this.updateMethodInterval = setInterval(this.updateMethod, 10)
+    }
+
+    updateMethod(){
+        this.updateMethod()
     }
 
     addObject(id, object){
