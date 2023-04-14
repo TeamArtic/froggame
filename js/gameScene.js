@@ -54,7 +54,7 @@ class frog extends gridObject {
 
     gridMove(offset) {
         super.gridMove(offset);
-        if (this.gridPosition.y === 6) {
+        if (this.gridPosition.y >= levels[actualLevel - 1].size.y) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
             startLoadingLevel()
         }
