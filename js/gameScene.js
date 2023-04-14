@@ -207,9 +207,9 @@ function ranasalta() {
 function moveFrog(movement){
     if(!onMovement && playing){
         onMovement = true
-        rana.src = "../img/palante.gif"
+        gameFrog.object.src = "../img/palante.gif"
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function(){onMovement = false; rana.src = "../img/dona.gif"}, 500)
+        frogMovementTimeout = setTimeout(function(){onMovement = false; gameFrog.object.src = "../img/dona.gif"}, 500)
         gameFrog.gridMove(movement)
     }
 }
