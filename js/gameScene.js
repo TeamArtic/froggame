@@ -32,8 +32,9 @@ let actualLevel = 0
 
 class levelManager{
     static loadLevel(levelInfo){    // TODO Do this with classes
-        levelManager.actualLevelId = levelInfo.levelId
+        actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
+        mainGrid.setGridSize(levelInfo.size)
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         gameFrog.gridTransform(new vector2(3, 0))
