@@ -189,8 +189,12 @@ function moveCharacter(e) {
     }
 }
 
+function update(){
+    
+}
+
 window.addEventListener('load', () => {
-    gameScene = new scene()
+    gameScene = new scene(update)
 
     appContainer = document.getElementById('app')
     pageTitle = document.getElementById('pageTitle')
