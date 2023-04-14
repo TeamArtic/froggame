@@ -16,12 +16,6 @@ class level {
     }
 }
 
-// let levels = [
-//     {"level":1, "name":"Cloaca", "backgroundImage":"../img/grafico-cloaca.png"},
-//     {"level":2, "name":"Carretera", "backgroundImage":"../img/grafico-carretera.png"},
-//     {"level":3, "name":"Level name", "backgroundImage":"../img/grafico3.png"}
-// ]
-
 let levels = [
     new level(1, "Cloaca",[
         {"type":"sewerFloor","position":new vector2(0,0)},
