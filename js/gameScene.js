@@ -41,7 +41,7 @@ class levelManager{
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         gameFrog.gridTransform(new vector2(3, 0))
-        for(let i = 0; i < levelInfo.floorElements; i++){
+        for(let i = 0; i < levelInfo.floorElements.length; i++){
             let floorElement = levelInfo.floorElements[i]
             let floorObjectText = generateLabelHTML("img",new attributes([{"name":"src","values":["../img/acer-nueva.png"]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;"]}]),"")
             elementsContainer.innerHTML += floorObjectText
