@@ -56,7 +56,10 @@ class levelFloor {
 
 let levelFloorObjects = [
     new levelFloor("sewerFloor", "../img/acer-nueva.png"),
-    new levelFloor("sewerWater", "../img/agua.png")
+    new levelFloor("sewerWater", "../img/agua.png"),
+    new levelFloor("streetFloor", "../img/acer-nueva.png"),
+    new levelFloor("streetRoad", "../img/carreterav1.png"),
+    new levelFloor("riverWater", "../img/agua.png"),
 ]
 
 let actualLevel = 0
