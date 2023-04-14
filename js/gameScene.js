@@ -55,7 +55,10 @@ class levelManager{
         gameFrog.gridTransform(new vector2(3, 0))
         for(let i = 0; i < levelInfo.floorElements.length; i++){
             let floorElement = levelInfo.floorElements[i]
-            let floorObjectText = generateLabelHTML("img",new attributes([{"name":"src","values":["../img/acer-nueva.png"]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;"]}]),"")
+            let floorObjectImageSRC = levelFloorObjects.find(function(element){
+                return element.floorName == floorElement.type
+            }).imageSRC
+            let floorObjectText = generateLabelHTML("img",new attributes([{"name":"src","values":[floorObjectImageSRC]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;"]}]),"")
             elementsContainer.innerHTML += floorObjectText
         }
     }
