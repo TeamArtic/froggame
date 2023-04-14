@@ -9,10 +9,11 @@ const animationTime = 500
 let actualCharacter
 
 class level {
-    constructor(levelId, name, backgroundImage){
+    constructor(levelId, name, backgroundImage, floorElements){
         this.levelId = levelId
         this.name = name
         this.backgroundImage = backgroundImage
+        this.floorElements = floorElements
     }
 }
 
@@ -31,11 +32,16 @@ let levels = [
 let actualLevel = 0
 
 class levelManager{
-    static loadLevel(level){    // TODO Do this with classes
-        pageTitle.innerHTML = level.name
-        elementsContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
-        appContainer.style.backgroundImage = "url(" + level.backgroundImage + ")"
+    static loadLevel(levelInfo){    // TODO Do this with classes
+        pageTitle.innerHTML = levelInfo.name
+        elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
+        appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         gameFrog.gridTransform(new vector2(3, 0))
+        for(let i = 0; i < levelInfo.floorElements; i++){
+            let floorElement = levelInfo.floorElements[i]
+            let floorObjectText = "<img src=\"../img/acer-nueva.png\" style=\"position:absolute\">"
+            elementsContainer.innerHTML += floorObjectText
+        }
     }
 }
 
