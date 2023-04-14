@@ -38,6 +38,11 @@ class levelFloor {
     }
 }
 
+let levelFloorObjects = [
+    new levelFloor("sewerFloor", "../img/acer-nueva.png"),
+    new levelFloor("sewerWater", "../img/agua.png")
+]
+
 let actualLevel = 0
 
 class levelManager{
