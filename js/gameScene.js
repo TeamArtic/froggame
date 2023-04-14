@@ -19,10 +19,13 @@ class level {
 
 let levels = [
     new level(1, "Cloaca", new vector2(6, 6), [
-        {"type":"sewerFloor","position":new vector2(0,0)},
-        {"type":"sewerWater","position":new vector2(100,0)},
-        {"type":"sewerFloor","position":new vector2(200,0)},
-        {"type":"sewerWater","position":new vector2(300,0)}
+        {"type":"sewerFloor","position":0},
+        {"type":"sewerWater","position":1},
+        {"type":"sewerFloor","position":2},
+        {"type":"sewerWater","position":3},
+        {"type":"sewerWater","position":4},
+        {"type":"sewerWater","position":5},
+        {"type":"sewerWater","position":6},
     ]),
     new level(2, "Carretera", new vector2(6, 6)),
     new level(3, "Rio", new vector2(6, 6)),
@@ -40,7 +43,7 @@ class levelManager{
         gameFrog.gridTransform(new vector2(3, 0))
         for(let i = 0; i < levelInfo.floorElements; i++){
             let floorElement = levelInfo.floorElements[i]
-            let floorObjectText = generateLabelHTML("img",new Attributes([{"name":"style","values":["position:absolute;"]}]),"")
+            let floorObjectText = generateLabelHTML("img",new attributes([{"name":"src","values":["../img/acer-nueva.png"]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;"]}]),"")
             elementsContainer.innerHTML += floorObjectText
         }
     }
