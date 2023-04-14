@@ -9,10 +9,9 @@ const animationTime = 500
 let actualCharacter
 
 class level {
-    constructor(levelId, name, backgroundImage, floorElements){
+    constructor(levelId, name, floorElements){
         this.levelId = levelId
         this.name = name
-        this.backgroundImage = backgroundImage
         this.floorElements = floorElements
     }
 }
@@ -24,14 +23,14 @@ class level {
 // ]
 
 let levels = [
-    new level(1, "Cloaca", "../img/grafico-cloaca.png",[
+    new level(1, "Cloaca",[
         {"type":"sewerFloor","position":new vector2(0,0)},
         {"type":"sewerWater","position":new vector2(100,0)},
         {"type":"sewerFloor","position":new vector2(200,0)},
         {"type":"sewerWater","position":new vector2(300,0)}
     ]),
-    new level(2, "Carretera", "../img/grafico-carretera.png"),
-    new level(3, "Rio", "../img/grafico3.png"),
+    new level(2, "Carretera"),
+    new level(3, "Rio"),
 ]
 
 let actualLevel = 0
