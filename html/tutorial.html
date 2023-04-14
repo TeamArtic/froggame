@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="../css/app.css">
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    /* Estilos para el contenedor de movimiento */
     #movementContainer {
       position: absolute;
       top: 20px;
@@ -15,6 +14,7 @@
       padding: 5px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      opacity: 0.8;
     }
 
     #movementContainer2 {
@@ -27,6 +27,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       height: 800px;
       width: 300px;
+      opacity: 0.8;
     }
 
     .typewriter>p {
@@ -63,7 +64,7 @@
     .tortugasgif1 {
       position: absolute;
       top: 200px;
-      left: 0;
+      left: 10px;
       padding: 5px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -86,8 +87,8 @@
 
     .tortugasgif3 {
       position: absolute;
-      top: 450px;
-      left: 0px;
+      top: 430px;
+      left: 10px;
       padding: 5px;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -97,7 +98,7 @@
 
     .tortugasgif4 {
       position: absolute;
-      top: 450px;
+      top: 430px;
       left: 160px;
       padding: 5px;
       border-radius: 5px;
@@ -106,11 +107,13 @@
       width: 100px;
     }
 
-    .tortugasgif1:hover, .tortugasgif2:hover, .tortugasgif3:hover, .tortugasgif4:hover {
-  opacity: 0.8;
-  transition: opacity 0.5s ease-in-out;
-}
-
+    .tortugasgif1:hover,
+    .tortugasgif2:hover,
+    .tortugasgif3:hover,
+    .tortugasgif4:hover {
+      opacity: 0.8;
+      transition: opacity 0.5s ease-in-out;
+    }
   </style>
 </head>
 
@@ -148,87 +151,87 @@
     <img src="../img/tutorial2.gif" alt="" class="tortugasgif2" width="100px" onclick="cambiarImagen('../img/miguel')">
     <img src="../img/tutorial3.gif" alt="" class="tortugasgif3" width="100px" onclick="cambiarImagen('../img/dona')">
     <img src="../img/tutorial4.gif" alt="" class="tortugasgif4" width="100px" onclick="cambiarImagen('../img/leo')">
-    
+
     <div id="movementContainer2">
       <p id="text" class="typewriter"></p>
       <img id="image" src="../img/tutorial.png" alt="" style="display:none;">
     </div>
-    
+
   </div>
 
 
   <script>
-const movementContainer2 = document.getElementById('movementContainer2');
-const text = document.getElementById('text');
-const image = document.getElementById('image');
-const message = "¡Bienvenido al emocionante mundo de las Tortugas Ninja! En este juego, tendrás la oportunidad de unirte a tus tortugas favoritas en una misión peligrosa pero crucial para salvar la ciudad de Nueva York del Clan del Pie. Solo tú y tus habilidades ninja podrán salvar la ciudad de Nueva York del malvado Clan del Pie. ¡Prepárate para una aventura emocionante y llena de acción!";
+    const movementContainer2 = document.getElementById('movementContainer2');
+    const text = document.getElementById('text');
+    const image = document.getElementById('image');
+    const message = "¡Bienvenido al emocionante mundo de las Tortugas Ninja! En este juego, tendrás la oportunidad de unirte a tus tortugas favoritas en una misión peligrosa pero crucial para salvar la ciudad de Nueva York del Clan del Pie. Solo tú y tus habilidades ninja podrán salvar la ciudad de Nueva York del malvado Clan del Pie. ¡Prepárate para una aventura emocionante y llena de acción!";
 
-let index = 0;
-function typeWriter() {
-  if (index < message.length) {
-    text.innerHTML += message.charAt(index);
-    index++;
-    setTimeout(typeWriter, 40);
-  } else {
-    image.style.display = 'inline-block';
-    image.style.width = '280px';
-  }
-}
-typeWriter();
+    let index = 0;
+    function typeWriter() {
+      if (index < message.length) {
+        text.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeWriter, 40);
+      } else {
+        image.style.display = 'inline-block';
+        image.style.width = '280px';
+      }
+    }
+    typeWriter();
 
-document.getElementById('foregroundContainer');
-  setTimeout(() => {
-    foregroundContainer.style.display = 'none';
-  }, 4000); // 500ms de retraso antes de cambiar a 'display:none';
+    document.getElementById('foregroundContainer');
+    setTimeout(() => {
+      foregroundContainer.style.display = 'none';
+    }, 4000); // 500ms de retraso antes de cambiar a 'display:none';
 
-  const tortugasgif1 = document.querySelector('.tortugasgif1');
-const tortugasgif2 = document.querySelector('.tortugasgif2');
-const tortugasgif3 = document.querySelector('.tortugasgif3');
-const tortugasgif4 = document.querySelector('.tortugasgif4');
+    const tortugasgif1 = document.querySelector('.tortugasgif1');
+    const tortugasgif2 = document.querySelector('.tortugasgif2');
+    const tortugasgif3 = document.querySelector('.tortugasgif3');
+    const tortugasgif4 = document.querySelector('.tortugasgif4');
 
-tortugasgif1.addEventListener('mouseenter', () => {
-  tortugasgif1.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
-});
+    tortugasgif1.addEventListener('mouseenter', () => {
+      tortugasgif1.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
+    });
 
-tortugasgif1.addEventListener('mouseleave', () => {
-  tortugasgif1.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-});
+    tortugasgif1.addEventListener('mouseleave', () => {
+      tortugasgif1.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    });
 
-tortugasgif2.addEventListener('mouseenter', () => {
-  tortugasgif2.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
-});
+    tortugasgif2.addEventListener('mouseenter', () => {
+      tortugasgif2.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
+    });
 
-tortugasgif2.addEventListener('mouseleave', () => {
-  tortugasgif2.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-});
+    tortugasgif2.addEventListener('mouseleave', () => {
+      tortugasgif2.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    });
 
-tortugasgif3.addEventListener('mouseenter', () => {
-  tortugasgif3.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
-});
+    tortugasgif3.addEventListener('mouseenter', () => {
+      tortugasgif3.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
+    });
 
-tortugasgif3.addEventListener('mouseleave', () => {
-  tortugasgif3.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-});
+    tortugasgif3.addEventListener('mouseleave', () => {
+      tortugasgif3.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    });
 
-tortugasgif4.addEventListener('mouseenter', () => {
-  tortugasgif4.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
-});
+    tortugasgif4.addEventListener('mouseenter', () => {
+      tortugasgif4.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.5)';
+    });
 
-tortugasgif4.addEventListener('mouseleave', () => {
-  tortugasgif4.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-});
+    tortugasgif4.addEventListener('mouseleave', () => {
+      tortugasgif4.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    });
 
-function cambiarImagen(ruta) {
-  var imagen = document.getElementById("rana");
-  imagen.src = ruta + ".gif";
-}
-
-
+    function cambiarImagen(ruta) {
+      var imagen = document.getElementById("rana");
+      imagen.src = ruta + ".gif";
+    }
 
 
 
 
-</script>
+
+
+  </script>
 
   <script src="../js/engine.js"></script>
   <script src="../js/gameSceneTutorial.js"></script>
