@@ -130,6 +130,10 @@ class object{
         this.imageDimension = dimension
         this.imagePosition = position
     }
+
+    updateObjectReference(){
+        this.object = document.getElementById(id)
+    }
 }
 
 class grid{
