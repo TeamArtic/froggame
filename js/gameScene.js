@@ -18,14 +18,14 @@ class level {
 }
 
 let levels = [
-    new level(1, "Cloaca", new vector2(7, 7), [
+    new level(1, "Cloaca", new vector2(6, 6), [
         {"type":"sewerFloor","position":new vector2(0,0)},
         {"type":"sewerWater","position":new vector2(100,0)},
         {"type":"sewerFloor","position":new vector2(200,0)},
         {"type":"sewerWater","position":new vector2(300,0)}
     ]),
-    new level(2, "Carretera", new vector2(7, 7)),
-    new level(3, "Rio", new vector2(7, 7)),
+    new level(2, "Carretera", new vector2(6, 6)),
+    new level(3, "Rio", new vector2(6, 6)),
 ]
 
 let actualLevel = 0
