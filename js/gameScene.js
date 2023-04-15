@@ -36,6 +36,12 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ]),
+    new levelInformation(2, "Autopista", new vector2(15, 3), [
+        {"type":"streetFloor","position":0},
+        {"type":"streetRoad","position":1},
+        {"type":"streetRoad","position":2},
+        {"type":"streetFloor","position":3},
+    ]),
     new levelInformation(3, "Rio", new vector2(6, 6),[
         {"type":"streetFloor","position":0},
         {"type":"riverWater","position":1},
