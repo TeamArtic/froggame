@@ -84,6 +84,12 @@ class levelManager{
     }
 }
 
+class road{
+    constructor(YPosition){
+        this.YPosition = YPosition
+    }
+}
+
 class frog extends gridObject {
     constructor(objectGrid, objectScene, id, object) {
         super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), object);
