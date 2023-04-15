@@ -86,12 +86,16 @@ class scene{
 
 class object{
     // constructor(position){
-    constructor(id, objectScene, position, size, object = null){
+    constructor(id, objectScene, position, size, withObject = false){
         this.id = id
         this.objectScene = objectScene
         this.position = position
-        this.object = object
         this.size = size
+        if(withObject){
+            let newObjectHTML = generateLabelHTML("img", new attributes([{"name":"src","values":[""]}, {"name":"id", "values":[id]}, {"name":"style","values":["position:absolute;", "z-index:3;", "left:" + this.position.y + "px;", "top:" + this.position.x + "px;"]}]), "")
+            this.objectScene.sceneContainer.innerHTML += newObjectHTML
+            this.object = document.getElementById(id)
+        }
         this.setPosition(this.position)
         this.objectScene.addObject(this.id, this)
         this.movementInterval
