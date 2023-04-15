@@ -204,7 +204,7 @@ function moveFrog(movement){
     }
 }
 
-function moveCharacter(e) {
+function keyEvent(e) {
     switch (e.keyCode) {
         case 87:
             moveFrog(new vector2(0, -1))
@@ -247,7 +247,7 @@ window.addEventListener('load', () => {
     mainScene.addObject("enemy", enemy)
     pauseMenu = document.getElementById('pauseMenu')
     pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
-    document.onkeydown = moveCharacter;
+    document.onkeydown = keyEvent;
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
 });
