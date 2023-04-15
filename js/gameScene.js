@@ -228,25 +228,31 @@ function update(){
 }
 
 window.addEventListener('load', () => {
-    gameScene = new scene(update)
 
-    appContainer = document.getElementById('app')
     pageTitle = document.getElementById('pageTitle')
-    elementsContainer = document.getElementById('elementsContainer')
     foregroundContainer = document.getElementById('foregroundContainer')
-    mainScene = new scene()
+    
+    appContainer = document.getElementById('app')
+    elementsContainer = document.getElementById('elementsContainer')
+    
+    gameScene = new scene(update, elementsContainer)
     keyboardEvent = new KeyboardEvent("keydown")
-    frogContainer = document.getElementById('mainCharacter')
     mainGrid = new grid(elementsContainer, 6, 6, 100)
-    gameFrog = new frog(mainGrid, mainScene, "mainCharacter", frogContainer)
+
+    // Generate the mainCharacter
+    gameFrog = new frog(mainGrid, gameScene, "mainCharacter")
     gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
-    mainScene.addObject("frog", gameFrog)
-    enemyContainer = document.getElementById('enemy')
-    enemyContainer = new object("enemy", mainScene, new vector2(50,0),new vector2(0,0), enemyContainer)
-    mainScene.addObject("enemy", enemy)
+    gameScene.addObject("frog", gameFrog)
+
+    // enemyContainer = document.getElementById('enemy')
+    // enemyContainer = new object("enemy", gameScene, new vector2(50,0),new vector2(0,0), enemyContainer)
+    // gameScene.addObject("enemy", enemy)
+
     pauseMenu = document.getElementById('pauseMenu')
     pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
     document.onkeydown = keyEvent;
+
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
+
 });
