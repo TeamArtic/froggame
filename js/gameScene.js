@@ -66,6 +66,7 @@ let actualLevel = 0
 
 class levelManager{
     static loadLevel(levelInfo){    // TODO Do this with classes
+        elementsContainer.innerHTML = "<img src=\"../img/dona.gif\" class=\"rana character position-absolute z-index-2\" id=\"mainCharacter\">"
         actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         mainGrid.setGridSize(levelInfo.size)
