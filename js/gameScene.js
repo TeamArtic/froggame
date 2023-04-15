@@ -91,8 +91,8 @@ class road{
 }
 
 class frog extends gridObject {
-    constructor(objectGrid, objectScene, id, object) {
-        super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), object);
+    constructor(objectGrid, objectScene, id) {
+        super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), true);
         this.gridPosition = new vector2(3, 0); // Inicializar la propiedad gridPosition en el constructor
     }
 
