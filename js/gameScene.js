@@ -27,7 +27,7 @@ let levels = [
         {"type":"sewerWater","position":5},
         {"type":"sewerFloor","position":6},
     ]),
-    new levelInformation(2, "Carretera", new vector2(6, 6), [
+    new levelInformation(2, "Carretera", new vector2(2, 6), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetFloor","position":2},
