@@ -137,7 +137,7 @@ function startLoadingLevel(){
 }
 
 function loadLevel(){
-    if(actualLevel < levels.length - 1){
+    if(actualLevel < levels.length){
         levelManager.loadLevel(levels[++actualLevel - 1])
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
