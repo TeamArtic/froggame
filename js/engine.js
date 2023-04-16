@@ -92,9 +92,7 @@ class object{
         this.position = position
         this.size = size
         if(withObject){
-            let newObjectHTML = generateLabelHTML("img", new attributes([{"name":"src","values":[""]}, {"name":"id", "values":[id]}, {"name":"style","values":["position:absolute;", "z-index:3;", "left:" + this.position.y + "px;", "top:" + this.position.x + "px;"]}]), "")
-            this.objectScene.sceneContainer.innerHTML += newObjectHTML
-            this.object = document.getElementById(id)
+            this.generateObject()
         }
         this.setPosition(this.position)
         this.objectScene.addObject(this.id, this)
@@ -138,6 +136,19 @@ class object{
 
     updateObjectReference(){
         this.object = document.getElementById(this.id)
+    }
+
+    setGenerateObjectFunction(generateObjectFunction){
+        this.generateObjectFunction = generateObjectFunction
+    }
+
+    generateObject(){
+        let newObjectHTML = generateLabelHTML("img", new attributes([{"name":"src","values":[""]}, {"name":"id", "values":[this.id]}, {"name":"style","values":["position:absolute;", "z-index:3;", "left:" + this.position.y + "px;", "top:" + this.position.x + "px;"]}]), "")
+        this.objectScene.sceneContainer.innerHTML += newObjectHTML
+        this.object = document.getElementById(this.id)
+        if(this.generateObjectFunction){
+            this.generateObjectFunction()
+        }
     }
 }
 
