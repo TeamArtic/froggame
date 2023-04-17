@@ -3,7 +3,15 @@
   src: url(../BITWONDER.TTF);
 }
 
-body{
+body {
+  background-image:url(../img/rafaello.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
   cursor:url(https://cdn.custom-cursor.com/db/12602/32/cartoons-tmnt-raphael-and-sai-weapon-cursor.png) , default !important;
 }
 
@@ -13,17 +21,6 @@ a{
 
 button{
   cursor:url(https://cdn.custom-cursor.com/db/12601/32/cartoons-tmnt-raphael-and-sai-weapon-pointer.png) , pointer !important;
-  font-family: 'Press Start 2P', cursive;
-}
-
-body {
-  background-image:url(../img/rafaello.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -67,11 +64,14 @@ nav a {
 }
 
 .tittle {
-   margin-left: 100px;
-  font-size: 20px;
+  position: relative;
+  transform: translateX(-50%);
+  font-size: 30px;
 }
 
 .money {
+  position: relative;
+  right: 5%;
   font-size: 20px;
 }
 
