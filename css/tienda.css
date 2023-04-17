@@ -34,6 +34,16 @@ button{
   height: 60px;
 }
 
+.characters-header {
+  background-color: #289234;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  height: 60px;
+}
+
 li a {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
