@@ -153,7 +153,7 @@ function loadLevel(){
 }
 
 function showEnd(){
-    window.location.href = "../html/creditos.html";
+    window.location.href = "../html/credits.html";
     levelInfoName.innerHTML = "Creditos"
     levelInfoName.style.filter = "opacity(100%)"
 }
