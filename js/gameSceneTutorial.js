@@ -94,7 +94,7 @@ function loadLevel(){
 }
 
 function showEnd(){
-    window.location.href = "../html/menuprincipal.html";
+    window.location.href = "../html/mainmenu.html";
     levelInfoName.innerHTML = "Menu Principal"
     levelInfoName.style.filter = "opacity(100%)"
 }

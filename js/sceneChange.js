@@ -38,7 +38,7 @@ function moveMenuToTutorial(){
     document.getElementById("tutorial").style.display = "block";
 }
 
-function moveTutorialToMenu(){
+function moveTutorialToMenu(){   
     document.getElementById("tutorial").style.display = "none";
     document.getElementById("menuprincipal").style.display = "block";
 }
