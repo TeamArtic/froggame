@@ -211,180 +211,48 @@ main {
   height: 60px;
 }
 
-.lia-personajes{
-  font-size: 20px;
-  color: #000;
-  text-decoration: none;
-}
-
-.lia-personajes:hover{
-  color: yellow;
-}
-
-h1-personajes {
-  text-align: center;
-  position: relative;
-  left: 100px;
-}
-
-.h3-leonardo-personajes {
-  position: relative;
-  top: 5px;
-
-}
-
-.h3-dona-personajes {
-  position: relative;
-  top: 22px;
-}
-
-.foto-personajes {
-  height: 80px;
-}
-
-@font-face {
-  font-family: 'hola';
-  src: url(../BITWONDER.TTF);
-}
-
-.navul-personajes {
-  list-style: none;
+.characters-pj{
   display: flex;
-}
-
-.navli-pesonajes {
-  margin-right: 20px;
-}
-
-
-
-
-
-.logo-personajes img {
-  height: 50px;
-}
-
-
-
-.main-personajes {
-  display: flex;
-  margin: 8px;
-}
-
-.characters-personajes {
+  flex-wrap: wrap;
+  gap: 30px;
   flex-grow: 1;
 }
 
-.characters-personajes h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #d7e9d9;
-}
 
-.character-personajes {
+.character-pj {
   display: flex;
   flex-direction: column;
+  position:relative ;
   align-items: center;
-  margin-bottom: 10px;
-  background-color:  #00000050 ;
+  background-color: #00000050;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #289234;
-  transform: scale(0.7);
-  margin-top: -80px;
-height: 580px;
-padding: 16px;
+  width: 250px;
+  height: 460px;
+  left:16px;
+  top:35px;
 }
 
-.characters-personajes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.character-pj div {
+  position: relative;
+  text-align: center;
+
 }
 
-
-.character-personajes h3 {
-  font-size: 15px;
-  margin-bottom: 5px;
-  color: #fffdfd;
+.character-pj img {
+  width: 65%;
+  position: relative;
 }
 
-.character-personajes p {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #289234;
-}
-
-
-.h2 {
-  margin-right: 160px;
+.character-pj h3 {
   font-size: 18px;
+  position: relative;
+  bottom: -30px;
+  color: #ffffff;
 }
 
 
-.splinter-personajes {
-  position: relative;
-  top: 92px;
-  text-align: center;
-}
-
-.p-splinter{
-  position: relative;
-  top: -2px;
-  text-align: center;
-}
-.h3-leo-personajes {
-
-  position: relative;
-  top:-5px;
-  text-align: center;
-}
-.p-leo{
-  position: relative;
-  top: -10px;
-  text-align: center;
-}
-.michelangelo-personajes {
-  position: relative;
-  top: 90px;
-  text-align: center;
-
-}
-
-.rafael-personajes {
-  position: relative;
-  top: 65px;
-  text-align: center;
-}
-
-.splinter-img-personajes {
-  top: 100px;
-  position: relative;
-}
-
-.rafaelo-img-personajes {
-  position: relative;
-  top: 70px;
-  width: 200px;
-}
-
-.michelangelo-img-personajes {
-  position: relative;
-  top: 95px;
-  width: 200px;
-}
-
-.leo-img-personajes {
-  position: relative;
-  top: 5px;
-  width: 200px;
-}
-
-.dona-img-personajes {
-  position: relative;
-  top: 27px;
-  width: 200px;
-}
 
 
 .mensaje-compra {
@@ -421,156 +289,35 @@ padding: 16px;
 }
 
 
-.buy-button1-personajes {
-  display: block;
+.selected-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 45px;
   width: 100%;
   max-width: 200px;
-  margin: 10px auto;
   padding: 20px;
-  border: 2px solid #1d4e00;
   color: #fff;
-  font-size: 24px;
+  font-size: 14px;
   text-align: center;
   text-shadow: 2px 2px #000;
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #289234;
   transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
-  margin-right: 60px;
-  margin-top: 96px;
   border-radius: 20px;
   border: 4px solid #154734;
-  position: relative;
-  left: 20px;
 }
 
 
-.buy-button1-personajes:hover {
+.selected-button:hover {
   background-color: #000;
   color: #289234;
   text-shadow: 2px 2px #fff;
   transform: scale(1.1);
 }
 
-.buy-button2-personajes {
-  display: block;
-  width: 140%;
-  max-width: 200px;
-  margin: 10px auto;
-  padding: 20px;
-  border: 4px solid #154734;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  text-shadow: 2px 2px #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
-  margin-right: 60px;
-  margin-top: 63px;
-  border-radius: 20px;
-  position: relative;
-  left: 15px;
-}
-
-.buy-button2-personajes:hover {
-  background-color: #000;
-  color: #289234;
-  text-shadow: 2px 2px #fff;
-  transform: scale(1.1);
-}
-
-.buy-button3-personajes {
-  display: block;
-  width: 140%;
-  max-width: 200px;
-  margin: 10px auto;
-  padding: 20px;
-  border: 4px solid #154734;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  text-shadow: 2px 2px #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
-  margin-right: 60px;
-  margin-top: 55px;
-  border-radius: 20px;
-  position: relative;
-  left: 15px;
-}
-
-.buy-button3-personajes:hover {
-  background-color: #000;
-  color: #289234;
-  text-shadow: 2px 2px #fff;
-  transform: scale(1.1);
-}
-
-
-.buy-button4-personajes {
-  display: block;
-  width: 110%;
-  max-width: 200px;
-  margin: 10px auto;
-  padding: 20px;
-  border: 2px solid #1d4e00;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  text-shadow: 2px 2px #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
-  margin-right: 60px;
-  margin-top: 57px;
-  border-radius: 20px;
-  border: 4px solid #154734;
-  position: relative;
-  left: 13px;
-}
-
-.buy-button4-personajes:hover {
-  background-color: #000;
-  color: #289234;
-  text-shadow: 2px 2px #fff;
-  transform: scale(1.1);
-}
-
-.buy-button5-personajes {
-  display: block;
-  width: 110%;
-  max-width: 200px;
-  margin: 10px auto;
-  padding: 20px;
-  border: 2px solid #1d4e00;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  text-shadow: 2px 2px #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #289234;
-  transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
-  margin-right: 60px;
-  margin-top: 61px;
-  border-radius: 20px;
-  border: 4px solid #154734;
-  position: relative;
-  top: 17px;
-  left: 10px;
-}
-
-.buy-button5-personajes:hover {
-  background-color: #000;
-  color: #289234;
-  text-shadow: 2px 2px #fff;
-  transform: scale(1.1);
-}
 .hidden {
   display: none;
 }
@@ -599,21 +346,8 @@ padding: 16px;
 .selected img {
   filter: none;
 }
-.h3-dona-personajes{
-  margin-left: 39px;
-}
-.h3-leonardo-personajes{
-margin-left: 50px;
-}
-h1 {
-  font-family:hola;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  display: inline-block;
-  margin-left: 20%;
-}
+
+
 #mensaje {
   position: fixed;
   top: 0%;
@@ -633,8 +367,5 @@ h1 {
   pointer-events: none; 
   height: 50px;
   padding-top: 30px;
-}
-.foto-personajes{
- height: 50px;
 }
 /* CSS-Creditos */
