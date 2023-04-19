@@ -36,12 +36,20 @@ let levels = [
         {"type":"streetFloor","position":4},
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
+    ], [
+        {"yPosition":1, "speed":10},
+        {"yPosition":3, "speed":10},
+        {"yPosition":5, "speed":10},
     ]),
     new levelInformation(3, "Autopista", new vector2(15, 3), new vector2(3, 0), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetRoad","position":2},
         {"type":"streetFloor","position":3},
+    ], [
+        {"yPosition":1, "speed":10},
+        {"yPosition":3, "speed":10},
+        {"yPosition":5, "speed":10},
     ]),
     new levelInformation(4, "Rio", new vector2(6, 6), new vector2(3, 0),[
         {"type":"streetFloor","position":0},
@@ -51,6 +59,9 @@ let levels = [
         {"type":"streetFloor","position":4},
         {"type":"riverWater","position":5},
         {"type":"streetFloor","position":6},
+    ], [
+        {"yPosition":1, "speed":10},
+        {"yPosition":2, "speed":10},
     ]),
     new levelInformation(5, "Rio 2", new vector2(8, 6),[
         {"type":"sandFloor","position":0},
@@ -62,6 +73,10 @@ let levels = [
         {"type":"sandFloor","position":6},
         {"type":"sandWater","position":7},
 
+    ], [
+        {"yPosition":1, "speed":10},
+        {"yPosition":3, "speed":10},
+        {"yPosition":5, "speed":10},
     ]),
 ]
 
