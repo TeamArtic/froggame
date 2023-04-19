@@ -291,4 +291,3 @@ window.addEventListener('load', () => {
     levelLoadingTimeout = setTimeout(showLevelName, 800)
 
 });
-

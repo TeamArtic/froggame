@@ -197,7 +197,3 @@ class gridObject extends object{
         }
     }
 }
-
-
-
-  
