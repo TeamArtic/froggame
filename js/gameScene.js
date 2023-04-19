@@ -105,8 +105,9 @@ class levelManager{
 }
 
 class road{
-    constructor(YPosition){
+    constructor(YPosition, speed){
         this.YPosition = YPosition
+        this.speed = speed
     }
 }
 
