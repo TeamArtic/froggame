@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tus personajes</title>
+  <title></title>
+  <link rel="stylesheet" href="../css/tienda.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+  </style>
+</head>
+
+<body>
+  <header class="characters-header">
+    <div>
+      <img src="../img/Logo.png">
+    </div>
+    <h1>Tus Personajes</h1>
+    <nav>
+      <ul>
+        <li><a href="../html/mainmenu.html">Inicio</a></li>
+        <li><a href="../html/shop.html">Tienda</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="characters-pj">
+      <div class="character-pj">
+        <img src="../img/yellowshop.gif">
+        <div>
+          <h3>Jennika</h3>
+          <button class="selected-button" data-price="5" data-name="Splinter"
+            onclick="cambiarprecio(event); mostrarMensaje();" id="Splinter">Seleccionar</button>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="character-pj">
+        <img src="../img/leoshop.gif">
+        <div>
+          <h3>Leo</h3>
+          <button class="selected-button" data-price="5" data-name="Splinter"
+            onclick="cambiarprecio(event); mostrarMensaje();" id="Splinter">Seleccionar</button>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="character-pj">
+        <img src="../img/rafashop.gif">
+        <div>
+          <h3>Rafael</h3>
+          <button class="selected-button" data-price="5" data-name="Splinter"
+            onclick="cambiarprecio(event); mostrarMensaje();" id="Splinter">Seleccionar</button>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="character-pj">
+        <img src="../img/miguelshop.gif">
+        <div>
+          <h3>Michelangelo</h3>
+          <button class="selected-button" data-price="5" data-name="Splinter"
+            onclick="cambiarprecio(event); mostrarMensaje();" id="Splinter">Seleccionar</button>
+          </button>
+        </div>
+      </div>
+
+
+
+      <div class="character-pj">
+        <img src="../img/donashop.gif">
+        <div>
+          <h3>Donnatelo</h3>
+          <button class="selected-button" data-price="5" data-name="Splinter"
+            onclick="cambiarprecio(event); mostrarMensaje();" id="Splinter">Seleccionar</button>
+          </button>
+        </div>
+      </div>
+
+  </main>
+
+  <div id="mensaje"></div>
+
+  <img id="other-characters-button" class="hidden" src="../img/boton cancelar.png" onclick="location.reload()"
+    style="cursor: pointer;">
+
+  <script src="../js/characters.js"></script>
+
+</body>
+
+</html>

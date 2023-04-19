@@ -52,6 +52,17 @@ let levels = [
         {"type":"riverWater","position":5},
         {"type":"streetFloor","position":6},
     ]),
+    new levelInformation(5, "Rio 2", new vector2(8, 6),[
+        {"type":"sandFloor","position":0},
+        {"type":"sandWater","position":1},
+        {"type":"sandFloor","position":2},
+        {"type":"sandWater","position":3},
+        {"type":"sandFloor","position":4},
+        {"type":"sandWater","position":5},
+        {"type":"sandFloor","position":6},
+        {"type":"sandWater","position":7},
+
+    ]),
 ]
 
 class levelFloor {
@@ -67,6 +78,8 @@ let levelFloorObjects = [
     new levelFloor("streetFloor", "../img/acer-nueva.png"),
     new levelFloor("streetRoad", "../img/carreterav1.png"),
     new levelFloor("riverWater", "../img/agua.png"),
+    new levelFloor("sandFloor", "../img/arena.png"),
+    new levelFloor("sandWater", "../img/agua2.png"),
 ]
 
 let actualLevel = 0
@@ -262,3 +275,4 @@ window.addEventListener('load', () => {
     levelLoadingTimeout = setTimeout(showLevelName, 800)
 
 });
+
