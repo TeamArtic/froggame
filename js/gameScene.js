@@ -9,16 +9,17 @@ const animationTime = 500
 let actualCharacter
 
 class levelInformation {
-    constructor(levelId, name, size, floorElements){
+    constructor(levelId, name, size, spawPosition, floorElements){
         this.levelId = levelId
         this.name = name
         this.size = size
+        this.spawPosition = spawPosition
         this.floorElements = floorElements
     }
 }
 
 let levels = [
-    new levelInformation(1, "Cloaca", new vector2(6, 6), [
+    new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
         {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
         {"type":"sewerFloor","position":2},
@@ -27,7 +28,7 @@ let levels = [
         {"type":"sewerWater","position":5},
         {"type":"sewerFloor","position":6},
     ]),
-    new levelInformation(2, "Carretera", new vector2(2, 6), [
+    new levelInformation(2, "Carretera", new vector2(2, 6), new vector2(1, 0), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetFloor","position":2},
@@ -36,13 +37,13 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ]),
-    new levelInformation(3, "Autopista", new vector2(15, 3), [
+    new levelInformation(3, "Autopista", new vector2(15, 3), new vector2(3, 0), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetRoad","position":2},
         {"type":"streetFloor","position":3},
     ]),
-    new levelInformation(4, "Rio", new vector2(6, 6),[
+    new levelInformation(4, "Rio", new vector2(6, 6), new vector2(3, 0),[
         {"type":"streetFloor","position":0},
         {"type":"riverWater","position":1},
         {"type":"streetFloor","position":2},
@@ -77,7 +78,7 @@ class levelManager{
         mainGrid.setGridSize(levelInfo.size)
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
-        gameFrog.gridTransform(new vector2(3, 0))
+        gameFrog.gridTransform(levelInfo.spawPosition)
         for(let i = 0; i < levelInfo.floorElements.length; i++){
             let floorElement = levelInfo.floorElements[i]
             let floorObjectImageSRC = levelFloorObjects.find(function(element){
