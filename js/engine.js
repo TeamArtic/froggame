@@ -157,6 +157,18 @@ class object{
             this.object.remove()
         }
     }
+
+    isColliding(collidingObject){
+        let topCollision = 
+        collidingObject.position.y + collidingObject.size.y > this.position.y
+        let bottomCollision = 
+        this.position.y + collidingObject.size.y > collidingObject.position.y
+        let leftCollision = 
+        collidingObject.position.x + collidingObject.size.x > this.position.x
+        let rightCollision = 
+        this.position.x + collidingObject.size.x > collidingObject.position.x
+        return !(topCollision && bottomCollision && leftCollision && rightCollision)
+    }
 }
 
 class grid{
