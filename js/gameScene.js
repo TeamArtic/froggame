@@ -155,7 +155,7 @@ class enemy extends object {
 
 class road {
     constructor(objectScene, YPosition, speed) {
-        this.YPosition = YPosition
+        this.YPosition = YPosition * 100
         this.speed = speed
         this.objectScene = objectScene
         this.generateEnemy()
