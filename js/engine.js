@@ -151,6 +151,12 @@ class object{
             this.generateObjectFunction()
         }
     }
+
+    remove(){
+        if(this.object){
+            this.object.remove()
+        }
+    }
 }
 
 class grid{
