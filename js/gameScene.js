@@ -192,6 +192,12 @@ class road {
             this.enemies[i].remove()
         }
     }
+
+    updateEnemiesReferences(){
+        for(let i = 0; i < this.enemies.length; i++){
+            this.enemies[i].updateObjectReference()
+        }
+    }
 }
 
 class frog extends gridObject {
