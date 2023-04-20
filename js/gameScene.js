@@ -88,7 +88,7 @@ let levels = [
         { "yPosition": 3, "speed": 10 },
         { "yPosition": 5, "speed": 10 },
     ]),
-    new levelInformation(5, "Playa", new vector2(6, 6), new vector2(3,0), [
+    new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"sandFloor","position":0},
         {"type":"sandWater","position":1},
         {"type":"sandWater","position":2},
