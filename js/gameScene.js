@@ -21,14 +21,8 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        { "type": "sewerFloor", "position": 0 },
-        { "type": "sewerWater", "position": 1 },
-        { "type": "sewerFloor", "position": 2 },
-        { "type": "sewerWater", "position": 3 },
-        { "type": "sewerFloor", "position": 4 },
-        { "type": "sewerWater", "position": 5 },
-        { "type": "sewerFloor", "position": 6 },
-        {"type":"sewerStart","position":0},
+        {"type":"sewerStart","position":-1},
+        {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
         {"type":"sewerFloor","position":2},
         {"type":"sewerWater","position":3},
