@@ -134,6 +134,7 @@ class levelManager {
     static loadLevel(levelInfo) {    // TODO Do this with classes
         for(let i = 0; i < roads.length; i++){
             roads[i].remove()
+            delete roads[i]
         }
         roads = []
         let floorElements = document.getElementsByClassName("floorElement")
@@ -204,6 +205,8 @@ class road {
     remove(){
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].remove()
+            clearTimeout(this.enemies[i].movementInterval)
+            delete this.enemies[i]
         }
     }
 
