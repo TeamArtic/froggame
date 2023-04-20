@@ -28,6 +28,10 @@ let levels = [
         {"type":"sewerFloor","position":4},
         {"type":"sewerWater","position":5},
         {"type":"sewerFloor","position":6},
+    ], [
+        {"yPosition":1, "speed":10},
+        {"yPosition":3, "speed":10},
+        {"yPosition":5, "speed":10},
     ]),
     new levelInformation(2, "Carretera", new vector2(2, 6), new vector2(1, 0), [
         {"type":"streetFloor","position":0},
