@@ -28,29 +28,39 @@ let levels = [
         { "type": "sewerFloor", "position": 4 },
         { "type": "sewerWater", "position": 5 },
         { "type": "sewerFloor", "position": 6 },
+        {"type":"sewerStart","position":0},
+        {"type":"sewerWater","position":1},
+        {"type":"sewerFloor","position":2},
+        {"type":"sewerWater","position":3},
+        {"type":"sewerFloor","position":4},
+        {"type":"sewerWater","position":5},
+        {"type":"sewerFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 10 },
         { "yPosition": 3, "speed": 10 },
         { "yPosition": 5, "speed": 10 },
     ]),
-    new levelInformation(2, "Carretera", new vector2(2, 6), new vector2(1, 0), [
-        { "type": "streetFloor", "position": 0 },
-        { "type": "streetRoad", "position": 1 },
-        { "type": "streetFloor", "position": 2 },
-        { "type": "streetRoad", "position": 3 },
-        { "type": "streetFloor", "position": 4 },
-        { "type": "streetRoad", "position": 5 },
-        { "type": "streetFloor", "position": 6 },
+    new levelInformation(2, "Carretera", new vector2(6, 6), new vector2(1, 0), [
+        {"type":"streetFloor","position":0},
+        {"type":"streetRoad","position":1},
+        {"type":"streetFloor","position":2},
+        {"type":"streetRoad","position":3},
+        {"type":"streetFloor","position":4},
+        {"type":"streetRoad","position":5},
+        {"type":"streetFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 10 },
         { "yPosition": 3, "speed": 10 },
         { "yPosition": 5, "speed": 10 },
     ]),
-    new levelInformation(3, "Autopista", new vector2(15, 3), new vector2(3, 0), [
-        { "type": "streetFloor", "position": 0 },
-        { "type": "streetRoad", "position": 1 },
-        { "type": "streetRoad", "position": 2 },
-        { "type": "streetFloor", "position": 3 },
+    new levelInformation(3, "Autopista", new vector2(6, 6), new vector2(3, 0), [
+        {"type":"streetFloor","position":0},
+        {"type":"streetRoad","position":1},
+        {"type":"streetRoad","position":2},
+        {"type":"streetFloor","position":3},
+        {"type":"streetRoad","position":4},
+        {"type":"streetRoad","position":5},
+        {"type":"streetFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 10 },
         { "yPosition": 3, "speed": 10 },
@@ -68,16 +78,14 @@ let levels = [
         { "yPosition": 1, "speed": 10 },
         { "yPosition": 2, "speed": 10 },
     ]),
-    new levelInformation(5, "Rio 2", new vector2(8, 6), [
-        { "type": "sandFloor", "position": 0 },
-        { "type": "sandWater", "position": 1 },
-        { "type": "sandFloor", "position": 2 },
-        { "type": "sandWater", "position": 3 },
-        { "type": "sandFloor", "position": 4 },
-        { "type": "sandWater", "position": 5 },
-        { "type": "sandFloor", "position": 6 },
-        { "type": "sandWater", "position": 7 },
-
+    new levelInformation(5, "Rio 2", new vector2(6, 6), new vector2(0,3), [
+        {"type":"sandFloor","position":0},
+        {"type":"sandWater","position":1},
+        {"type":"sandFloor","position":2},
+        {"type":"sandWater","position":3},
+        {"type":"sandFloor","position":4},
+        {"type":"sandWater","position":5},
+        {"type":"sandFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 10 },
         { "yPosition": 3, "speed": 10 },
@@ -93,7 +101,8 @@ class levelFloor {
 }
 
 let levelFloorObjects = [
-    new levelFloor("sewerFloor", "../img/acer-nueva.png"),
+    new levelFloor("sewerStart", "../img/cloaca-nueva.png"),
+    new levelFloor("sewerFloor", "../img/suelo.png"),
     new levelFloor("sewerWater", "../img/agua.png"),
     new levelFloor("streetFloor", "../img/acer-nueva.png"),
     new levelFloor("streetRoad", "../img/carreterav1.png"),
