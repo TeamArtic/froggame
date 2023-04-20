@@ -160,7 +160,6 @@ class enemy extends object {
             // this.moveEnemy()
             this.move(new vector2(this.speed, 0))
         }, 500)
-        this.generateObject()
         this.setPosition(position)
         this.position = position
         this.object.style.zIndex = 2
