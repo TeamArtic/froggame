@@ -140,7 +140,6 @@ class enemy extends object {
         }, 500)
         this.generateObject()
         this.setPosition(position)
-        alert(position.y)
         this.object.style.backgroundColor = "#000"
         this.object.style.width = "100px"
         this.object.style.height = "100px"
