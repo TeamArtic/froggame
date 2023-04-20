@@ -21,7 +21,8 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"sewerStart","position":0},
+        {"type":"sewerStart","position":-1},
+        {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
         {"type":"sewerFloor","position":2},
         {"type":"sewerWater","position":3},
@@ -123,7 +124,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            let newRoad = new road(gameScene, levelInfo.roadsElements.yPosition, levelInfo.roadsElements.speed)
+            let newRoad = new road(gameScene, levelInfo.roadsElements.position, levelInfo.roadsElements.speed)
         }
         gameFrog.updateObjectReference()
     }
@@ -131,7 +132,7 @@ class levelManager {
 
 class enemy extends object {
     constructor(objectScene, position, speed) {
-        super("id", objectScene, position, new vector2(1, 1), true)
+        super("id", objectScene, position, new vector2(0, position), true)
         this.speed = speed
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
@@ -159,7 +160,7 @@ class road {
     }
 
     generateEnemy() {
-        let generationPosition = new vector2(0, this.yPosition)
+        let generationPosition = new vector2(0, this.YPosition)
         let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
         newEnemy.object.style.border = "2px solid #000"
     }
