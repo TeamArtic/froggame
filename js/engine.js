@@ -116,6 +116,7 @@ class object{
     }
 
     setPosition(newPosition){
+        this.position = new vector2(newPosition.x, newPosition.y)
         if(this.imageURL){
             newPosition.add(this.imagePosition)
         }
