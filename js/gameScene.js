@@ -124,7 +124,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            let newRoad = new road(gameScene, levelInfo.roadsElements.position, levelInfo.roadsElements.speed)
+            let newRoad = new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed)
         }
         gameFrog.updateObjectReference()
     }
@@ -137,10 +137,9 @@ class enemy extends object {
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
             this.move(new vector2(this.speed, 0))
-        }, 10)
+        }, 500)
         this.generateObject()
         this.setPosition(position)
-        alert(position.y)
         this.object.style.backgroundColor = "#000"
         this.object.style.width = "100px"
         this.object.style.height = "100px"
