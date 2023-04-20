@@ -34,7 +34,7 @@ let levels = [
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(2, "Carretera", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"streetFloor","position":0},
+        {"type":"futureStreet","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetFloor","position":2},
         {"type":"streetRoad","position":3},
