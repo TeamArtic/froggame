@@ -9,7 +9,7 @@ const animationTime = 500
 let actualCharacter
 
 class levelInformation {
-    constructor(levelId, name, size, spawPosition, floorElements, roadsElements){
+    constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
         this.name = name
         this.size = size
@@ -21,72 +21,72 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"sewerFloor","position":0},
-        {"type":"sewerWater","position":1},
-        {"type":"sewerFloor","position":2},
-        {"type":"sewerWater","position":3},
-        {"type":"sewerFloor","position":4},
-        {"type":"sewerWater","position":5},
-        {"type":"sewerFloor","position":6},
+        { "type": "sewerFloor", "position": 0 },
+        { "type": "sewerWater", "position": 1 },
+        { "type": "sewerFloor", "position": 2 },
+        { "type": "sewerWater", "position": 3 },
+        { "type": "sewerFloor", "position": 4 },
+        { "type": "sewerWater", "position": 5 },
+        { "type": "sewerFloor", "position": 6 },
     ], [
-        {"yPosition":1, "speed":10},
-        {"yPosition":3, "speed":10},
-        {"yPosition":5, "speed":10},
+        { "yPosition": 1, "speed": 10 },
+        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(2, "Carretera", new vector2(2, 6), new vector2(1, 0), [
-        {"type":"streetFloor","position":0},
-        {"type":"streetRoad","position":1},
-        {"type":"streetFloor","position":2},
-        {"type":"streetRoad","position":3},
-        {"type":"streetFloor","position":4},
-        {"type":"streetRoad","position":5},
-        {"type":"streetFloor","position":6},
+        { "type": "streetFloor", "position": 0 },
+        { "type": "streetRoad", "position": 1 },
+        { "type": "streetFloor", "position": 2 },
+        { "type": "streetRoad", "position": 3 },
+        { "type": "streetFloor", "position": 4 },
+        { "type": "streetRoad", "position": 5 },
+        { "type": "streetFloor", "position": 6 },
     ], [
-        {"yPosition":1, "speed":10},
-        {"yPosition":3, "speed":10},
-        {"yPosition":5, "speed":10},
+        { "yPosition": 1, "speed": 10 },
+        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(3, "Autopista", new vector2(15, 3), new vector2(3, 0), [
-        {"type":"streetFloor","position":0},
-        {"type":"streetRoad","position":1},
-        {"type":"streetRoad","position":2},
-        {"type":"streetFloor","position":3},
+        { "type": "streetFloor", "position": 0 },
+        { "type": "streetRoad", "position": 1 },
+        { "type": "streetRoad", "position": 2 },
+        { "type": "streetFloor", "position": 3 },
     ], [
-        {"yPosition":1, "speed":10},
-        {"yPosition":3, "speed":10},
-        {"yPosition":5, "speed":10},
+        { "yPosition": 1, "speed": 10 },
+        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 5, "speed": 10 },
     ]),
-    new levelInformation(4, "Rio", new vector2(6, 6), new vector2(3, 0),[
-        {"type":"streetFloor","position":0},
-        {"type":"riverWater","position":1},
-        {"type":"streetFloor","position":2},
-        {"type":"riverWater","position":3},
-        {"type":"streetFloor","position":4},
-        {"type":"riverWater","position":5},
-        {"type":"streetFloor","position":6},
+    new levelInformation(4, "Rio", new vector2(6, 6), new vector2(3, 0), [
+        { "type": "streetFloor", "position": 0 },
+        { "type": "riverWater", "position": 1 },
+        { "type": "streetFloor", "position": 2 },
+        { "type": "riverWater", "position": 3 },
+        { "type": "streetFloor", "position": 4 },
+        { "type": "riverWater", "position": 5 },
+        { "type": "streetFloor", "position": 6 },
     ], [
-        {"yPosition":1, "speed":10},
-        {"yPosition":2, "speed":10},
+        { "yPosition": 1, "speed": 10 },
+        { "yPosition": 2, "speed": 10 },
     ]),
-    new levelInformation(5, "Rio 2", new vector2(8, 6),[
-        {"type":"sandFloor","position":0},
-        {"type":"sandWater","position":1},
-        {"type":"sandFloor","position":2},
-        {"type":"sandWater","position":3},
-        {"type":"sandFloor","position":4},
-        {"type":"sandWater","position":5},
-        {"type":"sandFloor","position":6},
-        {"type":"sandWater","position":7},
+    new levelInformation(5, "Rio 2", new vector2(8, 6), [
+        { "type": "sandFloor", "position": 0 },
+        { "type": "sandWater", "position": 1 },
+        { "type": "sandFloor", "position": 2 },
+        { "type": "sandWater", "position": 3 },
+        { "type": "sandFloor", "position": 4 },
+        { "type": "sandWater", "position": 5 },
+        { "type": "sandFloor", "position": 6 },
+        { "type": "sandWater", "position": 7 },
 
     ], [
-        {"yPosition":1, "speed":10},
-        {"yPosition":3, "speed":10},
-        {"yPosition":5, "speed":10},
+        { "yPosition": 1, "speed": 10 },
+        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 5, "speed": 10 },
     ]),
 ]
 
 class levelFloor {
-    constructor(floorName, imageSRC){
+    constructor(floorName, imageSRC) {
         this.floorName = floorName
         this.imageSRC = imageSRC
     }
@@ -104,30 +104,62 @@ let levelFloorObjects = [
 
 let actualLevel = 0
 
-class levelManager{
-    static loadLevel(levelInfo){    // TODO Do this with classes
+class levelManager {
+    static loadLevel(levelInfo) {    // TODO Do this with classes
         actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         mainGrid.setGridSize(levelInfo.size)
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         gameFrog.gridTransform(levelInfo.spawPosition)
-        for(let i = 0; i < levelInfo.floorElements.length; i++){
+        for (let i = 0; i < levelInfo.floorElements.length; i++) {
             let floorElement = levelInfo.floorElements[i]
-            let floorObjectImageSRC = levelFloorObjects.find(function(element){
+            let floorObjectImageSRC = levelFloorObjects.find(function (element) {
                 return element.floorName == floorElement.type
             }).imageSRC
-            let floorObjectText = generateLabelHTML("div",new attributes([{"name":"src","values":[floorObjectImageSRC]}, {"name":"style","values":["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 1) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"]}]),"")
+            let floorObjectText = generateLabelHTML("div", new attributes([{ "name": "src", "values": [floorObjectImageSRC] }, { "name": "style", "values": ["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 1) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"] }]), "")
             elementsContainer.innerHTML += floorObjectText
+        }
+        for (let i = 0; i < levelInfo.roadsElements.length; i++) {
+            let newRoad = new road(gameScene, levelInfo.roadsElements.yPosition, levelInfo.roadsElements.speed)
         }
         gameFrog.updateObjectReference()
     }
 }
 
-class road{
-    constructor(YPosition, speed){
+class enemy extends object {
+    constructor(objectScene, position, speed) {
+        super("id", objectScene, position, new vector2(1, 1), true)
+        this.speed = speed
+        this.movementInterval = setInterval(() => {
+            // this.moveEnemy()
+            this.move(new vector2(this.speed, 0))
+        }, 10)
+        this.generateObject()
+        this.setPosition(position)
+        alert(position.y)
+        this.object.style.backgroundColor = "#000"
+        this.object.style.width = "100px"
+        this.object.style.height = "100px"
+    }
+
+    // moveEnemy(){
+    //     this.object.move(new vector2(speed, 0))
+    // }
+}
+
+class road {
+    constructor(objectScene, YPosition, speed) {
         this.YPosition = YPosition
         this.speed = speed
+        this.objectScene = objectScene
+        this.generateEnemy()
+    }
+
+    generateEnemy() {
+        let generationPosition = new vector2(0, this.yPosition)
+        let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
+        newEnemy.object.style.border = "2px solid #000"
     }
 }
 
@@ -146,14 +178,14 @@ class frog extends gridObject {
     }
 }
 
-class imageInfo{
-    constructor(imageURL, size, center){
+class imageInfo {
+    constructor(imageURL, size, center) {
         this.imageURL = imageURL
     }
 }
 
-class characterInfo{
-    constructor(characterName, stayImageURL, movingImageURL){
+class characterInfo {
+    constructor(characterName, stayImageURL, movingImageURL) {
         this.characterName = characterName
         this.stayImageURL = stayImageURL
         this.movingImageURL = movingImageURL
@@ -168,7 +200,7 @@ let characters = [
 
 // Level transition animation
 
-function startLoadingLevel(){
+function startLoadingLevel() {
     playing = false
     foregroundContainer.style.backgroundColor = "#000000FF"
     // foregroundContainer.style.filter = "blur(4px)"
@@ -176,50 +208,50 @@ function startLoadingLevel(){
     levelLoadingTimeout = setTimeout(loadLevel, animationTime)
 }
 
-function loadLevel(){
-    if(actualLevel < levels.length){
+function loadLevel() {
+    if (actualLevel < levels.length) {
         levelManager.loadLevel(levels[++actualLevel - 1])
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
-    }else{
+    } else {
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showEnd, 800)
     }
 }
 
-function showEnd(){
+function showEnd() {
     window.location.href = "../html/credits.html";
     levelInfoName.innerHTML = "Creditos"
     levelInfoName.style.filter = "opacity(100%)"
 }
 
-function showLevelName(){
+function showLevelName() {
     levelInfoName.innerHTML = levels[actualLevel - 1].name
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(showLevel, 1000)
 }
 
-function showLevel(){
+function showLevel() {
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(showLevelInfo, animationTime)
     foregroundContainer.style.backgroundColor = "#000000ab"
 }
 
-function showLevelInfo(){ // TODO Change the name of this function.
+function showLevelInfo() { // TODO Change the name of this function.
     // pageTitle.innerHTML = levels[actualLevel].name
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(removeLoadLevelEffects, 1000)
 }
 
-function removeLoadLevelEffects(){
+function removeLoadLevelEffects() {
     foregroundContainer.style.backgroundColor = "#00000000"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(startLevel, animationTime)
     levelInfoName.style.filter = "opacity(0%)"
 }
 
-function startLevel(){
+function startLevel() {
     playing = true
 }
 
@@ -233,12 +265,12 @@ function transitionToNextScreen() {
     document.getElementById('elementsContainer2').style.display = 'grid';
 }
 
-function moveFrog(movement){
-    if(!onMovement && playing){
+function moveFrog(movement) {
+    if (!onMovement && playing) {
         onMovement = true
         gameFrog.object.src = "../img/palante.gif"
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function(){onMovement = false; gameFrog.object.src = "../img/dona.gif"}, 500)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; gameFrog.object.src = "../img/dona.gif" }, 500)
         gameFrog.gridMove(movement)
     }
 }
@@ -263,18 +295,18 @@ function keyEvent(e) {
     }
 }
 
-function update(){
-    
+function update() {
+
 }
 
 window.addEventListener('load', () => {
 
     pageTitle = document.getElementById('pageTitle')
     foregroundContainer = document.getElementById('foregroundContainer')
-    
+
     appContainer = document.getElementById('app')
     elementsContainer = document.getElementById('elementsContainer')
-    
+
     gameScene = new scene(update, elementsContainer)
     keyboardEvent = new KeyboardEvent("keydown")
     mainGrid = new grid(elementsContainer, 6, 6, 100)
