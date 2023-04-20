@@ -6,21 +6,34 @@
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-   
+    opacity: 0.8;
+  }
+  #movementContainer3 {
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 712px;
+    width: 300px;
+    opacity: 0.8;
+    color: rgb(0, 0, 0);
   }
 
   #movementContainer2 {
     position: absolute;
-    top: 20px;
-    right: 0px;
-    background-color: rgb(15, 15, 15);
+    top: 44px;
+    right: 50px;
+    background-color: white;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 800px;
+    height: 712px;
     width: 300px;
     opacity: 0.8;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   .typewriter>p {
@@ -57,7 +70,7 @@
   .tortugasgif1 {
     position: absolute;
     top: 200px;
-    left: 10px;
+    left: 20px;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -83,7 +96,7 @@
   .tortugasgif3 {
     position: absolute;
     top: 430px;
-    left: 10px;
+    left: 20px;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
