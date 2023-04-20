@@ -23,7 +23,8 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"sewerStart","position":0},
+        {"type":"sewerStart","position":-1},
+        {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
         {"type":"sewerFloor","position":2},
         {"type":"sewerWater","position":3},
@@ -36,7 +37,8 @@ let levels = [
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(2, "Carretera", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"futureStart","position":0},
+        {"type":"futureStart","position":-1},
+        {"type":"futureStreet","position":0},
         {"type":"futureRoad","position":1},
         {"type":"futureStreet","position":2},
         {"type":"futureRoad","position":3},
