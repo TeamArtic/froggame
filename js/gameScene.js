@@ -173,11 +173,11 @@ class enemy extends object {
 }
 
 class road {
-    constructor(objectScene, YPosition, speed) {
+    constructor(objectScene, YPosition, speed, roadId) {
         this.YPosition = YPosition * 100
         this.speed = speed
         this.objectScene = objectScene
-        this.generateEnemy()
+        this.roadId = roadId
     }
 
     generateEnemy() {
