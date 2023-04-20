@@ -21,8 +21,8 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"sewerStart","position":-1},
-        {"type":"sewerFloor","position":0},
+       
+        {"type":"sewerStart","position":0},
         {"type":"sewerWater","position":1},
         {"type":"sewerFloor","position":2},
         {"type":"sewerWater","position":3},
@@ -98,6 +98,7 @@ let levelFloorObjects = [
     new levelFloor("sewerStart", "../img/cloaca-nueva.png"),
     new levelFloor("sewerFloor", "../img/suelo.png"),
     new levelFloor("sewerWater", "../img/agua.png"),
+    new levelFloor("futureStreet", "../img/cabecero-city.png"),
     new levelFloor("streetFloor", "../img/acer-nueva.png"),
     new levelFloor("streetRoad", "../img/carreterav1.png"),
     new levelFloor("riverWater", "../img/agua.png"),
