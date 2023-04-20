@@ -33,7 +33,7 @@ let levels = [
         {"yPosition":3, "speed":10},
         {"yPosition":5, "speed":10},
     ]),
-    new levelInformation(2, "Carretera", new vector2(6, 6), new vector2(1, 0), [
+    new levelInformation(2, "Carretera", new vector2(6, 6), new vector2(3, 0), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetFloor","position":2},
@@ -71,7 +71,7 @@ let levels = [
         {"yPosition":1, "speed":10},
         {"yPosition":2, "speed":10},
     ]),
-    new levelInformation(5, "Rio 2", new vector2(6, 6), new vector2(0,3), [
+    new levelInformation(5, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"sandFloor","position":0},
         {"type":"sandWater","position":1},
         {"type":"sandFloor","position":2},
