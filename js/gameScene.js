@@ -132,7 +132,7 @@ class levelManager {
 
 class enemy extends object {
     constructor(objectScene, position, speed) {
-        super("id", objectScene, position, new vector2(1, 1), true)
+        super("id", objectScene, position, new vector2(0, position), true)
         this.speed = speed
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
