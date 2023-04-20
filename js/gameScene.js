@@ -137,7 +137,7 @@ class enemy extends object {
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
             this.move(new vector2(this.speed, 0))
-        }, 10)
+        }, 500)
         this.generateObject()
         this.setPosition(position)
         alert(position.y)
