@@ -68,7 +68,7 @@ let levels = [
         {"yPosition":1, "speed":10},
         {"yPosition":2, "speed":10},
     ]),
-    new levelInformation(5, "Rio 2", new vector2(8, 6),[
+    new levelInformation(5, "Rio 2", new vector2(8, 6), new vector2(0,3), [
         {"type":"sandFloor","position":0},
         {"type":"sandWater","position":1},
         {"type":"sandFloor","position":2},
@@ -77,7 +77,7 @@ let levels = [
         {"type":"sandWater","position":5},
         {"type":"sandFloor","position":6},
         {"type":"sandWater","position":7},
-
+        {"type":"sandFloor","position":8},
     ], [
         {"yPosition":1, "speed":10},
         {"yPosition":3, "speed":10},
