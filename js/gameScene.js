@@ -124,7 +124,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            let newRoad = new road(gameScene, levelInfo.roadsElements.yPosition, levelInfo.roadsElements.speed)
+            let newRoad = new road(gameScene, levelInfo.roadsElements.position, levelInfo.roadsElements.speed)
         }
         gameFrog.updateObjectReference()
     }
