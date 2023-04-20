@@ -140,9 +140,7 @@ class enemy extends object {
         }, 500)
         this.generateObject()
         this.setPosition(position)
-        this.object.style.backgroundColor = "#000"
-        this.object.style.width = "100px"
-        this.object.style.height = "100px"
+        this.object.src = "../img/april.gif"
     }
 
     // moveEnemy(){
@@ -161,7 +159,6 @@ class road {
     generateEnemy() {
         let generationPosition = new vector2(0, this.YPosition)
         let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
-        newEnemy.object.style.border = "2px solid #000"
     }
 }
 
