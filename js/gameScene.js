@@ -160,7 +160,7 @@ class road {
     }
 
     generateEnemy() {
-        let generationPosition = new vector2(0, this.yPosition)
+        let generationPosition = new vector2(0, this.YPosition)
         let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
         newEnemy.object.style.border = "2px solid #000"
     }
