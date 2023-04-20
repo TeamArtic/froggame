@@ -130,6 +130,10 @@ let actualLevel = 0
 
 class levelManager {
     static loadLevel(levelInfo) {    // TODO Do this with classes
+        for(let i = 0; i < roads.length; i++){
+            roads[i].remove()
+        }
+        roads = []
         actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         mainGrid.setGridSize(levelInfo.size)
@@ -145,7 +149,10 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            let newRoad = new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i)
+            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i))
+        }
+        for(let i = 0; i < roads.length; i++){
+            roads[i].updateEnemiesReferences()
         }
         gameFrog.updateObjectReference()
     }
