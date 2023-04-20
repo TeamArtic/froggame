@@ -116,6 +116,7 @@ class object{
     }
 
     setPosition(newPosition){
+        this.position = new vector2(newPosition.x, newPosition.y)
         if(this.imageURL){
             newPosition.add(this.imagePosition)
         }
@@ -148,6 +149,12 @@ class object{
         this.object = document.getElementById(this.id)
         if(this.generateObjectFunction){
             this.generateObjectFunction()
+        }
+    }
+
+    remove(){
+        if(this.object){
+            this.object.remove()
         }
     }
 }
