@@ -132,7 +132,7 @@ class levelManager {
 
 class enemy extends object {
     constructor(objectScene, position, speed) {
-        super("id", objectScene, position, new vector2(0, position), true)
+        super("id", objectScene, position, position, true)
         this.speed = speed
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
@@ -140,9 +140,7 @@ class enemy extends object {
         }, 500)
         this.generateObject()
         this.setPosition(position)
-        this.object.style.backgroundColor = "#000"
-        this.object.style.width = "100px"
-        this.object.style.height = "100px"
+        this.object.src = "../img/april.gif"
     }
 
     // moveEnemy(){
@@ -159,9 +157,8 @@ class road {
     }
 
     generateEnemy() {
-        let generationPosition = new vector2(0, this.YPosition)
+        let generationPosition = new vector2(-100, this.YPosition)
         let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
-        newEnemy.object.style.border = "2px solid #000"
     }
 }
 
