@@ -189,8 +189,8 @@ class road {
     }
 
     remove(){
-        for(let i = 0; i < emenyes.length; i++){
-            this.enemyes[i].remove()
+        for(let i = 0; i < this.enemies.length; i++){
+            this.enemies[i].remove()
         }
     }
 }
