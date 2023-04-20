@@ -187,6 +187,12 @@ class road {
         let generationPosition = new vector2(-100, this.YPosition)
         return new enemy(this.objectScene, generationPosition, this.speed, this.roadId + "-" + 1)
     }
+
+    remove(){
+        for(let i = 0; i < emenyes.length; i++){
+            this.enemyes[i].remove()
+        }
+    }
 }
 
 class frog extends gridObject {
