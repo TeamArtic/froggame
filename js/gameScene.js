@@ -180,11 +180,12 @@ class road {
         this.speed = speed
         this.objectScene = objectScene
         this.roadId = roadId
+        this.enemies = [this.generateEnemy()]
     }
 
     generateEnemy() {
         let generationPosition = new vector2(-100, this.YPosition)
-        let newEnemy = new enemy(this.objectScene, generationPosition, this.speed)
+        return new enemy(this.objectScene, generationPosition, this.speed, this.roadId + "-" + 1)
     }
 }
 
