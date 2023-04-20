@@ -174,6 +174,9 @@ class enemy extends object {
         this.movementInterval = setInterval(() => {
             // this.moveEnemy()
             this.move(new vector2(this.speed, 0))
+            if(!this.isColliding(gameFrog)){
+                window.location.reload() // TODO Make the death animation
+            }
         }, 500)
         this.setPosition(position)
         this.position = position
