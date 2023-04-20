@@ -56,7 +56,8 @@ let levels = [
         {"type":"streetFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 10 },
-        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 2, "speed": 10 },
+        { "yPosition": 4, "speed": 10 },
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(4, "Rio", new vector2(6, 6), new vector2(3, 0), [
@@ -69,7 +70,8 @@ let levels = [
         { "type": "streetFloor", "position": 6 },
     ], [
         { "yPosition": 1, "speed": 10 },
-        { "yPosition": 2, "speed": 10 },
+        { "yPosition": 3, "speed": 10 },
+        { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(5, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"sandFloor","position":0},
