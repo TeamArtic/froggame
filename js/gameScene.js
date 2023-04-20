@@ -136,6 +136,11 @@ class levelManager {
             roads[i].remove()
         }
         roads = []
+        let floorElements = document.getElementsByClassName("floorElement")
+        let length = floorElements.length
+        for(let i = 0; i < length; i++){
+            floorElements[0].remove()
+        }
         actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         mainGrid.setGridSize(levelInfo.size)
