@@ -9,12 +9,13 @@ const animationTime = 500
 let actualCharacter
 
 class levelInformation {
-    constructor(levelId, name, size, spawPosition, floorElements){
+    constructor(levelId, name, size, spawPosition, floorElements, roadsElements){
         this.levelId = levelId
         this.name = name
         this.size = size
         this.spawPosition = spawPosition
         this.floorElements = floorElements
+        this.roadsElements = roadsElements
     }
 }
 
