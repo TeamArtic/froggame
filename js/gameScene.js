@@ -8,7 +8,7 @@ const animationTime = 500
 
 let actualCharacter
 
-roads = []
+let roads = []
 
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
