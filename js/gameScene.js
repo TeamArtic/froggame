@@ -163,6 +163,7 @@ class enemy extends object {
         this.generateObject()
         this.setPosition(position)
         this.position = position
+        this.object.style.zIndex = 2
         this.object.src = "../img/april.gif"
         this.setImage("../img/april.gif", new vector2(50, 50), new vector2(30, -25))
         this.move(new vector2(0,0))
