@@ -2,6 +2,8 @@ let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEven
 
 let playing = false
 
+let notPaused = true
+
 let onMovement = false
 
 const animationTime = 500
@@ -196,13 +198,6 @@ class enemy extends object {
         super(enemyId, objectScene, position, position, true)
         this.enemyId = enemyId
         this.speed = speed
-        this.movementInterval = setInterval(() => {
-            // this.moveEnemy()
-            this.move(new vector2(this.speed, 0))
-            if(!this.isColliding(gameFrog)){
-                window.location.reload() // TODO Make the death animation
-            }
-        }, 500)
         this.setPosition(position)
         this.position = position
         this.object.style.zIndex = 2
@@ -214,6 +209,13 @@ class enemy extends object {
     // moveEnemy(){
     //     this.object.move(new vector2(speed, 0))
     // }
+
+    update(){
+        this.move(new vector2(this.speed/5, 0))
+        if(!this.isColliding(gameFrog)){
+            window.location.reload() // TODO Make the death animation
+        }
+    }
 }
 
 class road {
@@ -233,7 +235,6 @@ class road {
     remove(){
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].remove()
-            clearTimeout(this.enemies[i].movementInterval)
             delete this.enemies[i]
         }
     }
@@ -241,6 +242,12 @@ class road {
     updateEnemiesReferences(){
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].updateObjectReference()
+        }
+    }
+
+    update(){
+        for(let i = 0; i < this.enemies.length; i++){
+            this.enemies[i].update()
         }
     }
 }
@@ -348,7 +355,7 @@ function transitionToNextScreen() {
 }
 
 function moveFrog(movement) {
-    if (!onMovement && playing) {
+    if (!onMovement && playing && notPaused) {
         onMovement = true
         gameFrog.object.src = "../img/palante.gif"
         clearTimeout(frogMovementTimeout)
@@ -373,12 +380,17 @@ function keyEvent(e) {
             break;
         case 27:
             pauseMenuToggle.toggle()
+            notPaused = pauseMenuToggle.enabled
             break;
     }
 }
 
 function update() {
-
+    if(playing && notPaused){
+        for(let i = 0; i < roads.length; i++){
+            roads[i].update()
+        }
+    }
 }
 
 window.addEventListener('load', () => {
