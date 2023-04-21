@@ -37,7 +37,7 @@ class scene{
     constructor(updateMethod, sceneContainer){
         this.objects = []
         this.updateMethod = updateMethod
-        this.updateMethodInterval = setInterval(this.updateMethod, 10)
+        this.updateMethodInterval = setInterval(this.updateMethod, 25)
         this.sceneContainer = sceneContainer
     }
 
