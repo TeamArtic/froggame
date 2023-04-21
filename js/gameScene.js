@@ -36,7 +36,8 @@ let levels = [
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(2, "Ciudad día", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"startDia","position":0},
+        {"type":"startDia","position":-1},
+        {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetFloor","position":2},
         {"type":"streetRoad","position":3},
@@ -49,7 +50,8 @@ let levels = [
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(3, "Ciudad tarde", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"startTarde","position":0},
+        {"type":"startTarde","position":-1},
+        {"type":"streetUnMillonPM","position":0},
         {"type":"roadUnMillonPM","position":1},
         {"type":"streetUnMillonPM","position":2},
         {"type":"roadUnMillonPM","position":3},
@@ -63,7 +65,8 @@ let levels = [
         { "yPosition": 5, "speed": 10 },
     ]),
     new levelInformation(4, "Ciudad noche", new vector2(6, 6), new vector2(3, 0), [
-        { "type": "startNoche", "position": 0 },
+        { "type": "startNoche", "position": -1 },
+        { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 0 },
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 1 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 2 },
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 3 },
