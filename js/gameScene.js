@@ -196,14 +196,14 @@ class levelManager {
 
 class enemy extends object {
     constructor(objectScene, position, speed, enemyId) {
-        super(enemyId, objectScene, position, position, true)
+        super(enemyId, objectScene, position, new vector2(100, 100), true)
         this.enemyId = enemyId
         this.speed = speed
         this.setPosition(position)
         this.position = position
         this.object.style.zIndex = 2
         this.object.src = "../img/armaggon.gif"
-        this.setImage("../img/armaggon.gif", new vector2(50, 50), new vector2(30, -25))
+        this.setImage("../img/armaggon.gif", new vector2(50, 50), new vector2(10, -30))
         this.move(new vector2(0,0))
     }
 
@@ -253,7 +253,7 @@ class road {
             this.enemies[i].update()
         }
         this.nextEnemyGeneration += 1
-        if(this.nextEnemyGeneration >= 5000/25){
+        if(this.nextEnemyGeneration >= 2000/25){
             this.nextEnemyGeneration = 0
             this.enemies.push(this.generateEnemy())
             for(let i = 0; i < roads.length; i++){
@@ -265,8 +265,8 @@ class road {
 }
 
 class frog extends gridObject {
-    constructor(objectGrid, objectScene, id) {
-        super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), true);
+    constructor(objectGrid, objectScene, id, colliderObject, colliderSize) {
+        super(objectGrid, objectScene, id, new vector2(3, 0), new vector2(100, 100), true, colliderObject, colliderSize);
         this.gridPosition = new vector2(3, 0); // Inicializar la propiedad gridPosition en el constructor
     }
 
@@ -418,7 +418,7 @@ window.addEventListener('load', () => {
     mainGrid = new grid(elementsContainer, 6, 6, 100)
 
     // Generate the mainCharacter
-    gameFrog = new frog(mainGrid, gameScene, "mainCharacter")
+    gameFrog = new frog(mainGrid, gameScene, "mainCharacter", new vector2(30, 30), new vector2(40, 40))
     gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
     gameScene.addObject("frog", gameFrog)
 

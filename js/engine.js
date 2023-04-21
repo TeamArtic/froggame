@@ -86,11 +86,17 @@ class scene{
 
 class object{
     // constructor(position){
-    constructor(id, objectScene, position, size, withObject = false){
+    constructor(id, objectScene, position, size, withObject = false, colliderPosition = new vector2(0, 0), colliderSize = null){
         this.id = id
         this.objectScene = objectScene
         this.position = position
         this.size = size
+        this.colliderPosition = colliderPosition
+        if(colliderSize){
+            this.colliderSize = colliderSize
+        }else{
+            this.colliderSize = this.size
+        }
         if(withObject){
             this.generateObject()
         }
@@ -159,14 +165,18 @@ class object{
     }
 
     isColliding(collidingObject){
+        let firstColliderPosition = vector2.additionVector2(this.position, this.colliderPosition)
+        let firstColliderSize = this.colliderSize
+        let secondColliderPosition = vector2.additionVector2(collidingObject.position, collidingObject.colliderPosition)
+        let secondColliderSize = collidingObject.colliderSize
         let topCollision = 
-        collidingObject.position.y + collidingObject.size.y > this.position.y
+        secondColliderPosition.y + secondColliderSize.y > firstColliderPosition.y
         let bottomCollision = 
-        this.position.y + collidingObject.size.y > collidingObject.position.y
+        firstColliderPosition.y + firstColliderSize.y > secondColliderPosition.y
         let leftCollision = 
-        collidingObject.position.x + collidingObject.size.x > this.position.x
+        secondColliderPosition.x + secondColliderSize.x > firstColliderPosition.x
         let rightCollision = 
-        this.position.x + collidingObject.size.x > collidingObject.position.x
+        firstColliderPosition.x + firstColliderSize.x > secondColliderPosition.x
         return !(topCollision && bottomCollision && leftCollision && rightCollision)
     }
 }
@@ -194,8 +204,8 @@ class grid{
 }
 
 class gridObject extends object{
-    constructor(grid, objectScene, id, position, size, object){
-        super(id, objectScene, vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
+    constructor(grid, objectScene, id, position, size, object, colliderObject, colliderSize){
+        super(id, objectScene, vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object, colliderObject, colliderSize)
         this.grid = grid
         this.gridPosition = position
     }
