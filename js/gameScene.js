@@ -253,7 +253,7 @@ class road {
             this.enemies[i].update()
         }
         this.nextEnemyGeneration += 1
-        if(this.nextEnemyGeneration >= 5000/25){
+        if(this.nextEnemyGeneration >= 2000/25){
             this.nextEnemyGeneration = 0
             this.enemies.push(this.generateEnemy())
             for(let i = 0; i < roads.length; i++){
