@@ -224,12 +224,14 @@ class road {
         this.speed = speed
         this.objectScene = objectScene
         this.roadId = roadId
+        this.numberOfEnemies = 0
         this.enemies = [this.generateEnemy()]
+        this.nextEnemyGeneration = 0
     }
 
     generateEnemy() {
         let generationPosition = new vector2(-100, this.YPosition)
-        return new enemy(this.objectScene, generationPosition, this.speed, this.roadId + "-" + 1)
+        return new enemy(this.objectScene, generationPosition, this.speed, this.roadId + "-" + ++this.numberOfEnemies)
     }
 
     remove(){
@@ -248,6 +250,15 @@ class road {
     update(){
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].update()
+        }
+        this.nextEnemyGeneration += 1
+        if(this.nextEnemyGeneration >= 5000/25){
+            this.nextEnemyGeneration = 0
+            this.enemies.push(this.generateEnemy())
+            for(let i = 0; i < roads.length; i++){
+                roads[i].updateEnemiesReferences()
+            }
+            gameFrog.updateObjectReference()
         }
     }
 }
