@@ -195,15 +195,19 @@ class levelManager {
 }
 
 class enemy extends object {
-    constructor(objectScene, position, speed, enemyId) {
+    constructor(objectScene, position, speed, direction, enemyId) {
         super(enemyId, objectScene, position, new vector2(100, 100), true)
         this.enemyId = enemyId
         this.speed = speed
         this.setPosition(position)
         this.position = position
         this.object.style.zIndex = 2
+        this.direction = direction
         this.object.src = "../img/armaggon.gif"
         this.setImage("../img/armaggon.gif", new vector2(50, 50), new vector2(10, -30))
+        if(this.direction == "r"){
+            this.object.style.transform = "scale(-1,1)"
+        }
         this.move(new vector2(0,0))
     }
 
