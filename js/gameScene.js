@@ -376,6 +376,10 @@ function moveFrog(movement) {
     }
 }
 
+function specialAbility(){
+    
+}
+
 function keyEvent(e) {
     switch (e.keyCode) {
         case 87:
@@ -389,6 +393,9 @@ function keyEvent(e) {
             break;
         case 68:
             moveFrog(new vector2(1, 0))
+            break;
+        case 32:
+            specialAbility()
             break;
         case 27:
             pauseMenuToggle.toggle()
