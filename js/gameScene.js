@@ -185,7 +185,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i))
+            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction))
         }
         for(let i = 0; i < roads.length; i++){
             roads[i].updateEnemiesReferences()
@@ -224,19 +224,29 @@ class enemy extends object {
 }
 
 class road {
-    constructor(objectScene, YPosition, speed, roadId) {
+    constructor(objectScene, YPosition, speed, roadId, direction = "l") {
         this.YPosition = YPosition * 100
         this.speed = speed
         this.objectScene = objectScene
         this.roadId = roadId
         this.numberOfEnemies = 0
+        this.direction = direction
         this.enemies = [this.generateEnemy()]
         this.nextEnemyGeneration = 0
     }
 
     generateEnemy() {
-        let generationPosition = new vector2(-100, this.YPosition)
-        return new enemy(this.objectScene, generationPosition, this.speed, this.roadId + "-" + ++this.numberOfEnemies)
+        let horizontalPosition
+        let enemySpeed
+        if(this.direction == "l"){
+            horizontalPosition = -100
+            enemySpeed = this.speed
+        }else{
+            horizontalPosition = (levels[actualLevel - 1].size.x + 1) * 100
+            enemySpeed = -this.speed
+        }
+        let generationPosition = new vector2(horizontalPosition, this.YPosition)
+        return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies)
     }
 
     remove(){
