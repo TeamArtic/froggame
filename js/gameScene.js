@@ -34,9 +34,9 @@ let levels = [
         {"type":"sewerWater","position":5},
         {"type":"sewerFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 30 },
-        { "yPosition": 3, "speed": 25 },
-        { "yPosition": 5, "speed": 20 },
+        { "yPosition": 1, "speed": 30 , "direction": "r"},
+        { "yPosition": 3, "speed": 25 , "direction": "l"},
+        { "yPosition": 5, "speed": 20 , "direction": "r"},
     ]),
     new levelInformation(2, "Ciudad día", new vector2(6, 6), new vector2(3, 0), [
         {"type":"startDia","position":-1},
@@ -48,9 +48,9 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 20 },
-        { "yPosition": 3, "speed": 40 },
-        { "yPosition": 5, "speed": 30 },
+        { "yPosition": 1, "speed": 20 , "direction": "l"},
+        { "yPosition": 3, "speed": 40 , "direction": "l"},
+        { "yPosition": 5, "speed": 30 , "direction": "l"},
     ]),
     new levelInformation(3, "Ciudad tarde", new vector2(6, 6), new vector2(3, 0), [
         {"type":"startTarde","position":-1},
@@ -62,10 +62,10 @@ let levels = [
         {"type":"roadUnMillonPM","position":5},
         {"type":"streetUnMillonPM","position":6},
     ], [
-        { "yPosition": 1, "speed": 15 },
-        { "yPosition": 2, "speed": 30 },
-        { "yPosition": 4, "speed": 35 },
-        { "yPosition": 5, "speed": 25 },
+        { "yPosition": 1, "speed": 15 , "direction": "l"},
+        { "yPosition": 2, "speed": 30 , "direction": "l"},
+        { "yPosition": 4, "speed": 35 , "direction": "l"},
+        { "yPosition": 5, "speed": 25 , "direction": "l"},
     ]),
     new levelInformation(4, "Ciudad noche", new vector2(6, 6), new vector2(3, 0), [
         { "type": "startNoche", "position": -1 },
@@ -77,9 +77,9 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 },
-        { "yPosition": 3, "speed": 70 },
-        { "yPosition": 5, "speed": 45 },
+        { "yPosition": 1, "speed": 30 , "direction": "l"},
+        { "yPosition": 3, "speed": 70 , "direction": "l"},
+        { "yPosition": 5, "speed": 45 , "direction": "l"},
     ]),
     new levelInformation(5, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"startPlaya","position":-1},
@@ -91,9 +91,9 @@ let levels = [
         {"type":"sandWater","position":5},
         {"type":"sandFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 45 },
-        { "yPosition": 3, "speed": 30 },
-        { "yPosition": 5, "speed": 70 },
+        { "yPosition": 1, "speed": 45 , "direction": "l"},
+        { "yPosition": 3, "speed": 30 , "direction": "l"},
+        { "yPosition": 5, "speed": 70 , "direction": "l"},
     ]),
     new levelInformation(6, "Autopista", new vector2(6, 6), new vector2(3,0), [
         {"type":"streetFloor","position":0},
@@ -104,10 +104,10 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 80 },
-        { "yPosition": 2, "speed": 80 },
-        { "yPosition": 4, "speed": 80 },
-        { "yPosition": 5, "speed": 80 },
+        { "yPosition": 1, "speed": 80 , "direction": "l"},
+        { "yPosition": 2, "speed": 80 , "direction": "l"},
+        { "yPosition": 4, "speed": 80 , "direction": "l"},
+        { "yPosition": 5, "speed": 80 , "direction": "l"},
     ]),
     new levelInformation(7, "Ciudad Futur", new vector2(6, 6), new vector2(3,0), [
         {"type":"futureStart","position":-1},
@@ -119,11 +119,11 @@ let levels = [
         {"type":"futureRoad","position":5},
         {"type":"futureStreet","position":6},
     ], [
-        { "yPosition": 1, "speed": 80 },
-        { "yPosition": 2, "speed": 100 },
-        { "yPosition": 3, "speed": 40 },
-        { "yPosition": 4, "speed": 60 },
-        { "yPosition": 5, "speed": 30 },
+        { "yPosition": 1, "speed": 80 , "direction": "l"},
+        { "yPosition": 2, "speed": 100 , "direction": "l"},
+        { "yPosition": 3, "speed": 40 , "direction": "l"},
+        { "yPosition": 4, "speed": 60 , "direction": "l"},
+        { "yPosition": 5, "speed": 30 , "direction": "l"},
     ]),
 ]
 
