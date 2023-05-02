@@ -326,7 +326,11 @@ class characterInfo {
 let imagesFolder = "../img/"
 
 let characters = [
-    new characterInfo("Donatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif")
+    new characterInfo("Jennica", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 6, 0, 10),
+    new characterInfo("Leo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 4, 0, 20),
+    new characterInfo("Rafael", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 2, 0, 30),
+    new characterInfo("Michelangelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25),
+    new characterInfo("Donnatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25)
 ]
 
 // Level transition animation
