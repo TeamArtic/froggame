@@ -12,11 +12,11 @@ let actualCharacter
 
 let roads = []
 
-let dead = false
+let superDead = false
 
-const deadTimeout = 1000
+const superDeadTimeout = 1000
 
-let deadTimeoutTime = deadTimeout
+let superDeadTimeoutTime = superDeadTimeout
 
 let lifes = 3
 
@@ -227,7 +227,7 @@ class enemy extends object {
         this.move(new vector2(this.speed/5, 0))
         if(!this.isColliding(gameFrog)){
             lifes -= 1
-            dead = true
+            superDead = true
             foregroundContainer.style.backdropFilter = "grayScale(1)"
             if(lifes <= 0){
                 window.location.reload() // TODO Make the death animation
@@ -433,11 +433,11 @@ function keyEvent(e) {
 
 function update() {
     if(playing && notPaused){
-        if(dead){
-            deadTimeoutTime -= 10
-            if(deadTimeoutTime <= 0){
-                dead = false
-                deadTimeoutTime = deadTimeout
+        if(superDead){
+            superDeadTimeoutTime -= 10
+            if(superDeadTimeoutTime <= 0){
+                superDead = false
+                superDeadTimeoutTime = superDeadTimeout
                 foregroundContainer.style.backdropFilter = ""
             }
         }else{
