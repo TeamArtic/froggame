@@ -326,10 +326,10 @@ class characterInfo {
 let imagesFolder = "../img/"
 
 let characters = [
-    new characterInfo("Jennica", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 6, 0, 10),
-    new characterInfo("Leo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 4, 0, 20),
-    new characterInfo("Rafael", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 2, 0, 30),
-    new characterInfo("Michelangelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25),
+    new characterInfo("Jennica", imagesFolder + "yellow.gif", imagesFolder + "yellowfow.gif", 6, 0, 10),
+    new characterInfo("Leo", imagesFolder + "leo.gif", imagesFolder + "leopalante nuevo.gif", 4, 0, 20),
+    new characterInfo("Rafael", imagesFolder + "rafa.gif", imagesFolder + "rafapalante.gif", 2, 0, 30),
+    new characterInfo("Michelangelo", imagesFolder + "miguel.gif", imagesFolder + "miguelpalante.gif", 3, 0, 25),
     new characterInfo("Donnatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25)
 ]
 
