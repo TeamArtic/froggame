@@ -333,6 +333,12 @@ let characters = [
     new characterInfo("Donnatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25)
 ]
 
+let selectedCharacterId = localStorage.getItem("selectedCharacterId")
+if(!selectedCharacterId){
+    selectedCharacterId = 0
+}
+actualCharacter = characters[selectedCharacterId]
+
 // Level transition animation
 
 function startLoadingLevel() {
