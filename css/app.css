@@ -23,18 +23,35 @@ button{
     padding: 0;
 }
 
-.app{
+.app-game-container{
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
+
+.app-menu-container{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 
 .background-container{
     background-repeat: repeat;
     background-position: center;
+}
+
+.centered-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-1{
+    flex: 1;
 }
 
 .full-size-menu{
@@ -49,7 +66,16 @@ button{
     display: none !important;
 }
 
+.image-rendering-pixelated{
+    image-rendering: pixelated;
+}
+
+.overflow-auto{
+    overflow: auto;
+}
+
 .vertical-container{
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
@@ -95,7 +121,8 @@ button{
 
 .default-menu-container{
     border: 2px solid green;
-    background-color: #00000070
+    background-color: #00000070;
+    color: #FFF;
 }
 
 .default-background{
@@ -145,6 +172,22 @@ button{
 
 .position-absolute{
     position: absolute;
+}
+
+.default-character-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 500px;
+}
+
+.defalut-menu-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+    padding: 10px;
 }
 
 .highlighted-button {
