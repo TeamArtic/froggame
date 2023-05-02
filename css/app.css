@@ -23,7 +23,7 @@ button{
     padding: 0;
 }
 
-.app-game-container{
+.app-default-container{
     height: 100vh;
     overflow: hidden;
     display: flex;
