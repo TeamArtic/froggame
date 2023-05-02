@@ -403,9 +403,11 @@ function transitionToNextScreen() {
 function moveFrog(movement) {
     if (!onMovement && playing && notPaused) {
         onMovement = true
-        gameFrog.object.src = "../img/palante.gif"
+        if(actualCharacter){
+            gameFrog.object.src = actualCharacter.movingImageURL
+        }
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function () { onMovement = false; gameFrog.object.src = "../img/dona.gif" }, 500)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL}}, 500)
         gameFrog.gridMove(movement)
     }
 }
