@@ -12,6 +12,14 @@ let actualCharacter
 
 let roads = []
 
+let dead = false
+
+const deadTimeout = 1000
+
+let deadTimeoutTime = deadTimeout
+
+let lifes = 3
+
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -218,7 +226,12 @@ class enemy extends object {
     update(){
         this.move(new vector2(this.speed/5, 0))
         if(!this.isColliding(gameFrog)){
-            window.location.reload() // TODO Make the death animation
+            lifes -= 1
+            dead = true
+            foregroundContainer.style.backdropFilter = "grayScale(1)"
+            if(lifes <= 0){
+                window.location.reload() // TODO Make the death animation
+            }
         }
     }
 }
@@ -420,8 +433,17 @@ function keyEvent(e) {
 
 function update() {
     if(playing && notPaused){
-        for(let i = 0; i < roads.length; i++){
-            roads[i].update()
+        if(dead){
+            deadTimeoutTime -= 10
+            if(deadTimeoutTime <= 0){
+                dead = false
+                deadTimeoutTime = deadTimeout
+                foregroundContainer.style.backdropFilter = ""
+            }
+        }else{
+            for(let i = 0; i < roads.length; i++){
+                roads[i].update()
+            }
         }
     }
 }
