@@ -313,10 +313,13 @@ class imageInfo {
 }
 
 class characterInfo {
-    constructor(characterName, stayImageURL, movingImageURL) {
+    constructor(characterName, stayImageURL, movingImageURL, characterLifes, characterSuperLifes, speed) {
         this.characterName = characterName
         this.stayImageURL = stayImageURL
         this.movingImageURL = movingImageURL
+        this.characterLifes = characterLifes
+        this.characterSuperLifes = characterSuperLifes
+        this.speed = speed
     }
 }
 
