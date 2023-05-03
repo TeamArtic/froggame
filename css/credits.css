@@ -7,13 +7,14 @@
 
 body {
     font-family: 'hola';
-    background-image: url(../img/juego.gif);
+    /*! background-image: url(../img/juego.gif); */
     background-attachment: fixed;
     background-size: cover;
     font-size: 16px;
     color: #FFFFFF;
     margin: 0;
     padding: 0;
+    background: #000;
 }
 
 h1 {
@@ -25,6 +26,8 @@ h1 {
     font-weight: bold;
     text-shadow: 1px 1px 0 #CCCCCC;
     font-family: 'hola';
+    font-size: 1.1in;
+    text-align: center;
 }
 
 ul {
@@ -33,17 +36,20 @@ ul {
     padding: 0;
     text-align: center;
     line-height: 1.5;
-    animation: creditos 30s linear infinite;
+    animation: creditos 40s linear infinite;
     position: relative;
+    /*! transform: rotate3d(48,-23,0,51deg); */
+    /*! perspective: 15px; */
+    /*! transform: rotate3d(1,0,0, 45deg) translateY(-508px); */
 }
 
 li {
-    display: inline-block;
-    margin: 0 20px;
-    padding: 10px 20px;
-    border: 2px solid #FFFFFF;
+    /*! display: inline-block; */
+    /*! margin: 0 20px; */
+    /*! padding: 10px 20px; */
+    /*! border: 2px solid #FFFFFF; */
     border-radius: 5px;
-    text-shadow: 1px 1px 0 #CCCCCC;
+    /*! text-shadow: 1px 1px 0 #CCCCCC; */
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -54,7 +60,7 @@ li:hover {
 }
 
 .creditos {
-    margin: 400px 0 0 0;
+    /*! margin: 400px 0 0 0; */
     text-align: center;
     font-size: 14px;
     font-family: 'hola';
@@ -63,11 +69,11 @@ li:hover {
 
 @keyframes creditos {
     0% {
-        transform: translateY(0%);
+        transform:rotate3d(1, 0, 0, 25deg) translateY(1000px);
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: rotate3d(1, 0, 0, 25deg) translateY(-5000px);
     }
 }
 .li1{
