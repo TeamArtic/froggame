@@ -74,8 +74,8 @@ nav a {
 }
 
 .tittle {
-  position: relative;
-  transform: translateX(-50%);
+  /* position: relative;
+  transform: translateX(-50%); */
   font-size: 30px;
 }
 
@@ -208,7 +208,7 @@ nav a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
-  height: 60px;
+  /* height: 60px; */
 }
 
 .characters-pj{

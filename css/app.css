@@ -98,6 +98,10 @@ button{
     overflow: hidden;
 }
 
+.align-self-center{
+    align-self: center;
+}
+
 .text-align-center{
     text-align: center;
 }
