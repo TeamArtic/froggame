@@ -199,3 +199,90 @@ window.addEventListener('load', () => {
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
 });
+
+function moveFrog(movement) {
+    if (!onMovement && playing && notPaused) {
+        onMovement = true
+        if(actualCharacter){
+            gameFrog.object.src = actualCharacter.movingImageURL
+        }
+        clearTimeout(frogMovementTimeout)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL}}, 500)
+        gameFrog.gridMove(movement)
+    }
+}
+
+function specialAbility(){
+    
+}
+
+function keyEvent(e) {
+    switch (e.keyCode) {
+        case 87:
+            moveFrog(new vector2(0, -1))
+            break;
+        case 65:
+            moveFrog(new vector2(-1, 0))
+            break;
+        case 83:
+            moveFrog(new vector2(0, 1))
+            break;
+        case 68:
+            moveFrog(new vector2(1, 0))
+            break;
+        case 32:
+            specialAbility()
+            break;
+        case 27:
+            pauseMenuToggle.toggle()
+            notPaused = pauseMenuToggle.enabled
+            break;
+    }
+}
+
+function update() {
+    if(playing && notPaused){
+        if(superDead){
+            superDeadTimeoutTime -= 10
+            if(superDeadTimeoutTime <= 0){
+                superDead = false
+                superDeadTimeoutTime = superDeadTimeout
+                foregroundContainer.style.backdropFilter = ""
+            }
+        }else{
+            for(let i = 0; i < roads.length; i++){
+                roads[i].update()
+            }
+        }
+    }
+}
+
+window.addEventListener('load', () => {
+
+    pageTitle = document.getElementById('pageTitle')
+    foregroundContainer = document.getElementById('foregroundContainer')
+
+    appContainer = document.getElementById('app')
+    elementsContainer = document.getElementById('elementsContainer')
+
+    gameScene = new scene(update, elementsContainer)
+    keyboardEvent = new KeyboardEvent("keydown")
+    mainGrid = new grid(elementsContainer, 6, 6, 100)
+
+    // Generate the mainCharacter
+    gameFrog = new frog(mainGrid, gameScene, "mainCharacter", new vector2(30, 30), new vector2(40, 40))
+    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
+    gameScene.addObject("frog", gameFrog)
+
+    // enemyContainer = document.getElementById('enemy')
+    // enemyContainer = new object("enemy", gameScene, new vector2(50,0),new vector2(0,0), enemyContainer)
+    // gameScene.addObject("enemy", enemy)
+
+    pauseMenu = document.getElementById('pauseMenu')
+    pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
+    document.onkeydown = keyEvent;
+
+    levelManager.loadLevel(levels[0])
+    levelLoadingTimeout = setTimeout(showLevelName, 800)
+
+});
