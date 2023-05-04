@@ -278,7 +278,8 @@ nav a {
   background-color: #000;
   color: #289234;
   text-shadow: 2px 2px #fff;
-  transform: scale(1.1);
+  transform: scale(1.1) ;
+  
 }
 
 /* CSS-Creditos */

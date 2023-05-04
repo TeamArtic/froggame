@@ -33,6 +33,8 @@ function cambiarprecio(event) {
         document.getElementById("saldo").innerHTML = dinero + "€";
         comprarRealizada();
         boton.disabled = true;
+        boton.style.backgroundColor = "grey";
+        boton.style.pointerEvents = "none";
         boton.textContent = "Comprado";
       }
     }
