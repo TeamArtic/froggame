@@ -7,11 +7,23 @@ header {
   padding: 10px 20px;
 }
 
+body{
+  cursor:url(https://cdn.custom-cursor.com/db/12602/32/cartoons-tmnt-raphael-and-sai-weapon-cursor.png) , default !important;
+}
+
+a{
+  cursor:url(https://cdn.custom-cursor.com/db/12601/32/cartoons-tmnt-raphael-and-sai-weapon-pointer.png) , pointer !important; 
+}
+
+button{
+  cursor:url(https://cdn.custom-cursor.com/db/12601/32/cartoons-tmnt-raphael-and-sai-weapon-pointer.png) , pointer !important; 
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-image: url(../img/dona.jpg);
+  font-family: 'Press Start 2P', cursive;
+  /* background-image: url(../img/dona.jpg); */
   font-family: 'hola';
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,9 +67,9 @@ nav ul {
   display: flex;
 }
 
-nav li {
+/* nav li {
   margin-right: 20px;
-}
+} */
 
 nav a {
   color: #000;
@@ -89,10 +101,10 @@ nav ul {
   list-style: none;
   display: flex;
 }
-
+/* 
 nav li {
   margin-right: 20px;
-}
+} */
 
 nav a {
   color: #000;

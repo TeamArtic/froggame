@@ -12,6 +12,18 @@
     }
 }
 
+body{
+    cursor:url(https://cdn.custom-cursor.com/db/12602/32/cartoons-tmnt-raphael-and-sai-weapon-cursor.png) , default !important;
+}
+
+a{
+    cursor:url(https://cdn.custom-cursor.com/db/12601/32/cartoons-tmnt-raphael-and-sai-weapon-pointer.png) , pointer !important; 
+}
+
+button{
+    cursor:url(https://cdn.custom-cursor.com/db/12601/32/cartoons-tmnt-raphael-and-sai-weapon-pointer.png) , pointer !important; 
+  }
+
 .jump {
     animation: jump 1s ease-out;
 }

@@ -2,6 +2,10 @@ function generateObject(parameters){
 
 }
 
+function generateLabelHTML(labelType, attributes, text){
+    return "<" + labelType + attributes.renderHTML() + ">" + text + "</" + labelType + ">"
+}
+
 class vector2{
     constructor(x, y){
         this.x = x
@@ -30,8 +34,15 @@ class vector2{
 }
 
 class scene{
-    constructor(){
+    constructor(updateMethod, sceneContainer){
         this.objects = []
+        this.updateMethod = updateMethod
+        this.updateMethodInterval = setInterval(this.updateMethod, 25)
+        this.sceneContainer = sceneContainer
+    }
+
+    updateMethod(){
+        this.updateMethod()
     }
 
     addObject(id, object){
@@ -75,12 +86,20 @@ class scene{
 
 class object{
     // constructor(position){
-    constructor(id, objectScene, position, size, object = null){
+    constructor(id, objectScene, position, size, withObject = false, colliderPosition = new vector2(0, 0), colliderSize = null){
         this.id = id
         this.objectScene = objectScene
         this.position = position
-        this.object = object
         this.size = size
+        this.colliderPosition = colliderPosition
+        if(colliderSize){
+            this.colliderSize = colliderSize
+        }else{
+            this.colliderSize = this.size
+        }
+        if(withObject){
+            this.generateObject()
+        }
         this.setPosition(this.position)
         this.objectScene.addObject(this.id, this)
         this.movementInterval
@@ -103,6 +122,7 @@ class object{
     }
 
     setPosition(newPosition){
+        this.position = new vector2(newPosition.x, newPosition.y)
         if(this.imageURL){
             newPosition.add(this.imagePosition)
         }
@@ -120,6 +140,45 @@ class object{
         this.imageDimension = dimension
         this.imagePosition = position
     }
+
+    updateObjectReference(){
+        this.object = document.getElementById(this.id)
+    }
+
+    setGenerateObjectFunction(generateObjectFunction){
+        this.generateObjectFunction = generateObjectFunction
+    }
+
+    generateObject(){
+        let newObjectHTML = generateLabelHTML("img", new attributes([{"name":"src","values":[""]}, {"name":"id", "values":[this.id]}, {"name":"style","values":["position:absolute;", "z-index:3;", "left:" + this.position.y + "px;", "top:" + this.position.x + "px;"]}]), "")
+        this.objectScene.sceneContainer.innerHTML += newObjectHTML
+        this.object = document.getElementById(this.id)
+        if(this.generateObjectFunction){
+            this.generateObjectFunction()
+        }
+    }
+
+    remove(){
+        if(this.object){
+            this.object.remove()
+        }
+    }
+
+    isColliding(collidingObject){
+        let firstColliderPosition = vector2.additionVector2(this.position, this.colliderPosition)
+        let firstColliderSize = this.colliderSize
+        let secondColliderPosition = vector2.additionVector2(collidingObject.position, collidingObject.colliderPosition)
+        let secondColliderSize = collidingObject.colliderSize
+        let topCollision = 
+        secondColliderPosition.y + secondColliderSize.y > firstColliderPosition.y
+        let bottomCollision = 
+        firstColliderPosition.y + firstColliderSize.y > secondColliderPosition.y
+        let leftCollision = 
+        secondColliderPosition.x + secondColliderSize.x > firstColliderPosition.x
+        let rightCollision = 
+        firstColliderPosition.x + firstColliderSize.x > secondColliderPosition.x
+        return !(topCollision && bottomCollision && leftCollision && rightCollision)
+    }
 }
 
 class grid{
@@ -135,11 +194,18 @@ class grid{
         this.gridContainer.style.width = (this.width + 1) * this.tileSize + "px"
         this.gridContainer.style.height = (this.height + 1) * this.tileSize + "px"
     }
+
+    setGridSize(newSize){
+        this.width = newSize.x
+        this.height = newSize.y
+        this.gridContainer.style.width = (this.width + 1) * this.tileSize + "px"
+        this.gridContainer.style.height = (this.height + 1) * this.tileSize + "px"
+    }
 }
 
 class gridObject extends object{
-    constructor(grid, objectScene, id, position, size, object){
-        super(id, objectScene, vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object)
+    constructor(grid, objectScene, id, position, size, object, colliderObject, colliderSize){
+        super(id, objectScene, vector2.multiplyVector2(position, grid.tileSize), new vector2(grid.tileSize, grid.tileSize), object, colliderObject, colliderSize)
         this.grid = grid
         this.gridPosition = position
     }
@@ -160,4 +226,3 @@ class gridObject extends object{
         }
     }
 }
-
