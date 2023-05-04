@@ -20,6 +20,13 @@ let superDeadTimeoutTime = superDeadTimeout
 
 let lifes = 3
 
+function removeFromAnArray(array, startPosition, endPosition = null){
+    if(!endPosition){
+        endPosition = startPosition + 1
+    }
+    return array.splice(0, startPosition).concat(array.splice(startPosition + endPosition, array.length)) /* This part of the code is pending of reviewing. */
+}
+
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -244,6 +251,7 @@ class road {
         this.roadId = roadId
         this.numberOfEnemies = 0
         this.direction = direction
+        this.disabledEnemies = []
         this.enemies = [this.generateEnemy()]
         this.nextEnemyGeneration = 0
     }
@@ -259,7 +267,18 @@ class road {
             enemySpeed = -this.speed
         }
         let generationPosition = new vector2(horizontalPosition, this.YPosition)
-        return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies)
+        if(this.disabledEnemies.length > 0){
+            let finalEnemy = this.disabledEnemies[0]
+            this.disabledEnemies = removeFromAnArray(this.disabledEnemies, 0)
+            // finalEnemy.position = generationPositions
+            // finalEnemy.object.position = generationPosition
+            finalEnemy.setPosition(generationPosition)
+            finalEnemy.speed = enemySpeed
+            finalEnemy.object.style.display = "unset"
+            return finalEnemy
+        }else{
+            return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies)
+        }
     }
 
     remove(){
@@ -275,9 +294,24 @@ class road {
         }
     }
 
+    disableEnemy(enemyId){
+        this.enemies[enemyId].object.style.display = "none"
+        this.disabledEnemies.push(this.enemies[enemyId])
+        this.enemies = removeFromAnArray(this.enemies, enemyId)
+    }
+
     update(){
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].update()
+            if(this.direction == "l"){
+                if(this.enemies[i].position.x > 700){
+                    this.disableEnemy(i)
+                }
+            }else{
+                if(this.enemies[i].position.x < -100){
+                    this.disableEnemy(i)
+                }
+            }
         }
         this.nextEnemyGeneration += 1
         if(this.nextEnemyGeneration >= 2000/25){
