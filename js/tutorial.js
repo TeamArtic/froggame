@@ -19,7 +19,7 @@ typeWriter();
 document.getElementById('foregroundContainer');
 setTimeout(() => {
   foregroundContainer.style.display = 'none';
-}, 4000); // 500ms de retraso antes de cambiar a 'display:none';
+}, 1500); // 500ms de retraso antes de cambiar a 'display:none';
 
 const tortugasgif1 = document.querySelector('.tortugasgif1');
 const tortugasgif2 = document.querySelector('.tortugasgif2');
