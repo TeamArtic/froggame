@@ -286,6 +286,10 @@ class road {
             this.enemies[i].remove()
             delete this.enemies[i]
         }
+        for(let i = 0; i < this.disabledEnemies.length; i++){
+            this.disabledEnemies[i].remove()
+            delete this.disabledEnemies[i]
+        }
     }
 
     updateEnemiesReferences(){
