@@ -2,9 +2,13 @@ let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEven
 
 let playing = false
 
+let notPaused = true
+
 let onMovement = false
 
 const animationTime = 500
+
+let superDead = false
 
 let actualCharacter
 
@@ -157,48 +161,6 @@ function ranasalta() {
     }
 };
 
-function moveFrog(movement){
-    if(!onMovement && playing){
-        onMovement = true
-        rana.src = "../img/palante.gif"
-        clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function(){onMovement = false; rana.src = "../img/dona.gif"}, 500)
-        gameFrog.gridMove(movement)
-    }
-}
-
-function moveCharacter(e) {
-    switch (e.keyCode) {
-        case 87:
-            moveFrog(new vector2(0, -1))
-            break;
-        case 65:
-            moveFrog(new vector2(-1, 0))
-            break;
-        case 83:
-            moveFrog(new vector2(0, 1))
-            break;
-        case 68:
-            moveFrog(new vector2(1, 0))
-            break;
-    }
-}
-
-window.addEventListener('load', () => {
-    appContainer = document.getElementById('app')
-    pageTitle = document.getElementById('pageTitle')
-    elementsContainer = document.getElementById('elementsContainer')
-    foregroundContainer = document.getElementById('foregroundContainer')
-    mainScene = new scene()
-    keyboardEvent = new KeyboardEvent("keydown")
-    frogContainer = document.getElementById('rana')
-    mainGrid = new grid(elementsContainer, 6, 6, 100)
-    gameFrog = new frog(mainGrid, mainScene, "mainFrog", frogContainer)
-    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
-    document.onkeydown = moveCharacter;
-    levelManager.loadLevel(levels[0])
-    levelLoadingTimeout = setTimeout(showLevelName, 800)
-});
 
 function moveFrog(movement) {
     if (!onMovement && playing && notPaused) {
