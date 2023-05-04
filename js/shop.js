@@ -1,10 +1,10 @@
 var dinero = 100;
+
 var Tortugas = [
-    { nombre: 'Splinter', precio: '5' },
-    { nombre: 'Leonardo', precio: '10' },
-    { nombre: 'Raphael', precio: '20' },
-    { nombre: 'Michelangelo', precio: '30' },
-    { nombre: 'Donatelo', precio: '40' },
+  { nombre: 'Jennika', precio: '10' },
+  { nombre: 'Leo', precio: '10' },
+  { nombre: 'Rafael', precio: '15' },
+  { nombre: 'Michelangelo', precio: '25' }
 ];
 
 function comprarRealizada() {
@@ -22,16 +22,18 @@ function comprarRealizada() {
     divCompra.remove();
   }, 2000);
 }
+
 function cambiarprecio(event) {
-  var personaje = event.target.id;
-  var boton = document.getElementById(personaje);
+  var personaje = event.target.parentElement.querySelector('h3').textContent;
+  var boton = event.target;
   for (var i = 0; i < Tortugas.length; i++) {
     if (personaje == Tortugas[i].nombre && dinero - Tortugas[i].precio >= 0) {
       if (personaje == Tortugas[i].nombre) {
         dinero -= Tortugas[i].precio;
-        document.getElementById('saldo').innerHTML = dinero + '€';
-        boton.disabled = true;
+        document.getElementById("saldo").innerHTML = dinero + "€";
         comprarRealizada();
+        boton.disabled = true;
+        boton.textContent = "Comprado";
       }
     }
   }
