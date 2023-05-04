@@ -42,7 +42,12 @@
     width: 0;
     animation: typing 2s steps(20, end) forwards;
   }
+#elementsContainer{
 
+  position:relative;
+  top:45px;
+  left:28%;
+}
   @keyframes typing {
     from {
       width: 0;
