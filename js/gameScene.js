@@ -24,7 +24,9 @@ function removeFromAnArray(array, startPosition, endPosition = null){
     if(!endPosition){
         endPosition = startPosition + 1
     }
-    return array.splice(0, startPosition).concat(array.splice(startPosition + endPosition, array.length)) /* This part of the code is pending of reviewing. */
+    let endArray = array.splice(endPosition, array.length)
+    let startArray = array.splice(0, startPosition)
+    return startArray.concat(endArray)
 }
 
 class levelInformation {
