@@ -29,8 +29,6 @@ function removeFromAnArray(array, startPosition, endPosition = null){
     return startArray.concat(endArray)
 }
 
-class 
-
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -422,6 +420,12 @@ class frogInfo{
         this.runningImage = runningImage
     }
 }
+
+let frogsInformation = [
+    new frogInfo(
+        new imageInfo("../img/")
+    )
+]
 
 class characterInfo {
     constructor(characterName, stayImageURL, movingImageURL, characterLifes, characterSuperLifes, speed) {
