@@ -411,6 +411,8 @@ class frog extends gridObject {
 class imageInfo {
     constructor(imageURL, size, center) {
         this.imageURL = imageURL
+        this.size = size
+        this.center = center
     }
 }
 
