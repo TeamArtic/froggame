@@ -41,7 +41,7 @@ class levelInformation {
 }
 
 let levels = [
-    new levelInformation(1, "Cloaca", new vector2(2, 6), new vector2(3, 0), [
+    new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
         {"type":"sewerStart","position":-1},
         {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
@@ -98,7 +98,22 @@ let levels = [
         { "yPosition": 3, "speed": 70 , "direction": "l"},
         { "yPosition": 5, "speed": 45 , "direction": "l"},
     ]),
-    new levelInformation(5, "Playa", new vector2(6, 6), new vector2(3,0), [
+    new levelInformation(5, "Ciudad noche", new vector2(3, 6), new vector2(3, 0), [
+        { "type": "startNoche", "position": -1 },
+        { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 0 },
+        { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 1 },
+        { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 2 },
+        { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 3 },
+        { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 4 },
+        { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
+        { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
+    ], [
+        { "yPosition": 1, "speed": 30 , "direction": "l"},
+        { "yPosition": 3, "speed": 40 , "direction": "r"},
+        { "yPosition": 4, "speed": 55 , "direction": "l"},
+        { "yPosition": 5, "speed": 65 , "direction": "r"},
+    ]),
+    new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"startPlaya","position":-1},
         {"type":"sandFloor","position":0},
         {"type":"sandWater","position":1},
@@ -112,7 +127,7 @@ let levels = [
         { "yPosition": 3, "speed": 30 , "direction": "l"},
         { "yPosition": 5, "speed": 70 , "direction": "l"},
     ]),
-    new levelInformation(6, "Autopista", new vector2(6, 6), new vector2(3,0), [
+    new levelInformation(7, "Autopista", new vector2(6, 6), new vector2(3,0), [
         {"type":"streetFloor","position":0},
         {"type":"streetRoad","position":1},
         {"type":"streetRoad","position":2},
@@ -126,7 +141,23 @@ let levels = [
         { "yPosition": 4, "speed": 80 , "direction": "l"},
         { "yPosition": 5, "speed": 80 , "direction": "l"},
     ]),
-    new levelInformation(7, "Ciudad Futur", new vector2(6, 6), new vector2(3,0), [
+    new levelInformation(8, "Ciudad futurista 1", new vector2(6, 6), new vector2(3,0), [
+        {"type":"futureStart","position":-1},
+        {"type":"futureStreet","position":0},
+        {"type":"futureRoad","position":1},
+        {"type":"futureRoad","position":2},
+        {"type":"futureRoad","position":3},
+        {"type":"futureRoad","position":4},
+        {"type":"futureRoad","position":5},
+        {"type":"futureStreet","position":6},
+    ], [
+        { "yPosition": 1, "speed": 30 , "direction": "l"},
+        { "yPosition": 2, "speed": 50 , "direction": "r"},
+        { "yPosition": 3, "speed": 30 , "direction": "l"},
+        { "yPosition": 4, "speed": 70 , "direction": "r"},
+        { "yPosition": 5, "speed": 30 , "direction": "l"},
+    ]),
+    new levelInformation(9, "Ciudad futurista 2", new vector2(6, 6), new vector2(3,0), [
         {"type":"futureStart","position":-1},
         {"type":"futureStreet","position":0},
         {"type":"futureRoad","position":1},
