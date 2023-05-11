@@ -39,6 +39,24 @@ class imageInfo {
     }
 }
 
+class enemyInfo{
+    constructor(name, image){
+        this.name = name
+        this.image = image
+    }
+}
+
+let enemiesInfo = [
+    {"name":"armaggon", "image":new imageInfo(imagesFolder + "armaggon.gif", new vector2(50, 50), new vector2(10, -30))},
+    {"name":"april", "image":new imageInfo(imagesFolder + "april.gif", new vector2(20, 20), new vector2(29, -25))}, // 41x75
+    {"name":"asuka", "image":new imageInfo(imagesFolder + "asuka.gif", new vector2(23, 23), new vector2(27, -43))}, // 46x93
+    {"name":"chrome", "image":new imageInfo(imagesFolder + "chrome.gif", new vector2(26, 26), new vector2(23, -36))}, //53x76  23 -26
+    {"name":"cyber", "image":new imageInfo(imagesFolder + "cyber.gif", new vector2(25, 25), new vector2(25, -49))}, // 50x99
+    {"name":"dirtbag", "image":new imageInfo(imagesFolder + "dirtbag.gif", new vector2(20, 20), new vector2(25, -12))}, // 40x62
+    // {"name":"karai", "image":new imageInfo(imagesFolder + "karai.gif", new vector2(48, 48), new vector2(1, -54))}, // 97x104
+    {"name":"wignut", "image":new imageInfo(imagesFolder + "wignut.gif", new vector2(21, 21), new vector2(21, -45))} // 57x85 21 -35
+]
+
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -61,9 +79,9 @@ let levels = [
         {"type":"sewerWater","position":5},
         {"type":"sewerFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "r"},
-        { "yPosition": 3, "speed": 25 , "direction": "l"},
-        { "yPosition": 5, "speed": 20 , "direction": "r"},
+        { "yPosition": 1, "speed": 30 , "direction": "r", "enemy":"armaggon"},
+        { "yPosition": 3, "speed": 25 , "direction": "l", "enemy":"armaggon"},
+        { "yPosition": 5, "speed": 20 , "direction": "r", "enemy":"armaggon"},
     ]),
     new levelInformation(2, "Ciudad día", new vector2(6, 6), new vector2(3, 0), [
         {"type":"startDia","position":-1},
@@ -75,9 +93,9 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 20 , "direction": "l"},
-        { "yPosition": 3, "speed": 40 , "direction": "l"},
-        { "yPosition": 5, "speed": 30 , "direction": "l"},
+        { "yPosition": 1, "speed": 20 , "direction": "l", "enemy":"april"},
+        { "yPosition": 3, "speed": 40 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"april"},
     ]),
     new levelInformation(3, "Ciudad tarde", new vector2(6, 6), new vector2(3, 0), [
         {"type":"startTarde","position":-1},
@@ -89,10 +107,10 @@ let levels = [
         {"type":"roadUnMillonPM","position":5},
         {"type":"streetUnMillonPM","position":6},
     ], [
-        { "yPosition": 1, "speed": 15 , "direction": "l"},
-        { "yPosition": 2, "speed": 30 , "direction": "l"},
-        { "yPosition": 4, "speed": 35 , "direction": "l"},
-        { "yPosition": 5, "speed": 25 , "direction": "l"},
+        { "yPosition": 1, "speed": 15 , "direction": "l", "enemy":"april"},
+        { "yPosition": 2, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 4, "speed": 35 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 25 , "direction": "l", "enemy":"april"},
     ]),
     new levelInformation(4, "Ciudad noche", new vector2(6, 6), new vector2(3, 0), [
         { "type": "startNoche", "position": -1 },
@@ -104,9 +122,9 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l"},
-        { "yPosition": 3, "speed": 70 , "direction": "l"},
-        { "yPosition": 5, "speed": 45 , "direction": "l"},
+        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 3, "speed": 70 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 45 , "direction": "l", "enemy":"april"},
     ]),
     new levelInformation(5, "Ciudad noche", new vector2(2, 6), new vector2(1, 0), [
         { "type": "startNoche", "position": -1 },
@@ -118,10 +136,10 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l"},
-        { "yPosition": 3, "speed": 40 , "direction": "r"},
-        { "yPosition": 4, "speed": 55 , "direction": "l"},
-        { "yPosition": 5, "speed": 65 , "direction": "r"},
+        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"april"},
+        { "yPosition": 4, "speed": 55 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 65 , "direction": "r", "enemy":"april"},
     ]),
     new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"startPlaya","position":-1},
@@ -133,9 +151,9 @@ let levels = [
         {"type":"sandWater","position":5},
         {"type":"sandFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 45 , "direction": "l"},
-        { "yPosition": 3, "speed": 30 , "direction": "l"},
-        { "yPosition": 5, "speed": 70 , "direction": "l"},
+        { "yPosition": 1, "speed": 45 , "direction": "l", "enemy":"armaggon"},
+        { "yPosition": 3, "speed": 30 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 5, "speed": 70 , "direction": "l", "enemy":"wignut"},
     ]),
     new levelInformation(7, "Autopista", new vector2(6, 6), new vector2(3,0), [
         {"type":"streetFloor","position":0},
@@ -146,10 +164,10 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 80 , "direction": "l"},
-        { "yPosition": 2, "speed": 80 , "direction": "l"},
-        { "yPosition": 4, "speed": 80 , "direction": "l"},
-        { "yPosition": 5, "speed": 80 , "direction": "l"},
+        { "yPosition": 1, "speed": 80 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 2, "speed": 80 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 4, "speed": 80 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 5, "speed": 80 , "direction": "l", "enemy":"wignut"},
     ]),
     new levelInformation(8, "Ciudad futurista 1", new vector2(4, 6), new vector2(2,0), [
         {"type":"futureStart","position":-1},
@@ -161,11 +179,11 @@ let levels = [
         {"type":"futureRoad","position":5},
         {"type":"futureStreet","position":6},
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l"},
-        { "yPosition": 2, "speed": 50 , "direction": "r"},
-        { "yPosition": 3, "speed": 30 , "direction": "l"},
-        { "yPosition": 4, "speed": 70 , "direction": "r"},
-        { "yPosition": 5, "speed": 30 , "direction": "l"},
+        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"chrome"},
+        { "yPosition": 2, "speed": 50 , "direction": "r", "enemy":"wignut"},
+        { "yPosition": 3, "speed": 30 , "direction": "l", "enemy":"chrome"},
+        { "yPosition": 4, "speed": 70 , "direction": "r", "enemy":"wignut"},
+        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"chrome"},
     ]),
     new levelInformation(9, "Ciudad futurista 2", new vector2(6, 6), new vector2(3,0), [
         {"type":"futureStart","position":-1},
@@ -177,11 +195,11 @@ let levels = [
         {"type":"futureRoad","position":5},
         {"type":"futureStreet","position":6},
     ], [
-        { "yPosition": 1, "speed": 80 , "direction": "l"},
-        { "yPosition": 2, "speed": 100 , "direction": "l"},
-        { "yPosition": 3, "speed": 40 , "direction": "l"},
-        { "yPosition": 4, "speed": 60 , "direction": "l"},
-        { "yPosition": 5, "speed": 30 , "direction": "l"},
+        { "yPosition": 1, "speed": 80 , "direction": "l", "enemy":"dirtbag"},
+        { "yPosition": 2, "speed": 100 , "direction": "l", "enemy":"dirtbag"},
+        { "yPosition": 3, "speed": 40 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 4, "speed": 60 , "direction": "l", "enemy":"chrome"},
+        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"april"},
     ]),
 ]
 
@@ -251,7 +269,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction, levelInfo.size))
+            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction, levelInfo.size, levelInfo.roadsElements[i].enemy))
         }
         for(let i = 0; i < roads.length; i++){
             roads[i].updateEnemiesReferences()
@@ -261,16 +279,17 @@ class levelManager {
 }
 
 class enemy extends object {
-    constructor(objectScene, position, speed, direction, enemyId) {
+    constructor(objectScene, position, speed, direction, enemyId, enemyImageInfo) {
         super(enemyId, objectScene, position, new vector2(100, 100), true)
         this.enemyId = enemyId
+        this.enemyImageInfo = enemyImageInfo
         this.speed = speed
         this.setPosition(position)
         this.position = position
         this.object.style.zIndex = 2
         this.direction = direction
-        this.object.src = "../img/armaggon.gif"
-        this.setImage("../img/armaggon.gif", new vector2(50, 50), new vector2(10, -30))
+        this.object.src = enemyImageInfo.image.imageURL
+        this.setImage("../img/armaggon.gif", enemyImageInfo.image.size, enemyImageInfo.image.center)
         if(this.direction == "r"){
             this.object.style.transform = "scale(-1,1)"
         }
@@ -295,7 +314,7 @@ class enemy extends object {
 }
 
 class road {
-    constructor(objectScene, YPosition, speed, roadId, direction = "l", levelSize) {
+    constructor(objectScene, YPosition, speed, roadId, direction = "l", levelSize, enemyName) {
         this.YPosition = YPosition * 100
         this.levelSize = levelSize
         this.speed = speed
@@ -304,6 +323,7 @@ class road {
         this.numberOfEnemies = 0
         this.direction = direction
         this.disabledEnemies = []
+        this.enemyName = enemyName
         this.enemies = [this.generateEnemy()]
         let distanceBetweenEnemies = (speed / 5) * (1000 / 25) * 2
         if (direction == "l") {
@@ -322,6 +342,18 @@ class road {
             }
         }
         this.nextEnemyGeneration = 0
+    }
+
+    getEnemyInformation(){
+        let finalEnemyInfo = enemiesInfo.find((actualValue) => {
+            return actualValue.name == this.enemyName
+        })
+        if(finalEnemyInfo){
+            return finalEnemyInfo
+        }else{
+            alert("The enemy " + this.enemyName + " does not exist.")
+            return enemiesInfo[0]
+        }
     }
 
     generateEnemy() {
@@ -345,7 +377,7 @@ class road {
             finalEnemy.object.style.display = "unset"
             return finalEnemy
         }else{
-            return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies)
+            return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies, this.getEnemyInformation())
         }
     }
 
