@@ -106,3 +106,9 @@ function mostrarMensaje() {
     mensaje.style.display = "none";
   }, 2000); // 2000 milisegundos = 2 segundos
 }
+function mostrarMensaje() {
+  var mensaje = document.getElementById("mensaje");
+  mensaje.innerHTML = "";
+  var botonCancelar = document.getElementById("other-characters-button");
+  botonCancelar.classList.remove("hidden");
+}
