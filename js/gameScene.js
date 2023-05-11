@@ -98,7 +98,7 @@ let levels = [
         { "yPosition": 3, "speed": 70 , "direction": "l"},
         { "yPosition": 5, "speed": 45 , "direction": "l"},
     ]),
-    new levelInformation(5, "Ciudad noche", new vector2(3, 6), new vector2(3, 0), [
+    new levelInformation(5, "Ciudad noche", new vector2(2, 6), new vector2(3, 0), [
         { "type": "startNoche", "position": -1 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 0 },
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 1 },
@@ -141,7 +141,7 @@ let levels = [
         { "yPosition": 4, "speed": 80 , "direction": "l"},
         { "yPosition": 5, "speed": 80 , "direction": "l"},
     ]),
-    new levelInformation(8, "Ciudad futurista 1", new vector2(6, 6), new vector2(3,0), [
+    new levelInformation(8, "Ciudad futurista 1", new vector2(4, 6), new vector2(3,0), [
         {"type":"futureStart","position":-1},
         {"type":"futureStreet","position":0},
         {"type":"futureRoad","position":1},
