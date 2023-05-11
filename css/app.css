@@ -285,3 +285,17 @@ button.highlighted-button{
 .jump {
     animation: jump 0.5s ease-out;
 }
+
+.gradientElement{
+    position: absolute;
+    z-index: 4;
+}
+
+.left-gradient{
+    /* background-color:  */
+    background: linear-gradient(90deg, #000, #000, #00000000);
+}
+
+.right-gradient{
+    background: linear-gradient(90deg, #00000000, #000, #000);
+}

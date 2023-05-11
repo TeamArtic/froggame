@@ -190,6 +190,14 @@ class levelManager {
         actualLevel = levelInfo.levelId
         pageTitle.innerHTML = levelInfo.name
         mainGrid.setGridSize(levelInfo.size)
+        let leftGradientElement = document.getElementById('leftGradientElement')
+        let rightGradientElement = document.getElementById('rightGradientElement')
+        // leftGradientElement.style.left = "-200px"
+        // leftGradientElement.style.top = "-100px"
+        // leftGradientElement.style.width = "200px"
+        // leftGradientElement.style.height = ((levelInfo.size.y + 1)) * 100 + "px"
+        leftGradientElement.style = "left:-200px;top:-100px;height:" + ((levelInfo.size.y + 2)) * 100 + "px;width:200px;"
+        rightGradientElement.style = "right:-200px;top:-100px;height:" + ((levelInfo.size.y + 2)) * 100 + "px;width:200px;"
         elementsContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         appContainer.style.backgroundImage = "url(" + levelInfo.backgroundImage + ")"
         gameFrog.gridTransform(levelInfo.spawPosition)
@@ -198,7 +206,7 @@ class levelManager {
             let floorObjectImageSRC = levelFloorObjects.find(function (element) {
                 return element.floorName == floorElement.type
             }).imageSRC
-            let floorObjectText = generateLabelHTML("div", new attributes([{ "name": "src", "values": [floorObjectImageSRC] }, {"name":"class", "values":["floorElement"]}, { "name": "style", "values": ["position:absolute;", "z-index:1;", "left:0px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 1) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"] }]), "")
+            let floorObjectText = generateLabelHTML("div", new attributes([{ "name": "src", "values": [floorObjectImageSRC] }, {"name":"class", "values":["floorElement"]}, { "name": "style", "values": ["position:absolute;", "z-index:1;", "left:-100px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 3) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"] }]), "")
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
@@ -259,14 +267,14 @@ class road {
         let distanceBetweenEnemies = (speed / 5) * (1000 / 25) * 2
         if (direction == "l") {
             let distance = distanceBetweenEnemies
-            while (distance <= (this.levelSize.x + 1) * 100) {
+            while (distance <= (this.levelSize.x + 2) * 100) {
                 this.enemies.push(this.generateEnemy())
                 this.enemies[this.enemies.length - 1].move(new vector2(distance, 0))
                 distance += distanceBetweenEnemies
             }
         } else {
             let distance = -distanceBetweenEnemies
-            while (distance >= -(this.levelSize.x + 1) * 100) {
+            while (distance >= -(this.levelSize.x + 2) * 100) {
                 this.enemies.push(this.generateEnemy())
                 this.enemies[this.enemies.length - 1].move(new vector2(distance, 0))
                 distance -= distanceBetweenEnemies
@@ -279,7 +287,7 @@ class road {
         let horizontalPosition
         let enemySpeed
         if(this.direction == "l"){
-            horizontalPosition = -100
+            horizontalPosition = -200
             enemySpeed = this.speed
         }else{
             horizontalPosition = (levels[actualLevel - 1].size.x + 1) * 100
@@ -332,12 +340,12 @@ class road {
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].update()
             if(this.direction == "l"){
-                if(this.enemies[i].position.x > (this.levelSize.x + 1) * 100){
+                if(this.enemies[i].position.x > (this.levelSize.x + 2) * 100){
                 // if(this.enemies[i].position.x > (this.objectScene.actualLevel.size.X + 1) * 100){
                     this.disableEnemy(i)
                 }
             }else{
-                if(this.enemies[i].position.x < -100){
+                if(this.enemies[i].position.x < -200){
                     this.disableEnemy(i)
                 }
             }
@@ -533,6 +541,9 @@ window.addEventListener('load', () => {
 
     appContainer = document.getElementById('app')
     elementsContainer = document.getElementById('elementsContainer')
+
+    // leftGradientElement = document.getElementById('leftGradientElement')
+    // rightGradientElement = document.getElementById('rightGradientElement')
 
     gameScene = new scene(update, elementsContainer)
     keyboardEvent = new KeyboardEvent("keydown")
