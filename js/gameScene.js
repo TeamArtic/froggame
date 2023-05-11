@@ -1,5 +1,7 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton
 
+let imagesFolder = "../img/"
+
 let playing = false
 
 let notPaused = true
@@ -439,8 +441,6 @@ class characterInfo {
         this.speed = speed
     }
 }
-
-let imagesFolder = "../img/"
 
 let characters = [
     new characterInfo("Jennica", imagesFolder + "yellow.gif", imagesFolder + "yellowfow.gif", 6, 0, 10),
