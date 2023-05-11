@@ -1,4 +1,4 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton
 
 let playing = false
 
@@ -605,6 +605,12 @@ window.addEventListener('load', () => {
     pauseMenu = document.getElementById('pauseMenu')
     pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
     document.onkeydown = keyEvent;
+
+    continueButton = document.getElementById('continueButton')
+    continueButton.addEventListener("click", () => {
+        pauseMenuToggle.toggleToState(true)
+        notPaused = true
+    })
 
     levelManager.loadLevel(levels[0])
     levelLoadingTimeout = setTimeout(showLevelName, 800)
