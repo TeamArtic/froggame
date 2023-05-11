@@ -29,6 +29,8 @@ function removeFromAnArray(array, startPosition, endPosition = null){
     return startArray.concat(endArray)
 }
 
+class 
+
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -411,6 +413,13 @@ class frog extends gridObject {
 class imageInfo {
     constructor(imageURL, size, center) {
         this.imageURL = imageURL
+    }
+}
+
+class frogImageInfo{
+    constructor(stayImage, runningImage){
+        this.stayImage = stayImage
+        this.runningImage = runningImage
     }
 }
 
