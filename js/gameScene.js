@@ -321,7 +321,7 @@ class road {
             horizontalPosition = -200
             enemySpeed = this.speed
         }else{
-            horizontalPosition = (levels[actualLevel - 1].size.x + 1) * 100
+            horizontalPosition = (levels[actualLevel - 1].size.x + 2) * 100
             enemySpeed = -this.speed
         }
         let generationPosition = new vector2(horizontalPosition, this.YPosition)
