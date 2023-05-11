@@ -416,7 +416,7 @@ class imageInfo {
     }
 }
 
-class frogImageInfo{
+class frogInfo{
     constructor(stayImage, runningImage){
         this.stayImage = stayImage
         this.runningImage = runningImage
