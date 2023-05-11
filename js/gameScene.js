@@ -41,7 +41,7 @@ class levelInformation {
 }
 
 let levels = [
-    new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
+    new levelInformation(1, "Cloaca", new vector2(2, 6), new vector2(3, 0), [
         {"type":"sewerStart","position":-1},
         {"type":"sewerFloor","position":0},
         {"type":"sewerWater","position":1},
@@ -202,7 +202,7 @@ class levelManager {
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
-            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction))
+            roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction, levelInfo.size))
         }
         for(let i = 0; i < roads.length; i++){
             roads[i].updateEnemiesReferences()
@@ -246,8 +246,9 @@ class enemy extends object {
 }
 
 class road {
-    constructor(objectScene, YPosition, speed, roadId, direction = "l") {
+    constructor(objectScene, YPosition, speed, roadId, direction = "l", levelSize) {
         this.YPosition = YPosition * 100
+        this.levelSize = levelSize
         this.speed = speed
         this.objectScene = objectScene
         this.roadId = roadId
@@ -255,6 +256,22 @@ class road {
         this.direction = direction
         this.disabledEnemies = []
         this.enemies = [this.generateEnemy()]
+        let distanceBetweenEnemies = (speed / 5) * (1000 / 25) * 2
+        if (direction == "l") {
+            let distance = distanceBetweenEnemies
+            while (distance <= (this.levelSize.x + 1) * 100) {
+                this.enemies.push(this.generateEnemy())
+                this.enemies[this.enemies.length - 1].move(new vector2(distance, 0))
+                distance += distanceBetweenEnemies
+            }
+        } else {
+            let distance = -distanceBetweenEnemies
+            while (distance >= -(this.levelSize.x + 1) * 100) {
+                this.enemies.push(this.generateEnemy())
+                this.enemies[this.enemies.length - 1].move(new vector2(distance, 0))
+                distance -= distanceBetweenEnemies
+            }
+        }
         this.nextEnemyGeneration = 0
     }
 
@@ -298,11 +315,16 @@ class road {
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].updateObjectReference()
         }
+        for (let i = 0; i < this.disabledEnemies.length; i++) {
+            this.disabledEnemies[i].updateObjectReference()
+        }
     }
 
     disableEnemy(enemyId){
         this.enemies[enemyId].object.style.display = "none"
+        let realEnemyId = this.enemies[enemyId].enemyId
         this.disabledEnemies.push(this.enemies[enemyId])
+        let enemyObjectId = this.enemies[enemyId].object.id
         this.enemies = removeFromAnArray(this.enemies, enemyId)
     }
 
@@ -310,7 +332,8 @@ class road {
         for(let i = 0; i < this.enemies.length; i++){
             this.enemies[i].update()
             if(this.direction == "l"){
-                if(this.enemies[i].position.x > 700){
+                if(this.enemies[i].position.x > (this.levelSize.x + 1) * 100){
+                // if(this.enemies[i].position.x > (this.objectScene.actualLevel.size.X + 1) * 100){
                     this.disableEnemy(i)
                 }
             }else{
