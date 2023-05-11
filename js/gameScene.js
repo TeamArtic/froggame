@@ -29,6 +29,14 @@ function removeFromAnArray(array, startPosition, endPosition = null){
     return startArray.concat(endArray)
 }
 
+class imageInfo {
+    constructor(imageURL, size, center) {
+        this.imageURL = imageURL
+        this.size = size
+        this.center = center
+    }
+}
+
 class levelInformation {
     constructor(levelId, name, size, spawPosition, floorElements, roadsElements) {
         this.levelId = levelId
@@ -405,14 +413,6 @@ class frog extends gridObject {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
             startLoadingLevel()
         }
-    }
-}
-
-class imageInfo {
-    constructor(imageURL, size, center) {
-        this.imageURL = imageURL
-        this.size = size
-        this.center = center
     }
 }
 
