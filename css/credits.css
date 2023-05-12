@@ -7,7 +7,7 @@
 
 body {
     font-family: 'hola';
-     background-image: url(../img/juego.gif);
+    background-image: url(../img/juego.gif);
     background-attachment: fixed;
     background-size: cover;
     font-size: 16px;
