@@ -54,10 +54,7 @@ li {
     text-transform: uppercase;
 }
 
-li:hover {
-    background-color: #FFFFFF;
-    color: #000000;
-}
+
 
 .creditos {
     /*! margin: 400px 0 0 0; */
