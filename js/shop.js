@@ -51,15 +51,19 @@ function buyCharacter(characterId){
     return characterId == element.characterId
   })
   if(characterInfo){
-    if(characterInfo.price <= money){
-      money -= characterInfo.price
-      localStorage.setItem('money', money)
-      moneyContainer.innerHTML = money + "€"
-      unlockedCharacters[characterId].unlocked = true
-      localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters))
+    if(!unlockedCharacters[characterId].unlocked){
+      if(characterInfo.price <= money){
+        money -= characterInfo.price
+        localStorage.setItem('money', money)
+        moneyContainer.innerHTML = money + "€"
+        unlockedCharacters[characterId].unlocked = true
+        localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters))
+      }else{
+      alert("No tienes suficiente dinero para comprar a este personaje.")
+      }
     }else{
-    alert("No tienes suficiente dinero para comprar a este personaje.")
-  }
+      alert('Ya tienes a este personaje.')
+    }
   }
 }
 
