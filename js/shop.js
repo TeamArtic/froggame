@@ -36,3 +36,12 @@ function cambiarprecio(event) {
     }
   }
 }
+
+window.addEventListener('load', () => {
+  let money = localStorage.getItem('money')
+  if(!money){
+    money = 0
+  }
+  let moneyContainer = document.getElementById('saldo')
+  moneyContainer.innerHTML = money + "€"
+})

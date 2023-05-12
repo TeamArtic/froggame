@@ -458,6 +458,8 @@ class frog extends gridObject {
         super.gridMove(offset);
         if (this.gridPosition.y >= levels[actualLevel - 1].size.y) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
+            let money = localStorage.getItem('money')
+            localStorage.setItem('money', money + 10)
             startLoadingLevel()
         }
     }
