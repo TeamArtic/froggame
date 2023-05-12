@@ -16,11 +16,15 @@ let roads = []
 
 let superDead = false
 
-const superDeadTimeout = 1000
+const superDeadTimeout = 500
 
 let superDeadTimeoutTime = superDeadTimeout
 
 let lifes = 3
+
+let superLifes = 0
+
+let movementTimeout = 500
 
 function removeFromAnArray(array, startPosition, endPosition = null){
     if(!endPosition){
@@ -303,11 +307,20 @@ class enemy extends object {
     update(){
         this.move(new vector2(this.speed/5, 0))
         if(!this.isColliding(gameFrog)){
-            lifes -= 1
-            superDead = true
-            foregroundContainer.style.backdropFilter = "grayScale(1)"
-            if(lifes <= 0){
-                window.location.reload() // TODO Make the death animation
+            if(superLifes <= 0){
+                lifes = lifes - 1
+                superLifes = actualCharacter.characterSuperLifes
+                if(lifes <= 0){
+                    window.location.reload() // TODO Make the death animation
+                }else{
+                    actualLevel = actualLevel - 1
+                    startLoadingLevel()
+                }
+            }else{
+                superLifes -= 1
+                superDead = true
+                foregroundContainer.style.backdropFilter = "grayScale(1)"
+                movementTimeout = 10000/actualCharacter.speed
             }
         }
     }
@@ -475,11 +488,21 @@ class characterInfo {
 }
 
 let characters = [
-    new characterInfo("Jennica", imagesFolder + "yellow.gif", imagesFolder + "yellowfow.gif", 6, 0, 10),
-    new characterInfo("Leo", imagesFolder + "leo.gif", imagesFolder + "leopalante nuevo.gif", 4, 0, 20),
-    new characterInfo("Rafael", imagesFolder + "rafa.gif", imagesFolder + "rafapalante.gif", 2, 0, 30),
-    new characterInfo("Michelangelo", imagesFolder + "miguel.gif", imagesFolder + "miguelpalante.gif", 3, 0, 25),
-    new characterInfo("Donnatelo", imagesFolder + "dona.gif", imagesFolder + "palante.gif", 3, 0, 25)
+    new characterInfo("Jennica",
+        new imageInfo(imagesFolder + "yellow.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "yellowfow.gif", new vector2(50, 50), new vector2(10, -30)), 6, 1, 10),
+    new characterInfo("Leo",
+        new imageInfo(imagesFolder + "leo.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "leopalante nuevo.gif", new vector2(50, 50), new vector2(10, -30)), 4, 0, 12),
+    new characterInfo("Rafael",
+        new imageInfo(imagesFolder + "rafa.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "rafapalante.gif", new vector2(50, 50), new vector2(10, -30)), 2, 0, 20),
+    new characterInfo("Michelangelo",
+        new imageInfo(imagesFolder + "miguel.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "miguelpalante.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15),
+    new characterInfo("Donnatelo",
+        new imageInfo(imagesFolder + "dona.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "palante.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15)
 ]
 
 // Level transition animation
@@ -553,10 +576,11 @@ function moveFrog(movement) {
     if (!onMovement && playing && notPaused) {
         onMovement = true
         if(actualCharacter){
-            gameFrog.object.src = actualCharacter.movingImageURL
+            gameFrog.object.src = actualCharacter.movingImageURL.imageURL
+            // gameFrog.setImage(actualCharacter.movingImageURL.imageURL, actualCharacter.movingImageURL.size, actualCharacter.movingImageURL.position)
         }
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL}}, 500)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL.imageURL}}, movementTimeout)
         gameFrog.gridMove(movement)
     }
 }
@@ -594,6 +618,7 @@ function update() {
         if(superDead){
             superDeadTimeoutTime -= 10
             if(superDeadTimeoutTime <= 0){
+                movementTimeout = 5000/actualCharacter.speed
                 superDead = false
                 superDeadTimeoutTime = superDeadTimeout
                 foregroundContainer.style.backdropFilter = ""
@@ -613,6 +638,7 @@ window.addEventListener('load', () => {
         selectedCharacterId = 0
     }
     actualCharacter = characters[selectedCharacterId]
+    // actualCharacter = characters[2]
 
     pageTitle = document.getElementById('pageTitle')
     foregroundContainer = document.getElementById('foregroundContainer')
@@ -629,8 +655,12 @@ window.addEventListener('load', () => {
 
     // Generate the mainCharacter
     gameFrog = new frog(mainGrid, gameScene, "mainCharacter", new vector2(30, 30), new vector2(40, 40))
-    gameFrog.setImage("../img/dona.gif", new vector2(50, 50), new vector2(25, -39))
+    gameFrog.object.src = actualCharacter.stayImageURL.imageURL
+    gameFrog.setImage(actualCharacter.stayImageURL.imageURL, new vector2(50, 50), new vector2(25, -39))
     gameScene.addObject("frog", gameFrog)
+    lifes = actualCharacter.characterLifes
+    superLifes = actualCharacter.characterSuperLifes
+    movementTimeout = 5000 / actualCharacter.speed
 
     // enemyContainer = document.getElementById('enemy')
     // enemyContainer = new object("enemy", gameScene, new vector2(50,0),new vector2(0,0), enemyContainer)
