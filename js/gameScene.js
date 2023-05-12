@@ -459,6 +459,11 @@ class frog extends gridObject {
         if (this.gridPosition.y >= levels[actualLevel - 1].size.y) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
             let money = localStorage.getItem('money')
+            if(!money){
+                money = 0
+            }else{
+                money = parseInt(money)
+            }
             localStorage.setItem('money', money + 10)
             startLoadingLevel()
         }
