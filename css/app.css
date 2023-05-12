@@ -216,7 +216,7 @@ button{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    height: 500px;
+    height: 550px;
 }
 
 .defalut-menu-grid{
@@ -298,4 +298,12 @@ button.highlighted-button{
 
 .right-gradient{
     background: linear-gradient(90deg, #00000000, #000, #000);
+}
+
+.secondary-text{
+    color:#ff5656;
+}
+
+.special-secondary-text{
+    color:#b056ff;
 }
