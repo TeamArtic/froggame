@@ -87,3 +87,14 @@ window.addEventListener('load', () => {
     ]
   }
 })
+
+function removeAllCharacters(){
+  unlockedCharacters = [
+    {"characterId":0, "unlocked":false},
+    {"characterId":1, "unlocked":false},
+    {"characterId":2, "unlocked":false},
+    {"characterId":3, "unlocked":true},
+    {"characterId":4, "unlocked":false}
+  ]
+  localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters))
+}
