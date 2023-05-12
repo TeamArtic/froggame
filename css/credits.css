@@ -7,14 +7,16 @@
 
 body {
     font-family: 'hola';
-    /*! background-image: url(../img/juego.gif); */
+    background-image: url(../img/juego.gif);
     background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 16px;
     color: #FFFFFF;
     margin: 0;
     padding: 0;
-    background: #000;
+    overflow: hidden;
 }
 
 h1 {
@@ -54,10 +56,7 @@ li {
     text-transform: uppercase;
 }
 
-li:hover {
-    background-color: #FFFFFF;
-    color: #000000;
-}
+
 
 .creditos {
     /*! margin: 400px 0 0 0; */
