@@ -10,11 +10,13 @@ body {
     background-image: url(../img/juego.gif);
     background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 16px;
     color: #FFFFFF;
     margin: 0;
     padding: 0;
-    background: #000;
+    overflow: hidden;
 }
 
 h1 {
