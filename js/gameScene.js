@@ -314,6 +314,9 @@ class enemy extends object {
                     window.location.reload() // TODO Make the death animation
                 }else{
                     actualLevel = actualLevel - 1
+                    gameFrog.object.src = actualCharacter.deadImageULR.imageURL
+                    gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -8))
+                    gameFrog.move(new vector2(0, 0))
                     startLoadingLevel()
                 }
             }else{
@@ -484,10 +487,11 @@ let frogsInformation = [
 ]
 
 class characterInfo {
-    constructor(characterName, stayImageURL, movingImageURL, characterLifes, characterSuperLifes, speed) {
+    constructor(characterName, stayImageURL, movingImageURL, deadImageURL, characterLifes, characterSuperLifes, speed) {
         this.characterName = characterName
         this.stayImageURL = stayImageURL
         this.movingImageURL = movingImageURL
+        this.deadImageULR = deadImageURL
         this.characterLifes = characterLifes
         this.characterSuperLifes = characterSuperLifes
         this.speed = speed
@@ -497,19 +501,24 @@ class characterInfo {
 let characters = [
     new characterInfo("Jennica",
         new imageInfo(imagesFolder + "yellow.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "yellowfow.gif", new vector2(50, 50), new vector2(10, -30)), 6, 1, 10),
+        new imageInfo(imagesFolder + "yellowfow.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muerteamarillo.gif", new vector2(50, 50), new vector2(10, -30)), 6, 1, 10),
     new characterInfo("Leo",
         new imageInfo(imagesFolder + "leo.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "leopalante nuevo.gif", new vector2(50, 50), new vector2(10, -30)), 4, 0, 12),
+        new imageInfo(imagesFolder + "leopalante nuevo.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muerteazul.gif", new vector2(50, 50), new vector2(10, -30)), 4, 0, 12),
     new characterInfo("Rafael",
         new imageInfo(imagesFolder + "rafa.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "rafapalante.gif", new vector2(50, 50), new vector2(10, -30)), 2, 0, 20),
+        new imageInfo(imagesFolder + "rafapalante.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muerterojo.gif", new vector2(50, 50), new vector2(10, -30)), 2, 0, 20),
     new characterInfo("Michelangelo",
         new imageInfo(imagesFolder + "miguel.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "miguelpalante.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15),
+        new imageInfo(imagesFolder + "miguelpalante.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muertenaranja.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15),
     new characterInfo("Donnatelo",
         new imageInfo(imagesFolder + "dona.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "palante.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15)
+        new imageInfo(imagesFolder + "palante.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muertemorado.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15)
 ]
 
 // Level transition animation
@@ -543,6 +552,9 @@ function showLevelName() {
     levelInfoName.innerHTML = levels[actualLevel - 1].name
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
+    gameFrog.object.src = actualCharacter.stayImageURL.imageURL
+    gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -39))
+    gameFrog.move(new vector2(0, 0))
     levelLoadingTimeout = setTimeout(showLevel, 1000)
 }
 
