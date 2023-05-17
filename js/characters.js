@@ -13,7 +13,7 @@ function setCharacter(characterIndex) {
     var selectedButton = buttons[characterIndex];
   
     // Cambiar el texto y estado del botón seleccionado
-    selectedButton.innerHTML = "Comprado";
+    selectedButton.innerHTML = "Seleccionado";
     selectedButton.disabled = true;
     selectedButton.style.backgroundColor = "gray";
     selectedButton.style.transform = "none";
