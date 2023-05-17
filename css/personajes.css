@@ -474,3 +474,9 @@ main {
   margin-top: 20px;
 }
 
+.boton-comprado {
+  background-color: transparent;
+  color: gray;
+  border: 1px solid gray;
+  cursor: not-allowed;
+}
