@@ -307,3 +307,7 @@ button.highlighted-button{
 .special-secondary-text{
     color:#b056ff;
 }
+
+.disabled-ui-element{
+    filter: grayscale(1);
+}
