@@ -9,8 +9,9 @@
 		body {
 			background-color: black;
 			color: white;
-			font-family: Arial, sans-serif;
+			font-family: "hola";
 			text-align: center;
+			background-image: url("../img/naranjito.jpg");
 		}
 
 		.container {
@@ -18,6 +19,7 @@
 			margin: 20px;
 			opacity: 0;
 			transition: opacity 1s ease-in-out;
+			text-align: center; 
 		}
 
 		.container.visible {
@@ -28,11 +30,23 @@
 			margin-top: 10px;
 			font-size: 18px;
 		}
-		.p{
+		
+		.p {
+			font-size: 30px;
+		}
+		
+		.name {
+			font-size: 20px; 
+		}
+		
+		h1 {
+			font-family: "hola";
 			font-size: 60px;
 		}
-		.name {
-			font-size: 30px;
+		
+		@font-face {
+			font-family: 'hola';
+			src: url(../BITWONDER.TTF);
 		}
 	</style>
 </head>
@@ -44,29 +58,24 @@
 		<div class="name">Ale</div>
 	</div>
 	<div class="container fade-in" style="transition-delay: 2s;">
-		<p class="p">Programador</p>
+		<p class="p">Programador Senior</p>
 		<div class="name">Kevin</div>
 	</div>
 	<div class="container fade-in" style="transition-delay: 3s;">
-		<p class="p">Mirar</p>
+		<p class="p">Costumer Journey</p>
 		<div class="name">Raul</div>
 	</div>
 	<div class="container fade-in" style="transition-delay: 4s;">
 		<p class="p">Estilos y Graficos</p>
 		<div class="name">Pumu</div>
-	</div>
-	<div class="container fade-in" style="transition-delay: 5s;">
-		<p class="p">Estilos y Graficos</p>
 		<div class="name">Rafa</div>
 	</div>
 	<div class="container fade-in" style="transition-delay: 6s;">
-		<p class="p">Programador</p>
+		<p class="p">Programadores Junior</p>
 		<div class="name">Blas</div>
-	</div>
-	<div class="container fade-in" style="transition-delay: 7s;">
-		<p class="p">Programador</p>
 		<div class="name">Carlos</div>
 	</div>
+
 
 	<script>
 		const containers = document.querySelectorAll('.container');
