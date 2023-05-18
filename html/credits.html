@@ -2,42 +2,79 @@
 <html>
 
 <head>
-	<title>Creditos </title>
+	<title>Creditos</title>
 	<meta charset="UTF-8">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../css/credits.css">
-	<link rel="stylesheet" href="../css/app.css">
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+
+		.container {
+			display: inline-block;
+			margin: 20px;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+
+		.container.visible {
+			opacity: 1;
+		}
+
+		.name {
+			margin-top: 10px;
+			font-size: 18px;
+		}
+	</style>
 </head>
 
-<body class="overflow-hidden" style="perspective: 800px;">
-	<ul>
-		<h1>Creditos</h1>
-		<li>
-			<img src="../img/ale.png"height="200px" width="200px"><br>
-			Scrum: Ale
-		</li>
-		<li>
-			<img src="../img/blas.jpg" height="200px" width="200px"><br>
-			Programadores: Blas y Carlos
-		</li>
-		<li>
-			<img src="../img/raul.jpeg" height="200px" width="200px"><br>
-			Cliente: Raul
-		</li>
-		<li class="li1">
-			<img src="../img/manu.png"height="200px" width="200px"><img src="../img/rafaclase.png" height="200px" width="200px"><br>
-			Disenadores: Pumu y Rafa
-		</li>
-		<br><br>
-		<li>
-			<img src="../img/mr_K.png" width="200px"height="200px"><br>
-			Progamador: Mister K
-		</li>
-		<p class="creditos" style="margin-top: 800px;">© 2023 PumuSL. No te me copies guarro.</p>
-	</ul>
+<body>
+	<h1 class="fade-in">Creditos</h1>
+	<div class="container fade-in" style="transition-delay: 1s;">
+		<img src="../img/imagen1.jpg" width="200px" height="200px">
+		<p>aa</p>
+		<div class="name">Ale</div>
+	</div>
+	<div class="container fade-in" style="transition-delay: 2s;">
+		<img src="../img/imagen2.jpg" width="200px" height="200px">
+		<div class="name">Kevin</div>
+	</div>
+	<div class="container fade-in" style="transition-delay: 3s;">
+		<img src="../img/imagen3.jpg" width="200px" height="200px">
+		<div class="name">Nombre 3</div>
+	</div>
+	<div class="container fade-in" style="transition-delay: 4s;">
+		<img src="../img/imagen4.jpg" width="200px" height="200px">
+		<div class="name">Nombre 4</div>
+	</div>
+	<div class="container fade-in" style="transition-delay: 5s;">
+		<img src="../img/imagen5.jpg" width="200px" height="200px">
+		<div class="name">Nombre 5</div>
+	</div>
+	<div class="container fade-in" style="transition-delay: 6s;">
+		<img src="../img/imagen6.jpg" width="200px" height="200px">
+		<div class="name">Nombre 6</div>
+	</div>
 
+	<script>
+		const containers = document.querySelectorAll('.container');
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		});
+
+		containers.forEach(container => {
+			observer.observe(container);
+		});
+	</script>
 </body>
 
 </html>
