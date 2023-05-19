@@ -7,7 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/tutorial.css">
 </head>
+<script>
+  document.addEventListener("keydown", function(event) {
+    var rana = document.getElementById("rana");
+    var left = parseInt(window.getComputedStyle(rana).getPropertyValue("left"));
+    var top = parseInt(window.getComputedStyle(rana).getPropertyValue("top"));
+    var step = 10; // Cantidad de píxeles a mover la rana
 
+    // Mover la rana según la tecla presionada
+    if (event.key === "w") {
+      rana.style.top = (top - step) + "px"; // Mover hacia arriba
+    } else if (event.key === "s") {
+      rana.style.top = (top + step) + "px"; // Mover hacia abajo
+    } else if (event.key === "a") {
+      rana.style.left = (left - step) + "px"; // Mover hacia la izquierda
+    } else if (event.key === "d") {
+      rana.style.left = (left + step) + "px"; // Mover hacia la derecha
+    }
+  });
+</script>
 <body>
   <div id="app" class="app background-container">
     <div id="foregroundContainer" class="foregroundContainer" style="background-color: #000000FF"></div>
