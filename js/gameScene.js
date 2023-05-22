@@ -1,4 +1,5 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton, 
+character, level, lifesContainer, specialAvilityContainer
 
 let imagesFolder = "../img/"
 
@@ -309,7 +310,11 @@ class enemy extends object {
         if(!this.isColliding(gameFrog)){
             if(superLifes <= 0){
                 lifes = lifes - 1
-                superLifes = actualCharacter.characterSuperLifes
+                lifesContainer.innerHTML = "Vidas: " + lifes
+                if(actualCharacter.characterSuperLifes > 0){
+                    superLifes = actualCharacter.characterSuperLifes
+                    specialAvilityContainer.innerHTML = "Supervidas: " + actualCharacter.characterSuperLifes
+                }
                 if(lifes <= 0){
                     window.location.reload() // TODO Make the death animation
                 }else{
@@ -321,6 +326,7 @@ class enemy extends object {
                 }
             }else{
                 superLifes -= 1
+                specialAvilityContainer.innerHTML = "Supervidas: " + superLifes
                 superDead = true
                 foregroundContainer.style.backdropFilter = "grayScale(1)"
                 movementTimeout = 10000/actualCharacter.speed
@@ -549,6 +555,7 @@ function showEnd() {
 }
 
 function showLevelName() {
+    level.innerHTML = "Nivel: " + levels[actualLevel - 1].name
     levelInfoName.innerHTML = levels[actualLevel - 1].name
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
@@ -652,12 +659,26 @@ function update() {
 
 window.addEventListener('load', () => {
 
+    character = document.getElementById('character')
+    level = document.getElementById('level')
+    lifesContainer = document.getElementById('lifes')
+    specialAvilityContainer = document.getElementById('specialAvility')
+
+    level.innerHTML = "Nivel: " + levels[0].name
+
     let selectedCharacterId = localStorage.getItem("selectedCharacterId")
     if(!selectedCharacterId){
         selectedCharacterId = 0
     }
     actualCharacter = characters[selectedCharacterId]
     // actualCharacter = characters[2]
+    character.innerHTML = actualCharacter.characterName
+    lifesContainer.innerHTML = "Vidas: " + actualCharacter.characterLifes
+    if(actualCharacter.characterSuperLifes > 0){
+        specialAvilityContainer.innerHTML = "Supervidas: " + actualCharacter.characterSuperLifes
+    }else{
+        specialAvilityContainer.style.display = "none";
+    }
 
     pageTitle = document.getElementById('pageTitle')
     foregroundContainer = document.getElementById('foregroundContainer')

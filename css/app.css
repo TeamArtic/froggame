@@ -311,3 +311,11 @@ button.highlighted-button{
 .disabled-ui-element{
     filter: grayscale(1);
 }
+
+.gameUI{
+    z-index: 4;
+    color: #ffffff;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
