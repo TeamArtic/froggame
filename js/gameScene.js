@@ -639,6 +639,7 @@ function keyEvent(e) {
     }
 }
 
+
 function update() {
     if(playing && notPaused){
         if(superDead){

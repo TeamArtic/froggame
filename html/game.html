@@ -30,13 +30,14 @@
             <div id="lifes"></div>
             <div id="specialAvility" class="special-secondary-text"></div>
         </div>
-        <div class="controlsUI">
-            <div id="leftButton" class="leftButton"><img src="../img/a.png" alt=""></div>
-            <div id="rightButton" class="rightButton"><img src="../img/d.png" alt=""></div>
-            <div id="jumpButton" class="jumpButton"><img src="../img/s.png" alt=""></div>
-            <div id="topButton" class="topButton"><img src="../img/w.png" alt=""></div>
-            <div id="pauseButton" class="pauseButton">ESC</div>
+        <div class="controlsUI" id="controlsUI">
+            <div id="topButton" class="topButton" onclick="moveFrog(new vector2(0, -1))">W</div><br>
+            <div id="leftButton" class="leftButton" onclick="moveFrog(new vector2(-1, 0))">A</div>
+            <div id="jumpButton" class="jumpButton" onclick="moveFrog(new vector2(0, 1))">S</div>
+            <div id="rightButton" class="rightButton" onclick="moveFrog(new vector2(1, 0))">D</div>
+            <!-- <div id="pauseButton" class="pauseButton" onclick="togglePauseMenu()">ESC</div> -->
         </div>
+        
         <div id="levelInfoContainer" class="levelInfoContainer">
             <h1 id="levelInfoName" style="filter:opacity(0%)"></h1>
         </div>
