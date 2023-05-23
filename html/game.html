@@ -31,6 +31,14 @@
             <div id="lifes"></div>
             <div id="specialAvility" class="special-secondary-text"></div>
         </div>
+        <div class="controlsUI" id="controlsUI">
+            <button id="topButton" class="topButton" onclick="moveFrog(new vector2(0, -1))">W</button><br>
+            <button id="leftButton" class="leftButton" onclick="moveFrog(new vector2(-1, 0))">A</button>
+            <button id="jumpButton" class="jumpButton" onclick="moveFrog(new vector2(0, 1))">S</button>
+            <button id="rightButton" class="rightButton" onclick="moveFrog(new vector2(1, 0))">D</button>
+            <!-- <div id="pauseButton" class="pauseButton" onclick="togglePauseMenu()">ESC</div> -->
+        </div>
+        
         <div id="levelInfoContainer" class="levelInfoContainer">
             <h1 id="levelInfoName" style="filter:opacity(0%)"></h1>
         </div>
