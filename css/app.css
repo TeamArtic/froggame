@@ -266,25 +266,6 @@ button.highlighted-button {
     background-color: #002c03;
 }
 
-/* Animation */
-
-@keyframes jump {
-    0% {
-        transform: scale(1) translateY(0);
-    }
-
-    50% {
-        transform: scale(1.2) translateY(-50px);
-    }
-
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-
-.jump {
-    animation: jump 0.5s ease-out;
-}
 
 .gradientElement {
     position: absolute;
@@ -319,15 +300,28 @@ button.highlighted-button {
     top: 15px;
 }
 
+@media (max-width: 768px) {
+    .controlsUI {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+      
+    .topButton {
+        position: relative;
+        left: 40px;
+    }
+}
+
 .controlsUI {
     z-index: 5;
     position: fixed;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-  }
+}
   
-  .controlsUI div {
+.controlsUI div {
     display: inline-block;
     width: 65px;
     height: 65px;
@@ -338,11 +332,10 @@ button.highlighted-button {
     font-size: 35px;
     margin-bottom: 10px;
     cursor: pointer;
-  }
+}
 
-  .topButton {
+.topButton {
     background-color: yellow;
     position: relative;
     left: 80px;
-  }
-
+}
