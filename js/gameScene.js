@@ -1,5 +1,5 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton, 
-character, level, lifesContainer, specialAvilityContainer
+    character, level, lifesContainer, specialAvilityContainer,  stopwatch
 
 let imagesFolder = "../img/"
 
@@ -27,8 +27,10 @@ let superLifes = 0
 
 let movementTimeout = 500
 
-function removeFromAnArray(array, startPosition, endPosition = null){
-    if(!endPosition){
+let  stopwatchTime = 0
+
+let recordTime
+
         endPosition = startPosition + 1
     }
     let endArray = array.splice(endPosition, array.length)
@@ -544,14 +546,25 @@ function loadLevel() {
         levelLoadingTimeout = setTimeout(showLevelName, 800)
     } else {
         clearTimeout(levelLoadingTimeout)
-        levelLoadingTimeout = setTimeout(showEnd, 800)
+        let newRecord = calculeRecord(stopwatchTime)
+        if(newRecord){
+            recordTime = newRecord
+            levelInfoName.innerHTML = "¡Nuevo record!"
+            levelLoadingTimeout = setTimeout(showRecord, 1000)
+        }else{
+            levelLoadingTimeout = setTimeout(showEnd, 800)
+        }
     }
+}
+
+function showRecord(){
+    levelInfoName.innerHTML = recordTime + "ms"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(showEnd, 1500)
 }
 
 function showEnd() {
     window.location.href = "../html/credits.html";
-    levelInfoName.innerHTML = "Creditos"
-    levelInfoName.style.filter = "opacity(100%)"
 }
 
 function showLevelName() {
@@ -639,8 +652,24 @@ function keyEvent(e) {
     }
 }
 
+function calculeRecord(newTime){
+    let oldRecord = parseInt(localStorage.getItem('record'))
+    if(oldRecord){
+        if(oldRecord > newTime){
+            localStorage.setItem('record', newTime)
+            return newTime
+        }
+    }else{
+        localStorage.setItem('record', newTime)
+        return newTime
+    }
+    return false
+}
+
 function update() {
     if(playing && notPaused){
+        stopwatchTime += 25
+        stopwatch.innerHTML = "Tiempo: " +  stopwatchTime + "ms"
         if(superDead){
             superDeadTimeoutTime -= 10
             if(superDeadTimeoutTime <= 0){
@@ -660,11 +689,13 @@ function update() {
 window.addEventListener('load', () => {
 
     character = document.getElementById('character')
+    stopwatch = document.getElementById(' stopwatch')
     level = document.getElementById('level')
     lifesContainer = document.getElementById('lifes')
     specialAvilityContainer = document.getElementById('specialAvility')
 
-    level.innerHTML = "Nivel: " + levels[0].name
+    level.innerHTML = "Nivel:"
+    stopwatch.innerHTML = "Tiempo: 0ms"
 
     let selectedCharacterId = localStorage.getItem("selectedCharacterId")
     if(!selectedCharacterId){
