@@ -321,21 +321,30 @@ button.highlighted-button {
     transform: translateY(-50%);
 }
   
-.controlsUI div {
+.controlsUI button {
     display: inline-block;
-    width: 65px;
-    height: 65px;
+    width: 90px;
+    height: 90px;
     background-color: gray;
     color: white;
     text-align: center;
-    line-height: 65px;
-    font-size: 35px;
-    margin-bottom: 10px;
+    line-height: 90px;
+    font-size: 55px;
     cursor: pointer;
+    margin: 10px;
+    border-radius: 10%;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .topButton {
     background-color: yellow;
     position: relative;
-    left: 80px;
+    left: 126px;
+}
+
+.controlsUI button:hover {
+    background-color: #5eff00;
+    color: #ffffff;
+    text-shadow: 2px 2px #ffffff;
+    transform: scale(1.1);
 }
