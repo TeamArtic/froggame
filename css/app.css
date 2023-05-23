@@ -319,3 +319,41 @@ button.highlighted-button{
     left: 15px;
     top: 15px;
 }
+
+.controlsUI{
+    z-index: 4;
+    color: #ffffff;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.controlsUI .leftButton{
+    position: absolute;
+    left: 40px;
+    top: 100px;
+}
+
+.controlsUI .rightButton{
+    position: absolute;
+    right: 10px;
+    top: 100px;
+}
+
+.controlsUI .topButton{
+    position: absolute;
+    right: 40px;
+    top: 70px;
+}
+
+.controlsUI .bottomButton{
+    position: absolute;
+    right: 40px;
+    top: 130px;
+}
+
+.controlsUI .actionButton{
+    position: absolute;
+    right: 40px;
+    top: 100px;
+}
