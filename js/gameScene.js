@@ -1,5 +1,6 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton,
-    character, level, lifesContainer, specialAvilityContainer,  stopwatch
+    character, level, lifesContainer, specialAvilityContainer,  stopwatch,
+    gameUI
 
 let imagesFolder = "../img/"
 
@@ -755,6 +756,12 @@ window.addEventListener('load', () => {
     continueButton.addEventListener("click", () => {
         pauseMenuToggle.toggleToState(true)
         notPaused = true
+    })
+
+    gameUI = document.getElementById('gameUI')
+    gameUI.addEventListener('touchend', () => {
+        pauseMenuToggle.toggleToState(false)
+        notPaused = false
     })
 
     levelManager.loadLevel(levels[0])
