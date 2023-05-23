@@ -1,4 +1,4 @@
-let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton, 
+let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton,
     character, level, lifesContainer, specialAvilityContainer,  stopwatch
 
 let imagesFolder = "../img/"
@@ -31,6 +31,8 @@ let  stopwatchTime = 0
 
 let recordTime
 
+function removeFromAnArray(array, startPosition, endPosition = null) {
+    if (!endPosition) {
         endPosition = startPosition + 1
     }
     let endArray = array.splice(endPosition, array.length)
