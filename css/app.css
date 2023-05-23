@@ -232,17 +232,17 @@ button {
 }
 
 @media (max-height:600px) {
-    .default-character-card{
+    .default-character-card {
         height: 250px;
         flex-direction: row;
         overflow: hidden;
     }
 
-    .default-character-card-image{
+    .default-character-card-image {
         align-self: flex-start;
     }
 
-    .defalut-menu-grid{
+    .defalut-menu-grid {
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     }
 }
@@ -333,7 +333,7 @@ button.highlighted-button {
     bottom: 20px;
     right: 20px;
 }
-  
+
 .controlsUI button {
     display: inline-block;
     width: 90px;
@@ -367,7 +367,7 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
-.cameraAnimation{
+.cameraAnimation {
     transition: transform 0.2s ease;
 }
 
@@ -377,4 +377,17 @@ button.highlighted-button {
         right: 25%;
         position: fixed;
     }
+
+    .elementsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 700px;
+        left: 20%;
+        transform: translate(0px, 250px);
+    }
+
+
 }
