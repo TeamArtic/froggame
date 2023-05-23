@@ -577,6 +577,7 @@ function showLevelName() {
     gameFrog.object.src = actualCharacter.stayImageURL.imageURL
     gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -39))
     gameFrog.move(new vector2(0, 0))
+    setCameraPosition(gameFrog.position)
     levelLoadingTimeout = setTimeout(showLevel, 1000)
 }
 
@@ -623,6 +624,7 @@ function moveFrog(movement) {
         clearTimeout(frogMovementTimeout)
         frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL.imageURL}}, movementTimeout)
         gameFrog.gridMove(movement)
+        setCameraPosition(gameFrog.position)
     }
 }
 
@@ -666,6 +668,12 @@ function calculeRecord(newTime){
         return newTime
     }
     return false
+}
+
+function setCameraPosition(cameraPosition){
+    // let finalCameraPosition = vector2.additionVector2(cameraPosition.multiply(-1), new vector2(levels[actualLevel - 1].size.x/2, levels[actualLevel - 1].size.y/2))
+    let finalCameraPosition = vector2.additionVector2(new vector2(-cameraPosition.x, -cameraPosition.y), new vector2((levels[actualLevel - 1].size.x + 1)*50 - 50, (levels[actualLevel - 1].size.y + 1)*50 - 100))
+    elementsContainer.style.transform = "translate(" + finalCameraPosition.x + "px, " + finalCameraPosition.y + "px)"
 }
 
 function update() {

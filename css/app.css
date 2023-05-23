@@ -347,3 +347,7 @@ button.highlighted-button {
     text-shadow: 2px 2px #ffffff;
     transform: scale(1.1);
 }
+
+.cameraAnimation{
+    transition: transform 0.2s ease;
+}
