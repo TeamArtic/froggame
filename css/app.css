@@ -320,6 +320,7 @@ button.highlighted-button {
 }
 
 .controlsUI {
+    z-index: 5;
     position: fixed;
     top: 50%;
     right: 20px;
