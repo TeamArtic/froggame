@@ -371,6 +371,10 @@ button.highlighted-button {
     transition: transform 0.2s ease;
 }
 
+.levelInfoName{
+    font-size: 0.9in;
+}
+
 @media (max-width: 768px) {
     .controlsUI {
         bottom: 10px;
