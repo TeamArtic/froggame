@@ -384,14 +384,24 @@ button.highlighted-button {
 @media (max-width: 768px) {
     .controlsUI {
         bottom: 10px;
-        right: 25%;
         position: fixed;
         display: block;
     }
 
-    .controlsUI button{
-        transform: scale(0.8);
+    .controlsUI button {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        font-size: 35px;
+        cursor: pointer;
     }
+
+    .topButton {
+        position: relative;
+        left: 105px;
+    }
+    
 }
 
 @media (max-height: 768px) {

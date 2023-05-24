@@ -693,10 +693,8 @@ function calculeRecord(newTime){
 }
 
 function setCameraPosition(cameraPosition){
-    // let finalCameraPosition = vector2.additionVector2(cameraPosition.multiply(-1), new vector2(levels[actualLevel - 1].size.x/2, levels[actualLevel - 1].size.y/2))
-    // let finalCameraPosition = vector2.additionVector2(new vector2(-cameraPosition.x, -cameraPosition.y), new vector2((levels[actualLevel - 1].size.x + 1)*50 - 50, (levels[actualLevel - 1].size.y + 1)*50 - 100))
-    // elementsContainer.style.transform = "translate(" + finalCameraPosition.x + "px, " + finalCameraPosition.y + "px)"
-    elementsContainer.style.transform = "translate(0px, " + (-cameraPosition.y + (levels[actualLevel - 1].size.y + 1)*50 - 100) + "px)"
+    let finalCameraPosition = vector2.additionVector2(new vector2(-cameraPosition.x, -cameraPosition.y), new vector2((levels[actualLevel - 1].size.x + 1)*50 - 50, (levels[actualLevel - 1].size.y + 1)*50 - 100))
+    elementsContainer.style.transform = "translate(" + finalCameraPosition.x + "px, " + finalCameraPosition.y + "px)"
 
 }
 
