@@ -247,11 +247,7 @@ button {
     }
 
     .main-screen-menu {
-        transform: scale(0.7);
-    }
-
-    .default-menu-container{
-        scale: 0.7;
+        transform: scale(0.6);
     }
 
 }
