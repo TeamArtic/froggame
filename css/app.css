@@ -9,6 +9,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: #000;
     overflow: hidden;
+    touch-action: manipulation;
     
 }
 
@@ -384,6 +385,11 @@ button.highlighted-button {
 }
 
 @media (max-width: 768px) {
+
+    body{
+        touch-action: manipulation;
+    }
+
     .controlsUI {
         bottom: 10px;
         position: fixed;
@@ -421,5 +427,9 @@ button.highlighted-button {
 
     .controlsUI button{
         transform: scale(0.8);
+    }
+
+    body{
+        touch-action: manipulation;
     }
 }
