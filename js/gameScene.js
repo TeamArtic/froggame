@@ -32,6 +32,8 @@ let  stopwatchTime = 0
 
 let recordTime
 
+let dead = false
+
 function removeFromAnArray(array, startPosition, endPosition = null) {
     if (!endPosition) {
         endPosition = startPosition + 1
@@ -327,7 +329,7 @@ class enemy extends object {
                     gameFrog.object.src = actualCharacter.deadImageULR.imageURL
                     gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -8))
                     gameFrog.move(new vector2(0, 0))
-                    startLoadingLevel()
+                    startLoadingDeathDialog()
                 }
             }else{
                 superLifes -= 1
@@ -534,6 +536,24 @@ let characters = [
 
 // Level transition animation
 
+function startLoadingDeathDialog(){
+    dead = true
+    playing = false
+    foregroundContainer.style.backgroundColor = "#9b1212a1"
+    // foregroundContainer.style.filter = "blur(4px)"
+    levelInfoName.innerHTML = "¡Has muerto!"
+    levelInfoName.style.filter = "opacity(100%)"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(endLoadingDeathAnimation, animationTime + 1200)
+}
+
+function endLoadingDeathAnimation(){
+    foregroundContainer.style.backgroundColor = "#000000FF"
+    levelInfoName.innerHTML = ""
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(loadLevel, animationTime)
+}
+
 function startLoadingLevel() {
     playing = false
     foregroundContainer.style.backgroundColor = "#000000FF"
@@ -543,6 +563,7 @@ function startLoadingLevel() {
 }
 
 function loadLevel() {
+    dead = false
     if (actualLevel < levels.length) {
         levelManager.loadLevel(levels[++actualLevel - 1])
         clearTimeout(levelLoadingTimeout)
@@ -623,7 +644,7 @@ function moveFrog(movement) {
             // gameFrog.setImage(actualCharacter.movingImageURL.imageURL, actualCharacter.movingImageURL.size, actualCharacter.movingImageURL.position)
         }
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter){gameFrog.object.src = actualCharacter.stayImageURL.imageURL}}, movementTimeout)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter && !dead){gameFrog.object.src = actualCharacter.stayImageURL.imageURL}}, movementTimeout)
         gameFrog.gridMove(movement)
         setCameraPosition(gameFrog.position)
     }
@@ -759,7 +780,7 @@ window.addEventListener('load', () => {
     })
 
     gameUI = document.getElementById('gameUI')
-    gameUI.addEventListener('touchend', () => {
+    gameUI.addEventListener('click', () => {
         pauseMenuToggle.toggleToState(false)
         notPaused = false
     })

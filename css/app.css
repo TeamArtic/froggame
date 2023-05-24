@@ -377,16 +377,4 @@ button.highlighted-button {
         right: 25%;
         position: fixed;
     }
-
-    .elementsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 700px;
-        height: 700px;
-        left: 5%;
-    }
-
-
 }
