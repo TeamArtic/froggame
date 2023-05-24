@@ -106,7 +106,7 @@ let levels = [
         {"type":"streetFloor","position":6},
     ], [
         { "yPosition": 1, "speed": 20 , "direction": "l", "enemy":"april"},
-        { "yPosition": 3, "speed": 40 , "direction": "l", "enemy":"april"},
+        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"asuka"},
         { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"april"},
     ]),
     new levelInformation(3, "Ciudad tarde", new vector2(6, 6), new vector2(3, 0), [
@@ -120,9 +120,9 @@ let levels = [
         {"type":"streetUnMillonPM","position":6},
     ], [
         { "yPosition": 1, "speed": 15 , "direction": "l", "enemy":"april"},
-        { "yPosition": 2, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 2, "speed": 30 , "direction": "r", "enemy":"asuka"},
         { "yPosition": 4, "speed": 35 , "direction": "l", "enemy":"april"},
-        { "yPosition": 5, "speed": 25 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 25 , "direction": "r", "enemy":"asuka"},
     ]),
     new levelInformation(4, "Ciudad noche", new vector2(6, 6), new vector2(3, 0), [
         { "type": "startNoche", "position": -1 },
@@ -134,9 +134,9 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"april"},
-        { "yPosition": 3, "speed": 70 , "direction": "l", "enemy":"april"},
-        { "yPosition": 5, "speed": 45 , "direction": "l", "enemy":"april"},
+        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"cyber"},
+        { "yPosition": 3, "speed": 70 , "direction": "r", "enemy":"cyber"},
+        { "yPosition": 5, "speed": 45 , "direction": "l", "enemy":"cyber"},
     ]),
     new levelInformation(5, "Ciudad noche", new vector2(2, 6), new vector2(1, 0), [
         { "type": "startNoche", "position": -1 },
@@ -148,10 +148,10 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"april"},
-        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"april"},
-        { "yPosition": 4, "speed": 55 , "direction": "l", "enemy":"april"},
-        { "yPosition": 5, "speed": 65 , "direction": "r", "enemy":"april"},
+        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"cyber"},
+        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"cyber"},
+        { "yPosition": 4, "speed": 55 , "direction": "l", "enemy":"cyber"},
+        { "yPosition": 5, "speed": 65 , "direction": "r", "enemy":"cyber"},
     ]),
     new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3,0), [
         {"type":"startPlaya","position":-1},
@@ -163,9 +163,9 @@ let levels = [
         {"type":"sandWater","position":5},
         {"type":"sandFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 45 , "direction": "l", "enemy":"armaggon"},
+        { "yPosition": 1, "speed": 45 , "direction": "r", "enemy":"wignut"},
         { "yPosition": 3, "speed": 30 , "direction": "l", "enemy":"wignut"},
-        { "yPosition": 5, "speed": 70 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 5, "speed": 70 , "direction": "r", "enemy":"wignut"},
     ]),
     new levelInformation(7, "Autopista", new vector2(6, 6), new vector2(3,0), [
         {"type":"streetFloor","position":0},
@@ -176,10 +176,10 @@ let levels = [
         {"type":"streetRoad","position":5},
         {"type":"streetFloor","position":6},
     ], [
-        { "yPosition": 1, "speed": 80 , "direction": "l", "enemy":"wignut"},
-        { "yPosition": 2, "speed": 80 , "direction": "l", "enemy":"wignut"},
-        { "yPosition": 4, "speed": 80 , "direction": "l", "enemy":"wignut"},
-        { "yPosition": 5, "speed": 80 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 1, "speed": 80 , "direction": "r", "enemy":"chrome"},
+        { "yPosition": 2, "speed": 80 , "direction": "l", "enemy":"armaggon"},
+        { "yPosition": 4, "speed": 80 , "direction": "r", "enemy":"chrome"},
+        { "yPosition": 5, "speed": 80 , "direction": "l", "enemy":"armaggon"},
     ]),
     new levelInformation(8, "Ciudad futurista 1", new vector2(4, 6), new vector2(2,0), [
         {"type":"futureStart","position":-1},
@@ -208,10 +208,10 @@ let levels = [
         {"type":"futureStreet","position":6},
     ], [
         { "yPosition": 1, "speed": 80 , "direction": "l", "enemy":"dirtbag"},
-        { "yPosition": 2, "speed": 100 , "direction": "l", "enemy":"dirtbag"},
-        { "yPosition": 3, "speed": 40 , "direction": "l", "enemy":"wignut"},
+        { "yPosition": 2, "speed": 100 , "direction": "r", "enemy":"dirtbag"},
+        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"wignut"},
         { "yPosition": 4, "speed": 60 , "direction": "l", "enemy":"chrome"},
-        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 5, "speed": 30 , "direction": "r", "enemy":"dirtbag"},
     ]),
 ]
 
@@ -541,7 +541,7 @@ function startLoadingDeathDialog(){
     playing = false
     foregroundContainer.style.backgroundColor = "#9b1212a1"
     // foregroundContainer.style.filter = "blur(4px)"
-    levelInfoName.innerHTML = "¡Has muerto!"
+    levelInfoName.innerHTML = "¡Pierdes vida!"
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(endLoadingDeathAnimation, animationTime + 1200)
@@ -699,6 +699,7 @@ function setCameraPosition(cameraPosition){
     elementsContainer.style.transform = "translate(0px, " + (-cameraPosition.y + (levels[actualLevel - 1].size.y + 1)*50 - 100) + "px)"
 
 }
+
 
 function update() {
     if(playing && notPaused){

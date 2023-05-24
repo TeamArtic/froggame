@@ -231,7 +231,7 @@ button {
     padding: 10px;
 }
 
-@media (max-height:600px) {
+@media (max-height:768px) {
     .default-character-card {
         height: 250px;
         flex-direction: row;
@@ -245,6 +245,15 @@ button {
     .defalut-menu-grid {
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     }
+
+    .main-screen-menu {
+        transform: scale(0.2);
+    }
+
+    .default-menu-container{
+        transform: scale(0.2);
+    }
+
 }
 
 .highlighted-button {
