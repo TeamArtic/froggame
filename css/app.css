@@ -341,6 +341,7 @@ button.highlighted-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    display: none;
 }
 
 .controlsUI button {
@@ -389,5 +390,6 @@ button.highlighted-button {
         bottom: 10px;
         right: 25%;
         position: fixed;
+        display: block;
     }
 }
