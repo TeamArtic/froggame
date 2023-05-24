@@ -396,11 +396,12 @@ button.highlighted-button {
         line-height: 70px;
         font-size: 35px;
         cursor: pointer;
+        margin: 2px;
     }
 
     .topButton {
         position: relative;
-        left: 106px;
+        left: 90px;
     }
     
 }
