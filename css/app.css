@@ -9,7 +9,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: #000;
     overflow: hidden;
-    touch-action: manipulation;
+    
 }
 
 body {
@@ -27,6 +27,7 @@ button {
 * {
     margin: 0;
     padding: 0;
+    touch-action: manipulation;
 }
 
 .app-default-container {
