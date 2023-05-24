@@ -388,6 +388,7 @@ button.highlighted-button {
 
     body{
         touch-action: manipulation;
+        overflow: hidden;
     }
 
     .controlsUI {
@@ -431,5 +432,6 @@ button.highlighted-button {
 
     body{
         touch-action: manipulation;
+        overflow: hidden;
     }
 }
