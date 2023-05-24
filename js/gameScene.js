@@ -780,7 +780,7 @@ window.addEventListener('load', () => {
     })
 
     gameUI = document.getElementById('gameUI')
-    gameUI.addEventListener('touchend', () => {
+    gameUI.addEventListener('click', () => {
         pauseMenuToggle.toggleToState(false)
         notPaused = false
     })
