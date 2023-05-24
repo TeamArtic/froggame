@@ -245,11 +245,6 @@ button {
     .defalut-menu-grid {
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     }
-
-    .main-screen-menu {
-        transform: scale(0.6);
-    }
-
 }
 
 .highlighted-button {
