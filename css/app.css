@@ -247,11 +247,11 @@ button {
     }
 
     .main-screen-menu {
-        transform: scale(0.6);
+        transform: scale(0.8);
     }
 
     .default-menu-container{
-        transform: scale(0.6);
+        transform: scale(0.8);
     }
 
 }
