@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'flechas';
+    src: url(../MMRock9.ttf);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -227,17 +232,17 @@ button {
 }
 
 @media (max-height:600px) {
-    .default-character-card{
+    .default-character-card {
         height: 250px;
         flex-direction: row;
         overflow: hidden;
     }
 
-    .default-character-card-image{
+    .default-character-card-image {
         align-self: flex-start;
     }
 
-    .defalut-menu-grid{
+    .defalut-menu-grid {
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     }
 }
@@ -320,19 +325,7 @@ button.highlighted-button {
     flex-direction: column;
     gap: 5px;
 }
-/* 
-@media (max-width: 768px) {
-    .controlsUI {
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-      
-    .topButton {
-        position: relative;
-        left: 40px;
-    }
-} */
+
 
 .controlsUI {
     z-index: 5;
@@ -340,7 +333,7 @@ button.highlighted-button {
     bottom: 20px;
     right: 20px;
 }
-  
+
 .controlsUI button {
     display: inline-block;
     width: 90px;
@@ -353,7 +346,7 @@ button.highlighted-button {
     cursor: pointer;
     margin: 10px;
     border-radius: 10%;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'flechas', cursive;
 }
 
 .topButton {
@@ -368,6 +361,32 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
-.cameraAnimation{
+.controlsUI button:active {
+    background-color: grey;
+    color: white;
+    transform: scale(1.1);
+}
+
+.cameraAnimation {
     transition: transform 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .controlsUI {
+        bottom: 10px;
+        right: 25%;
+        position: fixed;
+    }
+
+    .elementsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 700px;
+        left: 5%;
+    }
+
+
 }
