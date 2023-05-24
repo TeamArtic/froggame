@@ -227,8 +227,18 @@ class gridObject extends object{
     }
 }
 
-document.addEventListener('touchmove', function(event) {
-    if (event.scale !== 1) {
+var lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+  var now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Bloquear el desplazamiento de la página
+    document.addEventListener('touchmove', function(event) {
       event.preventDefault();
-    }
-  }, { passive: false });
+    }, { passive: false });
+  });
