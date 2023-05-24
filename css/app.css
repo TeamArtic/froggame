@@ -404,6 +404,10 @@ button.highlighted-button {
         left: 90px;
     }
     
+    .levelInfoName{
+        font-size: 0.5in;
+    }
+
 }
 
 @media (max-height: 768px) {
