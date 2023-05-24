@@ -555,7 +555,6 @@ function endLoadingDeathAnimation(){
 }
 
 function startLoadingLevel() {
-    dead = false
     playing = false
     foregroundContainer.style.backgroundColor = "#000000FF"
     // foregroundContainer.style.filter = "blur(4px)"
@@ -564,6 +563,7 @@ function startLoadingLevel() {
 }
 
 function loadLevel() {
+    dead = false
     if (actualLevel < levels.length) {
         levelManager.loadLevel(levels[++actualLevel - 1])
         clearTimeout(levelLoadingTimeout)
