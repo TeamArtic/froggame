@@ -227,8 +227,12 @@ class gridObject extends object{
     }
 }
 
-document.addEventListener('touchmove', function(event) {
-    if (event.scale !== 1) {
-      event.preventDefault();
+let lastTouchTime = 0;
+
+document.addEventListener('touchstart', function (event) {
+    const now = window.performance.now();
+    if (now - lastTouchTime < 500) {
+        event.preventDefault();
     }
-  }, { passive: false });
+    lastTouchTime = now;
+});
