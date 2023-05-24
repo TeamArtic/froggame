@@ -541,7 +541,7 @@ function startLoadingDeathDialog(){
     playing = false
     foregroundContainer.style.backgroundColor = "#9b1212a1"
     // foregroundContainer.style.filter = "blur(4px)"
-    levelInfoName.innerHTML = "¡Has muerto!"
+    levelInfoName.innerHTML = "¡Pierdes Vida!"
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(endLoadingDeathAnimation, animationTime + 1200)
