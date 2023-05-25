@@ -405,43 +405,47 @@ button.highlighted-button {
     font-size: 24px;
   }
 
-  input[type="range"] {
+  #audioVolume {
     -webkit-appearance: none;
-    width: 260px;
-    height: 10px;
-    background-color: #ffffff;
-    border-radius: 0px;
-    outline: none;
-    margin: 20px;
-  }
-
-  /* Estilos para la barra de progreso */
-  input[type="range"]::-webkit-slider-runnable-track {
+    appearance: none; 
     width: 100%;
-    height: 10px;
-    background-color: #00ff00;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
     border-radius: 0px;
-    cursor: pointer;
+    margin-top: 10px;
   }
-
-  /* Estilos para el control deslizante */
-  input[type="range"]::-webkit-slider-thumb {
+  
+  #audioVolume::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 0px;
+  }
+  
+  #audioVolume::-moz-range-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 0px;
+  }
+  
+  #audioVolume::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    appearance: none; 
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
     border-radius: 50%;
-    background-color: #ffffff;
-    cursor: pointer;
-    margin-top: -5px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: -407px 0 0 400px #51DC00;
   }
-
-  /* Estilos para el rango del slider en navegadores no WebKit */
-  input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+  
+  #audioVolume::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
     border-radius: 50%;
-    background-color: #00ff00;
-    cursor: pointer;
+    border: 1px solid #51DC00;
+    box-shadow: -407px 0 0 400px #51DC00;
   }
 
 
