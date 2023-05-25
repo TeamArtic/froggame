@@ -1,6 +1,6 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton,
     character, level, lifesContainer, specialAvilityContainer,  stopwatch,
-    gameUI
+    gameUI, startMenu, startButton, audioController, audioButton, audioVolume
 
 let imagesFolder = "../img/"
 
@@ -784,9 +784,16 @@ window.addEventListener('load', () => {
     gameUI.addEventListener('click', () => {
         pauseMenuToggle.toggleToState(false)
         notPaused = false
+        audioController = new backgroundAudioController("", audioButton, audioVolume)
     })
 
-    levelManager.loadLevel(levels[0])
-    levelLoadingTimeout = setTimeout(showLevelName, 800)
+    startMenu = document.getElementById('startMenu')
+    startButton = document.getElementById('startButton')
 
+    startButton.addEventListener('click', () => {
+        startMenu.classList.add('hidden-menu')
+        levelManager.loadLevel(levels[0])
+        levelLoadingTimeout = setTimeout(showLevelName, 800)
+
+    })
 });
