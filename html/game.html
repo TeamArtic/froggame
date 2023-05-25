@@ -40,13 +40,13 @@
             <div id="specialAvility" class="special-secondary-text"></div>
         </div>
         <a id="pauseButton" class="pauseButton " onclick="activateToggleMenu()">ESC</a>
-        <div class="controlsUI" id="controlsUI">
+        <div class="controlsUI hidden-menu" id="controlsUI">
             <button id="topButton" class="topButton" onclick="moveFrog(new vector2(0, -1))">W</button><br>
             <button id="leftButton" class="leftButton" onclick="moveFrog(new vector2(-1, 0))">A</button>
             <button id="jumpButton" class="jumpButton" onclick="moveFrog(new vector2(0, 1))">S</button>
             <button id="rightButton" class="rightButton" onclick="moveFrog(new vector2(1, 0))">D</button>
         </div>
-        <div class="controlsUIChrome hidden-menu" id="controlsUIChrome">
+        <div class="controlsUIChrome " id="controlsUIChrome">
             <button id="topButton" class="controlsButton" onclick="moveFrog(new vector2(0, -1))">W</button><br>
             <button id="leftButton" class="controlsButton" onclick="moveFrog(new vector2(-1, 0))">A</button>
             <button id="jumpButton" class="controlsButton" onclick="moveFrog(new vector2(0, 1))">S</button>
