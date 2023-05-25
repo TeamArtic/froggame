@@ -986,18 +986,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var deltaY = endY - startY;
   
       if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-        isScrolling = true;
-      }
-    }
-  
-    // Detectar gestos en la pantalla táctil
-    document.addEventListener('touchend', handleTouchEnd);
-  
-    function handleTouchEnd(event) {
-      if (!isScrolling) {
-        var deltaX = endX - startX;
-        var deltaY = endY - startY;
-  
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
           if (deltaX > 0) {
             moveFrog(new vector2(1, 0));
@@ -1011,12 +999,23 @@ document.addEventListener('DOMContentLoaded', function() {
             moveFrog(new vector2(0, -1));
           }
         }
+        isScrolling = true;
+      }
+    }
+  
+    // Detectar gestos en la pantalla táctil
+    document.addEventListener('touchend', handleTouchEnd);
+  
+    function handleTouchEnd(event) {
+      if (!isScrolling) {
+        event.preventDefault();
       }
       isScrolling = false;
     }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
