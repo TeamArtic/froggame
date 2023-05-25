@@ -951,3 +951,32 @@ if (isChrome) {
   // Añadir la clase "hiddenMenu" a controlsUIChrome
   controlsUIChrome.classList.add("hiddenMenu");
 }
+
+var startX, startY, endX, endY;
+
+document.addEventListener('touchstart', function(event) {
+  startX = event.touches[0].clientX;
+  startY = event.touches[0].clientY;
+});
+
+document.addEventListener('touchend', function(event) {
+  endX = event.changedTouches[0].clientX;
+  endY = event.changedTouches[0].clientY;
+  
+  var deltaX = endX - startX;
+  var deltaY = endY - startY;
+  
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (deltaX > 0) {
+        moveFrog(new vector2(1, 0))
+    } else {
+        moveFrog(new vector2(-1, 0))
+    }
+  } else {
+    if (deltaY > 0) {
+        moveFrog(new vector2(0, 1))
+    } else {
+        moveFrog(new vector2(0, -1))
+    }
+  }
+});
