@@ -235,10 +235,3 @@ document.addEventListener('touchend', function (event) {
   }
   lastTouchEnd = now;
 }, false);
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Bloquear el desplazamiento de la página
-    document.addEventListener('touchmove', function(event) {
-      event.preventDefault();
-    }, { passive: false });
-  });

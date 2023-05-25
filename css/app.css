@@ -155,6 +155,7 @@ button {
     justify-items: center;
     position: absolute;
     background-image: url(../img/grafico-cloaca.png);
+    z-index: 1;
 }
 
 .foregroundContainer {
@@ -386,6 +387,31 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
+.controlsUI {
+    z-index: 5;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    /* Agregamos esta línea */
+}
+
+.controlsButton {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
 .cameraAnimation {
     transition: transform 0.2s ease;
 }
@@ -481,23 +507,23 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
-.unlockedArchievement{
+.unlockedArchievement {
     border: 2px solid green;
     background-color: #00000070;
     color: #FFF;
 }
 
-.lockedArchievement{
+.lockedArchievement {
     border: 2px solid green;
     background-color: #00000070;
     color: #a9a9a9;
 }
 
-.font-size-24{
+.font-size-24 {
     font-size: 24px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 
     body {
         touch-action: manipulation;
@@ -506,7 +532,7 @@ button.highlighted-button {
 
     .controlsUI {
         bottom: 10px;
-        position: absolute;
+        position: fixed;
         display: block;
         opacity: 0.8;
         z-index: 5;
@@ -522,132 +548,146 @@ button.highlighted-button {
         margin: 2px;
     }
 
-    .pauseButton {
-        top: 20px;
-        right: 20px;
-        position: fixed;
-        display: block;
-        opacity: 0.8;
-        z-index: 5;
+    .controlsUIChrome {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .controlsButtonChrome {
         width: 70px;
         height: 70px;
         line-height: 70px;
         font-size: 35px;
-        cursor: pointer;
-        text-align: center;
-        font-size: 20px;
+        margin: 2px;
     }
+}
 
-    .gameUI {
-        font-size: 12px;
-    }
+.pauseButton {
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    z-index: 5;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+}
 
-    .topButton {
-        position: relative;
-        left: 90px;
-    }
+.gameUI {
+    font-size: 12px;
+}
 
-    .levelInfoName {
-        font-size: 0.2in;
-    }
+.topButton {
+    position: relative;
+    left: 90px;
+}
 
-    .main-screen-menu {
-        scale: 0.65;
-    }
+.levelInfoName {
+    font-size: 0.2in;
+}
 
-    .default-character-card {
-        height: 200px;
-        flex-direction: row;
-        overflow: hidden;
-        width: calc(100vw - 50px);
-    }
+.main-screen-menu {
+    scale: 0.65;
+}
 
-    .default-character-card-image {
-        align-self: flex-start;
-        width: 100px;
-    }
+.default-character-card {
+    height: 200px;
+    flex-direction: row;
+    overflow: hidden;
+    width: calc(100vw - 50px);
+}
 
-    .defalut-menu-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+.default-character-card-image {
+    align-self: flex-start;
+    width: 100px;
+}
 
-    .vertical-container-characters {
-        width: calc(100% - 100px);
-        overflow: auto;
-    }
+.defalut-menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
-    .vertical-container-credits {
-        scale: 0.95;
-        overflow: auto;
-    }
+.vertical-container-characters {
+    width: calc(100% - 100px);
+    overflow: auto;
+}
 
-    .text-align-center {
-        font-size: 12px;
-    }
+.vertical-container-credits {
+    scale: 0.95;
+    overflow: auto;
+}
 
-    button.highlighted-button {
-        font: normal;
-        font-size: 12px;
-    }
+.text-align-center {
+    font-size: 12px;
+}
 
-    .highlighted-button {
-        padding: 10px;
-    }
+button.highlighted-button {
+    font: normal;
+    font-size: 12px;
+}
 
-    .image-rendering-pixelated {
-        margin-top: 35px;
-    }
+.highlighted-button {
+    padding: 10px;
+}
 
-
-
-    .left-elemen-margin-10-px {
-        margin: 4px 0 4px 4px;
-        height: 30px;
-
-    }
-
-    .money {
-        font-size: 8px;
-    }
-
-    .gap-20-px {
-        gap: 6px;
-    }
-
-    .right-element-margin-20-px {
-        margin: 0;
-        flex-direction: column;
-        font-size: 7px;
-        margin-right: 2px;
-    }
-
-    ul li a {
-        font-size: 9px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 20px;
-
-    }
+.image-rendering-pixelated {
+    margin-top: 35px;
+}
 
 
 
-    li a {
-        font-size: 9px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 20px;
+.left-elemen-margin-10-px {
+    margin: 4px 0 4px 4px;
+    height: 30px;
 
-    }
+}
 
-    li {
-        flex: 0 0 calc(50% - 20px);
-    }
+.money {
+    font-size: 8px;
+}
 
-    #texto {
-        font-size: 10px;
-    }
+.gap-20-px {
+    gap: 6px;
+}
+
+.right-element-margin-20-px {
+    margin: 0;
+    flex-direction: column;
+    font-size: 7px;
+    margin-right: 2px;
+}
+
+ul li a {
+    font-size: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+
+}
+
+
+
+li a {
+    font-size: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+
+}
+
+li {
+    flex: 0 0 calc(50% - 20px);
+}
+
+#texto {
+    font-size: 10px;
+}
 
 }
 

@@ -929,3 +929,25 @@ function loadEnd() {
     actualLevel = 9
     startLoadingLevel()
 }
+
+// Verificar si el usuario está utilizando Chrome
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+// Obtener las referencias a los elementos del DOM
+var controlsUI = document.getElementById("controlsUI");
+var controlsUIChrome = document.getElementById("controlsUIChrome");
+
+// Verificar si el usuario está utilizando Chrome
+if (isChrome) {
+  // Quitar la clase "hiddenMenu" de controlsUIChrome
+  controlsUIChrome.classList.remove("hiddenMenu");
+
+  // Añadir la clase "hiddenMenu" a controlsUI
+  controlsUI.classList.add("hiddenMenu");
+} else {
+  // Quitar la clase "hiddenMenu" de controlsUI
+  controlsUI.classList.remove("hiddenMenu");
+
+  // Añadir la clase "hiddenMenu" a controlsUIChrome
+  controlsUIChrome.classList.add("hiddenMenu");
+}
