@@ -839,20 +839,26 @@ window.addEventListener('load', () => {
     // enemyContainer = new object("enemy", gameScene, new vector2(50,0),new vector2(0,0), enemyContainer)
     // gameScene.addObject("enemy", enemy)
 
+    document.addEventListener("DOMContentLoaded", function () {
+        activateToggleMenu();
+    });
+
     function activateToggleMenu() {
         // Obtener referencias al botón y al menú correspondiente
         var toggleButton = document.getElementById('pauseButton');
         var menu = document.getElementById('pauseMenu');
-      
+
         // Crear una instancia de toggleMenu
         var toggleMenuInstance = new toggleMenu(menu, 'hidden-menu');
-      
+
         // Agregar event listener al botón para activar el toggleMenu
-        toggleButton.addEventListener("click", function() {
-          toggleMenuInstance.toggle();
+        toggleButton.addEventListener("click", function () {
+            toggleMenuInstance.toggle();
         });
-      }
-      
+    }
+
+    
+
 
     var pauseButton = document.getElementById('pauseButton');
     pauseButton.addEventListener("click", activateToggleMenu);
