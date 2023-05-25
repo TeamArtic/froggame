@@ -17,6 +17,18 @@ function buyCharacter(characterId) {
   if (characterInfo) {
     if (!unlockedCharacters[characterId].unlocked) {
       if (characterInfo.price <= money) {
+        if(characterId == 1){ // Donnatelo
+          setArchievement(10)
+        }
+        if(characterId == 2){ // Rafael
+          setArchievement(11)
+        }
+        if(characterId == 3){ // Leonardo
+          setArchievement(12)
+        }
+        if(characterId == 4){ // Jennika
+          setArchievement(13)
+        }
         money -= characterInfo.price;
         localStorage.setItem('money', money);
         moneyContainer.innerHTML = money + "€";
@@ -162,10 +174,10 @@ window.addEventListener('load', () => {
   unlockedCharacters = JSON.parse(localStorage.getItem('unlockedCharacters'))
   if(!unlockedCharacters){
     unlockedCharacters = [
-      {"characterId":0, "unlocked":false},
+      {"characterId":0, "unlocked":true},
       {"characterId":1, "unlocked":false},
       {"characterId":2, "unlocked":false},
-      {"characterId":3, "unlocked":true},
+      {"characterId":3, "unlocked":false},
       {"characterId":4, "unlocked":false}
     ]
   }
@@ -173,10 +185,10 @@ window.addEventListener('load', () => {
 
 function removeAllCharacters(){
   unlockedCharacters = [
-    {"characterId":0, "unlocked":false},
+    {"characterId":0, "unlocked":true},
     {"characterId":1, "unlocked":false},
     {"characterId":2, "unlocked":false},
-    {"characterId":3, "unlocked":true},
+    {"characterId":3, "unlocked":false},
     {"characterId":4, "unlocked":false}
   ]
   localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters))
