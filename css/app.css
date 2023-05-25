@@ -10,7 +10,7 @@ body {
     background-color: #000;
     overflow: hidden;
     touch-action: none;
-    
+
 }
 
 body {
@@ -383,13 +383,13 @@ button.highlighted-button {
     transition: transform 0.2s ease;
 }
 
-.levelInfoName{
+.levelInfoName {
     font-size: 0.9in;
 }
 
 @media (max-width: 768px) {
 
-    body{
+    body {
         touch-action: manipulation;
         overflow: hidden;
     }
@@ -416,8 +416,8 @@ button.highlighted-button {
         position: relative;
         left: 90px;
     }
-    
-    .levelInfoName{
+
+    .levelInfoName {
         font-size: 0.5in;
     }
 
@@ -430,35 +430,31 @@ button.highlighted-button {
         display: block;
     }
 
-    .controlsUI button{
+    .controlsUI button {
         transform: scale(0.8);
     }
 
-    body{
+    body {
         touch-action: manipulation;
         overflow: hidden;
     }
 }
 
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
+* {
     scrollbar-width: auto;
     scrollbar-color: #1f3d21 #3a6837;
-  }
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 8px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #3a6837;
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #1f3d21;
     border-radius: 57px;
     border: 3px solid #1f3d21;
-  }
+}
