@@ -29,6 +29,22 @@ button {
     margin: 0;
     padding: 0;
     touch-action: manipulation;
+    scrollbar-width: auto;
+    scrollbar-color: #1f3d21 #3a6837;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #3a6837;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #1f3d21;
+    border-radius: 57px;
+    border: 3px solid #1f3d21;
 }
 
 .app-default-container {
@@ -248,22 +264,6 @@ button {
     padding: 10px;
 }
 
-@media (max-height:768px) {
-    .default-character-card {
-        height: 250px;
-        flex-direction: row;
-        overflow: hidden;
-    }
-
-    .default-character-card-image {
-        align-self: flex-start;
-    }
-
-    .defalut-menu-grid {
-        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-    }
-}
-
 .highlighted-button {
     display: block;
     padding: 20px 40px;
@@ -459,8 +459,17 @@ button.highlighted-button {
         width: 100px;
     }
 
+    .defalut-menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
     .vertical-container-characters {
         width: calc(100% - 100px);
+        overflow: auto;
+    }
+
+    .vertical-container-credits {
+        scale: 0.95;
         overflow: auto;
     }
 
@@ -485,10 +494,8 @@ button.highlighted-button {
 
     .left-elemen-margin-10-px {
         margin: 4px 0 4px 4px;
-    }
-
-    header div img {
         height: 30px;
+
     }
 
     .money {
@@ -504,6 +511,15 @@ button.highlighted-button {
         flex-direction: column;
         font-size: 7px;
         margin-right: 2px;
+    }
+
+    ul li a {
+        font-size: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 20px;
+
     }
 
 
@@ -543,23 +559,20 @@ button.highlighted-button {
         touch-action: manipulation;
         overflow: hidden;
     }
+
+    .default-character-card {
+        height: 250px;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .default-character-card-image {
+        align-self: flex-start;
+    }
+
+    .defalut-menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    }
 }
 
-* {
-    scrollbar-width: auto;
-    scrollbar-color: #1f3d21 #3a6837;
-}
 
-*::-webkit-scrollbar {
-    width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-    background: #3a6837;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #1f3d21;
-    border-radius: 57px;
-    border: 3px solid #1f3d21;
-}
