@@ -954,29 +954,16 @@ function loadEnd() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var startX, startY, endX, endY;
-    var isScrolling = false;
-    var isHorizontalSwipe = false;
-  
-    // Bloquear el desplazamiento lateral de la página
-    document.addEventListener('touchmove', function(event) {
-      if (!isScrolling || isHorizontalSwipe) {
-        event.preventDefault();
-      }
-    }, { passive: false });
-  
-    // Desactivar el zoom de la página
-    document.body.style.touchAction = 'none';
+    var threshold = 50; // Umbral mínimo de desplazamiento para considerarlo un gesto válido
   
     // Detectar gestos en la pantalla táctil
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
     document.addEventListener('touchend', handleTouchEnd);
   
     function handleTouchStart(event) {
       startX = event.touches[0].clientX;
       startY = event.touches[0].clientY;
-      isScrolling = false;
-      isHorizontalSwipe = false;
     }
   
     function handleTouchMove(event) {
@@ -986,46 +973,27 @@ document.addEventListener('DOMContentLoaded', function() {
       var deltaX = endX - startX;
       var deltaY = endY - startY;
   
-      if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-        isScrolling = true;
-  
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          isHorizontalSwipe = true;
-        } else {
-          isHorizontalSwipe = false;
-        }
-      }
-  
-      if (!isScrolling || isHorizontalSwipe) {
-        event.preventDefault();
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault(); // Prevenir el desplazamiento de la página si es un gesto horizontal
       }
     }
   
     function handleTouchEnd(event) {
-      if (!isScrolling) {
-        var deltaX = endX - startX;
-        var deltaY = endY - startY;
+      var deltaX = endX - startX;
+      var deltaY = endY - startY;
   
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          if (deltaX > 0) {
-            moveFrog(new vector2(1, 0));
-          } else {
-            moveFrog(new vector2(-1, 0));
-          }
-        } else {
-          if (deltaY > 0) {
-            moveFrog(new vector2(0, 1));
-          } else {
-            moveFrog(new vector2(0, -1));
-          }
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > threshold) {
+          moveFrog(new vector2(1, 0)); // Mover hacia la derecha
+        } else if (deltaX < -threshold) {
+          moveFrog(new vector2(-1, 0)); // Mover hacia la izquierda
         }
       }
-      isScrolling = false;
-      isHorizontalSwipe = false;
     }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
