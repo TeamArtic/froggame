@@ -54,7 +54,7 @@ class backgroundAudioController{
     play(){
         this.audio.play()
         this.button.innerHTML = "<span class=\"material-symbols-outlined\">" +
-        "volume_up" +
+        "Silenciar" +
         "</span>" // TODO Do this part of the code in a clearner and modular way.
 
     }
@@ -62,7 +62,7 @@ class backgroundAudioController{
     pause(){
         this.audio.pause()
         this.button.innerHTML = "<span class=\"material-symbols-outlined\">" +
-        "volume_off" +
+        "Desilenciar" +
         "</span>"
     }
 

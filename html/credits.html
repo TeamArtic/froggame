@@ -5,15 +5,43 @@
 	<title>Creditos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta charset="UTF-8">
+	<script src="../js/backgroundMusic.js"></script>
+	<script src="../js/toggleMenu.js"></script>
+	<script src="../js/attributes.js"></script>
+	<script src="../js/engine.js"></script>
+	<script src="../js/gameScene.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="../css/credits.css">
 	<link rel="icon" type="image/x-icon" href="../img/Logo.ico">
 	<style>
 		body {
 			background-color: black;
 			color: white;
-			font-family: "hola";
+			font-family: 'Press Start 2P', cursive;
 			text-align: center;
-			background-image: url("../img/naranjito.jpg");
+			background-image: url("../img/juego.gif");
+			background-repeat: no-repeat;
+		}
+
+		.highlighted-button {
+			display: block;
+			padding: 20px 10px;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 24px;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+			background-color: #2e4e1c83;
+			transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.highlighted-button:hover {
+			transform: scale(1.1);
 		}
 
 		.container {
@@ -21,7 +49,7 @@
 			margin: 20px;
 			opacity: 0;
 			transition: opacity 1s ease-in-out;
-			text-align: center; 
+			text-align: center;
 		}
 
 		.container.visible {
@@ -32,51 +60,68 @@
 			margin-top: 10px;
 			font-size: 18px;
 		}
-		
+
 		.p {
 			font-size: 30px;
 		}
-		
+
 		.name {
-			font-size: 20px; 
+			font-size: 20px;
 		}
-		
+
 		h1 {
-			font-family: "hola";
+			font-family: 'Press Start 2P';
 			font-size: 60px;
 		}
-		
-		@font-face {
-			font-family: 'hola';
-			src: url(../BITWONDER.TTF);
+
+		.hidden-menu {
+			display: none !important;
+		}
+
+		@media(max-width: 740px) {
+			h1 {
+				font-size: 30px;
+			}
+
+			.p {
+				font-size: 15px;
+			}
+
+			.name {
+				font-size: 10px;
+			}
 		}
 	</style>
 </head>
 
 <body>
 	<h1 class="fade-in">Creditos</h1>
-	<div class="container fade-in" style="transition-delay: 1s;">
+	<div class="container fade-in" style="transition-delay: 0.5s;">
 		<p class="p">Scrum Master</p>
 		<div class="name">Alex Martinez</div>
 	</div>
-	<div class="container fade-in" style="transition-delay: 2s;">
-		<p class="p">Programador</p>
-		<div class="name">Kevin Rodriguez</div>
-	</div>
-	<div class="container fade-in" style="transition-delay: 3s;">
+	<div class="container fade-in" style="transition-delay: 1s;">
 		<p class="p">Product Owner</p>
 		<div class="name">Raul Lopez</div>
 	</div>
-	<div class="container fade-in" style="transition-delay: 4s;">
+	<div class="container fade-in" style="transition-delay: 1.5s;">
+		<p class="p">Programador</p>
+		<div class="name">Kevin Rodriguez</div>
+	</div><br>
+	<div class="container fade-in" style="transition-delay: 2s;">
 		<p class="p">Diseño de niveles</p>
 		<div class="name">Manuel Mendias</div>
 		<div class="name">Rafa Higueras</div>
 	</div>
-	<div class="container fade-in" style="transition-delay: 5s;">
+	<div class="container fade-in" style="transition-delay: 2.5s;">
 		<p class="p">Diseño de paginas</p>
 		<div class="name">Blas Escalona</div>
 		<div class="name">Carlos Perez</div>
+	</div><br>
+	<div class="container fade-in" style="transition-delay: 3s;">
+		<a class="highlighted-button" href="../html/mainmenu.html">Inicio</a>
 	</div>
+
 
 
 	<script>
