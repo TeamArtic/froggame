@@ -120,6 +120,12 @@ button {
     gap: 10px;
 }
 
+.vertical-container-characters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .vertical-menu {
     display: flex;
     flex-direction: column;
@@ -422,7 +428,7 @@ button.highlighted-button {
     }
 
     .main-screen-menu{
-        scale: 0.60;
+        scale: 0.6;
     }
 
     .default-character-card {
@@ -437,7 +443,7 @@ button.highlighted-button {
         width: 100px;
     }
 
-    .vertical-container {
+    .vertical-container-characters {
         width: calc(100% - 100px);
         overflow: auto;
     }
