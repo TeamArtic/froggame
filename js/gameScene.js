@@ -958,7 +958,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Bloquear el desplazamiento de la página
     document.addEventListener('touchmove', function(event) {
-      if (event.touches.length > 1 || isScrolling) {
+      if (!isScrolling) {
         event.preventDefault();
       }
     }, { passive: false });
@@ -990,13 +990,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var deltaY = endY - startY;
   
         if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-          if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            isScrolling = true;
-          } else {
-            isScrolling = false;
-            event.preventDefault();
-          }
+          isScrolling = true;
         }
+      } else {
+        event.preventDefault(); // Bloquear el zoom con dos dedos
       }
     }
   
@@ -1005,10 +1002,18 @@ document.addEventListener('DOMContentLoaded', function() {
         var deltaX = endX - startX;
         var deltaY = endY - startY;
   
-        if (deltaX > 0 && Math.abs(deltaX) > Math.abs(deltaY)) {
-          moveFrog(new vector2(1, 0));
-        } else if (deltaY > 0 && Math.abs(deltaY) > Math.abs(deltaX)) {
-          moveFrog(new vector2(0, 1));
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) {
+            moveFrog(new vector2(1, 0));
+          } else {
+            moveFrog(new vector2(-1, 0));
+          }
+        } else {
+          if (deltaY > 0) {
+            moveFrog(new vector2(0, 1));
+          } else {
+            moveFrog(new vector2(0, -1));
+          }
         }
       }
       isScrolling = false;
@@ -1016,6 +1021,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
