@@ -418,13 +418,17 @@ button.highlighted-button {
         margin: 2px;
     }
 
+    .gameUI{
+        font-size: 12px;
+    }
+
     .topButton {
         position: relative;
         left: 90px;
     }
 
     .levelInfoName {
-        font-size: 0.5in;
+        font-size: 0.2in;
     }
 
     .main-screen-menu {
