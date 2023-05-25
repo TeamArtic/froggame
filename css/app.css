@@ -508,6 +508,12 @@ button.highlighted-button {
     li {
         flex: 0 0 calc(50% - 20px);
     }
+
+    #texto {
+        font-size: 16px;
+      }
+
+      
 }
 
 @media (max-height: 768px) {
