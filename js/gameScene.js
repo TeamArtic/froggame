@@ -963,10 +963,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: false });
   
-    // Detectar gestos en la pantalla táctil
+    // Bloquear el zoom en el navegador móvil
     document.addEventListener('touchstart', handleTouchStart, { passive: false });
     document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd);
   
     function handleTouchStart(event) {
       startX = event.touches[0].clientX;
@@ -975,6 +974,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     function handleTouchMove(event) {
+      if (event.touches.length > 1) {
+        event.preventDefault(); // Bloquear el gesto de zoom
+        return;
+      }
+  
       endX = event.touches[0].clientX;
       endY = event.touches[0].clientY;
   
@@ -982,15 +986,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var deltaY = endY - startY;
   
       if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-        isScrolling = true;
-      }
-    }
-  
-    function handleTouchEnd(event) {
-      if (!isScrolling) {
-        var deltaX = endX - startX;
-        var deltaY = endY - startY;
-  
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
           if (deltaX > 0) {
             moveFrog(new vector2(1, 0));
@@ -1004,6 +999,16 @@ document.addEventListener('DOMContentLoaded', function() {
             moveFrog(new vector2(0, -1));
           }
         }
+        isScrolling = true;
+      }
+    }
+  
+    // Detectar gestos en la pantalla táctil
+    document.addEventListener('touchend', handleTouchEnd);
+  
+    function handleTouchEnd(event) {
+      if (!isScrolling) {
+        event.preventDefault();
       }
       isScrolling = false;
     }
