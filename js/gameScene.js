@@ -1,5 +1,5 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton,
-    character, level, lifesContainer, specialAvilityContainer,  stopwatch,
+    character, level, lifesContainer, specialAvilityContainer, stopwatch,
     gameUI
 
 let imagesFolder = "../img/"
@@ -28,7 +28,7 @@ let superLifes = 0
 
 let movementTimeout = 500
 
-let  stopwatchTime = 0
+let stopwatchTime = 0
 
 let recordTime
 
@@ -51,22 +51,22 @@ class imageInfo {
     }
 }
 
-class enemyInfo{
-    constructor(name, image){
+class enemyInfo {
+    constructor(name, image) {
         this.name = name
         this.image = image
     }
 }
 
 let enemiesInfo = [
-    {"name":"armaggon", "image":new imageInfo(imagesFolder + "armaggon.gif", new vector2(50, 50), new vector2(10, -30))},
-    {"name":"april", "image":new imageInfo(imagesFolder + "april.gif", new vector2(20, 20), new vector2(29, -25))}, // 41x75
-    {"name":"asuka", "image":new imageInfo(imagesFolder + "asuka.gif", new vector2(23, 23), new vector2(27, -43))}, // 46x93
-    {"name":"chrome", "image":new imageInfo(imagesFolder + "chrome.gif", new vector2(26, 26), new vector2(23, -36))}, //53x76  23 -26
-    {"name":"cyber", "image":new imageInfo(imagesFolder + "cyber.gif", new vector2(25, 25), new vector2(25, -49))}, // 50x99
-    {"name":"dirtbag", "image":new imageInfo(imagesFolder + "dirtbag.gif", new vector2(20, 20), new vector2(25, -12))}, // 40x62
+    { "name": "armaggon", "image": new imageInfo(imagesFolder + "armaggon.gif", new vector2(50, 50), new vector2(10, -30)) },
+    { "name": "april", "image": new imageInfo(imagesFolder + "april.gif", new vector2(20, 20), new vector2(29, -25)) }, // 41x75
+    { "name": "asuka", "image": new imageInfo(imagesFolder + "asuka.gif", new vector2(23, 23), new vector2(27, -43)) }, // 46x93
+    { "name": "chrome", "image": new imageInfo(imagesFolder + "chrome.gif", new vector2(26, 26), new vector2(23, -36)) }, //53x76  23 -26
+    { "name": "cyber", "image": new imageInfo(imagesFolder + "cyber.gif", new vector2(25, 25), new vector2(25, -49)) }, // 50x99
+    { "name": "dirtbag", "image": new imageInfo(imagesFolder + "dirtbag.gif", new vector2(20, 20), new vector2(25, -12)) }, // 40x62
     // {"name":"karai", "image":new imageInfo(imagesFolder + "karai.gif", new vector2(48, 48), new vector2(1, -54))}, // 97x104
-    {"name":"wignut", "image":new imageInfo(imagesFolder + "wignut.gif", new vector2(21, 21), new vector2(21, -45))} // 57x85 21 -35
+    { "name": "wignut", "image": new imageInfo(imagesFolder + "wignut.gif", new vector2(21, 21), new vector2(21, -45)) } // 57x85 21 -35
 ]
 
 class levelInformation {
@@ -82,47 +82,47 @@ class levelInformation {
 
 let levels = [
     new levelInformation(1, "Cloaca", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"sewerStart","position":-1},
-        {"type":"sewerFloor","position":0},
-        {"type":"sewerWater","position":1},
-        {"type":"sewerFloor","position":2},
-        {"type":"sewerWater","position":3},
-        {"type":"sewerFloor","position":4},
-        {"type":"sewerWater","position":5},
-        {"type":"sewerFloor","position":6},
+        { "type": "sewerStart", "position": -1 },
+        { "type": "sewerFloor", "position": 0 },
+        { "type": "sewerWater", "position": 1 },
+        { "type": "sewerFloor", "position": 2 },
+        { "type": "sewerWater", "position": 3 },
+        { "type": "sewerFloor", "position": 4 },
+        { "type": "sewerWater", "position": 5 },
+        { "type": "sewerFloor", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "r", "enemy":"armaggon"},
-        { "yPosition": 3, "speed": 25 , "direction": "l", "enemy":"armaggon"},
-        { "yPosition": 5, "speed": 20 , "direction": "r", "enemy":"armaggon"},
+        { "yPosition": 1, "speed": 30, "direction": "r", "enemy": "armaggon" },
+        { "yPosition": 3, "speed": 25, "direction": "l", "enemy": "armaggon" },
+        { "yPosition": 5, "speed": 20, "direction": "r", "enemy": "armaggon" },
     ]),
     new levelInformation(2, "Ciudad día", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"startDia","position":-1},
-        {"type":"streetFloor","position":0},
-        {"type":"streetRoad","position":1},
-        {"type":"streetFloor","position":2},
-        {"type":"streetRoad","position":3},
-        {"type":"streetFloor","position":4},
-        {"type":"streetRoad","position":5},
-        {"type":"streetFloor","position":6},
+        { "type": "startDia", "position": -1 },
+        { "type": "streetFloor", "position": 0 },
+        { "type": "streetRoad", "position": 1 },
+        { "type": "streetFloor", "position": 2 },
+        { "type": "streetRoad", "position": 3 },
+        { "type": "streetFloor", "position": 4 },
+        { "type": "streetRoad", "position": 5 },
+        { "type": "streetFloor", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 20 , "direction": "l", "enemy":"april"},
-        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"asuka"},
-        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"april"},
+        { "yPosition": 1, "speed": 20, "direction": "l", "enemy": "april" },
+        { "yPosition": 3, "speed": 40, "direction": "r", "enemy": "asuka" },
+        { "yPosition": 5, "speed": 30, "direction": "l", "enemy": "april" },
     ]),
     new levelInformation(3, "Ciudad tarde", new vector2(6, 6), new vector2(3, 0), [
-        {"type":"startTarde","position":-1},
-        {"type":"streetUnMillonPM","position":0},
-        {"type":"roadUnMillonPM","position":1},
-        {"type":"roadUnMillonPM","position":2},
-        {"type":"streetUnMillonPM","position":3},
-        {"type":"roadUnMillonPM","position":4},
-        {"type":"roadUnMillonPM","position":5},
-        {"type":"streetUnMillonPM","position":6},
+        { "type": "startTarde", "position": -1 },
+        { "type": "streetUnMillonPM", "position": 0 },
+        { "type": "roadUnMillonPM", "position": 1 },
+        { "type": "roadUnMillonPM", "position": 2 },
+        { "type": "streetUnMillonPM", "position": 3 },
+        { "type": "roadUnMillonPM", "position": 4 },
+        { "type": "roadUnMillonPM", "position": 5 },
+        { "type": "streetUnMillonPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 15 , "direction": "l", "enemy":"april"},
-        { "yPosition": 2, "speed": 30 , "direction": "r", "enemy":"asuka"},
-        { "yPosition": 4, "speed": 35 , "direction": "l", "enemy":"april"},
-        { "yPosition": 5, "speed": 25 , "direction": "r", "enemy":"asuka"},
+        { "yPosition": 1, "speed": 15, "direction": "l", "enemy": "april" },
+        { "yPosition": 2, "speed": 30, "direction": "r", "enemy": "asuka" },
+        { "yPosition": 4, "speed": 35, "direction": "l", "enemy": "april" },
+        { "yPosition": 5, "speed": 25, "direction": "r", "enemy": "asuka" },
     ]),
     new levelInformation(4, "Ciudad noche", new vector2(6, 6), new vector2(3, 0), [
         { "type": "startNoche", "position": -1 },
@@ -134,9 +134,9 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"cyber"},
-        { "yPosition": 3, "speed": 70 , "direction": "r", "enemy":"cyber"},
-        { "yPosition": 5, "speed": 45 , "direction": "l", "enemy":"cyber"},
+        { "yPosition": 1, "speed": 30, "direction": "l", "enemy": "cyber" },
+        { "yPosition": 3, "speed": 70, "direction": "r", "enemy": "cyber" },
+        { "yPosition": 5, "speed": 45, "direction": "l", "enemy": "cyber" },
     ]),
     new levelInformation(5, "Ciudad noche", new vector2(2, 6), new vector2(1, 0), [
         { "type": "startNoche", "position": -1 },
@@ -148,70 +148,70 @@ let levels = [
         { "type": "roadLaCeroPuntoCincoMillonesPM", "position": 5 },
         { "type": "streetLaCeroPuntoCincoMillonesPM", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"cyber"},
-        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"cyber"},
-        { "yPosition": 4, "speed": 55 , "direction": "l", "enemy":"cyber"},
-        { "yPosition": 5, "speed": 65 , "direction": "r", "enemy":"cyber"},
+        { "yPosition": 1, "speed": 30, "direction": "l", "enemy": "cyber" },
+        { "yPosition": 3, "speed": 40, "direction": "r", "enemy": "cyber" },
+        { "yPosition": 4, "speed": 55, "direction": "l", "enemy": "cyber" },
+        { "yPosition": 5, "speed": 65, "direction": "r", "enemy": "cyber" },
     ]),
-    new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3,0), [
-        {"type":"startPlaya","position":-1},
-        {"type":"sandFloor","position":0},
-        {"type":"sandWater","position":1},
-        {"type":"sandFloor","position":2},
-        {"type":"sandWater","position":3},
-        {"type":"sandFloor","position":4},
-        {"type":"sandWater","position":5},
-        {"type":"sandFloor","position":6},
+    new levelInformation(6, "Playa", new vector2(6, 6), new vector2(3, 0), [
+        { "type": "startPlaya", "position": -1 },
+        { "type": "sandFloor", "position": 0 },
+        { "type": "sandWater", "position": 1 },
+        { "type": "sandFloor", "position": 2 },
+        { "type": "sandWater", "position": 3 },
+        { "type": "sandFloor", "position": 4 },
+        { "type": "sandWater", "position": 5 },
+        { "type": "sandFloor", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 45 , "direction": "r", "enemy":"wignut"},
-        { "yPosition": 3, "speed": 30 , "direction": "l", "enemy":"wignut"},
-        { "yPosition": 5, "speed": 70 , "direction": "r", "enemy":"wignut"},
+        { "yPosition": 1, "speed": 45, "direction": "r", "enemy": "wignut" },
+        { "yPosition": 3, "speed": 30, "direction": "l", "enemy": "wignut" },
+        { "yPosition": 5, "speed": 70, "direction": "r", "enemy": "wignut" },
     ]),
-    new levelInformation(7, "Autopista", new vector2(6, 6), new vector2(3,0), [
-        {"type":"streetFloor","position":0},
-        {"type":"streetRoad","position":1},
-        {"type":"streetRoad","position":2},
-        {"type":"streetFloor","position":3},
-        {"type":"streetRoad","position":4},
-        {"type":"streetRoad","position":5},
-        {"type":"streetFloor","position":6},
+    new levelInformation(7, "Autopista", new vector2(6, 6), new vector2(3, 0), [
+        { "type": "streetFloor", "position": 0 },
+        { "type": "streetRoad", "position": 1 },
+        { "type": "streetRoad", "position": 2 },
+        { "type": "streetFloor", "position": 3 },
+        { "type": "streetRoad", "position": 4 },
+        { "type": "streetRoad", "position": 5 },
+        { "type": "streetFloor", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 80 , "direction": "r", "enemy":"chrome"},
-        { "yPosition": 2, "speed": 80 , "direction": "l", "enemy":"armaggon"},
-        { "yPosition": 4, "speed": 80 , "direction": "r", "enemy":"chrome"},
-        { "yPosition": 5, "speed": 80 , "direction": "l", "enemy":"armaggon"},
+        { "yPosition": 1, "speed": 80, "direction": "r", "enemy": "chrome" },
+        { "yPosition": 2, "speed": 80, "direction": "l", "enemy": "armaggon" },
+        { "yPosition": 4, "speed": 80, "direction": "r", "enemy": "chrome" },
+        { "yPosition": 5, "speed": 80, "direction": "l", "enemy": "armaggon" },
     ]),
-    new levelInformation(8, "Ciudad futurista 1", new vector2(4, 6), new vector2(2,0), [
-        {"type":"futureStart","position":-1},
-        {"type":"futureStreet","position":0},
-        {"type":"futureRoad","position":1},
-        {"type":"futureRoad","position":2},
-        {"type":"futureRoad","position":3},
-        {"type":"futureRoad","position":4},
-        {"type":"futureRoad","position":5},
-        {"type":"futureStreet","position":6},
+    new levelInformation(8, "Ciudad futurista 1", new vector2(4, 6), new vector2(2, 0), [
+        { "type": "futureStart", "position": -1 },
+        { "type": "futureStreet", "position": 0 },
+        { "type": "futureRoad", "position": 1 },
+        { "type": "futureRoad", "position": 2 },
+        { "type": "futureRoad", "position": 3 },
+        { "type": "futureRoad", "position": 4 },
+        { "type": "futureRoad", "position": 5 },
+        { "type": "futureStreet", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 30 , "direction": "l", "enemy":"chrome"},
-        { "yPosition": 2, "speed": 50 , "direction": "r", "enemy":"wignut"},
-        { "yPosition": 3, "speed": 30 , "direction": "l", "enemy":"chrome"},
-        { "yPosition": 4, "speed": 70 , "direction": "r", "enemy":"wignut"},
-        { "yPosition": 5, "speed": 30 , "direction": "l", "enemy":"chrome"},
+        { "yPosition": 1, "speed": 30, "direction": "l", "enemy": "chrome" },
+        { "yPosition": 2, "speed": 50, "direction": "r", "enemy": "wignut" },
+        { "yPosition": 3, "speed": 30, "direction": "l", "enemy": "chrome" },
+        { "yPosition": 4, "speed": 70, "direction": "r", "enemy": "wignut" },
+        { "yPosition": 5, "speed": 30, "direction": "l", "enemy": "chrome" },
     ]),
-    new levelInformation(9, "Ciudad futurista 2", new vector2(6, 6), new vector2(3,0), [
-        {"type":"futureStart","position":-1},
-        {"type":"futureStreet","position":0},
-        {"type":"futureRoad","position":1},
-        {"type":"futureRoad","position":2},
-        {"type":"futureRoad","position":3},
-        {"type":"futureRoad","position":4},
-        {"type":"futureRoad","position":5},
-        {"type":"futureStreet","position":6},
+    new levelInformation(9, "Ciudad futurista 2", new vector2(6, 6), new vector2(3, 0), [
+        { "type": "futureStart", "position": -1 },
+        { "type": "futureStreet", "position": 0 },
+        { "type": "futureRoad", "position": 1 },
+        { "type": "futureRoad", "position": 2 },
+        { "type": "futureRoad", "position": 3 },
+        { "type": "futureRoad", "position": 4 },
+        { "type": "futureRoad", "position": 5 },
+        { "type": "futureStreet", "position": 6 },
     ], [
-        { "yPosition": 1, "speed": 80 , "direction": "l", "enemy":"dirtbag"},
-        { "yPosition": 2, "speed": 100 , "direction": "r", "enemy":"dirtbag"},
-        { "yPosition": 3, "speed": 40 , "direction": "r", "enemy":"wignut"},
-        { "yPosition": 4, "speed": 60 , "direction": "l", "enemy":"chrome"},
-        { "yPosition": 5, "speed": 30 , "direction": "r", "enemy":"dirtbag"},
+        { "yPosition": 1, "speed": 80, "direction": "l", "enemy": "dirtbag" },
+        { "yPosition": 2, "speed": 100, "direction": "r", "enemy": "dirtbag" },
+        { "yPosition": 3, "speed": 40, "direction": "r", "enemy": "wignut" },
+        { "yPosition": 4, "speed": 60, "direction": "l", "enemy": "chrome" },
+        { "yPosition": 5, "speed": 30, "direction": "r", "enemy": "dirtbag" },
     ]),
 ]
 
@@ -248,14 +248,14 @@ let actualLevel = 0
 
 class levelManager {
     static loadLevel(levelInfo) {    // TODO Do this with classes
-        for(let i = 0; i < roads.length; i++){
+        for (let i = 0; i < roads.length; i++) {
             roads[i].remove()
             delete roads[i]
         }
         roads = []
         let floorElements = document.getElementsByClassName("floorElement")
         let length = floorElements.length
-        for(let i = 0; i < length; i++){
+        for (let i = 0; i < length; i++) {
             floorElements[0].remove()
         }
         actualLevel = levelInfo.levelId
@@ -277,13 +277,13 @@ class levelManager {
             let floorObjectImageSRC = levelFloorObjects.find(function (element) {
                 return element.floorName == floorElement.type
             }).imageSRC
-            let floorObjectText = generateLabelHTML("div", new attributes([{ "name": "src", "values": [floorObjectImageSRC] }, {"name":"class", "values":["floorElement"]}, { "name": "style", "values": ["position:absolute;", "z-index:1;", "left:-100px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 3) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"] }]), "")
+            let floorObjectText = generateLabelHTML("div", new attributes([{ "name": "src", "values": [floorObjectImageSRC] }, { "name": "class", "values": ["floorElement"] }, { "name": "style", "values": ["position:absolute;", "z-index:1;", "left:-100px;", "top:" + floorElement.position * mainGrid.tileSize + "px;", "width:" + ((levelInfo.size.x + 3) * 100) + "px;", "height:100px;", "background-image:url('" + floorObjectImageSRC + "');"] }]), "")
             elementsContainer.innerHTML += floorObjectText
         }
         for (let i = 0; i < levelInfo.roadsElements.length; i++) {
             roads.push(new road(gameScene, levelInfo.roadsElements[i].yPosition, levelInfo.roadsElements[i].speed, "road-" + i, levelInfo.roadsElements[i].direction, levelInfo.size, levelInfo.roadsElements[i].enemy))
         }
-        for(let i = 0; i < roads.length; i++){
+        for (let i = 0; i < roads.length; i++) {
             roads[i].updateEnemiesReferences()
         }
         gameFrog.updateObjectReference()
@@ -302,41 +302,41 @@ class enemy extends object {
         this.direction = direction
         this.object.src = enemyImageInfo.image.imageURL
         this.setImage("../img/armaggon.gif", enemyImageInfo.image.size, enemyImageInfo.image.center)
-        if(this.direction == "r"){
+        if (this.direction == "r") {
             this.object.style.transform = "scale(-1,1)"
         }
-        this.move(new vector2(0,0))
+        this.move(new vector2(0, 0))
     }
 
     // moveEnemy(){
     //     this.object.move(new vector2(speed, 0))
     // }
 
-    update(){
-        this.move(new vector2(this.speed/5, 0))
-        if(!this.isColliding(gameFrog)){
-            if(superLifes <= 0){
+    update() {
+        this.move(new vector2(this.speed / 5, 0))
+        if (!this.isColliding(gameFrog)) {
+            if (superLifes <= 0) {
                 lifes = lifes - 1
                 lifesContainer.innerHTML = "Vidas: " + lifes
-                if(actualCharacter.characterSuperLifes > 0){
+                if (actualCharacter.characterSuperLifes > 0) {
                     superLifes = actualCharacter.characterSuperLifes
                     specialAvilityContainer.innerHTML = "Supervidas: " + actualCharacter.characterSuperLifes
                 }
-                if(lifes <= 0){
+                if (lifes <= 0) {
                     window.location.reload() // TODO Make the death animation
-                }else{
+                } else {
                     actualLevel = actualLevel - 1
                     gameFrog.object.src = actualCharacter.deadImageULR.imageURL
                     gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -8))
                     gameFrog.move(new vector2(0, 0))
                     startLoadingDeathDialog()
                 }
-            }else{
+            } else {
                 superLifes -= 1
                 specialAvilityContainer.innerHTML = "Supervidas: " + superLifes
                 superDead = true
                 foregroundContainer.style.backdropFilter = "grayScale(1)"
-                movementTimeout = 10000/actualCharacter.speed
+                movementTimeout = 10000 / actualCharacter.speed
             }
         }
     }
@@ -373,13 +373,13 @@ class road {
         this.nextEnemyGeneration = 0
     }
 
-    getEnemyInformation(){
+    getEnemyInformation() {
         let finalEnemyInfo = enemiesInfo.find((actualValue) => {
             return actualValue.name == this.enemyName
         })
-        if(finalEnemyInfo){
+        if (finalEnemyInfo) {
             return finalEnemyInfo
-        }else{
+        } else {
             alert("The enemy " + this.enemyName + " does not exist.")
             return enemiesInfo[0]
         }
@@ -388,15 +388,15 @@ class road {
     generateEnemy() {
         let horizontalPosition
         let enemySpeed
-        if(this.direction == "l"){
+        if (this.direction == "l") {
             horizontalPosition = -200
             enemySpeed = this.speed
-        }else{
+        } else {
             horizontalPosition = (levels[actualLevel - 1].size.x + 2) * 100
             enemySpeed = -this.speed
         }
         let generationPosition = new vector2(horizontalPosition, this.YPosition)
-        if(this.disabledEnemies.length > 0){
+        if (this.disabledEnemies.length > 0) {
             let finalEnemy = this.disabledEnemies[0]
             this.disabledEnemies = removeFromAnArray(this.disabledEnemies, 0)
             // finalEnemy.position = generationPositions
@@ -405,24 +405,24 @@ class road {
             finalEnemy.speed = enemySpeed
             finalEnemy.object.style.display = "unset"
             return finalEnemy
-        }else{
-            return new enemy(this.objectScene, generationPosition, enemySpeed,  this.direction, this.roadId + "-" + ++this.numberOfEnemies, this.getEnemyInformation())
+        } else {
+            return new enemy(this.objectScene, generationPosition, enemySpeed, this.direction, this.roadId + "-" + ++this.numberOfEnemies, this.getEnemyInformation())
         }
     }
 
-    remove(){
-        for(let i = 0; i < this.enemies.length; i++){
+    remove() {
+        for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].remove()
             delete this.enemies[i]
         }
-        for(let i = 0; i < this.disabledEnemies.length; i++){
+        for (let i = 0; i < this.disabledEnemies.length; i++) {
             this.disabledEnemies[i].remove()
             delete this.disabledEnemies[i]
         }
     }
 
-    updateEnemiesReferences(){
-        for(let i = 0; i < this.enemies.length; i++){
+    updateEnemiesReferences() {
+        for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].updateObjectReference()
         }
         for (let i = 0; i < this.disabledEnemies.length; i++) {
@@ -430,7 +430,7 @@ class road {
         }
     }
 
-    disableEnemy(enemyId){
+    disableEnemy(enemyId) {
         this.enemies[enemyId].object.style.display = "none"
         let realEnemyId = this.enemies[enemyId].enemyId
         this.disabledEnemies.push(this.enemies[enemyId])
@@ -438,25 +438,25 @@ class road {
         this.enemies = removeFromAnArray(this.enemies, enemyId)
     }
 
-    update(){
-        for(let i = 0; i < this.enemies.length; i++){
+    update() {
+        for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].update()
-            if(this.direction == "l"){
-                if(this.enemies[i].position.x > (this.levelSize.x + 2) * 100){
-                // if(this.enemies[i].position.x > (this.objectScene.actualLevel.size.X + 1) * 100){
+            if (this.direction == "l") {
+                if (this.enemies[i].position.x > (this.levelSize.x + 2) * 100) {
+                    // if(this.enemies[i].position.x > (this.objectScene.actualLevel.size.X + 1) * 100){
                     this.disableEnemy(i)
                 }
-            }else{
-                if(this.enemies[i].position.x < -200){
+            } else {
+                if (this.enemies[i].position.x < -200) {
                     this.disableEnemy(i)
                 }
             }
         }
         this.nextEnemyGeneration += 1
-        if(this.nextEnemyGeneration >= 2000/25){
+        if (this.nextEnemyGeneration >= 2000 / 25) {
             this.nextEnemyGeneration = 0
             this.enemies.push(this.generateEnemy())
-            for(let i = 0; i < roads.length; i++){
+            for (let i = 0; i < roads.length; i++) {
                 roads[i].updateEnemiesReferences()
             }
             gameFrog.updateObjectReference()
@@ -475,9 +475,9 @@ class frog extends gridObject {
         if (this.gridPosition.y >= levels[actualLevel - 1].size.y) {
             // Si la rana llegó a la fila 6, activa la transición a la siguiente pantalla
             let money = localStorage.getItem('money')
-            if(!money){
+            if (!money) {
                 money = 0
-            }else{
+            } else {
                 money = parseInt(money)
             }
             localStorage.setItem('money', money + 10)
@@ -486,8 +486,8 @@ class frog extends gridObject {
     }
 }
 
-class frogInfo{
-    constructor(stayImage, runningImage){
+class frogInfo {
+    constructor(stayImage, runningImage) {
         this.stayImage = stayImage
         this.runningImage = runningImage
     }
@@ -512,18 +512,6 @@ class characterInfo {
 }
 
 let characters = [
-    new characterInfo("Jennica",
-        new imageInfo(imagesFolder + "yellow.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "yellowfow.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "muerteamarillo.gif", new vector2(50, 50), new vector2(10, -30)), 6, 1, 10),
-    new characterInfo("Leo",
-        new imageInfo(imagesFolder + "leo.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "leopalante nuevo.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "muerteazul.gif", new vector2(50, 50), new vector2(10, -30)), 4, 0, 12),
-    new characterInfo("Rafael",
-        new imageInfo(imagesFolder + "rafa.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "rafapalante.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "muerterojo.gif", new vector2(50, 50), new vector2(10, -30)), 2, 0, 20),
     new characterInfo("Michelangelo",
         new imageInfo(imagesFolder + "miguel.gif", new vector2(50, 50), new vector2(10, -30)),
         new imageInfo(imagesFolder + "miguelpalante.gif", new vector2(50, 50), new vector2(10, -30)),
@@ -531,12 +519,26 @@ let characters = [
     new characterInfo("Donnatelo",
         new imageInfo(imagesFolder + "dona.gif", new vector2(50, 50), new vector2(10, -30)),
         new imageInfo(imagesFolder + "palante.gif", new vector2(50, 50), new vector2(10, -30)),
-        new imageInfo(imagesFolder + "muertemorado.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15)
+        new imageInfo(imagesFolder + "muertemorado.gif", new vector2(50, 50), new vector2(10, -30)), 3, 0, 15),
+    new characterInfo("Rafael",
+        new imageInfo(imagesFolder + "rafa.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "rafapalante.gif", new vector2(50, 50), new vector2(10, -30)),
+
+        new imageInfo(imagesFolder + "muerterojo.gif", new vector2(50, 50), new vector2(10, -30)), 2, 0, 20),
+    new characterInfo("Leo",
+        new imageInfo(imagesFolder + "leo.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "leopalante nuevo.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muerteazul.gif", new vector2(50, 50), new vector2(10, -30)), 4, 0, 12),
+    new characterInfo("Jennica",
+        new imageInfo(imagesFolder + "yellow.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "yellowfow.gif", new vector2(50, 50), new vector2(10, -30)),
+        new imageInfo(imagesFolder + "muerteamarillo.gif", new vector2(50, 50), new vector2(10, -30)), 6, 1, 10),
+
 ]
 
 // Level transition animation
 
-function startLoadingDeathDialog(){
+function startLoadingDeathDialog() {
     dead = true
     playing = false
     foregroundContainer.style.backgroundColor = "#9b1212a1"
@@ -547,7 +549,7 @@ function startLoadingDeathDialog(){
     levelLoadingTimeout = setTimeout(endLoadingDeathAnimation, animationTime + 1200)
 }
 
-function endLoadingDeathAnimation(){
+function endLoadingDeathAnimation() {
     foregroundContainer.style.backgroundColor = "#000000FF"
     levelInfoName.innerHTML = ""
     clearTimeout(levelLoadingTimeout)
@@ -571,17 +573,17 @@ function loadLevel() {
     } else {
         clearTimeout(levelLoadingTimeout)
         let newRecord = calculeRecord(stopwatchTime)
-        if(newRecord){
+        if (newRecord) {
             recordTime = newRecord
             levelInfoName.innerHTML = "¡Nuevo record!"
             levelLoadingTimeout = setTimeout(showRecord, 1000)
-        }else{
+        } else {
             levelLoadingTimeout = setTimeout(showEnd, 800)
         }
     }
 }
 
-function showRecord(){
+function showRecord() {
     levelInfoName.innerHTML = recordTime + "ms"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(showEnd, 1500)
@@ -639,19 +641,19 @@ function transitionToNextScreen() {
 function moveFrog(movement) {
     if (!onMovement && playing && notPaused) {
         onMovement = true
-        if(actualCharacter){
+        if (actualCharacter) {
             gameFrog.object.src = actualCharacter.movingImageURL.imageURL
             // gameFrog.setImage(actualCharacter.movingImageURL.imageURL, actualCharacter.movingImageURL.size, actualCharacter.movingImageURL.position)
         }
         clearTimeout(frogMovementTimeout)
-        frogMovementTimeout = setTimeout(function () { onMovement = false; if(actualCharacter && !dead){gameFrog.object.src = actualCharacter.stayImageURL.imageURL}}, movementTimeout)
+        frogMovementTimeout = setTimeout(function () { onMovement = false; if (actualCharacter && !dead) { gameFrog.object.src = actualCharacter.stayImageURL.imageURL } }, movementTimeout)
         gameFrog.gridMove(movement)
         setCameraPosition(gameFrog.position)
     }
 }
 
-function specialAbility(){
-    
+function specialAbility() {
+
 }
 
 function keyEvent(e) {
@@ -678,41 +680,41 @@ function keyEvent(e) {
     }
 }
 
-function calculeRecord(newTime){
+function calculeRecord(newTime) {
     let oldRecord = parseInt(localStorage.getItem('record'))
-    if(oldRecord){
-        if(oldRecord > newTime){
+    if (oldRecord) {
+        if (oldRecord > newTime) {
             localStorage.setItem('record', newTime)
             return newTime
         }
-    }else{
+    } else {
         localStorage.setItem('record', newTime)
         return newTime
     }
     return false
 }
 
-function setCameraPosition(cameraPosition){
-    let finalCameraPosition = vector2.additionVector2(new vector2(-cameraPosition.x, -cameraPosition.y), new vector2((levels[actualLevel - 1].size.x + 1)*50 - 50, (levels[actualLevel - 1].size.y + 1)*50 - 100))
+function setCameraPosition(cameraPosition) {
+    let finalCameraPosition = vector2.additionVector2(new vector2(-cameraPosition.x, -cameraPosition.y), new vector2((levels[actualLevel - 1].size.x + 1) * 50 - 50, (levels[actualLevel - 1].size.y + 1) * 50 - 100))
     elementsContainer.style.transform = "translate(" + finalCameraPosition.x + "px, " + finalCameraPosition.y + "px)"
 
 }
 
 
 function update() {
-    if(playing && notPaused){
+    if (playing && notPaused) {
         stopwatchTime += 25
-        stopwatch.innerHTML = "Tiempo: " +  stopwatchTime + "ms"
-        if(superDead){
+        stopwatch.innerHTML = "Tiempo: " + stopwatchTime + "ms"
+        if (superDead) {
             superDeadTimeoutTime -= 10
-            if(superDeadTimeoutTime <= 0){
-                movementTimeout = 5000/actualCharacter.speed
+            if (superDeadTimeoutTime <= 0) {
+                movementTimeout = 5000 / actualCharacter.speed
                 superDead = false
                 superDeadTimeoutTime = superDeadTimeout
                 foregroundContainer.style.backdropFilter = ""
             }
-        }else{
-            for(let i = 0; i < roads.length; i++){
+        } else {
+            for (let i = 0; i < roads.length; i++) {
                 roads[i].update()
             }
         }
@@ -731,16 +733,16 @@ window.addEventListener('load', () => {
     stopwatch.innerHTML = "Tiempo: 0ms"
 
     let selectedCharacterId = localStorage.getItem("selectedCharacterId")
-    if(!selectedCharacterId){
+    if (!selectedCharacterId) {
         selectedCharacterId = 0
     }
     actualCharacter = characters[selectedCharacterId]
     // actualCharacter = characters[2]
     character.innerHTML = actualCharacter.characterName
     lifesContainer.innerHTML = "Vidas: " + actualCharacter.characterLifes
-    if(actualCharacter.characterSuperLifes > 0){
+    if (actualCharacter.characterSuperLifes > 0) {
         specialAvilityContainer.innerHTML = "Supervidas: " + actualCharacter.characterSuperLifes
-    }else{
+    } else {
         specialAvilityContainer.style.display = "none";
     }
 
