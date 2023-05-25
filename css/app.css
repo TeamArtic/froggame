@@ -159,6 +159,14 @@ button {
     align-items: center;
 }
 
+.startMenu {
+    z-index: 5;
+    background-color: #00000096;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
 .default-menu-container {
     border: 2px solid green;
     background-color: #00000070;
