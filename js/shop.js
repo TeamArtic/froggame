@@ -46,26 +46,104 @@ function cambiarprecio(event) {
   }
 }
 
-function buyCharacter(characterId){
+function buyCharacter(characterId) {
   let characterInfo = characterPrices.find((element) => {
-    return characterId == element.characterId
-  })
-  if(characterInfo){
-    if(!unlockedCharacters[characterId].unlocked){
-      if(characterInfo.price <= money){
-        money -= characterInfo.price
-        localStorage.setItem('money', money)
-        moneyContainer.innerHTML = money + "€"
-        unlockedCharacters[characterId].unlocked = true
-        localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters))
-      }else{
-      alert("No tienes suficiente dinero para comprar a este personaje.")
+    return characterId == element.characterId;
+  });
+
+  if (characterInfo) {
+    if (!unlockedCharacters[characterId].unlocked) {
+      if (characterInfo.price <= money) {
+        money -= characterInfo.price;
+        localStorage.setItem('money', money);
+        moneyContainer.innerHTML = money + "€";
+        unlockedCharacters[characterId].unlocked = true;
+        localStorage.setItem('unlockedCharacters', JSON.stringify(unlockedCharacters));
+      } else {
+        // Crear el elemento del mensaje
+        let mensaje = document.createElement('div');
+        mensaje.style.position = 'fixed';
+        mensaje.style.top = '0';
+        mensaje.style.left = '0';
+        mensaje.style.width = '100%';
+        mensaje.style.height = '100%';
+        mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        mensaje.style.zIndex = '9999';
+        mensaje.style.display = 'flex';
+        mensaje.style.justifyContent = 'center';
+        mensaje.style.alignItems = 'center';
+        mensaje.style.opacity = '0';
+        mensaje.style.transition = 'opacity 0.5s';
+
+        // Crear el contenido del mensaje
+        let texto = document.createElement('p');
+        texto.style.color = '#fff';
+        texto.style.fontSize = '24px';
+        texto.textContent = 'No tienes suficiente dinero para comprar a este personaje.';
+
+        // Agregar el contenido al mensaje
+        mensaje.appendChild(texto);
+
+        // Agregar el mensaje al cuerpo del documento
+        document.body.appendChild(mensaje);
+
+        // Animación de aparición
+        setTimeout(function () {
+          mensaje.style.opacity = '1';
+        }, 100);
+
+        // Animación de desaparición después de 3 segundos
+        setTimeout(function () {
+          mensaje.style.opacity = '0';
+          setTimeout(function () {
+            mensaje.parentNode.removeChild(mensaje);
+          }, 500);
+        }, 3000);
       }
-    }else{
-      alert('Ya tienes a este personaje.')
+    } else {
+      // Crear el elemento del mensaje
+      let mensaje = document.createElement('div');
+      mensaje.style.position = 'fixed';
+      mensaje.style.top = '0';
+      mensaje.style.left = '0';
+      mensaje.style.width = '100%';
+      mensaje.style.height = '100%';
+      mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      mensaje.style.zIndex = '9999';
+      mensaje.style.display = 'flex';
+      mensaje.style.justifyContent = 'center';
+      mensaje.style.alignItems = 'center';
+      mensaje.style.opacity = '0';
+      mensaje.style.transition = 'opacity 0.5s';
+
+      // Crear el contenido del mensaje
+      let texto = document.createElement('p');
+      texto.style.color = '#fff';
+      texto.style.fontSize = '24px';
+      texto.textContent = 'Ya tienes a este personaje.';
+
+      // Agregar el contenido al mensaje
+      mensaje.appendChild(texto);
+
+      // Agregar el mensaje al cuerpo del documento
+      document.body.appendChild(mensaje);
+
+      // Animación de aparición
+      setTimeout(function () {
+        mensaje.style.opacity = '1';
+      }, 100);
+
+      // Animación de desaparición después de 3 segundos
+      setTimeout(function () {
+        mensaje.style.opacity = '0';
+        setTimeout(function () {
+          mensaje.parentNode.removeChild(mensaje);
+        }, 500);
+      }, 3000);
     }
   }
-}
+} 
+
 
 window.addEventListener('load', () => {
   money = localStorage.getItem('money')
