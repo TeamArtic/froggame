@@ -963,25 +963,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: false });
   
-    // Detectar gestos en la pantalla
-    document.addEventListener('mousedown', handleTouchStart);
-    document.addEventListener('touchstart', handleTouchStart);
-  
-    document.addEventListener('mousemove', handleTouchMove);
-    document.addEventListener('touchmove', handleTouchMove);
-  
-    document.addEventListener('mouseup', handleTouchEnd);
+    // Detectar gestos en la pantalla táctil
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
     document.addEventListener('touchend', handleTouchEnd);
   
     function handleTouchStart(event) {
-      startX = event.clientX || event.touches[0].clientX;
-      startY = event.clientY || event.touches[0].clientY;
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
       isScrolling = false;
     }
   
     function handleTouchMove(event) {
-      endX = event.clientX || event.touches[0].clientX;
-      endY = event.clientY || event.touches[0].clientY;
+      endX = event.touches[0].clientX;
+      endY = event.touches[0].clientY;
   
       var deltaX = endX - startX;
       var deltaY = endY - startY;
@@ -992,26 +987,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     function handleTouchEnd(event) {
-      isScrolling = false;
+      if (!isScrolling) {
+        var deltaX = endX - startX;
+        var deltaY = endY - startY;
   
-      var deltaX = endX - startX;
-      var deltaY = endY - startY;
-  
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX > 0) {
-          moveFrog(new vector2(1, 0));
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) {
+            moveFrog(new vector2(1, 0));
+          } else {
+            moveFrog(new vector2(-1, 0));
+          }
         } else {
-          moveFrog(new vector2(-1, 0));
-        }
-      } else {
-        if (deltaY > 0) {
-          moveFrog(new vector2(0, 1));
-        } else {
-          moveFrog(new vector2(0, -1));
+          if (deltaY > 0) {
+            moveFrog(new vector2(0, 1));
+          } else {
+            moveFrog(new vector2(0, -1));
+          }
         }
       }
+      isScrolling = false;
     }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
