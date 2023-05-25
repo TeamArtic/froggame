@@ -391,6 +391,7 @@ button.highlighted-button {
         position: fixed;
         display: block;
         opacity: 0.8;
+        z-index: 5;
     }
 
     .controlsUI button {
