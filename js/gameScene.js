@@ -954,45 +954,70 @@ function loadEnd() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var startX, startY, endX, endY;
-    var threshold = 50; // Umbral mínimo de desplazamiento para considerarlo un gesto válido
+    var isScrolling = false;
   
-    // Detectar gestos en la pantalla táctil
-    document.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-    document.addEventListener('touchend', handleTouchEnd);
+    // Bloquear el desplazamiento de la página
+    document.addEventListener('touchmove', function(event) {
+      if (!isScrolling) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+  
+    // Bloquear el zoom en el navegador móvil
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
   
     function handleTouchStart(event) {
       startX = event.touches[0].clientX;
       startY = event.touches[0].clientY;
+      isScrolling = false;
     }
   
     function handleTouchMove(event) {
+      if (event.touches.length > 1) {
+        event.preventDefault(); // Bloquear el gesto de zoom
+        return;
+      }
+  
       endX = event.touches[0].clientX;
       endY = event.touches[0].clientY;
   
       var deltaX = endX - startX;
       var deltaY = endY - startY;
   
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        event.preventDefault(); // Prevenir el desplazamiento de la página si es un gesto horizontal
+      if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
+        isScrolling = true;
       }
     }
   
-    function handleTouchEnd(event) {
-      var deltaX = endX - startX;
-      var deltaY = endY - startY;
+    // Detectar gestos en la pantalla táctil
+    document.addEventListener('touchend', handleTouchEnd);
   
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX > threshold) {
-          moveFrog(new vector2(1, 0)); // Mover hacia la derecha
-        } else if (deltaX < -threshold) {
-          moveFrog(new vector2(-1, 0)); // Mover hacia la izquierda
+    function handleTouchEnd(event) {
+      if (!isScrolling) {
+        var deltaX = endX - startX;
+        var deltaY = endY - startY;
+  
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX > 0) {
+            moveFrog(new vector2(1, 0));
+          } else {
+            moveFrog(new vector2(-1, 0));
+          }
+        } else {
+          if (deltaY > 0) {
+            moveFrog(new vector2(0, 1));
+          } else {
+            moveFrog(new vector2(0, -1));
+          }
         }
       }
+      isScrolling = false;
     }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
