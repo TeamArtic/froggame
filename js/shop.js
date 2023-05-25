@@ -2,9 +2,9 @@ var dinero = 100;
 let money, moneyContainer, unlockedCharacters
 
 let characterPrices = [
-  {"characterId":0, "price":60},
-  {"characterId":1, "price":70},
-  {"characterId":2, "price":80},
+  {"characterId":1, "price":60},
+  {"characterId":2, "price":70},
+  {"characterId":3, "price":80},
   {"characterId":4, "price":100},
 ]
 
