@@ -734,6 +734,21 @@ function keyEvent(e) {
 
 function calculeRecord(newTime) {
     let oldRecord = parseInt(localStorage.getItem('record'))
+    if(newTime <= 120000){
+        setArchievement(5)
+    }
+    if(newTime <= 90000){
+        setArchievement(6)
+    }
+    if(newTime <= 60000){
+        setArchievement(7)
+    }
+    if(newTime <= 30000){
+        setArchievement(8)
+    }
+    if(newTime <= 25000){
+        setArchievement(9)
+    }
     if (oldRecord) {
         if (oldRecord > newTime) {
             localStorage.setItem('record', newTime)
