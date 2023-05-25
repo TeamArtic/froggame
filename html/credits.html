@@ -5,9 +5,15 @@
 	<title>Creditos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta charset="UTF-8">
+	<script src="../js/backgroundMusic.js"></script>
+    <script src="../js/toggleMenu.js"></script>
+    <script src="../js/attributes.js"></script>
+    <script src="../js/engine.js"></script>
+    <script src="../js/gameScene.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="../css/credits.css">
 	<link rel="icon" type="image/x-icon" href="../img/Logo.ico">
 	<style>
@@ -24,7 +30,7 @@
 			margin: 20px;
 			opacity: 0;
 			transition: opacity 1s ease-in-out;
-			text-align: center; 
+			text-align: center;
 		}
 
 		.container.visible {
@@ -35,34 +41,37 @@
 			margin-top: 10px;
 			font-size: 18px;
 		}
-		
+
 		.p {
 			font-size: 30px;
 		}
-		
+
 		.name {
-			font-size: 20px; 
+			font-size: 20px;
 		}
-		
+
 		h1 {
 			font-family: 'Press Start 2P';
 			font-size: 60px;
 		}
-		
+
+		.hidden-menu {
+			display: none !important;
+		}
+
 		@media(max-width: 740px) {
 			h1 {
 				font-size: 30px;
 			}
-			
+
 			.p {
 				font-size: 20px;
 			}
-			
+
 			.name {
 				font-size: 15px;
 			}
 		}
-		
 	</style>
 </head>
 
@@ -89,6 +98,13 @@
 		<p class="p">Diseño de paginas</p>
 		<div class="name">Blas Escalona</div>
 		<div class="name">Carlos Perez</div>
+	</div>
+
+	<div id="pauseMenu" class="pauseMenu full-size-menu hidden-menu">
+		<div id="pauseMenuContainer" class="pauseMenuContainer default-menu-container vertical-menu">
+			<a id="continueButton" class="highlighted-button">Continuar</a>
+			<a class="highlighted-button" href="../html/mainmenu.html">Inicio</a>
+		</div>
 	</div>
 
 
