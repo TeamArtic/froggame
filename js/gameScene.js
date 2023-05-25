@@ -325,7 +325,12 @@ class enemy extends object {
                     specialAvilityContainer.innerHTML = "Supervidas: " + actualCharacter.characterSuperLifes
                 }
                 if (lifes <= 0) {
-                    window.location.reload() // TODO Make the death animation
+                    // window.location.reload() // TODO Make the death animation
+                    actualLevel = 0
+                    gameFrog.object.src = actualCharacter.deadImageULR.imageURL
+                    gameFrog.setImage(actualCharacter.deadImageULR.imageURL, new vector2(50, 50), new vector2(25, -8))
+                    gameFrog.move(new vector2(0, 0))
+                    startLoadingDeathDialog()
                 } else {
                     actualLevel = actualLevel - 1
                     gameFrog.object.src = actualCharacter.deadImageULR.imageURL
@@ -545,7 +550,12 @@ function startLoadingDeathDialog() {
     playing = false
     foregroundContainer.style.backgroundColor = "#9b1212a1"
     // foregroundContainer.style.filter = "blur(4px)"
-    levelInfoName.innerHTML = "¡Pierdes vida!"
+    if(lifes == 0){
+        levelInfoName.innerHTML = "¡Moriste!"
+    }else{
+        levelInfoName.innerHTML = "¡Pierdes vida!"
+    }
+
     levelInfoName.style.filter = "opacity(100%)"
     clearTimeout(levelLoadingTimeout)
     levelLoadingTimeout = setTimeout(endLoadingDeathAnimation, animationTime + 1200)
@@ -555,7 +565,18 @@ function endLoadingDeathAnimation() {
     foregroundContainer.style.backgroundColor = "#000000FF"
     levelInfoName.innerHTML = ""
     clearTimeout(levelLoadingTimeout)
-    levelLoadingTimeout = setTimeout(loadLevel, animationTime)
+    if(lifes == 0){
+        levelLoadingTimeout = setTimeout(loadLevel, animationTime)
+    }else{
+        levelLoadingTimeout = setTimeout(loadLevel, animationTime)
+    }
+}
+
+function restartGame(){
+    actualLevel = 1
+    levelManager.loadLevel(levels[++actualLevel - 1])
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(showLevelName, 800)
 }
 
 function startLoadingLevel() {
@@ -573,12 +594,16 @@ function loadLevel() {
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
     } else {
+        audioController.pause()
+        audioController.audio = new Audio("../audio/mainmenu.mp3")
+        audioController.play()
         clearTimeout(levelLoadingTimeout)
         let newRecord = calculeRecord(stopwatchTime)
         if (newRecord) {
             recordTime = newRecord
             levelInfoName.innerHTML = "¡Nuevo record!"
-            levelLoadingTimeout = setTimeout(showRecord, 1000)
+            levelInfoName.style.filter = "opacity(100%)"
+            levelLoadingTimeout = setTimeout(showRecord, 8000)
         } else {
             levelLoadingTimeout = setTimeout(showEnd, 800)
         }
@@ -588,14 +613,27 @@ function loadLevel() {
 function showRecord() {
     levelInfoName.innerHTML = recordTime + "ms"
     clearTimeout(levelLoadingTimeout)
-    levelLoadingTimeout = setTimeout(showEnd, 1500)
+    levelLoadingTimeout = setTimeout(showEnd, 15000)
 }
 
 function showEnd() {
+    levelInfoName.innerHTML = "Fin"
+    levelInfoName.style.filter = "opacity(100%)"
+    clearTimeout(levelLoadingTimeout)
+    levelLoadingTimeout = setTimeout(showCredits, 10000)
+}
+
+function showCredits(){
     window.location.href = "../html/credits.html";
 }
 
 function showLevelName() {
+    if(lifes == 0){
+        lifes = actualCharacter.characterLifes
+        lifesContainer.innerHTML = "Vidas: " + lifes
+        stopwatchTime = 0
+        stopwatch.innerHTML = "Tiempo: " + stopwatchTime + "ms"
+    }
     level.innerHTML = "Nivel: " + levels[actualLevel - 1].name
     levelInfoName.innerHTML = levels[actualLevel - 1].name
     levelInfoName.style.filter = "opacity(100%)"
@@ -803,3 +841,8 @@ window.addEventListener('load', () => {
         audioController.play()
     })
 });
+
+function loadEnd(){
+    actualLevel = 9
+    startLoadingLevel()
+}
