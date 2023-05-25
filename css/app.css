@@ -405,50 +405,50 @@ button.highlighted-button {
     font-size: 24px;
   }
 
-  #audioVolume {
-    -webkit-appearance: none;
-    appearance: none; 
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    border-radius: 0px;
-    margin-top: 10px;
-  }
-  
-  #audioVolume::-webkit-slider-runnable-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 0px;
-  }
-  
-  #audioVolume::-moz-range-track {
-    height: 15px;
-    background: #ccc;
-    border-radius: 0px;
-  }
-  
-  #audioVolume::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none; 
-    height: 15px;
-    width: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 2px solid rgb(255, 255, 255);
-    box-shadow: -407px 0 0 400px #51DC00;
-  }
-  
-  #audioVolume::-moz-range-thumb {
-    height: 15px;
-    width: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #51DC00;
-    box-shadow: -407px 0 0 400px #51DC00;
-  }
+.range-slider{
+    appearance: none;
+    background-color:#5eff00;
+    border-radius: 0;
+    height: 10px;
+    border: 2px solid #1d4e00;
+    margin: 10px 0px;
+}
 
+.range-slider::-moz-range-thumb{
+    background-color: #bbff94;
+    border: 2px solid #1d4e00;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
+}
 
+.range-slider:hover::-moz-range-thumb{
+    transform: scale(1.2);
+}
+
+.range-slider::-webkit-slider-thumb{
+    appearance: none;
+    background-color: #bbff94;
+    border: 2px solid #1d4e00;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s cubic-bezier(.18, .89, .32, 1.28);
+}
+
+.range-slider:hover::-webkit-slider-thumb{
+    transform: scale(1.2);
+}
+
+.width-400-px{
+    width: 400px;
+}
+
+.default-divider{
+    color: green;
+    border-style: solid;
+}
 
 @media (max-width: 768px) {
 

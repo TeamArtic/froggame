@@ -53,17 +53,13 @@ class backgroundAudioController{
 
     play(){
         this.audio.play()
-        this.button.innerHTML = "<button class=\"highlighted-button\">" +
-        "Pausar" +
-        "</button>" // TODO Do this part of the code in a clearner and modular way.
+        this.button.innerHTML = "Silenciar"
 
     }
 
     pause(){
         this.audio.pause()
-        this.button.innerHTML = "<button class=\"highlighted-button\">" +
-        "Reanudar" +
-        "</button>"
+        this.button.innerHTML = "Desilenciar"
     }
 
     autoPlay(){
