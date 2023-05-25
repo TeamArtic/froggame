@@ -41,7 +41,7 @@ function buyCharacter(characterId) {
         // Crear el contenido del mensaje de compra realizada
         let texto = document.createElement('p');
         texto.style.color = '#fff';
-        texto.style.fontSize = '16px';
+        texto.style.fontSize = '24px';
         texto.style.textAlign = 'center';
         texto.textContent = '¡Compra realizada con éxito!';
 
