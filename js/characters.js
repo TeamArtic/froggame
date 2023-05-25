@@ -17,10 +17,10 @@ window.addEventListener('load', () => {
     unlockedCharacters = JSON.parse(localStorage.getItem('unlockedCharacters'))
     if(!unlockedCharacters){
         unlockedCharacters = [
-            {"characterId":0, "unlocked":false},
+            {"characterId":0, "unlocked":true},
             {"characterId":1, "unlocked":false},
             {"characterId":2, "unlocked":false},
-            {"characterId":3, "unlocked":true},
+            {"characterId":3, "unlocked":false},
             {"characterId":4, "unlocked":false}
         ]
     }

@@ -431,3 +431,26 @@ button.highlighted-button {
         overflow: hidden;
     }
 }
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #1f3d21 #3a6837;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #3a6837;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #1f3d21;
+    border-radius: 57px;
+    border: 3px solid #1f3d21;
+  }
