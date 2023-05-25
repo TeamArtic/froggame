@@ -550,9 +550,9 @@ function startLoadingDeathDialog() {
     playing = false
     foregroundContainer.style.backgroundColor = "#9b1212a1"
     // foregroundContainer.style.filter = "blur(4px)"
-    if(lifes == 0){
+    if (lifes == 0) {
         levelInfoName.innerHTML = "¡Moriste!"
-    }else{
+    } else {
         levelInfoName.innerHTML = "¡Pierdes vida!"
     }
 
@@ -565,14 +565,14 @@ function endLoadingDeathAnimation() {
     foregroundContainer.style.backgroundColor = "#000000FF"
     levelInfoName.innerHTML = ""
     clearTimeout(levelLoadingTimeout)
-    if(lifes == 0){
+    if (lifes == 0) {
         levelLoadingTimeout = setTimeout(loadLevel, animationTime)
-    }else{
+    } else {
         levelLoadingTimeout = setTimeout(loadLevel, animationTime)
     }
 }
 
-function restartGame(){
+function restartGame() {
     actualLevel = 1
     levelManager.loadLevel(levels[++actualLevel - 1])
     clearTimeout(levelLoadingTimeout)
@@ -623,12 +623,12 @@ function showEnd() {
     levelLoadingTimeout = setTimeout(showCredits, 10000)
 }
 
-function showCredits(){
+function showCredits() {
     window.location.href = "../html/credits.html";
 }
 
 function showLevelName() {
-    if(lifes == 0){
+    if (lifes == 0) {
         lifes = actualCharacter.characterLifes
         lifesContainer.innerHTML = "Vidas: " + lifes
         stopwatchTime = 0
@@ -709,6 +709,18 @@ function keyEvent(e) {
             break;
         case 68:
             moveFrog(new vector2(1, 0))
+            break;
+        case 38: 
+            moveFrog(new vector2(0, -1));
+            break;
+        case 37: 
+            moveFrog(new vector2(-1, 0));
+            break;
+        case 40:
+            moveFrog(new vector2(0, 1));
+            break;
+        case 39:
+            moveFrog(new vector2(1, 0));
             break;
         case 32:
             specialAbility()
@@ -827,13 +839,13 @@ window.addEventListener('load', () => {
         pauseMenuToggle.toggleToState(false)
         notPaused = false
     })
-    
+
     startMenu = document.getElementById('startMenu')
     startButton = document.getElementById('startButton')
     audioButton = document.getElementById("audioButton")
     audioVolume = document.getElementById('audioVolume')
     audioController = new backgroundAudioController("../audio/game.mp3", audioButton, audioVolume)
-    
+
     startButton.addEventListener('click', () => {
         startMenu.classList.add('hidden-menu')
         levelManager.loadLevel(levels[0])
@@ -842,7 +854,7 @@ window.addEventListener('load', () => {
     })
 });
 
-function loadEnd(){
+function loadEnd() {
     actualLevel = 9
     startLoadingLevel()
 }
