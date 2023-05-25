@@ -834,6 +834,27 @@ window.addEventListener('load', () => {
         notPaused = true
     })
 
+    // Obtener referencias a los elementos del DOM
+var pauseMenu = document.getElementById('pauseMenu');
+var audioMenu = document.getElementById('audioMenu');
+var settingsButton = document.getElementById('settingsButton');
+var returnButton = document.getElementById('returnButton');
+
+// Agregar event listener al botón "Ajustes"
+settingsButton.addEventListener("click", function() {
+  pauseMenu.classList.add('hidden-menu'); // Ocultar menú de pausa
+  audioMenu.classList.remove('hidden-menu'); // Mostrar menú de audio
+});
+
+// Agregar event listener al botón "Volver"
+returnButton.addEventListener("click", function() {
+  audioMenu.classList.add('hidden-menu'); // Ocultar menú de audio
+  pauseMenu.classList.remove('hidden-menu'); // Mostrar menú de pausa
+});
+
+    
+
+
     gameUI = document.getElementById('gameUI')
     gameUI.addEventListener('click', () => {
         pauseMenuToggle.toggleToState(false)
