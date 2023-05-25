@@ -514,6 +514,29 @@ button.highlighted-button {
     font-size: 24px;
 }
 
+.controlsUIChrome {
+    z-index: 5;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block; /* Agregamos esta línea */
+  }
+  
+  .controlsButtonChrome {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10%;
+    font-family: 'Press Start 2P', cursive;
+  }
+
 @media (max-width: 768px) and (orientation: portrait) {
 
     body {
