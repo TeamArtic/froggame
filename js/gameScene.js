@@ -955,10 +955,11 @@ function loadEnd() {
 document.addEventListener('DOMContentLoaded', function() {
     var startX, startY, endX, endY;
     var isScrolling = false;
+    var isHorizontalSwipe = false;
   
-    // Bloquear el desplazamiento de la página
+    // Bloquear el desplazamiento lateral de la página
     document.addEventListener('touchmove', function(event) {
-      if (!isScrolling) {
+      if (!isScrolling || isHorizontalSwipe) {
         event.preventDefault();
       }
     }, { passive: false });
@@ -975,6 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
       startX = event.touches[0].clientX;
       startY = event.touches[0].clientY;
       isScrolling = false;
+      isHorizontalSwipe = false;
     }
   
     function handleTouchMove(event) {
@@ -986,9 +988,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
       if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
         isScrolling = true;
+  
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          isHorizontalSwipe = true;
+        } else {
+          isHorizontalSwipe = false;
+        }
       }
   
-      if (!isScrolling) {
+      if (!isScrolling || isHorizontalSwipe) {
         event.preventDefault();
       }
     }
@@ -1013,10 +1021,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       isScrolling = false;
+      isHorizontalSwipe = false;
     }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
