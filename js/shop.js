@@ -56,7 +56,8 @@ function buyCharacter(characterId) {
         // Crear el contenido del mensaje
         let texto = document.createElement('p');
         texto.style.color = '#fff';
-        texto.style.fontSize = '24px';
+        texto.style.fontSize = '16px';
+        texto.style.textAlign = 'center';
         texto.textContent = 'No tienes suficiente dinero para comprar a este personaje.';
 
         // Agregar el contenido al mensaje
