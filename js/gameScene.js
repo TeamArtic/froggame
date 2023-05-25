@@ -963,6 +963,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: false });
   
+    // Bloquear el zoom en el navegador móvil
+    document.addEventListener('gesturestart', function(event) {
+      event.preventDefault();
+    });
+  
     // Detectar gestos en la pantalla táctil
     document.addEventListener('touchstart', handleTouchStart, { passive: false });
     document.addEventListener('touchmove', handleTouchMove, { passive: false });
@@ -1010,5 +1015,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
