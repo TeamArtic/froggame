@@ -550,6 +550,8 @@ button.highlighted-button {
         display: block;
         opacity: 0.8;
         z-index: 5;
+        bottom: 200px;
+        right: 200px;
     }
 
     .controlsUI button {
