@@ -387,15 +387,6 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
-.controlsUI {
-    z-index: 5;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: block;
-    /* Agregamos esta línea */
-}
-
 .controlsButton {
     display: inline-block;
     width: 90px;
@@ -539,14 +530,19 @@ button.highlighted-button {
     }
 
     .controlsUI button {
-        display: inline-block;
+        display: block;
         width: 70px;
         height: 70px;
         line-height: 70px;
         font-size: 35px;
         cursor: pointer;
         margin: 2px;
+        float: none;
+        clear: both;
     }
+    
+
+
 
     .controlsUIChrome {
         bottom: 10px;
