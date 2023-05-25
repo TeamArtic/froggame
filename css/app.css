@@ -427,7 +427,7 @@ button.highlighted-button {
         font-size: 0.5in;
     }
 
-    .main-screen-menu{
+    .main-screen-menu {
         scale: 0.65;
     }
 
@@ -448,7 +448,7 @@ button.highlighted-button {
         overflow: auto;
     }
 
-    .text-align-center{
+    .text-align-center {
         font-size: 12px;
     }
 
@@ -457,10 +457,45 @@ button.highlighted-button {
         font-size: 12px;
     }
 
-    .highlighted-button{
+    .highlighted-button {
         padding: 10px;
     }
 
+    header div img {
+        height: 30px;
+    }
+
+    .money {
+        font-size: 8px;
+    }
+
+    .gap-20-px {
+        gap: 5px;
+    }
+
+    .tittle {
+        font-size: 20px;
+    }
+
+    .right-element-margin-20-px {
+        margin: 0;
+        flex-direction: column;
+        font-size: 8px;
+
+    }
+
+    li a {
+        font-size: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-left: 10px;
+    }
+
+    li {
+        flex: 0 0 calc(50% - 20px);
+    }
 }
 
 @media (max-height: 768px) {
