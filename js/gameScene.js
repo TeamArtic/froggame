@@ -794,7 +794,7 @@ window.addEventListener('load', () => {
     startButton = document.getElementById('startButton')
     audioButton = document.getElementById("audioButton")
     audioVolume = document.getElementById('audioVolume')
-    audioController = new backgroundAudioController("", audioButton, audioVolume)
+    audioController = new backgroundAudioController("../audio/game.mp3", audioButton, audioVolume)
     
     startButton.addEventListener('click', () => {
         startMenu.classList.add('hidden-menu')
