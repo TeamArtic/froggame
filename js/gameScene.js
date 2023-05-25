@@ -952,69 +952,6 @@ function loadEnd() {
 //   controlsUIChrome.classList.add("hiddenMenu");
 // }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var startX, startY, endX, endY;
-    var isScrolling = false;
-  
-    // Bloquear el desplazamiento de la página
-    document.addEventListener('touchmove', function(event) {
-      if (!isScrolling) {
-        event.preventDefault();
-      }
-    }, { passive: false });
-  
-    // Bloquear el zoom en el navegador móvil
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-  
-    function handleTouchStart(event) {
-      startX = event.touches[0].clientX;
-      startY = event.touches[0].clientY;
-      isScrolling = false;
-    }
-  
-    function handleTouchMove(event) {
-      if (event.touches.length > 1) {
-        event.preventDefault(); // Bloquear el gesto de zoom
-        return;
-      }
-  
-      endX = event.touches[0].clientX;
-      endY = event.touches[0].clientY;
-  
-      var deltaX = endX - startX;
-      var deltaY = endY - startY;
-  
-      if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          if (deltaX > 0) {
-            moveFrog(new vector2(1, 0));
-          } else {
-            moveFrog(new vector2(-1, 0));
-          }
-        } else {
-          if (deltaY > 0) {
-            moveFrog(new vector2(0, 1));
-          } else {
-            moveFrog(new vector2(0, -1));
-          }
-        }
-        isScrolling = true;
-      }
-    }
-  
-    // Detectar gestos en la pantalla táctil
-    document.addEventListener('touchend', handleTouchEnd);
-  
-    function handleTouchEnd(event) {
-      if (!isScrolling) {
-        event.preventDefault();
-      }
-      isScrolling = false;
-    }
-  
-    // Aquí puedes colocar otras funciones o lógica adicional si es necesario
-  });
   
   
   
