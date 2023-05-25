@@ -34,6 +34,8 @@ let recordTime
 
 let dead = false
 
+let automaticStartedAudio
+
 function removeFromAnArray(array, startPosition, endPosition = null) {
     if (!endPosition) {
         endPosition = startPosition + 1
@@ -786,16 +788,18 @@ window.addEventListener('load', () => {
     gameUI.addEventListener('click', () => {
         pauseMenuToggle.toggleToState(false)
         notPaused = false
-        audioController = new backgroundAudioController("", audioButton, audioVolume)
     })
-
+    
     startMenu = document.getElementById('startMenu')
     startButton = document.getElementById('startButton')
-
+    audioButton = document.getElementById("audioButton")
+    audioVolume = document.getElementById('audioVolume')
+    audioController = new backgroundAudioController("", audioButton, audioVolume)
+    
     startButton.addEventListener('click', () => {
         startMenu.classList.add('hidden-menu')
         levelManager.loadLevel(levels[0])
         levelLoadingTimeout = setTimeout(showLevelName, 800)
-
+        audioController.play()
     })
 });
