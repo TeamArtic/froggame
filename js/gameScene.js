@@ -964,15 +964,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: false });
   
     // Detectar gestos en la pantalla
-    document.addEventListener('touchstart', function(event) {
-      startX = event.touches[0].clientX;
-      startY = event.touches[0].clientY;
-      isScrolling = false;
-    });
+    document.addEventListener('mousedown', handleTouchStart);
+    document.addEventListener('touchstart', handleTouchStart);
   
-    document.addEventListener('touchmove', function(event) {
-      endX = event.touches[0].clientX;
-      endY = event.touches[0].clientY;
+    document.addEventListener('mousemove', handleTouchMove);
+    document.addEventListener('touchmove', handleTouchMove);
+  
+    document.addEventListener('mouseup', handleTouchEnd);
+    document.addEventListener('touchend', handleTouchEnd);
+  
+    function handleTouchStart(event) {
+      startX = event.clientX || event.touches[0].clientX;
+      startY = event.clientY || event.touches[0].clientY;
+      isScrolling = false;
+    }
+  
+    function handleTouchMove(event) {
+      endX = event.clientX || event.touches[0].clientX;
+      endY = event.clientY || event.touches[0].clientY;
   
       var deltaX = endX - startX;
       var deltaY = endY - startY;
@@ -980,9 +989,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
         isScrolling = true;
       }
-    });
+    }
   
-    document.addEventListener('touchend', function(event) {
+    function handleTouchEnd(event) {
       isScrolling = false;
   
       var deltaX = endX - startX;
@@ -1001,7 +1010,8 @@ document.addEventListener('DOMContentLoaded', function() {
           moveFrog(new vector2(0, -1));
         }
       }
-    });
+    }
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
