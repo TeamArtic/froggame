@@ -930,53 +930,78 @@ function loadEnd() {
     startLoadingLevel()
 }
 
-// Verificar si el usuario está utilizando Chrome
-var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+// // Verificar si el usuario está utilizando Chrome
+// var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-// Obtener las referencias a los elementos del DOM
-var controlsUI = document.getElementById("controlsUI");
-var controlsUIChrome = document.getElementById("controlsUIChrome");
+// // Obtener las referencias a los elementos del DOM
+// var controlsUI = document.getElementById("controlsUI");
+// var controlsUIChrome = document.getElementById("controlsUIChrome");
 
-// Verificar si el usuario está utilizando Chrome
-if (isChrome) {
-  // Quitar la clase "hiddenMenu" de controlsUIChrome
-  controlsUIChrome.classList.remove("hiddenMenu");
+// // Verificar si el usuario está utilizando Chrome
+// if (isChrome) {
+//   // Quitar la clase "hiddenMenu" de controlsUIChrome
+//   controlsUIChrome.classList.remove("hiddenMenu");
 
-  // Añadir la clase "hiddenMenu" a controlsUI
-  controlsUI.classList.add("hiddenMenu");
-} else {
-  // Quitar la clase "hiddenMenu" de controlsUI
-  controlsUI.classList.remove("hiddenMenu");
+//   // Añadir la clase "hiddenMenu" a controlsUI
+//   controlsUI.classList.add("hiddenMenu");
+// } else {
+//   // Quitar la clase "hiddenMenu" de controlsUI
+//   controlsUI.classList.remove("hiddenMenu");
 
-  // Añadir la clase "hiddenMenu" a controlsUIChrome
-  controlsUIChrome.classList.add("hiddenMenu");
-}
+//   // Añadir la clase "hiddenMenu" a controlsUIChrome
+//   controlsUIChrome.classList.add("hiddenMenu");
+// }
 
-var startX, startY, endX, endY;
-
-document.addEventListener('touchstart', function(event) {
-  startX = event.touches[0].clientX;
-  startY = event.touches[0].clientY;
-});
-
-document.addEventListener('touchend', function(event) {
-  endX = event.changedTouches[0].clientX;
-  endY = event.changedTouches[0].clientY;
+document.addEventListener('DOMContentLoaded', function() {
+    var startX, startY, endX, endY;
+    var isScrolling = false;
   
-  var deltaX = endX - startX;
-  var deltaY = endY - startY;
+    // Bloquear el desplazamiento de la página
+    document.addEventListener('touchmove', function(event) {
+      if (!isScrolling) {
+        event.preventDefault();
+      }
+    }, { passive: false });
   
-  if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    if (deltaX > 0) {
-        moveFrog(new vector2(1, 0))
-    } else {
-        moveFrog(new vector2(-1, 0))
-    }
-  } else {
-    if (deltaY > 0) {
-        moveFrog(new vector2(0, 1))
-    } else {
-        moveFrog(new vector2(0, -1))
-    }
-  }
-});
+    // Detectar gestos en la pantalla
+    document.addEventListener('touchstart', function(event) {
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      isScrolling = false;
+    });
+  
+    document.addEventListener('touchmove', function(event) {
+      endX = event.touches[0].clientX;
+      endY = event.touches[0].clientY;
+  
+      var deltaX = endX - startX;
+      var deltaY = endY - startY;
+  
+      if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
+        isScrolling = true;
+      }
+    });
+  
+    document.addEventListener('touchend', function(event) {
+      isScrolling = false;
+  
+      var deltaX = endX - startX;
+      var deltaY = endY - startY;
+  
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+          moveFrog(new vector2(1, 0));
+        } else {
+          moveFrog(new vector2(-1, 0));
+        }
+      } else {
+        if (deltaY > 0) {
+          moveFrog(new vector2(0, 1));
+        } else {
+          moveFrog(new vector2(0, -1));
+        }
+      }
+    });
+  
+    // Aquí puedes colocar otras funciones o lógica adicional si es necesario
+  });
