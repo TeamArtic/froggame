@@ -250,6 +250,16 @@ let actualLevel = 0
 
 class levelManager {
     static loadLevel(levelInfo) {    // TODO Do this with classes
+        if(levelInfo.levelId >= 2){
+            setArchievement(0)
+            setArchievement(1)
+        }
+        if(levelInfo.levelId >= 7){
+            setArchievement(2)
+        }
+        if(levelInfo.levelId >= 8){
+            setArchievement(3)
+        }
         for (let i = 0; i < roads.length; i++) {
             roads[i].remove()
             delete roads[i]
@@ -594,6 +604,7 @@ function loadLevel() {
         clearTimeout(levelLoadingTimeout)
         levelLoadingTimeout = setTimeout(showLevelName, 800)
     } else {
+        setArchievement(4)
         audioController.pause()
         audioController.audio = new Audio("../audio/mainmenu.mp3")
         audioController.play()
