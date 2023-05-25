@@ -53,13 +53,17 @@ class backgroundAudioController{
 
     play(){
         this.audio.play()
-        this.button.innerHTML = "Silenciar"
+        this.button.innerHTML = "<button class=\"highlighted-button\">" +
+        "Silenciar" +
+        "</button>" 
 
     }
 
     pause(){
         this.audio.pause()
-        this.button.innerHTML = "Desilenciar"
+        this.button.innerHTML = "<button class=\"highlighted-button\">" +
+        "Desilenciar" +
+        "</button>"
     }
 
     autoPlay(){
