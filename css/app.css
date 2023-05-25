@@ -478,6 +478,18 @@ button.highlighted-button {
     transform: scale(1.1);
 }
 
+.unlockedArchievement{
+    border: 2px solid green;
+    background-color: #00000070;
+    color: #FFF;
+}
+
+.lockedArchievement{
+    border: 2px solid green;
+    background-color: #00000070;
+    color: #a9a9a9;
+}
+
 @media (max-width: 768px) {
 
     body {
