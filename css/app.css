@@ -421,6 +421,40 @@ button.highlighted-button {
         font-size: 0.5in;
     }
 
+    .main-screen-menu{
+        scale: 0.60;
+    }
+
+    .default-character-card {
+        height: 250px;
+        flex-direction: row;
+        overflow: hidden;
+        width: calc(100vw - 50px);
+    }
+
+    .default-character-card-image {
+        align-self: flex-start;
+        width: 100px;
+    }
+
+    .vertical-container {
+        width: calc(100% - 100px);
+        overflow: auto;
+    }
+
+    .text-align-center{
+        font-size: 12px;
+    }
+
+    button.highlighted-button {
+        font: normal;
+        font-size: 12px;
+    }
+
+    .highlighted-button{
+        padding: 10px;
+    }
+
 }
 
 @media (max-height: 768px) {
