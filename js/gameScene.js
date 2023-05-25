@@ -1,6 +1,6 @@
 let appContainer, elementsContainer, pageTitle, elementsContainer2, keyboardEvent, gameFrog, gameFrog2, frogContainer, frogContainer2, mainGrid, mainGrid2, levelLoadingTimeout, frogMovementTimeout, pauseMenu, pauseMenuToggle, mainScene, continueButton,
     character, level, lifesContainer, specialAvilityContainer, stopwatch,
-    gameUI, startMenu, startButton, audioController, audioButton, audioVolume,settingsButton,returnButton,audioMenu,audioMenuToggle
+    gameUI, startMenu, startButton, audioController, audioButton, audioVolume, settingsButton, returnButton, audioMenu, audioMenuToggle
 
 let imagesFolder = "../img/"
 
@@ -710,10 +710,10 @@ function keyEvent(e) {
         case 68:
             moveFrog(new vector2(1, 0))
             break;
-        case 38: 
+        case 38:
             moveFrog(new vector2(0, -1));
             break;
-        case 37: 
+        case 37:
             moveFrog(new vector2(-1, 0));
             break;
         case 40:
@@ -824,6 +824,24 @@ window.addEventListener('load', () => {
     // enemyContainer = new object("enemy", gameScene, new vector2(50,0),new vector2(0,0), enemyContainer)
     // gameScene.addObject("enemy", enemy)
 
+    function activateToggleMenu() {
+        // Obtener referencias al botón y al menú correspondiente
+        var toggleButton = document.getElementById('pauseButton');
+        var menu = document.getElementById('pauseMenu');
+      
+        // Crear una instancia de toggleMenu
+        var toggleMenuInstance = new toggleMenu(menu, 'hidden-menu');
+      
+        // Agregar event listener al botón para activar el toggleMenu
+        toggleButton.addEventListener("click", function() {
+          toggleMenuInstance.toggle();
+        });
+      }
+      
+
+    var pauseButton = document.getElementById('pauseButton');
+    pauseButton.addEventListener("click", activateToggleMenu);
+
     pauseMenu = document.getElementById('pauseMenu')
     pauseMenuToggle = new toggleMenu(pauseMenu, 'hidden-menu')
     document.onkeydown = keyEvent;
@@ -835,24 +853,24 @@ window.addEventListener('load', () => {
     })
 
     // Obtener referencias a los elementos del DOM
-var pauseMenu = document.getElementById('pauseMenu');
-var audioMenu = document.getElementById('audioMenu');
-var settingsButton = document.getElementById('settingsButton');
-var returnButton = document.getElementById('returnButton');
+    var pauseMenu = document.getElementById('pauseMenu');
+    var audioMenu = document.getElementById('audioMenu');
+    var settingsButton = document.getElementById('settingsButton');
+    var returnButton = document.getElementById('returnButton');
 
-// Agregar event listener al botón "Ajustes"
-settingsButton.addEventListener("click", function() {
-  pauseMenu.classList.add('hidden-menu'); // Ocultar menú de pausa
-  audioMenu.classList.remove('hidden-menu'); // Mostrar menú de audio
-});
+    // Agregar event listener al botón "Ajustes"
+    settingsButton.addEventListener("click", function () {
+        pauseMenu.classList.add('hidden-menu'); // Ocultar menú de pausa
+        audioMenu.classList.remove('hidden-menu'); // Mostrar menú de audio
+    });
 
-// Agregar event listener al botón "Volver"
-returnButton.addEventListener("click", function() {
-  audioMenu.classList.add('hidden-menu'); // Ocultar menú de audio
-  pauseMenu.classList.remove('hidden-menu'); // Mostrar menú de pausa
-});
+    // Agregar event listener al botón "Volver"
+    returnButton.addEventListener("click", function () {
+        audioMenu.classList.add('hidden-menu'); // Ocultar menú de audio
+        pauseMenu.classList.remove('hidden-menu'); // Mostrar menú de pausa
+    });
 
-    
+
 
 
     gameUI = document.getElementById('gameUI')
