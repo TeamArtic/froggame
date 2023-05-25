@@ -517,8 +517,8 @@ button.highlighted-button {
 .controlsUIChrome {
     z-index: 5;
     position: fixed;
-    bottom: 200px;
-    right: 200px;
+    bottom: 20px;
+    right: 20px;
     display: block; /* Agregamos esta línea */
   }
   
@@ -537,7 +537,7 @@ button.highlighted-button {
     font-family: 'Press Start 2P', cursive;
   }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
 
     body {
         touch-action: manipulation;
@@ -550,8 +550,7 @@ button.highlighted-button {
         display: block;
         opacity: 0.8;
         z-index: 5;
-        bottom: 200px;
-        right: 200px;
+
     }
 
     .controlsUI button {
@@ -570,8 +569,8 @@ button.highlighted-button {
 
 
     .controlsUIChrome {
-        bottom: 10px;
-        right: 10px;
+        bottom: 200px;
+        right: 200px;
     }
 
     .controlsButtonChrome {
