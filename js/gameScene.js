@@ -987,6 +987,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
         isScrolling = true;
       }
+  
+      if (!isScrolling) {
+        event.preventDefault();
+      }
     }
   
     function handleTouchEnd(event) {
