@@ -5,5 +5,6 @@ window.addEventListener('load', () => {
     if(record){
         recordContainer.innerHTML = "Record: " + record + "ms"
         recordContainer.style.display = "block"
+        recordContainer.style.textAlign = "center"
     }
 })
