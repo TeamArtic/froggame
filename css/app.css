@@ -519,7 +519,7 @@ button.highlighted-button {
 
     .pauseButton {
         top: 20px;
-        left: 230px;
+        right: 20px;
         position: fixed;
         display: block;
         opacity: 0.8;
