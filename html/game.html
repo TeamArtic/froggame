@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../img/Logo.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 
 <body>
@@ -41,13 +40,13 @@
             <div id="specialAvility" class="special-secondary-text"></div>
         </div>
         <a id="pauseButton" class="pauseButton " onclick="activateToggleMenu()">ESC</a>
-        <div class="controlsUI hidden-menu" id="controlsUI">
+        <div class="controlsUI" id="controlsUI">
             <button id="topButton" class="topButton" onclick="moveFrog(new vector2(0, -1))">W</button><br>
             <button id="leftButton" class="leftButton" onclick="moveFrog(new vector2(-1, 0))">A</button>
             <button id="jumpButton" class="jumpButton" onclick="moveFrog(new vector2(0, 1))">S</button>
             <button id="rightButton" class="rightButton" onclick="moveFrog(new vector2(1, 0))">D</button>
         </div>
-        <div class="controlsUIChrome" id="controlsUIChrome">
+        <div class="controlsUIChrome hidden-menu" id="controlsUIChrome">
             <button id="topButton" class="controlsButton" onclick="moveFrog(new vector2(0, -1))">W</button><br>
             <button id="leftButton" class="controlsButton" onclick="moveFrog(new vector2(-1, 0))">A</button>
             <button id="jumpButton" class="controlsButton" onclick="moveFrog(new vector2(0, 1))">S</button>
