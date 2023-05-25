@@ -570,7 +570,7 @@ button.highlighted-button {
 
     .controlsUIChrome {
         bottom: 670px;
-        right: 360px;
+        left: 40px;
     }
 
     .controlsButtonChrome {
