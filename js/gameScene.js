@@ -958,7 +958,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Bloquear el desplazamiento de la página
     document.addEventListener('touchmove', function(event) {
-      if (event.touches.length > 1) {
+      if (isScrolling) {
         event.preventDefault();
       }
     }, { passive: false });
@@ -969,24 +969,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchend', handleTouchEnd);
   
     function handleTouchStart(event) {
-      if (event.touches.length === 1) {
-        startX = event.touches[0].clientX;
-        startY = event.touches[0].clientY;
-        isScrolling = false;
-      }
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      isScrolling = false;
     }
   
     function handleTouchMove(event) {
-      if (event.touches.length === 1) {
-        endX = event.touches[0].clientX;
-        endY = event.touches[0].clientY;
+      endX = event.touches[0].clientX;
+      endY = event.touches[0].clientY;
   
-        var deltaX = endX - startX;
-        var deltaY = endY - startY;
+      var deltaX = endX - startX;
+      var deltaY = endY - startY;
   
-        if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
-          isScrolling = true;
-        }
+      if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
+        isScrolling = true;
+        event.preventDefault();
       }
     }
   
@@ -1014,6 +1011,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Aquí puedes colocar otras funciones o lógica adicional si es necesario
   });
+  
   
   
   
