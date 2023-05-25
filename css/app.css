@@ -353,7 +353,8 @@ button.highlighted-button {
 }
 
 .controlsUI button {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 90px;
     height: 90px;
     background-color: gray;
@@ -505,7 +506,7 @@ button.highlighted-button {
 
     .controlsUI {
         bottom: 10px;
-        position: fixed;
+        position: absolute;
         display: block;
         opacity: 0.8;
         z-index: 5;
