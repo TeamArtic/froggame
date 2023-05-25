@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logros - Esquiva y Avanza</title>
+    <style>
+        @font-face {
+            font-family: 'hola';
+            src: url(../BITWONDER.TTF);
+        }
+        
+        body {
+            background-color: black !important;
+            font-family: 'hola';
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px 0;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+        
+        li:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+        
+        li.completed:before {
+            background-color: #4CAF50;
+        }
+        
+        li.completed:after {
+            content: '\2713';
+            position: absolute;
+            right: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 14px;
+        }
+        
+        li.locked:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #666;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+        
+        li.locked:after {
+            content: '\1F512';
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .contenedor {
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            opacity: 1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            padding: 10px;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+        }
+
+        header h1 {
+            color: rgb(0, 0, 0);
+            margin: 0;
+        }
+
+        header nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        #logo{
+            width: 100px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html"><img src="../img/logo.png" alt="logo" id="logo"></a>
+        </div>
+        <h1>Tus Logros</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+        </nav>
+    </header>
+    <h2>Logro 1: Velocidad</h2>
+    <div class="contenedor">
+        <ul>
+            <li class="completed">Corredor Novato: Sobrevive durante 30 segundos en el juego.</li>
+            <li>Velocista Habil: Sobrevive durante 1 minuto en el juego.</li>
+            <li>Maestro de la Velocidad: Sobrevive durante 3 minutos en el juego.</li>
+            <li>Esquivador Experto: Alcanza una puntuacion de 500 puntos en una partida.</li>
+            <li>Rey de la Carretera: Alcanza una puntuacion de 1000 puntos en una partida.</li>
+        </ul>
+    </div>
+    
+    <h2>Logro 2: Habilidades</h2>
+    <div class="contenedor">
+        <ul>
+            <li>Esquivador Agil: Esquiva exitosamente a 50 enemigos en una partida.</li>
+            <li>Experto en Maniobras: Realiza 100 maniobras evasivas en una partida.</li>
+            <li>Maestro de la Pericia: Supera a 200 enemigos sin ser golpeado en una partida.</li>
+            <li>Evasion Perfecta: Sobrevive durante 5 minutos sin recibir ningun daño.</li>
+            <li>Imbatible: Completa una partida sin ser golpeado.</li>
+        </ul>
+    </div>
+    
+    <h2>Logro 3: Exploracion</h2>
+    <div class="contenedor">
+        <ul>
+            <li>Aventurero Curioso: Explora 3 diferentes carreteras en el juego.</li>
+            <li>Explorador Intrepido: Explora 5 diferentes carreteras en el juego.</li>
+            <li>Cartografo del Asfalto: Descubre y completa todas las carreteras del juego.</li>
+            <li>Buscador de Secretos: Encuentra y recolecta todos los objetos ocultos en el juego.</li>
+            <li>Explorador Legendario: Completa todas las carreteras y encuentra todos los secretos.</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
