@@ -1,4 +1,4 @@
-const archievementsArrayInfo = [
+const achievementsArrayInfo = [
     {"id":0, "name":"", "UIName":"Principiante", "description":"Has superado el primer nivel."}, // First level
     {"id":1, "name":"", "UIName":"Primera ciudad", "description":"Llega a una ciudad."}, // First city
     {"id":2, "name":"", "UIName":"Primera autopista", "description":"Llega a una autopista."}, // First highway
@@ -15,7 +15,7 @@ const archievementsArrayInfo = [
     {"id":13, "name":"", "UIName":"Jennica", "description":"Desbloquea a Jennica"}, // Unlock Jennica
 ]
 
-const archievementsArrayValues = [
+const achievementsArrayValues = [
     {"id":0, "value":false}, // First level
     {"id":1, "value":false}, // First city
     {"id":2, "value":false}, // First highway
@@ -32,20 +32,20 @@ const archievementsArrayValues = [
     {"id":13, "value":false}, // Unlock Jennica
 ]
 
-function setArchievement(archievemtId){
-    let archievementsArray = JSON.parse(localStorage.getItem('archievements'))
-    if(!archievementsArray || archievementsArray == "null"){
-        archievementsArray = archievementsArrayValues
+function setAchievement(archievemtId){
+    let achievementsArray = JSON.parse(localStorage.getItem('achievements'))
+    if(!achievementsArray || achievementsArray == "null"){
+        achievementsArray = achievementsArrayValues
     }
-    let newArchievementArray = archievementsArray
-    newArchievementArray[archievemtId].value = true
-    localStorage.setItem('archievements', JSON.stringify(newArchievementArray))
+    let newAchievementArray = achievementsArray
+    newAchievementArray[archievemtId].value = true
+    localStorage.setItem('achievements', JSON.stringify(newAchievementArray))
 }
 
-function getArchievement(){
-    let archievementsArray = JSON.parse(localStorage.getItem('archievements'))
-    if(!archievementsArray || archievementsArray == "null"){
-        archievementsArray = archievementsArrayValues
+function getAchievement(){
+    let achievementsArray = JSON.parse(localStorage.getItem('achievements'))
+    if(!achievementsArray || achievementsArray == "null"){
+        achievementsArray = achievementsArrayValues
     }
-    return archievementsArray
+    return achievementsArray
 }
