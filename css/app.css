@@ -463,6 +463,8 @@ button.highlighted-button {
     color: white;
     font-family: 'Press Start 2P', cursive;
     border-radius: 10%;
+    z-index: 5;
+    position: fixed;
 }
 
 .pauseButton:hover {
