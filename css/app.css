@@ -405,6 +405,47 @@ button.highlighted-button {
     font-size: 24px;
   }
 
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 260px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 0px;
+    outline: none;
+    margin: 20px;
+  }
+
+  /* Estilos para la barra de progreso */
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background-color: #00ff00;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+
+  /* Estilos para el control deslizante */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+
+  /* Estilos para el rango del slider en navegadores no WebKit */
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #00ff00;
+    cursor: pointer;
+  }
+
+
+
 @media (max-width: 768px) {
 
     body {
