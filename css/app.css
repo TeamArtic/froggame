@@ -573,7 +573,6 @@ button.highlighted-button {
         height: 200px;
         flex-direction: row;
         overflow: hidden;
-        width: calc(100vw - 50px);
     }
 
     .default-character-card-image {
